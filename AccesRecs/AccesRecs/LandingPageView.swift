@@ -74,7 +74,9 @@ class LandingPageView: UIViewController {
     }
     
     @objc func GoToGuide(sender: UIButton!){
-        print("Go to Guide")
+        let guideVC = GuideVC()
+        present(guideVC, animated: true, completion: nil)
+        
     }
 }
 
