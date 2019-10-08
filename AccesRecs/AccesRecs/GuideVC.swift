@@ -11,6 +11,6 @@ import UIKit
 class GuideVC: UIViewController {
     
     override func viewDidLoad() {
-        view.backgroundColor = .blue
+        view.backgroundColor = .green
     }
 }
