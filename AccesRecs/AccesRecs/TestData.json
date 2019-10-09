@@ -1,0 +1,20 @@
+[
+    {
+        name: "Colorblind"
+        tests: [
+            {
+                name: "",
+                answer: 1,
+                id: 1001,
+                imageName: "DarkMode"
+            },
+            {
+                name: "",
+                answer: 2,
+                id: 1002,
+                imageName: ""
+            }
+        ],
+    },
+    
+]

@@ -52,6 +52,7 @@
 /* Begin PBXFileReference section */
 		E2D2A8FD234E439100E2404B /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		E2D2A8FF234E43DA00E2404B /* TestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestList.swift; sourceTree = "<group>"; };
+		E2D2A901234E492B00E2404B /* TestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestData.json; sourceTree = "<group>"; };
 		EF10A07F233E4F9D004407B5 /* AccesRecs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccesRecs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF10A082233E4F9D004407B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF10A084233E4F9D004407B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +143,7 @@
 				EF5A890C234DBEAC003DB430 /* GuideData.json */,
 				EF10A082233E4F9D004407B5 /* AppDelegate.swift */,
 				EF5A8907234DBD9B003DB430 /* Data.swift */,
+				E2D2A901234E492B00E2404B /* TestData.json */,
 				EF5A8906234DBD9B003DB430 /* Guide.swift */,
 				EF5A8910234DC3A6003DB430 /* GuideList.swift */,
 				EF5A8902234DBBC9003DB430 /* GuideRow.swift */,
