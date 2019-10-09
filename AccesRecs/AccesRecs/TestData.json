@@ -3,17 +3,30 @@
         name: "Colorblind"
         tests: [
             {
-                name: "",
-                answer: 1,
-                id: 1001,
-                imageName: "DarkMode"
+                name: "Basic",
+                answer: 74,
+                id: 1,
+                imageName: "test.png"
             },
             {
-                name: "",
+                name: "BluePurple",
+                answer: 7,
+                id: 2,
+                imageName: "testbp7.jpg"
+            },
+            {
+                name: "BlueRed",
+                answer: 8,
+                id: 3,
+                imageName: "testbr8.jpg"
+            },
+            {
+                name: "GreenRed",
                 answer: 2,
-                id: 1002,
-                imageName: ""
-            }
+                id: 4,
+                imageName: "testgr15.jpg",
+            },
+            
         ],
     },
     
