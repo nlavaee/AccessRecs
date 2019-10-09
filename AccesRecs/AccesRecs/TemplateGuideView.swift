@@ -2,24 +2,12 @@
 //  TemplateGuideView.swift
 //  AccesRecs
 //
-<<<<<<< HEAD
+
 //  Created by Amaris Sim on 10/7/19.
 //  Copyright © 2019 Norin Lavaee. All rights reserved.
 //
 
-=======
-//  Created by Norin Lavaee on 10/9/19.
-//  Copyright © 2019 Norin Lavaee. All rights reserved.
-//
 
-//
-//  TemplateGuideView.swift
-//  AccesRecs
-//
-//  Created by Amaris Sim on 10/7/19.
-//  Copyright © 2019 Norin Lavaee. All rights reserved.
-//
->>>>>>> nlavaee
 
 import Foundation
 import UIKit
@@ -93,7 +81,3 @@ struct TemplateGuideView_Preview: PreviewProvider {
     }
 }
 #endif
-<<<<<<< HEAD
-
-=======
->>>>>>> nlavaee
