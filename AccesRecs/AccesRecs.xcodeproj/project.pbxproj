@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		812202DC234E4AA800C193DA /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812202DB234E4AA800C193DA /* Test.swift */; };
 		E2D2A8FE234E439100E2404B /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2A8FD234E439100E2404B /* TestView.swift */; };
 		E2D2A900234E43DA00E2404B /* TestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2A8FF234E43DA00E2404B /* TestList.swift */; };
 		EF10A083233E4F9D004407B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10A082233E4F9D004407B5 /* AppDelegate.swift */; };
@@ -51,7 +50,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		812202DB234E4AA800C193DA /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		E2D2A8FD234E439100E2404B /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		E2D2A8FF234E43DA00E2404B /* TestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestList.swift; sourceTree = "<group>"; };
 		E2D2A901234E492B00E2404B /* TestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestData.json; sourceTree = "<group>"; };
@@ -145,11 +143,7 @@
 				EF5A890C234DBEAC003DB430 /* GuideData.json */,
 				EF10A082233E4F9D004407B5 /* AppDelegate.swift */,
 				EF5A8907234DBD9B003DB430 /* Data.swift */,
-<<<<<<< HEAD
 				E2D2A901234E492B00E2404B /* TestData.json */,
-=======
-				812202DB234E4AA800C193DA /* Test.swift */,
->>>>>>> 63c731ac7081b3a24aa94b8f56368cce16f09bca
 				EF5A8906234DBD9B003DB430 /* Guide.swift */,
 				EF5A8910234DC3A6003DB430 /* GuideList.swift */,
 				EF5A8902234DBBC9003DB430 /* GuideRow.swift */,
@@ -332,7 +326,6 @@
 				E2D2A8FE234E439100E2404B /* TestView.swift in Sources */,
 				EF416D52234BA67900DC30A9 /* GuideVC.swift in Sources */,
 				EF10A083233E4F9D004407B5 /* AppDelegate.swift in Sources */,
-				812202DC234E4AA800C193DA /* Test.swift in Sources */,
 				EF5A8911234DC3A6003DB430 /* GuideList.swift in Sources */,
 				EF5A8903234DBBC9003DB430 /* GuideRow.swift in Sources */,
 				EF416D54234D3AC000DC30A9 /* GuideTableViewCell.swift in Sources */,
