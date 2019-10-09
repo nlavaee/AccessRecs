@@ -15,11 +15,11 @@ struct TestList: View {
         
         NavigationView {
             
-            List(Guidedata) { guide in
+            List(Testdata) { test in
             
-                NavigationLink(destination: TemplateGuideView()){
+                NavigationLink(destination: TestView()){
                     
-                    GuideRow(guide: guide)
+                    TestRow(test: test)
                 }
             }
         }

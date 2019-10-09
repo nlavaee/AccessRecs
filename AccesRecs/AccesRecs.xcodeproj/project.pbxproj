@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		811F93AE234E697400D6375E /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811F93AD234E697400D6375E /* Test.swift */; };
+		81416711234E6E58008C74E0 /* TestRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81416710234E6E58008C74E0 /* TestRow.swift */; };
+		81416712234E709D008C74E0 /* TestData.json in Resources */ = {isa = PBXBuildFile; fileRef = E2D2A901234E492B00E2404B /* TestData.json */; };
 		E2D2A8FE234E439100E2404B /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2A8FD234E439100E2404B /* TestView.swift */; };
 		E2D2A900234E43DA00E2404B /* TestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2A8FF234E43DA00E2404B /* TestList.swift */; };
 		EF10A083233E4F9D004407B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10A082233E4F9D004407B5 /* AppDelegate.swift */; };
@@ -49,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		811F93AD234E697400D6375E /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		81416710234E6E58008C74E0 /* TestRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRow.swift; sourceTree = "<group>"; };
 		E2D2A8FD234E439100E2404B /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		E2D2A8FF234E43DA00E2404B /* TestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestList.swift; sourceTree = "<group>"; };
 		E2D2A901234E492B00E2404B /* TestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestData.json; sourceTree = "<group>"; };
@@ -136,11 +139,12 @@
 			children = (
 				EF5A890A234DBEAC003DB430 /* DarkMode.jpg */,
 				E2D2A8FF234E43DA00E2404B /* TestList.swift */,
+				81416710234E6E58008C74E0 /* TestRow.swift */,
 				EF5A890B234DBEAC003DB430 /* GrayScale.jpg */,
 				EF5A890C234DBEAC003DB430 /* GuideData.json */,
+				E2D2A901234E492B00E2404B /* TestData.json */,
 				EF10A082233E4F9D004407B5 /* AppDelegate.swift */,
 				EF5A8907234DBD9B003DB430 /* Data.swift */,
-				E2D2A901234E492B00E2404B /* TestData.json */,
 				811F93AD234E697400D6375E /* Test.swift */,
 				EF5A8906234DBD9B003DB430 /* Guide.swift */,
 				EF5A8910234DC3A6003DB430 /* GuideList.swift */,
@@ -290,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF10A08C233E4F9F004407B5 /* Preview Assets.xcassets in Resources */,
+				81416712234E709D008C74E0 /* TestData.json in Resources */,
 				EF5A890F234DBEAC003DB430 /* GuideData.json in Resources */,
 				EF5A890E234DBEAC003DB430 /* GrayScale.jpg in Resources */,
 				EF10A089233E4F9F004407B5 /* Assets.xcassets in Resources */,
@@ -323,6 +328,7 @@
 				EF10A083233E4F9D004407B5 /* AppDelegate.swift in Sources */,
 				811F93AE234E697400D6375E /* Test.swift in Sources */,
 				EF5A8911234DC3A6003DB430 /* GuideList.swift in Sources */,
+				81416711234E6E58008C74E0 /* TestRow.swift in Sources */,
 				EF5A8903234DBBC9003DB430 /* GuideRow.swift in Sources */,
 				EF416D54234D3AC000DC30A9 /* GuideTableViewCell.swift in Sources */,
 				EF5A8908234DBD9B003DB430 /* Guide.swift in Sources */,
