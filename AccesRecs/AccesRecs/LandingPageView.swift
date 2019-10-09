@@ -74,7 +74,10 @@ class LandingPageView: UIViewController {
     }
     
     @objc func GoToGuide(sender: UIButton!){
-        print("Go to Guide")
+        let guideVC = GuideList()
+        let viewCtrl = UIHostingController(rootView: guideVC)
+        present(viewCtrl, animated: true, completion: nil)
+        
     }
 }
 

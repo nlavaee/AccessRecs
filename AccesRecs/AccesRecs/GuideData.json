@@ -1,0 +1,15 @@
+[
+    {
+        "name": "Dark Mode",
+        "category": "Vision",
+        "id": 1001,
+        "imageName": "DarkMode"
+    },
+    {
+        "name": "Gray Scale",
+        "category": "Vision",
+        "id": 4,
+        "imageName": "GrayScale"
+    }
+]
+
