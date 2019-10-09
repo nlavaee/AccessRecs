@@ -11,11 +11,12 @@ import CoreLocation
 struct Test: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
-    var category: Category
-
-    enum Category: String, CaseIterable, Codable, Hashable {
-        case vision = "Vision"
-        case mobility = "Mobility"
-    }
+    var tests: [ColorBlindTest]
+//    var category: Category
+//
+//    enum Category: String, CaseIterable, Codable, Hashable {
+//        case vision = "Vision"
+//        case mobility = "Mobility"
+//    }
 }
 

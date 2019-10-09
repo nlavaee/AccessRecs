@@ -1,33 +1,34 @@
 [
     {
-        name: "Colorblind"
-        tests: [
+        "name": "Colorblind",
+        "id": 1,
+        "tests": [
             {
-                name: "Basic",
-                answer: 74,
-                id: 1,
-                imageName: "test.png"
+                "name": "Basic",
+                "answer": 74,
+                "id": 1,
+                "imageName": "test.png"
             },
             {
-                name: "BluePurple",
-                answer: 7,
-                id: 2,
-                imageName: "testbp7.jpg"
+                "name": "BluePurple",
+                "answer": 7,
+                "id": 2,
+                "imageName": "testbp7.jpg"
             },
             {
-                name: "BlueRed",
-                answer: 8,
-                id: 3,
-                imageName: "testbr8.jpg"
+                "name": "BlueRed",
+                "answer": 8,
+                "id": 3,
+                "imageName": "testbr8.jpg"
             },
             {
-                name: "GreenRed",
-                answer: 2,
-                id: 4,
-                imageName: "testgr15.jpg",
+                "name": "GreenRed",
+                "answer": 2,
+                "id": 4,
+                "imageName": "testgr15.jpg",
             },
             
         ],
-    },
+    }
     
 ]

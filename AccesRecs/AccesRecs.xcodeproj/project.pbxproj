@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		811479B8234E72CF00502363 /* ColorBlindTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811479B7234E72CF00502363 /* ColorBlindTest.swift */; };
 		811F93AE234E697400D6375E /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811F93AD234E697400D6375E /* Test.swift */; };
 		81416711234E6E58008C74E0 /* TestRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81416710234E6E58008C74E0 /* TestRow.swift */; };
 		81416712234E709D008C74E0 /* TestData.json in Resources */ = {isa = PBXBuildFile; fileRef = E2D2A901234E492B00E2404B /* TestData.json */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		811479B7234E72CF00502363 /* ColorBlindTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBlindTest.swift; sourceTree = "<group>"; };
 		811F93AD234E697400D6375E /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		81416710234E6E58008C74E0 /* TestRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRow.swift; sourceTree = "<group>"; };
 		E2D2A8FD234E439100E2404B /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				EF10A082233E4F9D004407B5 /* AppDelegate.swift */,
 				EF5A8907234DBD9B003DB430 /* Data.swift */,
 				811F93AD234E697400D6375E /* Test.swift */,
+				811479B7234E72CF00502363 /* ColorBlindTest.swift */,
 				EF5A8906234DBD9B003DB430 /* Guide.swift */,
 				EF5A8910234DC3A6003DB430 /* GuideList.swift */,
 				EF5A8902234DBBC9003DB430 /* GuideRow.swift */,
@@ -330,6 +333,7 @@
 				EF5A8911234DC3A6003DB430 /* GuideList.swift in Sources */,
 				81416711234E6E58008C74E0 /* TestRow.swift in Sources */,
 				EF5A8903234DBBC9003DB430 /* GuideRow.swift in Sources */,
+				811479B8234E72CF00502363 /* ColorBlindTest.swift in Sources */,
 				EF416D54234D3AC000DC30A9 /* GuideTableViewCell.swift in Sources */,
 				EF5A8908234DBD9B003DB430 /* Guide.swift in Sources */,
 				EF10A085233E4F9D004407B5 /* SceneDelegate.swift in Sources */,
