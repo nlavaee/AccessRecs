@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2D2A8FE234E439100E2404B /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2A8FD234E439100E2404B /* TestView.swift */; };
+		E2D2A900234E43DA00E2404B /* TestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2A8FF234E43DA00E2404B /* TestList.swift */; };
 		EF10A083233E4F9D004407B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10A082233E4F9D004407B5 /* AppDelegate.swift */; };
 		EF10A085233E4F9D004407B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10A084233E4F9D004407B5 /* SceneDelegate.swift */; };
 		EF10A087233E4F9D004407B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10A086233E4F9D004407B5 /* ContentView.swift */; };
@@ -16,9 +18,6 @@
 		EF10A0A5233E4F9F004407B5 /* AccesRecsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10A0A4233E4F9F004407B5 /* AccesRecsUITests.swift */; };
 		EF416D52234BA67900DC30A9 /* GuideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF416D51234BA67900DC30A9 /* GuideVC.swift */; };
 		EF416D54234D3AC000DC30A9 /* GuideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF416D53234D3AC000DC30A9 /* GuideTableViewCell.swift */; };
-		EF5A88F9234DAC98003DB430 /* Items in Resources */ = {isa = PBXBuildFile; fileRef = EF5A88F8234DAC98003DB430 /* Items */; };
-		EF5A88FA234DAC98003DB430 /* Items in Resources */ = {isa = PBXBuildFile; fileRef = EF5A88F8234DAC98003DB430 /* Items */; };
-		EF5A88FB234DAC98003DB430 /* Items in Resources */ = {isa = PBXBuildFile; fileRef = EF5A88F8234DAC98003DB430 /* Items */; };
 		EF5A88FD234DB266003DB430 /* Models in Resources */ = {isa = PBXBuildFile; fileRef = EF5A88FC234DB266003DB430 /* Models */; };
 		EF5A88FE234DB266003DB430 /* Models in Resources */ = {isa = PBXBuildFile; fileRef = EF5A88FC234DB266003DB430 /* Models */; };
 		EF5A88FF234DB266003DB430 /* Models in Resources */ = {isa = PBXBuildFile; fileRef = EF5A88FC234DB266003DB430 /* Models */; };
@@ -51,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E2D2A8FD234E439100E2404B /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		E2D2A8FF234E43DA00E2404B /* TestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestList.swift; sourceTree = "<group>"; };
 		EF10A07F233E4F9D004407B5 /* AccesRecs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccesRecs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF10A082233E4F9D004407B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF10A084233E4F9D004407B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,7 +67,6 @@
 		EF10A0A6233E4F9F004407B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF416D51234BA67900DC30A9 /* GuideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideVC.swift; sourceTree = "<group>"; };
 		EF416D53234D3AC000DC30A9 /* GuideTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideTableViewCell.swift; sourceTree = "<group>"; };
-		EF5A88F8234DAC98003DB430 /* Items */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Items; sourceTree = "<group>"; };
 		EF5A88FC234DB266003DB430 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
 		EF5A8902234DBBC9003DB430 /* GuideRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideRow.swift; sourceTree = "<group>"; };
 		EF5A8906234DBD9B003DB430 /* Guide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Guide.swift; sourceTree = "<group>"; };
@@ -104,11 +104,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E2D2A8FC234E430800E2404B /* Items */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
 		EF10A076233E4F9D004407B5 = {
 			isa = PBXGroup;
 			children = (
+				E2D2A8FC234E430800E2404B /* Items */,
 				EF5A88FC234DB266003DB430 /* Models */,
-				EF5A88F8234DAC98003DB430 /* Items */,
 				EF10A081233E4F9D004407B5 /* AccesRecs */,
 				EF10A098233E4F9F004407B5 /* AccesRecsTests */,
 				EF10A0A3233E4F9F004407B5 /* AccesRecsUITests */,
@@ -130,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				EF5A890A234DBEAC003DB430 /* DarkMode.jpg */,
+				E2D2A8FF234E43DA00E2404B /* TestList.swift */,
 				EF5A890B234DBEAC003DB430 /* GrayScale.jpg */,
 				EF5A890C234DBEAC003DB430 /* GuideData.json */,
 				EF10A082233E4F9D004407B5 /* AppDelegate.swift */,
@@ -144,6 +152,7 @@
 				EF10A084233E4F9D004407B5 /* SceneDelegate.swift */,
 				EF10A086233E4F9D004407B5 /* ContentView.swift */,
 				EF10A088233E4F9F004407B5 /* Assets.xcassets */,
+				E2D2A8FD234E439100E2404B /* TestView.swift */,
 				EF10A090233E4F9F004407B5 /* Info.plist */,
 				EF10A08A233E4F9F004407B5 /* Preview Content */,
 			);
@@ -286,7 +295,6 @@
 				EF10A089233E4F9F004407B5 /* Assets.xcassets in Resources */,
 				EF5A890D234DBEAC003DB430 /* DarkMode.jpg in Resources */,
 				EF5A88FD234DB266003DB430 /* Models in Resources */,
-				EF5A88F9234DAC98003DB430 /* Items in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +303,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF5A88FE234DB266003DB430 /* Models in Resources */,
-				EF5A88FA234DAC98003DB430 /* Items in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +311,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF5A88FF234DB266003DB430 /* Models in Resources */,
-				EF5A88FB234DAC98003DB430 /* Items in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2D2A8FE234E439100E2404B /* TestView.swift in Sources */,
 				EF416D52234BA67900DC30A9 /* GuideVC.swift in Sources */,
 				EF10A083233E4F9D004407B5 /* AppDelegate.swift in Sources */,
 				EF5A8911234DC3A6003DB430 /* GuideList.swift in Sources */,
@@ -325,6 +332,7 @@
 				EF7253A323413CFC00FEBF0F /* LandingPageView.swift in Sources */,
 				EF5A8909234DBD9B003DB430 /* Data.swift in Sources */,
 				EF5A8913234DCE32003DB430 /* TemplateGuideView.swift in Sources */,
+				E2D2A900234E43DA00E2404B /* TestList.swift in Sources */,
 				EF10A087233E4F9D004407B5 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
