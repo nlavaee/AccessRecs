@@ -18,18 +18,23 @@ struct GuideList: View {
 
     var body: some View {
         NavigationView {
-            Group {
-                VStack{
+            Group{
             SearchBar(text: $searchTerm)
-            List(Guidedata) { guide in
-            NavigationLink(destination: TemplateGuideView()){
-                GuideRow(guide: guide)
-                        }
-                    }
-                }
+                            List(Guidedata) { guide in
+                            NavigationLink(destination: TemplateGuideView()){
+                                GuideRow(guide: guide)
+                                        }
+                                    }
             }
+            .navigationBarTitle("Guide")
+                .navigationBarItems(trailing:
+                    Button("back")
+                        {
+                        print("tapped")
+                    }
+                    
+                )
         }
-        
         
     }
 }
