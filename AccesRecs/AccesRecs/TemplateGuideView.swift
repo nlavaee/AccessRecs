@@ -64,7 +64,8 @@ struct TemplateGuideView: View {
                         .stroke(Color.gray, lineWidth:2)
                 )
                 .lineLimit(nil)
-            guide.imgBefore
+            
+            Image(uiImage: UIImage(named: guide.imageBefore)!)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
 
@@ -79,7 +80,7 @@ struct TemplateGuideView: View {
                         .stroke(Color.gray, lineWidth:2)
                 )
                 .lineLimit(nil)
-            guide.imgAfter
+            Image(uiImage: UIImage(named: guide.imageAfter)!)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
            }

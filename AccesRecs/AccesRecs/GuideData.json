@@ -32,7 +32,7 @@
         "id": 201,
         "imageName": "GrayScale",
         "imageBefore": "GrayScalebefore",
-        "imageAfter": "DarkScale_after",
+        "imageAfter": "GrayScale_after",
         "Description": "Description about how reduce transparency works here"
     },
     {

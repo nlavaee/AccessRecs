@@ -13,8 +13,10 @@ struct Guide: Hashable, Codable, Identifiable {
     var name: String
     fileprivate var imageName: String
     var category: Category
-    fileprivate var imageBefore: String
-    fileprivate var imageAfter: String
+    var imageBefore : String
+    var imageAfter : String
+//    fileprivate var imageBefore: String
+//    fileprivate var imageAfter: String
     var Description: String
     
 
@@ -32,10 +34,10 @@ extension Guide {
     var image: Image {
         ImageStore.shared.image(name: imageName)
     }
-    var imgBefore: Image {
-        ImageStore.shared.image(name: imageBefore)
-    }
-    var imgAfter: Image {
-        ImageStore.shared.image(name: imageAfter)
-    }
+//    var imgBefore: Image {
+//        ImageStore.shared.image(name: imageBefore)
+//    }
+//    var imgAfter: Image {
+//        ImageStore.shared.image(name: imageAfter)
+//    }
 }

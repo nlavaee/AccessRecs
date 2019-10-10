@@ -30,8 +30,6 @@
 		EFABA606234FD26600229064 /* DarkMode_after.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA600234FD26600229064 /* DarkMode_after.png */; };
 		EFABA607234FD26600229064 /* ColorFilters_before.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA601234FD26600229064 /* ColorFilters_before.png */; };
 		EFABA608234FD26600229064 /* LargeText_before.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA602234FD26600229064 /* LargeText_before.png */; };
-		EFABA609234FD26600229064 /* GrayScale_after.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA603234FD26600229064 /* GrayScale_after.png */; };
-		EFABA60F234FD6C600229064 /* GrayScalebefore.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA60E234FD6C600229064 /* GrayScalebefore.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,8 +79,6 @@
 		EFABA600234FD26600229064 /* DarkMode_after.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DarkMode_after.png; sourceTree = "<group>"; };
 		EFABA601234FD26600229064 /* ColorFilters_before.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColorFilters_before.png; sourceTree = "<group>"; };
 		EFABA602234FD26600229064 /* LargeText_before.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LargeText_before.png; sourceTree = "<group>"; };
-		EFABA603234FD26600229064 /* GrayScale_after.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrayScale_after.png; sourceTree = "<group>"; };
-		EFABA60E234FD6C600229064 /* GrayScalebefore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrayScalebefore.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,15 +129,6 @@
 		EF10A081233E4F9D004407B5 /* AccesRecs */ = {
 			isa = PBXGroup;
 			children = (
-				EFABA60E234FD6C600229064 /* GrayScalebefore.png */,
-				EFABA601234FD26600229064 /* ColorFilters_before.png */,
-				EFABA600234FD26600229064 /* DarkMode_after.png */,
-				EFABA5FF234FD26500229064 /* DarkMode_before.png */,
-				EFABA603234FD26600229064 /* GrayScale_after.png */,
-				EFABA5FE234FD26500229064 /* LargeText_after.png */,
-				EFABA602234FD26600229064 /* LargeText_before.png */,
-				EF5A890A234DBEAC003DB430 /* DarkMode.png */,
-				EF5A890B234DBEAC003DB430 /* GrayScale.png */,
 				EF5A890C234DBEAC003DB430 /* GuideData.json */,
 				EF5A8906234DBD9B003DB430 /* Guide.swift */,
 				EF5A8912234DCE32003DB430 /* TemplateGuideView.swift */,
@@ -154,6 +141,13 @@
 				EF7253A223413CFC00FEBF0F /* LandingPageView.swift */,
 				EF10A084233E4F9D004407B5 /* SceneDelegate.swift */,
 				EF10A086233E4F9D004407B5 /* ContentView.swift */,
+				EF5A890B234DBEAC003DB430 /* GrayScale.png */,
+				EFABA601234FD26600229064 /* ColorFilters_before.png */,
+				EFABA600234FD26600229064 /* DarkMode_after.png */,
+				EFABA5FF234FD26500229064 /* DarkMode_before.png */,
+				EFABA5FE234FD26500229064 /* LargeText_after.png */,
+				EFABA602234FD26600229064 /* LargeText_before.png */,
+				EF5A890A234DBEAC003DB430 /* DarkMode.png */,
 				EF10A088233E4F9F004407B5 /* Assets.xcassets */,
 				EF10A090233E4F9F004407B5 /* Info.plist */,
 				EF10A08A233E4F9F004407B5 /* Preview Content */,
@@ -295,13 +289,11 @@
 				EFABA607234FD26600229064 /* ColorFilters_before.png in Resources */,
 				EF5A890F234DBEAC003DB430 /* GuideData.json in Resources */,
 				EF5A890E234DBEAC003DB430 /* GrayScale.png in Resources */,
-				EFABA60F234FD6C600229064 /* GrayScalebefore.png in Resources */,
 				EFABA604234FD26600229064 /* LargeText_after.png in Resources */,
 				EFABA608234FD26600229064 /* LargeText_before.png in Resources */,
 				EF10A089233E4F9F004407B5 /* Assets.xcassets in Resources */,
 				EFABA606234FD26600229064 /* DarkMode_after.png in Resources */,
 				EF5A890D234DBEAC003DB430 /* DarkMode.png in Resources */,
-				EFABA609234FD26600229064 /* GrayScale_after.png in Resources */,
 				EFABA605234FD26600229064 /* DarkMode_before.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
