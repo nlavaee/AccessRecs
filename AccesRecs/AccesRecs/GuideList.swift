@@ -8,19 +8,24 @@
 
 // creating the whole list of the Guide
 
+
+
 import SwiftUI
 
 struct GuideList: View {
 
+    @State private var searchTerm: String = ""
+
     var body: some View {
-        
         NavigationView {
-            
+            Group {
+                VStack{
+            SearchBar(text: $searchTerm)
             List(Guidedata) { guide in
-            
-                NavigationLink(destination: TemplateGuideView()){
-                    
-                    GuideRow(guide: guide)
+            NavigationLink(destination: TemplateGuideView()){
+                GuideRow(guide: guide)
+                        }
+                    }
                 }
             }
         }
