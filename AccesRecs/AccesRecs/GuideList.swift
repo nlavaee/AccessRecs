@@ -11,7 +11,6 @@
 import SwiftUI
 
 struct GuideList: View {
-
     var body: some View {
         
         NavigationView {
@@ -24,8 +23,6 @@ struct GuideList: View {
                 }
             }
         }
-        
-        
     }
 }
 

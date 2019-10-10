@@ -19,4 +19,3 @@ struct Test: Hashable, Codable, Identifiable {
 //        case mobility = "Mobility"
 //    }
 }
-
