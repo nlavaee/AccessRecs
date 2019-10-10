@@ -3,13 +3,73 @@
         "name": "Dark Mode",
         "category": "Vision",
         "id": 1001,
-        "imageName": "DarkMode"
+        "imageName": "DarkMode",
+        "imageBefore": "DarkMode_before",
+        "imageAfter": "DarkMode_after",
+        "Description": "Dark mode provides balance"
     },
     {
         "name": "Gray Scale",
         "category": "Vision",
         "id": 4,
-        "imageName": "GrayScale"
-    }
+        "imageName": "GrayScale",
+        "imageBefore": "GrayScalebefore",
+        "imageAfter": "GrayScale_after",
+        "Description": "Something about Gray Scale"
+    },
+    {
+        "name": "Reduce Transparency",
+        "category": "Vision",
+        "id": 200,
+        "imageName": "GrayScale",
+        "imageBefore": "GrayScalebefore",
+        "imageAfter": "GrayScale_after",
+        "Description": "Description about how reduce transparency works here"
+    },
+    {
+        "name": "Zoom",
+        "category": "Vision",
+        "id": 201,
+        "imageName": "GrayScale",
+        "imageBefore": "GrayScalebefore",
+        "imageAfter": "DarkScale_after",
+        "Description": "Description about how reduce transparency works here"
+    },
+    {
+        "name": "Magnifier",
+        "category": "Vision",
+        "id": 88,
+        "imageName": "GrayScale",
+        "imageBefore": "GrayScalebefore",
+        "imageAfter": "GrayScale_after",
+        "Description": "Description about how reduce transparency works here"
+    },
+    {
+        "name": "Large Text",
+        "category": "Vision",
+        "id": 67,
+        "imageName": "GrayScale",
+        "imageBefore": "LargeText_before",
+        "imageAfter": "LargeText_after",
+        "Description": "Description about how reduce transparency works here"
+    },
+    {
+        "name": "Motion",
+        "category": "Vision",
+        "id": 31,
+        "imageName": "GrayScale",
+        "imageBefore": "LargeText_before",
+        "imageAfter" : "LargeText_after",
+        "Description": "Description about how reduce transparency works here"
+    },
+    {
+        "name": "Button Shape",
+        "category": "Vision",
+        "id": 45,
+        "imageName": "GrayScale",
+        "imageBefore": "LargeText_before",
+        "imageAfter": "LargeText_after",
+        "Description": "Description about how reduce transparency works here"
+      }
 ]
 

@@ -23,6 +23,7 @@ import SwiftUI
 
 struct TemplateGuideView: View {
     @State private var toggleTrue = false
+    var guide: Guide
     var body: some View {
         
         VStack(){
@@ -32,17 +33,23 @@ struct TemplateGuideView: View {
 //          note: padding to apply goes to outside
             VStack(alignment: .leading){
                 HStack(){
-                    Text("Reduce Transparency")
-                        .font(.system(size: 30))
+                    Text(guide.name)
+//                        .font(.system(size: 30))
+                        .font(.headline)
+                    
+//                        .lineLimit(nil)
                      Spacer()
                      Toggle(isOn: $toggleTrue){
-                         Text("Before Reduce Transparency")
+                        Text("Before " + guide.name)
+                            .lineLimit(nil)
                      }
                      .labelsHidden()
                     }
-                Text("Description about how reduce transparency works here")
+                
+                
+                Text(guide.Description)
                     .font(.subheadline)
-                    .lineLimit(0)
+                    .lineLimit(nil)
             }
             .padding()
             Spacer()
@@ -56,7 +63,8 @@ struct TemplateGuideView: View {
                     RoundedRectangle(cornerRadius: 4)
                         .stroke(Color.gray, lineWidth:2)
                 )
-            Image("BeforeReduceTransparencyDock")
+                .lineLimit(nil)
+            guide.imgBefore
                 .resizable()
                 .aspectRatio(contentMode: .fit)
 
@@ -70,7 +78,8 @@ struct TemplateGuideView: View {
                     RoundedRectangle(cornerRadius: 4)
                         .stroke(Color.gray, lineWidth:2)
                 )
-            Image("AfterReduceTransparencyDock")
+                .lineLimit(nil)
+            guide.imgAfter
                 .resizable()
                 .aspectRatio(contentMode: .fit)
            }
@@ -79,10 +88,10 @@ struct TemplateGuideView: View {
     }
 }
 
-#if DEBUG
-struct TemplateGuideView_Preview: PreviewProvider {
-    static var previews: some View {
-        TemplateGuideView()
-    }
-}
-#endif
+//#if DEBUG
+//struct TemplateGuideView_Preview: PreviewProvider {
+//    static var previews: some View {
+//        TemplateGuideView()
+//    }
+//}
+//#endif

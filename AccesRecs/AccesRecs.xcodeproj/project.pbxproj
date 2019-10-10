@@ -16,21 +16,22 @@
 		EF10A0A5233E4F9F004407B5 /* AccesRecsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10A0A4233E4F9F004407B5 /* AccesRecsUITests.swift */; };
 		EF416D52234BA67900DC30A9 /* GuideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF416D51234BA67900DC30A9 /* GuideVC.swift */; };
 		EF416D54234D3AC000DC30A9 /* GuideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF416D53234D3AC000DC30A9 /* GuideTableViewCell.swift */; };
-		EF5A88F9234DAC98003DB430 /* Items in Resources */ = {isa = PBXBuildFile; fileRef = EF5A88F8234DAC98003DB430 /* Items */; };
-		EF5A88FA234DAC98003DB430 /* Items in Resources */ = {isa = PBXBuildFile; fileRef = EF5A88F8234DAC98003DB430 /* Items */; };
-		EF5A88FB234DAC98003DB430 /* Items in Resources */ = {isa = PBXBuildFile; fileRef = EF5A88F8234DAC98003DB430 /* Items */; };
-		EF5A88FD234DB266003DB430 /* Models in Resources */ = {isa = PBXBuildFile; fileRef = EF5A88FC234DB266003DB430 /* Models */; };
-		EF5A88FE234DB266003DB430 /* Models in Resources */ = {isa = PBXBuildFile; fileRef = EF5A88FC234DB266003DB430 /* Models */; };
-		EF5A88FF234DB266003DB430 /* Models in Resources */ = {isa = PBXBuildFile; fileRef = EF5A88FC234DB266003DB430 /* Models */; };
 		EF5A8903234DBBC9003DB430 /* GuideRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8902234DBBC9003DB430 /* GuideRow.swift */; };
 		EF5A8908234DBD9B003DB430 /* Guide.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8906234DBD9B003DB430 /* Guide.swift */; };
 		EF5A8909234DBD9B003DB430 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8907234DBD9B003DB430 /* Data.swift */; };
-		EF5A890D234DBEAC003DB430 /* DarkMode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF5A890A234DBEAC003DB430 /* DarkMode.jpg */; };
-		EF5A890E234DBEAC003DB430 /* GrayScale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF5A890B234DBEAC003DB430 /* GrayScale.jpg */; };
+		EF5A890D234DBEAC003DB430 /* DarkMode.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5A890A234DBEAC003DB430 /* DarkMode.png */; };
+		EF5A890E234DBEAC003DB430 /* GrayScale.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5A890B234DBEAC003DB430 /* GrayScale.png */; };
 		EF5A890F234DBEAC003DB430 /* GuideData.json in Resources */ = {isa = PBXBuildFile; fileRef = EF5A890C234DBEAC003DB430 /* GuideData.json */; };
 		EF5A8911234DC3A6003DB430 /* GuideList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8910234DC3A6003DB430 /* GuideList.swift */; };
 		EF5A8913234DCE32003DB430 /* TemplateGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8912234DCE32003DB430 /* TemplateGuideView.swift */; };
 		EF7253A323413CFC00FEBF0F /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7253A223413CFC00FEBF0F /* LandingPageView.swift */; };
+		EFABA604234FD26600229064 /* LargeText_after.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA5FE234FD26500229064 /* LargeText_after.png */; };
+		EFABA605234FD26600229064 /* DarkMode_before.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA5FF234FD26500229064 /* DarkMode_before.png */; };
+		EFABA606234FD26600229064 /* DarkMode_after.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA600234FD26600229064 /* DarkMode_after.png */; };
+		EFABA607234FD26600229064 /* ColorFilters_before.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA601234FD26600229064 /* ColorFilters_before.png */; };
+		EFABA608234FD26600229064 /* LargeText_before.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA602234FD26600229064 /* LargeText_before.png */; };
+		EFABA609234FD26600229064 /* GrayScale_after.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA603234FD26600229064 /* GrayScale_after.png */; };
+		EFABA60F234FD6C600229064 /* GrayScalebefore.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA60E234FD6C600229064 /* GrayScalebefore.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,17 +67,22 @@
 		EF10A0A6233E4F9F004407B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF416D51234BA67900DC30A9 /* GuideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideVC.swift; sourceTree = "<group>"; };
 		EF416D53234D3AC000DC30A9 /* GuideTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideTableViewCell.swift; sourceTree = "<group>"; };
-		EF5A88F8234DAC98003DB430 /* Items */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Items; sourceTree = "<group>"; };
-		EF5A88FC234DB266003DB430 /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
 		EF5A8902234DBBC9003DB430 /* GuideRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideRow.swift; sourceTree = "<group>"; };
 		EF5A8906234DBD9B003DB430 /* Guide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Guide.swift; sourceTree = "<group>"; };
 		EF5A8907234DBD9B003DB430 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		EF5A890A234DBEAC003DB430 /* DarkMode.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DarkMode.jpg; sourceTree = "<group>"; };
-		EF5A890B234DBEAC003DB430 /* GrayScale.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GrayScale.jpg; sourceTree = "<group>"; };
+		EF5A890A234DBEAC003DB430 /* DarkMode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DarkMode.png; sourceTree = "<group>"; };
+		EF5A890B234DBEAC003DB430 /* GrayScale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrayScale.png; sourceTree = "<group>"; };
 		EF5A890C234DBEAC003DB430 /* GuideData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GuideData.json; sourceTree = "<group>"; };
 		EF5A8910234DC3A6003DB430 /* GuideList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideList.swift; sourceTree = "<group>"; };
 		EF5A8912234DCE32003DB430 /* TemplateGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateGuideView.swift; sourceTree = "<group>"; };
 		EF7253A223413CFC00FEBF0F /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
+		EFABA5FE234FD26500229064 /* LargeText_after.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LargeText_after.png; sourceTree = "<group>"; };
+		EFABA5FF234FD26500229064 /* DarkMode_before.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DarkMode_before.png; sourceTree = "<group>"; };
+		EFABA600234FD26600229064 /* DarkMode_after.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DarkMode_after.png; sourceTree = "<group>"; };
+		EFABA601234FD26600229064 /* ColorFilters_before.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColorFilters_before.png; sourceTree = "<group>"; };
+		EFABA602234FD26600229064 /* LargeText_before.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LargeText_before.png; sourceTree = "<group>"; };
+		EFABA603234FD26600229064 /* GrayScale_after.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrayScale_after.png; sourceTree = "<group>"; };
+		EFABA60E234FD6C600229064 /* GrayScalebefore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrayScalebefore.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +113,6 @@
 		EF10A076233E4F9D004407B5 = {
 			isa = PBXGroup;
 			children = (
-				EF5A88FC234DB266003DB430 /* Models */,
-				EF5A88F8234DAC98003DB430 /* Items */,
 				EF10A081233E4F9D004407B5 /* AccesRecs */,
 				EF10A098233E4F9F004407B5 /* AccesRecsTests */,
 				EF10A0A3233E4F9F004407B5 /* AccesRecsUITests */,
@@ -129,15 +133,22 @@
 		EF10A081233E4F9D004407B5 /* AccesRecs */ = {
 			isa = PBXGroup;
 			children = (
-				EF5A890A234DBEAC003DB430 /* DarkMode.jpg */,
-				EF5A890B234DBEAC003DB430 /* GrayScale.jpg */,
+				EFABA60E234FD6C600229064 /* GrayScalebefore.png */,
+				EFABA601234FD26600229064 /* ColorFilters_before.png */,
+				EFABA600234FD26600229064 /* DarkMode_after.png */,
+				EFABA5FF234FD26500229064 /* DarkMode_before.png */,
+				EFABA603234FD26600229064 /* GrayScale_after.png */,
+				EFABA5FE234FD26500229064 /* LargeText_after.png */,
+				EFABA602234FD26600229064 /* LargeText_before.png */,
+				EF5A890A234DBEAC003DB430 /* DarkMode.png */,
+				EF5A890B234DBEAC003DB430 /* GrayScale.png */,
 				EF5A890C234DBEAC003DB430 /* GuideData.json */,
+				EF5A8906234DBD9B003DB430 /* Guide.swift */,
+				EF5A8912234DCE32003DB430 /* TemplateGuideView.swift */,
 				EF10A082233E4F9D004407B5 /* AppDelegate.swift */,
 				EF5A8907234DBD9B003DB430 /* Data.swift */,
-				EF5A8906234DBD9B003DB430 /* Guide.swift */,
 				EF5A8910234DC3A6003DB430 /* GuideList.swift */,
 				EF5A8902234DBBC9003DB430 /* GuideRow.swift */,
-				EF5A8912234DCE32003DB430 /* TemplateGuideView.swift */,
 				EF416D51234BA67900DC30A9 /* GuideVC.swift */,
 				EF416D53234D3AC000DC30A9 /* GuideTableViewCell.swift */,
 				EF7253A223413CFC00FEBF0F /* LandingPageView.swift */,
@@ -281,12 +292,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF10A08C233E4F9F004407B5 /* Preview Assets.xcassets in Resources */,
+				EFABA607234FD26600229064 /* ColorFilters_before.png in Resources */,
 				EF5A890F234DBEAC003DB430 /* GuideData.json in Resources */,
-				EF5A890E234DBEAC003DB430 /* GrayScale.jpg in Resources */,
+				EF5A890E234DBEAC003DB430 /* GrayScale.png in Resources */,
+				EFABA60F234FD6C600229064 /* GrayScalebefore.png in Resources */,
+				EFABA604234FD26600229064 /* LargeText_after.png in Resources */,
+				EFABA608234FD26600229064 /* LargeText_before.png in Resources */,
 				EF10A089233E4F9F004407B5 /* Assets.xcassets in Resources */,
-				EF5A890D234DBEAC003DB430 /* DarkMode.jpg in Resources */,
-				EF5A88FD234DB266003DB430 /* Models in Resources */,
-				EF5A88F9234DAC98003DB430 /* Items in Resources */,
+				EFABA606234FD26600229064 /* DarkMode_after.png in Resources */,
+				EF5A890D234DBEAC003DB430 /* DarkMode.png in Resources */,
+				EFABA609234FD26600229064 /* GrayScale_after.png in Resources */,
+				EFABA605234FD26600229064 /* DarkMode_before.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,8 +310,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF5A88FE234DB266003DB430 /* Models in Resources */,
-				EF5A88FA234DAC98003DB430 /* Items in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,8 +317,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF5A88FF234DB266003DB430 /* Models in Resources */,
-				EF5A88FB234DAC98003DB430 /* Items in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,7 @@ struct GuideList: View {
             
             List(Guidedata) { guide in
             
-                NavigationLink(destination: TemplateGuideView()){
+                NavigationLink(destination: TemplateGuideView(guide: guide)){
                     
                     GuideRow(guide: guide)
                 }
