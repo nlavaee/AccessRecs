@@ -40,7 +40,7 @@ struct TemplateGuideView: View {
                     }
                 Text(guide.Description)
                     .font(.subheadline)
-                    .lineLimit(0)
+                    .lineLimit(nil)
             }
             .padding()
             Spacer()
