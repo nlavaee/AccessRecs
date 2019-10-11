@@ -10,10 +10,46 @@ import Foundation
 import UIKit
 import SwiftUI
 
+struct LargeTextTestView: View {
+    @State private var textSize: Int = 6
+    var body: some View {
+        VStack(){
+            Text("Can you easily read the text below?")
+            Spacer()
+            Text("This is a sentence")
+                .font(Font.system(size: CGFloat(textSize)))
+                .multilineTextAlignment(.center)
+            
+                HStack() {
+                    Button(action:{self.canRead(flag: true)}) {
+                        Text("Yes")
+                    }
+                    
+                    Spacer()
+                    Button(action:{self.canRead(flag: false)})
+                    {
+                        Text("No")
+                    }
+                    
+                    
+                }
+                } .padding()
+        }
+    
+    func canRead(flag: Bool) {
+        if flag {
+            
+        } else {
+            textSize += 2
+        }
+    }
+
+}
+
 
 //Find out how to pass in name of image and correct answer, then use that and a
 // assets to load multiple tests in a row
-struct TestView: View {
+struct ColorBlindTestView: View {
     @State private var guess:String = ""
     @State private var idx: Int = 0
     @State private var score: Int = 0
@@ -95,9 +131,17 @@ struct TestView: View {
 
 
 #if DEBUG
-struct TestView_Preview: PreviewProvider {
+struct ColorBlindTestView_Preview: PreviewProvider {
     static var previews: some View {
-        TestView() // Add something here??
+        ColorBlindTestView() // Add something here??
+    }
+}
+#endif
+
+#if DEBUG
+struct LargeTextTestView_Preview: PreviewProvider {
+    static var previews: some View {
+        LargeTextTestView() // Add something here??
     }
 }
 #endif
