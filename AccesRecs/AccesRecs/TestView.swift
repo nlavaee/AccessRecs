@@ -16,16 +16,13 @@ import SwiftUI
 struct TestView: View {
     @State private var guess:String = ""
     @State private var idx: Int = 0
-    //@State private var correct:String = "74"
-    
+    @State private var score: Int = 0
     @State private var image: String = Testdata[0].tests[0].imageName
     @State private var name: String = Testdata[0].tests[0].name
     @State private var correct: String = String(Testdata[0].tests[0].answer)
     @State private var id: Int = Testdata[0].tests[0].id
     @State private var finished = false
-    
-    //@State private var correctAnswer: String = String(test.answer)
-    //@State private var field: TextField = TextField("Enter your name")
+
     var body: some View {
         //VStack(alignment: .center){
             VStack() {
@@ -48,8 +45,6 @@ struct TestView: View {
                     .border(Color.gray, width: 2)
                     .multilineTextAlignment(.center)
                     .keyboardType(.numberPad)
-                    
-                
                 
                 if(finished) {
                     Button(action:{self.finish()}) {
@@ -64,9 +59,7 @@ struct TestView: View {
                 Spacer()
                     .frame(height: 150)
                 
-                if guess == correct {
-                    Text("You are right!")
-                }
+//                Text("Score: \(score)")
                     
                 Spacer()
                 .frame(height: 50)
@@ -77,6 +70,10 @@ struct TestView: View {
     
     func nextQuestion() {
         idx = idx + 1
+        if guess == correct {
+            score += 1
+        }
+        
         if(idx == Testdata[0].tests.count) {
             finished = true
         } else {
@@ -84,6 +81,7 @@ struct TestView: View {
             correct = String(Testdata[0].tests[idx].answer)
             id = Testdata[0].tests[idx].id
             image = Testdata[0].tests[idx].imageName
+            guess = ""
         }
     }
     
