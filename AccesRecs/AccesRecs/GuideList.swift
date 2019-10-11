@@ -17,25 +17,26 @@ struct GuideList: View {
     @State private var searchTerm: String = ""
 
     var body: some View {
+        VStack{
+            SearchBar(text: $searchTerm)
         NavigationView {
             Group{
-            SearchBar(text: $searchTerm)
                             List(Guidedata) { guide in
-                            NavigationLink(destination: TemplateGuideView()){
+                            NavigationLink(destination: TemplateGuideView(guide: guide)){
                                 GuideRow(guide: guide)
                                         }
                                     }
             }
             .navigationBarTitle("Guide")
                 .navigationBarItems(trailing:
-                    Button("back")
-                        {
+                    Button("")                        {
                         print("tapped")
                     }
                     
                 )
+            }
+            
         }
-        
     }
 }
 
