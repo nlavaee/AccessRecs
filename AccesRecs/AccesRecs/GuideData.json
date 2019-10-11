@@ -31,8 +31,8 @@
         "category": "Vision",
         "id": 3,
         "imageName": "GrayScale",
-        "imageBefore": "BeforeGrayScale",
-        "imageAfter": "AfterGrayScale",
+        "imageBefore": "BeforeZoom",
+        "imageAfter": "AfterZoom",
         "Description": "Description about how reduce transparency works here"
     },
     {
@@ -40,8 +40,8 @@
         "category": "Vision",
         "id": 4,
         "imageName": "GrayScale",
-        "imageBefore": "GrayScalebefore",
-        "imageAfter": "GrayScale_after",
+        "imageBefore": "BeforeMagnifier",
+        "imageAfter": "AfterMagnifier",
         "Description": "Description about how reduce transparency works here"
     },
     {
@@ -58,8 +58,8 @@
         "category": "Vision",
         "id": 6,
         "imageName": "GrayScale",
-        "imageBefore": "BeforeLargeText",
-        "imageAfter": "AfterLargeText",
+        "imageBefore": "BeforeLargerText",
+        "imageAfter": "AfterLargerText",
         "Description": "Description about how reduce transparency works here"
     },
     {

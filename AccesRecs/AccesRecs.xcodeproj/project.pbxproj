@@ -13,6 +13,10 @@
 		8F2E71ED2350286E00D89A71 /* BeforeLargerText.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2E71E72350286E00D89A71 /* BeforeLargerText.png */; };
 		8F2E71EF2350286E00D89A71 /* BeforeDarkMode.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2E71E92350286E00D89A71 /* BeforeDarkMode.png */; };
 		8F2E71F3235029C700D89A71 /* AfterGrayScale.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2E71F2235029C700D89A71 /* AfterGrayScale.png */; };
+		8F2E71F92350DA2E00D89A71 /* BeforeMagnifier.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2E71F52350DA2E00D89A71 /* BeforeMagnifier.png */; };
+		8F2E71FB2350DA2E00D89A71 /* AfterMagnifier.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2E71F72350DA2E00D89A71 /* AfterMagnifier.png */; };
+		8F2E71FE2350DAEE00D89A71 /* AfterZoom.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2E71FC2350DAED00D89A71 /* AfterZoom.png */; };
+		8F2E71FF2350DAEE00D89A71 /* BeforeZoom.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2E71FD2350DAED00D89A71 /* BeforeZoom.png */; };
 		8F8CC16E234FEA79009D629C /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8CC16D234FEA79009D629C /* SearchBar.swift */; };
 		8F8CC177234FEE8B009D629C /* AfterReduceTransparencyDock.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F8CC173234FEE8A009D629C /* AfterReduceTransparencyDock.png */; };
 		8F8CC178234FEE8B009D629C /* BeforeReduceTransparencyDock.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F8CC174234FEE8A009D629C /* BeforeReduceTransparencyDock.png */; };
@@ -62,6 +66,10 @@
 		8F2E71E72350286E00D89A71 /* BeforeLargerText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeLargerText.png; sourceTree = "<group>"; };
 		8F2E71E92350286E00D89A71 /* BeforeDarkMode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeDarkMode.png; sourceTree = "<group>"; };
 		8F2E71F2235029C700D89A71 /* AfterGrayScale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AfterGrayScale.png; sourceTree = "<group>"; };
+		8F2E71F52350DA2E00D89A71 /* BeforeMagnifier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeMagnifier.png; sourceTree = "<group>"; };
+		8F2E71F72350DA2E00D89A71 /* AfterMagnifier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AfterMagnifier.png; sourceTree = "<group>"; };
+		8F2E71FC2350DAED00D89A71 /* AfterZoom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AfterZoom.png; sourceTree = "<group>"; };
+		8F2E71FD2350DAED00D89A71 /* BeforeZoom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeZoom.png; sourceTree = "<group>"; };
 		8F8CC16D234FEA79009D629C /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		8F8CC173234FEE8A009D629C /* AfterReduceTransparencyDock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AfterReduceTransparencyDock.png; sourceTree = "<group>"; };
 		8F8CC174234FEE8A009D629C /* BeforeReduceTransparencyDock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeReduceTransparencyDock.png; sourceTree = "<group>"; };
@@ -141,6 +149,10 @@
 		EF10A081233E4F9D004407B5 /* AccesRecs */ = {
 			isa = PBXGroup;
 			children = (
+				8F2E71FC2350DAED00D89A71 /* AfterZoom.png */,
+				8F2E71FD2350DAED00D89A71 /* BeforeZoom.png */,
+				8F2E71F72350DA2E00D89A71 /* AfterMagnifier.png */,
+				8F2E71F52350DA2E00D89A71 /* BeforeMagnifier.png */,
 				8F2E71F2235029C700D89A71 /* AfterGrayScale.png */,
 				8F2E71E52350286E00D89A71 /* AfterDarkMode.png */,
 				8F2E71E42350286E00D89A71 /* AfterLargerText.png */,
@@ -308,12 +320,16 @@
 				EF5A890F234DBEAC003DB430 /* GuideData.json in Resources */,
 				8F2E71EA2350286E00D89A71 /* AfterLargerText.png in Resources */,
 				8F2E71ED2350286E00D89A71 /* BeforeLargerText.png in Resources */,
+				8F2E71FF2350DAEE00D89A71 /* BeforeZoom.png in Resources */,
 				8F8CC17A234FEE8B009D629C /* GrayScale.png in Resources */,
 				8F2E71EC2350286E00D89A71 /* BeforeGrayScale.png in Resources */,
+				8F2E71FB2350DA2E00D89A71 /* AfterMagnifier.png in Resources */,
 				EF10A089233E4F9F004407B5 /* Assets.xcassets in Resources */,
+				8F2E71F92350DA2E00D89A71 /* BeforeMagnifier.png in Resources */,
 				8FEF7E352350231B0094A22A /* BeforeButtonShape.png in Resources */,
 				8F8CC178234FEE8B009D629C /* BeforeReduceTransparencyDock.png in Resources */,
 				8F8CC179234FEE8B009D629C /* DarkMode.png in Resources */,
+				8F2E71FE2350DAEE00D89A71 /* AfterZoom.png in Resources */,
 				8F2E71EF2350286E00D89A71 /* BeforeDarkMode.png in Resources */,
 				8FEF7E342350231B0094A22A /* AfterButtonShape.png in Resources */,
 				8F8CC177234FEE8B009D629C /* AfterReduceTransparencyDock.png in Resources */,
