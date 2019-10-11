@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F8CC16E234FEA79009D629C /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8CC16D234FEA79009D629C /* SearchBar.swift */; };
+		8F8CC177234FEE8B009D629C /* AfterReduceTransparencyDock.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F8CC173234FEE8A009D629C /* AfterReduceTransparencyDock.png */; };
+		8F8CC178234FEE8B009D629C /* BeforeReduceTransparencyDock.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F8CC174234FEE8A009D629C /* BeforeReduceTransparencyDock.png */; };
+		8F8CC179234FEE8B009D629C /* DarkMode.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F8CC175234FEE8A009D629C /* DarkMode.png */; };
+		8F8CC17A234FEE8B009D629C /* GrayScale.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F8CC176234FEE8B009D629C /* GrayScale.png */; };
+		8F8CC189234FF284009D629C /* AfterButtonShape.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F8CC187234FF284009D629C /* AfterButtonShape.png */; };
+		8F8CC18A234FF284009D629C /* BeforeButtonShape.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F8CC188234FF284009D629C /* BeforeButtonShape.png */; };
 		EF10A083233E4F9D004407B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10A082233E4F9D004407B5 /* AppDelegate.swift */; };
 		EF10A085233E4F9D004407B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10A084233E4F9D004407B5 /* SceneDelegate.swift */; };
 		EF10A087233E4F9D004407B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10A086233E4F9D004407B5 /* ContentView.swift */; };
@@ -19,8 +26,6 @@
 		EF5A8903234DBBC9003DB430 /* GuideRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8902234DBBC9003DB430 /* GuideRow.swift */; };
 		EF5A8908234DBD9B003DB430 /* Guide.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8906234DBD9B003DB430 /* Guide.swift */; };
 		EF5A8909234DBD9B003DB430 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8907234DBD9B003DB430 /* Data.swift */; };
-		EF5A890D234DBEAC003DB430 /* DarkMode.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF5A890A234DBEAC003DB430 /* DarkMode.jpg */; };
-		EF5A890E234DBEAC003DB430 /* GrayScale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF5A890B234DBEAC003DB430 /* GrayScale.jpg */; };
 		EF5A890F234DBEAC003DB430 /* GuideData.json in Resources */ = {isa = PBXBuildFile; fileRef = EF5A890C234DBEAC003DB430 /* GuideData.json */; };
 		EF5A8911234DC3A6003DB430 /* GuideList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8910234DC3A6003DB430 /* GuideList.swift */; };
 		EF5A8913234DCE32003DB430 /* TemplateGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8912234DCE32003DB430 /* TemplateGuideView.swift */; };
@@ -45,6 +50,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F8CC16D234FEA79009D629C /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		8F8CC173234FEE8A009D629C /* AfterReduceTransparencyDock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AfterReduceTransparencyDock.png; sourceTree = "<group>"; };
+		8F8CC174234FEE8A009D629C /* BeforeReduceTransparencyDock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeReduceTransparencyDock.png; sourceTree = "<group>"; };
+		8F8CC175234FEE8A009D629C /* DarkMode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DarkMode.png; sourceTree = "<group>"; };
+		8F8CC176234FEE8B009D629C /* GrayScale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrayScale.png; sourceTree = "<group>"; };
+		8F8CC187234FF284009D629C /* AfterButtonShape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AfterButtonShape.png; path = ../../AfterButtonShape.png; sourceTree = "<group>"; };
+		8F8CC188234FF284009D629C /* BeforeButtonShape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BeforeButtonShape.png; path = ../../BeforeButtonShape.png; sourceTree = "<group>"; };
 		EF10A07F233E4F9D004407B5 /* AccesRecs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccesRecs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF10A082233E4F9D004407B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF10A084233E4F9D004407B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,8 +75,6 @@
 		EF5A8902234DBBC9003DB430 /* GuideRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideRow.swift; sourceTree = "<group>"; };
 		EF5A8906234DBD9B003DB430 /* Guide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Guide.swift; sourceTree = "<group>"; };
 		EF5A8907234DBD9B003DB430 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		EF5A890A234DBEAC003DB430 /* DarkMode.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DarkMode.jpg; sourceTree = "<group>"; };
-		EF5A890B234DBEAC003DB430 /* GrayScale.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = GrayScale.jpg; sourceTree = "<group>"; };
 		EF5A890C234DBEAC003DB430 /* GuideData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GuideData.json; sourceTree = "<group>"; };
 		EF5A8910234DC3A6003DB430 /* GuideList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideList.swift; sourceTree = "<group>"; };
 		EF5A8912234DCE32003DB430 /* TemplateGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateGuideView.swift; sourceTree = "<group>"; };
@@ -119,8 +129,13 @@
 		EF10A081233E4F9D004407B5 /* AccesRecs */ = {
 			isa = PBXGroup;
 			children = (
-				EF5A890A234DBEAC003DB430 /* DarkMode.jpg */,
-				EF5A890B234DBEAC003DB430 /* GrayScale.jpg */,
+				8F8CC187234FF284009D629C /* AfterButtonShape.png */,
+				8F8CC188234FF284009D629C /* BeforeButtonShape.png */,
+				8F8CC173234FEE8A009D629C /* AfterReduceTransparencyDock.png */,
+				8F8CC174234FEE8A009D629C /* BeforeReduceTransparencyDock.png */,
+				8F8CC175234FEE8A009D629C /* DarkMode.png */,
+				8F8CC176234FEE8B009D629C /* GrayScale.png */,
+				8F8CC16D234FEA79009D629C /* SearchBar.swift */,
 				EF5A890C234DBEAC003DB430 /* GuideData.json */,
 				EF10A082233E4F9D004407B5 /* AppDelegate.swift */,
 				EF5A8907234DBD9B003DB430 /* Data.swift */,
@@ -270,11 +285,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F8CC189234FF284009D629C /* AfterButtonShape.png in Resources */,
 				EF10A08C233E4F9F004407B5 /* Preview Assets.xcassets in Resources */,
 				EF5A890F234DBEAC003DB430 /* GuideData.json in Resources */,
-				EF5A890E234DBEAC003DB430 /* GrayScale.jpg in Resources */,
+				8F8CC18A234FF284009D629C /* BeforeButtonShape.png in Resources */,
+				8F8CC17A234FEE8B009D629C /* GrayScale.png in Resources */,
 				EF10A089233E4F9F004407B5 /* Assets.xcassets in Resources */,
-				EF5A890D234DBEAC003DB430 /* DarkMode.jpg in Resources */,
+				8F8CC178234FEE8B009D629C /* BeforeReduceTransparencyDock.png in Resources */,
+				8F8CC179234FEE8B009D629C /* DarkMode.png in Resources */,
+				8F8CC177234FEE8B009D629C /* AfterReduceTransparencyDock.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +323,7 @@
 				EF5A8911234DC3A6003DB430 /* GuideList.swift in Sources */,
 				EF5A8903234DBBC9003DB430 /* GuideRow.swift in Sources */,
 				EF416D54234D3AC000DC30A9 /* GuideTableViewCell.swift in Sources */,
+				8F8CC16E234FEA79009D629C /* SearchBar.swift in Sources */,
 				EF5A8908234DBD9B003DB430 /* Guide.swift in Sources */,
 				EF10A085233E4F9D004407B5 /* SceneDelegate.swift in Sources */,
 				EF7253A323413CFC00FEBF0F /* LandingPageView.swift in Sources */,
