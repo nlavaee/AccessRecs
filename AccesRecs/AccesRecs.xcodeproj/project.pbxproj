@@ -19,7 +19,6 @@
 		8F2E71FF2350DAEE00D89A71 /* BeforeZoom.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F2E71FD2350DAED00D89A71 /* BeforeZoom.png */; };
 		8F8CC16E234FEA79009D629C /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8CC16D234FEA79009D629C /* SearchBar.swift */; };
 		8F8CC177234FEE8B009D629C /* AfterReduceTransparencyDock.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F8CC173234FEE8A009D629C /* AfterReduceTransparencyDock.png */; };
-		8F8CC178234FEE8B009D629C /* BeforeReduceTransparencyDock.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F8CC174234FEE8A009D629C /* BeforeReduceTransparencyDock.png */; };
 		8F8CC179234FEE8B009D629C /* DarkMode.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F8CC175234FEE8A009D629C /* DarkMode.png */; };
 		8F8CC17A234FEE8B009D629C /* GrayScale.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F8CC176234FEE8B009D629C /* GrayScale.png */; };
 		8FEF7E342350231B0094A22A /* AfterButtonShape.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEF7E322350231B0094A22A /* AfterButtonShape.png */; };
@@ -40,6 +39,7 @@
 		EF5A8911234DC3A6003DB430 /* GuideList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8910234DC3A6003DB430 /* GuideList.swift */; };
 		EF5A8913234DCE32003DB430 /* TemplateGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8912234DCE32003DB430 /* TemplateGuideView.swift */; };
 		EF7253A323413CFC00FEBF0F /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7253A223413CFC00FEBF0F /* LandingPageView.swift */; };
+		EFABA6152350D0EE00229064 /* BeforeReduceTransparencyDock.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA6142350D0EE00229064 /* BeforeReduceTransparencyDock.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,7 +72,6 @@
 		8F2E71FD2350DAED00D89A71 /* BeforeZoom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeZoom.png; sourceTree = "<group>"; };
 		8F8CC16D234FEA79009D629C /* SearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		8F8CC173234FEE8A009D629C /* AfterReduceTransparencyDock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AfterReduceTransparencyDock.png; sourceTree = "<group>"; };
-		8F8CC174234FEE8A009D629C /* BeforeReduceTransparencyDock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeReduceTransparencyDock.png; sourceTree = "<group>"; };
 		8F8CC175234FEE8A009D629C /* DarkMode.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DarkMode.png; sourceTree = "<group>"; };
 		8F8CC176234FEE8B009D629C /* GrayScale.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrayScale.png; sourceTree = "<group>"; };
 		8FEF7E322350231B0094A22A /* AfterButtonShape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AfterButtonShape.png; sourceTree = "<group>"; };
@@ -99,6 +98,7 @@
 		EF5A8910234DC3A6003DB430 /* GuideList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideList.swift; sourceTree = "<group>"; };
 		EF5A8912234DCE32003DB430 /* TemplateGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateGuideView.swift; sourceTree = "<group>"; };
 		EF7253A223413CFC00FEBF0F /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
+		EFABA6142350D0EE00229064 /* BeforeReduceTransparencyDock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeReduceTransparencyDock.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +153,7 @@
 				8F2E71FD2350DAED00D89A71 /* BeforeZoom.png */,
 				8F2E71F72350DA2E00D89A71 /* AfterMagnifier.png */,
 				8F2E71F52350DA2E00D89A71 /* BeforeMagnifier.png */,
+				EFABA6142350D0EE00229064 /* BeforeReduceTransparencyDock.png */,
 				8F2E71F2235029C700D89A71 /* AfterGrayScale.png */,
 				8F2E71E52350286E00D89A71 /* AfterDarkMode.png */,
 				8F2E71E42350286E00D89A71 /* AfterLargerText.png */,
@@ -162,7 +163,6 @@
 				8FEF7E322350231B0094A22A /* AfterButtonShape.png */,
 				8FEF7E332350231B0094A22A /* BeforeButtonShape.png */,
 				8F8CC173234FEE8A009D629C /* AfterReduceTransparencyDock.png */,
-				8F8CC174234FEE8A009D629C /* BeforeReduceTransparencyDock.png */,
 				8F8CC175234FEE8A009D629C /* DarkMode.png */,
 				8F8CC176234FEE8B009D629C /* GrayScale.png */,
 				8F8CC16D234FEA79009D629C /* SearchBar.swift */,
@@ -327,12 +327,12 @@
 				EF10A089233E4F9F004407B5 /* Assets.xcassets in Resources */,
 				8F2E71F92350DA2E00D89A71 /* BeforeMagnifier.png in Resources */,
 				8FEF7E352350231B0094A22A /* BeforeButtonShape.png in Resources */,
-				8F8CC178234FEE8B009D629C /* BeforeReduceTransparencyDock.png in Resources */,
 				8F8CC179234FEE8B009D629C /* DarkMode.png in Resources */,
 				8F2E71FE2350DAEE00D89A71 /* AfterZoom.png in Resources */,
 				8F2E71EF2350286E00D89A71 /* BeforeDarkMode.png in Resources */,
 				8FEF7E342350231B0094A22A /* AfterButtonShape.png in Resources */,
 				8F8CC177234FEE8B009D629C /* AfterReduceTransparencyDock.png in Resources */,
+				EFABA6152350D0EE00229064 /* BeforeReduceTransparencyDock.png in Resources */,
 				8F2E71EB2350286E00D89A71 /* AfterDarkMode.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

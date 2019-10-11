@@ -22,6 +22,8 @@ struct TemplateGuideView: View {
 
     var body: some View {
         
+        
+        
         VStack{
 //            Text("hello world")
 //          line 23 - 36

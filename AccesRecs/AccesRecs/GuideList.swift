@@ -17,11 +17,12 @@ struct GuideList: View {
     @State private var searchTerm: String = ""
 
     var body: some View {
-        VStack{
-            Text("Guide")
-                .font(.title)
+        VStack(){
         NavigationView {
             Group{
+                Text("")
+//                .padding(12)
+                .font(.title)
                 SearchBar(text: $searchTerm)
                             List(Guidedata) { guide in
                             NavigationLink(destination: TemplateGuideView(guide: guide)){
@@ -30,15 +31,18 @@ struct GuideList: View {
                                     }
                 }
 
-                .navigationBarHidden(true)
+//                .navigationBarHidden(true)
+//                .navigationBarTitle("Guide")
+//                .font(.title)
+                .navigationBarTitle(Text("Guide"), displayMode: .inline)
+                .navigationBarBackButtonHidden(true)
                 .navigationBarItems(trailing:
-                    Button("")                        {
+                    Button("")                     {
                         print("tapped")
                     }
                     
                 )
             }
-            
         }
     }
 }
