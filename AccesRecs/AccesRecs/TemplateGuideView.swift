@@ -18,30 +18,32 @@ import SwiftUI
 
 struct TemplateGuideView: View {
     @State private var toggleTrue = false
+    var guide: Guide
+
     var body: some View {
         
-        VStack(){
-            
+        VStack{
+//            Text("hello world")
 //          line 23 - 36
 //          title, toggle button, description
 //          note: padding to apply goes to outside
-            VStack(alignment: .leading){
+            VStack{
                 HStack(){
-                    Text("Reduce Transparency")
-                        .font(.system(size: 30))
+                    Text(guide.name)
+//                        .font(.system(size: 30))
+                        .font(.headline)
                      Spacer()
                      Toggle(isOn: $toggleTrue){
-                         Text("Before Reduce Transparency")
+                        Text(guide.name)
                      }
                      .labelsHidden()
                     }
-                Text("Description about how reduce transparency works here")
+                Text(guide.Description)
                     .font(.subheadline)
                     .lineLimit(0)
             }
             .padding()
             Spacer()
-
 //          line 43-52
 //          before text box and image
             Text("Before")
@@ -51,12 +53,12 @@ struct TemplateGuideView: View {
                     RoundedRectangle(cornerRadius: 4)
                         .stroke(Color.gray, lineWidth:2)
                 )
-            Image("BeforeReduceTransparencyDock")
+            guide.imgBefore
                 .resizable()
                 .aspectRatio(contentMode: .fit)
 
             Spacer()
-                .frame(height:50)
+                .frame(height:10)
             
            if toggleTrue {
             Text("After")
@@ -65,19 +67,21 @@ struct TemplateGuideView: View {
                     RoundedRectangle(cornerRadius: 4)
                         .stroke(Color.gray, lineWidth:2)
                 )
-            Image("AfterReduceTransparencyDock")
+            guide.imgAfter
                 .resizable()
                 .aspectRatio(contentMode: .fit)
            }
         }
-        .padding()
-    }
+//        .padding()
+//        Spacer()
+        }
 }
 
-#if DEBUG
-struct TemplateGuideView_Preview: PreviewProvider {
-    static var previews: some View {
-        TemplateGuideView()
-    }
-}
-#endif
+//#if DEBUG
+//struct TemplateGuideView_Preview: PreviewProvider {
+//    
+//    static var previews: some View {
+//        TemplateGuideView(guide)
+//    }
+//}
+//#endif

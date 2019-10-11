@@ -11,8 +11,11 @@ import CoreLocation
 struct Guide: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
-    fileprivate var imageName: String
     var category: Category
+    fileprivate var imageName: String
+    fileprivate var imageBefore: String
+    fileprivate var imageAfter: String
+    var Description: String
 
 //    func image(forSize size: Int) -> Image {
 //        ImageStore.shared.image(name: imageName)
@@ -27,5 +30,11 @@ struct Guide: Hashable, Codable, Identifiable {
 extension Guide {
     var image: Image {
         ImageStore.shared.image(name: imageName)
+    }
+    var imgBefore: Image {
+        ImageStore.shared.image(name: imageBefore)
+    }
+    var imgAfter: Image {
+        ImageStore.shared.image(name: imageAfter)
     }
 }

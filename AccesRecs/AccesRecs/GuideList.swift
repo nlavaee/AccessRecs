@@ -18,16 +18,19 @@ struct GuideList: View {
 
     var body: some View {
         VStack{
-            SearchBar(text: $searchTerm)
+            Text("Guide")
+                .font(.title)
         NavigationView {
             Group{
+                SearchBar(text: $searchTerm)
                             List(Guidedata) { guide in
                             NavigationLink(destination: TemplateGuideView(guide: guide)){
                                 GuideRow(guide: guide)
                                         }
                                     }
-            }
-            .navigationBarTitle("Guide")
+                }
+
+                .navigationBarHidden(true)
                 .navigationBarItems(trailing:
                     Button("")                        {
                         print("tapped")
