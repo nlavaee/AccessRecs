@@ -22,6 +22,8 @@ struct TemplateGuideView: View {
 
     var body: some View {
         
+        
+        
         VStack{
 //            Text("hello world")
 //          line 23 - 36
@@ -40,7 +42,7 @@ struct TemplateGuideView: View {
                     }
                 Text(guide.Description)
                     .font(.subheadline)
-                    .lineLimit(0)
+                    .lineLimit(nil)
             }
             .padding()
             Spacer()

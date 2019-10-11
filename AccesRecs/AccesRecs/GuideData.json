@@ -40,8 +40,8 @@
         "category": "Vision",
         "id": 4,
         "imageName": "GrayScale",
-        "imageBefore": "GrayScalebefore",
-        "imageAfter": "GrayScale_after",
+        "imageBefore": "BeforeGrayScale",
+        "imageAfter": "AfterGrayScale",
         "Description": "Description about how reduce transparency works here"
     },
     {
