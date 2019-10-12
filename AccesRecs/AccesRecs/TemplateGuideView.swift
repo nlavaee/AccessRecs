@@ -23,7 +23,6 @@ struct TemplateGuideView: View {
     var body: some View {
         
         
-        
         VStack{
 //            Text("hello world")
 //          line 23 - 36
@@ -55,10 +54,11 @@ struct TemplateGuideView: View {
                     RoundedRectangle(cornerRadius: 4)
                         .stroke(Color.gray, lineWidth:2)
                 )
+                .lineLimit(1)
             guide.imgBefore
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-
+                .scaledToFit()
             Spacer()
                 .frame(height:10)
             
@@ -69,6 +69,7 @@ struct TemplateGuideView: View {
                     RoundedRectangle(cornerRadius: 4)
                         .stroke(Color.gray, lineWidth:2)
                 )
+                .lineLimit(1)
             guide.imgAfter
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -77,8 +78,10 @@ struct TemplateGuideView: View {
 //        .padding()
 //        Spacer()
         }
+
 }
 
+struct before_img_togg
 //#if DEBUG
 //struct TemplateGuideView_Preview: PreviewProvider {
 //    
