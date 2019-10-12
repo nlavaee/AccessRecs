@@ -18,7 +18,7 @@ struct GuideRow: View {
         
         HStack {
             
-            guide.image.resizable().frame(width: 50, height: 50)
+            guide.image.resizable().frame(width: 50, height: 55)
             Text(guide.name)
             Spacer() // push all the way to the edges
         }

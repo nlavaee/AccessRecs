@@ -40,6 +40,14 @@
 		EF5A8913234DCE32003DB430 /* TemplateGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8912234DCE32003DB430 /* TemplateGuideView.swift */; };
 		EF7253A323413CFC00FEBF0F /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7253A223413CFC00FEBF0F /* LandingPageView.swift */; };
 		EFABA6152350D0EE00229064 /* BeforeReduceTransparencyDock.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA6142350D0EE00229064 /* BeforeReduceTransparencyDock.png */; };
+		EFABA61C2352620F00229064 /* MagnifierLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA6162352620E00229064 /* MagnifierLogo.png */; };
+		EFABA61D2352620F00229064 /* ButtonShapeLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA6172352620E00229064 /* ButtonShapeLogo.png */; };
+		EFABA61E2352620F00229064 /* LargeTextLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA6182352620E00229064 /* LargeTextLogo.png */; };
+		EFABA61F2352620F00229064 /* ReduceTransparencyLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA6192352620E00229064 /* ReduceTransparencyLogo.png */; };
+		EFABA6202352620F00229064 /* ZoomLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA61A2352620F00229064 /* ZoomLogo.png */; };
+		EFABA6212352620F00229064 /* MotionLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA61B2352620F00229064 /* MotionLogo.png */; };
+		EFABA6232352804E00229064 /* BeforeReduceTransparency.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA6222352804D00229064 /* BeforeReduceTransparency.png */; };
+		EFABA6252352806200229064 /* AfterReduceTransparency.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA6242352806200229064 /* AfterReduceTransparency.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +107,14 @@
 		EF5A8912234DCE32003DB430 /* TemplateGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateGuideView.swift; sourceTree = "<group>"; };
 		EF7253A223413CFC00FEBF0F /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
 		EFABA6142350D0EE00229064 /* BeforeReduceTransparencyDock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeReduceTransparencyDock.png; sourceTree = "<group>"; };
+		EFABA6162352620E00229064 /* MagnifierLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MagnifierLogo.png; sourceTree = "<group>"; };
+		EFABA6172352620E00229064 /* ButtonShapeLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonShapeLogo.png; sourceTree = "<group>"; };
+		EFABA6182352620E00229064 /* LargeTextLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LargeTextLogo.png; sourceTree = "<group>"; };
+		EFABA6192352620E00229064 /* ReduceTransparencyLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ReduceTransparencyLogo.png; sourceTree = "<group>"; };
+		EFABA61A2352620F00229064 /* ZoomLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZoomLogo.png; sourceTree = "<group>"; };
+		EFABA61B2352620F00229064 /* MotionLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MotionLogo.png; sourceTree = "<group>"; };
+		EFABA6222352804D00229064 /* BeforeReduceTransparency.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeReduceTransparency.png; sourceTree = "<group>"; };
+		EFABA6242352806200229064 /* AfterReduceTransparency.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AfterReduceTransparency.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +165,14 @@
 		EF10A081233E4F9D004407B5 /* AccesRecs */ = {
 			isa = PBXGroup;
 			children = (
+				EFABA6242352806200229064 /* AfterReduceTransparency.png */,
+				EFABA6222352804D00229064 /* BeforeReduceTransparency.png */,
+				EFABA6172352620E00229064 /* ButtonShapeLogo.png */,
+				EFABA6182352620E00229064 /* LargeTextLogo.png */,
+				EFABA6162352620E00229064 /* MagnifierLogo.png */,
+				EFABA61B2352620F00229064 /* MotionLogo.png */,
+				EFABA6192352620E00229064 /* ReduceTransparencyLogo.png */,
+				EFABA61A2352620F00229064 /* ZoomLogo.png */,
 				8F2E71FC2350DAED00D89A71 /* AfterZoom.png */,
 				8F2E71FD2350DAED00D89A71 /* BeforeZoom.png */,
 				8F2E71F72350DA2E00D89A71 /* AfterMagnifier.png */,
@@ -165,12 +189,12 @@
 				8F8CC173234FEE8A009D629C /* AfterReduceTransparencyDock.png */,
 				8F8CC175234FEE8A009D629C /* DarkMode.png */,
 				8F8CC176234FEE8B009D629C /* GrayScale.png */,
-				8F8CC16D234FEA79009D629C /* SearchBar.swift */,
 				EF5A890C234DBEAC003DB430 /* GuideData.json */,
 				EF10A082233E4F9D004407B5 /* AppDelegate.swift */,
 				EF5A8907234DBD9B003DB430 /* Data.swift */,
 				EF5A8906234DBD9B003DB430 /* Guide.swift */,
 				EF5A8910234DC3A6003DB430 /* GuideList.swift */,
+				8F8CC16D234FEA79009D629C /* SearchBar.swift */,
 				EF5A8902234DBBC9003DB430 /* GuideRow.swift */,
 				EF5A8912234DCE32003DB430 /* TemplateGuideView.swift */,
 				EF416D51234BA67900DC30A9 /* GuideVC.swift */,
@@ -318,22 +342,30 @@
 				8F2E71F3235029C700D89A71 /* AfterGrayScale.png in Resources */,
 				EF10A08C233E4F9F004407B5 /* Preview Assets.xcassets in Resources */,
 				EF5A890F234DBEAC003DB430 /* GuideData.json in Resources */,
+				EFABA6212352620F00229064 /* MotionLogo.png in Resources */,
 				8F2E71EA2350286E00D89A71 /* AfterLargerText.png in Resources */,
 				8F2E71ED2350286E00D89A71 /* BeforeLargerText.png in Resources */,
+				EFABA6202352620F00229064 /* ZoomLogo.png in Resources */,
 				8F2E71FF2350DAEE00D89A71 /* BeforeZoom.png in Resources */,
+				EFABA61F2352620F00229064 /* ReduceTransparencyLogo.png in Resources */,
 				8F8CC17A234FEE8B009D629C /* GrayScale.png in Resources */,
+				EFABA61D2352620F00229064 /* ButtonShapeLogo.png in Resources */,
 				8F2E71EC2350286E00D89A71 /* BeforeGrayScale.png in Resources */,
 				8F2E71FB2350DA2E00D89A71 /* AfterMagnifier.png in Resources */,
 				EF10A089233E4F9F004407B5 /* Assets.xcassets in Resources */,
+				EFABA61E2352620F00229064 /* LargeTextLogo.png in Resources */,
 				8F2E71F92350DA2E00D89A71 /* BeforeMagnifier.png in Resources */,
 				8FEF7E352350231B0094A22A /* BeforeButtonShape.png in Resources */,
 				8F8CC179234FEE8B009D629C /* DarkMode.png in Resources */,
 				8F2E71FE2350DAEE00D89A71 /* AfterZoom.png in Resources */,
 				8F2E71EF2350286E00D89A71 /* BeforeDarkMode.png in Resources */,
+				EFABA6232352804E00229064 /* BeforeReduceTransparency.png in Resources */,
 				8FEF7E342350231B0094A22A /* AfterButtonShape.png in Resources */,
 				8F8CC177234FEE8B009D629C /* AfterReduceTransparencyDock.png in Resources */,
 				EFABA6152350D0EE00229064 /* BeforeReduceTransparencyDock.png in Resources */,
 				8F2E71EB2350286E00D89A71 /* AfterDarkMode.png in Resources */,
+				EFABA61C2352620F00229064 /* MagnifierLogo.png in Resources */,
+				EFABA6252352806200229064 /* AfterReduceTransparency.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

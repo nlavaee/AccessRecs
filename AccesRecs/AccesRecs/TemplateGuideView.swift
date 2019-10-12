@@ -44,7 +44,6 @@ struct TemplateGuideView: View {
                     .lineLimit(nil)
             }
             .padding()
-            Spacer()
 //          line 43-52
 //          before text box and image
             Text("Before")
@@ -58,7 +57,7 @@ struct TemplateGuideView: View {
             guide.imgBefore
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .scaledToFit()
+//                .scaledToFit()
             Spacer()
                 .frame(height:10)
             
@@ -81,7 +80,19 @@ struct TemplateGuideView: View {
 
 }
 
-struct before_img_togg
+//struct before_img_togg : View{
+//    var guide: Guide
+//
+//    var body : some View {
+//
+//        GeometryReader { geometry in
+//
+//            guide.imgBefore
+//            .frame(width: <#T##CGFloat?#>, height: <#T##CGFloat?#>, alignment: <#T##Alignment#>)
+//
+//        }
+//    }
+//}
 //#if DEBUG
 //struct TemplateGuideView_Preview: PreviewProvider {
 //    
