@@ -10,22 +10,37 @@ import SwiftUI
 
 // creating each of the separate rows for the Guide
 
-struct TestRow: View {
-    
-    var test: Test
-    
-    var body: some View {
-        
-        HStack {
-            Text(test.name)
-            Spacer() // push all the way to the edges
+//struct TestRow: View {
+//
+//    var test: Test
+//
+//    var body: some View {
+//
+//        HStack {
+//            Text(test.name)
+//            Spacer() // push all the way to the edges
+//        }
+//    }
+//}
+//
+//struct TestRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//
+//        TestRow(test: Testdata[0])
+//    }
+//}
+
+class TestRow : UITableViewCell {
+    var titleArea : UILabel = UILabel(frame: CGRect(x: 30, y: 5, width: 350, height: 25))
+    var test : Test! {
+        didSet {
+            titleArea.text = test.name
+            contentView.addSubview(titleArea)
         }
     }
-}
 
-struct TestRow_Previews: PreviewProvider {
-    static var previews: some View {
-        
-        TestRow(test: Testdata[0])
+    override func awakeFromNib() {
+        super.awakeFromNib()
     }
+    
 }

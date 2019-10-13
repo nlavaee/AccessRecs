@@ -46,9 +46,187 @@ struct LargeTextTestView: View {
 
 }
 
+class LargeTextTestViewController : UIViewController {
+    var sentenceLabel : UILabel = UILabel()
+    var textSize : Int = 6 {
+        didSet {
+            sentenceLabel.font = .systemFont(ofSize: CGFloat(textSize))
+        }
+    }
+    
+    override func viewDidLoad() {
+        self.view.backgroundColor = UIColor.white
+        sentenceLabel.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 200)
+        sentenceLabel.center = self.view.center
+        sentenceLabel.center.x = self.view.center.x
+        sentenceLabel.center.y = self.view.center.y - 50
+        sentenceLabel.textAlignment = .center
+        sentenceLabel.lineBreakMode = .byWordWrapping
+        sentenceLabel.numberOfLines = 0
+//        sentenceLabel.sizeToFit()
+        sentenceLabel.text = "This is a sentence."
+        sentenceLabel.textColor = UIColor.black
+        sentenceLabel.font = .systemFont(ofSize: CGFloat(textSize))
+        
+        let prompt = UILabel(frame: CGRect(x: 0, y: 50, width: view.frame.size.width, height: 100))
+        prompt.center.x = self.view.center.x
+        prompt.textAlignment = .center
+        prompt.textColor = UIColor.black
+        prompt.text = "Can you easily read the text below?"
+        
+        
+        let yesButton = UIButton(frame: CGRect(x: 50, y: 600, width: 100, height: 100))
+        let noButton = UIButton(frame: CGRect(x: 250, y: 600, width: 100, height: 100))
+        yesButton.setTitle("Yes", for: .normal)
+        noButton.setTitle("No", for: .normal)
+        noButton.addTarget(self, action: #selector(cantRead), for: .touchUpInside)
+        yesButton.addTarget(self, action: #selector(canRead), for: .touchUpInside)
+        noButton.backgroundColor = UIColor.red
+        yesButton.backgroundColor = UIColor.green
+        noButton.layer.cornerRadius = 20
+        yesButton.layer.cornerRadius = 20
+        
+        
+        self.view.addSubview(sentenceLabel)
+        self.view.addSubview(prompt)
+        self.view.addSubview(yesButton)
+        self.view.addSubview(noButton)
+        
+
+        
+    }
+    
+    @objc func canRead(sender: UIButton!) {
+        let resultView = ResultView()
+        var result = ""
+        if(textSize > 10) {
+            result = "You should probably increase your text size"
+        } else {
+            result = "You don't need to increase the text size on your phone"
+        }
+        resultView.result = result
+//        let resultCtrl = UIHostingController(rootView: resultView)
+        self.present(resultView, animated: true, completion: nil)
+    }
+    
+    @objc func cantRead(sender: UIButton!) {
+        textSize += 2
+    }
+}
+
 
 //Find out how to pass in name of image and correct answer, then use that and a
 // assets to load multiple tests in a row
+
+class ColorBlindTestViewController : UIViewController, UITextFieldDelegate {
+    var idx = 0
+    var testImageView : UIImageView!
+    var tests : [ColorBlindTest]!
+    var nextButton : UIButton = UIButton(frame: CGRect(x: 200 - (100), y: 575, width: 200, height: 50))
+    var answerField : UITextField = UITextField(frame: CGRect(x: 125, y: 505, width: 149, height: 50))
+    var score : Int = 0
+//    var scoreLabel = UILabel(frame: CGRect(x: 100, y: 600, width: 100, height: 100))
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = UIColor.white
+        
+        nextButton.setTitle("Next Question", for: .normal)
+        nextButton.addTarget(self, action: #selector(NextQuestion), for: .touchUpInside)
+        nextButton.backgroundColor = UIColor.red
+        nextButton.layer.cornerRadius = 20
+        
+        
+        let testImage = UIImage(named: tests[idx].imageName)
+        testImageView = UIImageView(image: testImage!)
+        testImageView.frame = CGRect(x: 80, y: 180, width: 250, height: 250)
+        
+        let prompt = UILabel(frame: CGRect(x: 100, y: 420, width: 200, height: 100))
+        prompt.textColor = UIColor.black
+        prompt.font = .preferredFont(forTextStyle: UIFont.TextStyle.title3)
+        prompt.text = "Enter the number you see"
+        prompt.lineBreakMode = .byWordWrapping
+        prompt.numberOfLines = 0
+        prompt.textAlignment = .center
+        prompt.adjustsFontSizeToFitWidth = true
+        
+//        scoreLabel.textColor = UIColor.black
+//        scoreLabel.text = "Score: " + String(score)
+        
+        answerField.delegate = self
+        answerField.borderStyle = UITextField.BorderStyle.line
+        answerField.layer.borderColor = UIColor.gray.cgColor
+        answerField.keyboardType = .numberPad
+
+        self.view.addSubview(testImageView)
+        self.view.addSubview(prompt)
+        self.view.addSubview(answerField)
+        self.view.addSubview(nextButton)
+//        self.view.addSubview(scoreLabel)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillOpen(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillClose(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillOpen(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        
+
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+    }
+    
+    func hideKeyboard() {
+        answerField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        answerField.resignFirstResponder()
+        return true
+    }
+    
+    @objc func keyboardWillOpen(notification: Notification) {
+        view.frame.origin.y = -250
+    }
+    
+    @objc func keyboardWillClose(notification: Notification) {
+        view.frame.origin.y = 0
+    }
+    
+    @objc func CompleteTest(sender: UIButton!) {
+        let resultView = ResultView()
+        var result = ""
+        if(score > 3) {
+            result = "You don't need to update any color settings on your phone"
+        } else {
+            result = "You might be color blind"
+        }
+        resultView.result = result
+//        let resultCtrl = UIHostingController(rootView: resultView)
+        self.present(resultView, animated: true, completion: nil)
+    }
+    
+    @objc func NextQuestion(sender: UIButton!) {
+        self.hideKeyboard()
+        if(answerField.text == String(tests[idx].answer)) {
+            score = score + 1
+        }
+        answerField.text = ""
+        if(idx < (tests.count - 1)) {
+            idx = idx + 1
+            testImageView.image = UIImage(named: tests[idx].imageName)
+        }
+        if(idx == tests.count-1) {
+            nextButton.setTitle("Complete Test", for: .normal)
+            nextButton.addTarget(self, action: #selector(CompleteTest), for: .touchUpInside)
+        }
+    }
+
+    
+    
+}
 struct ColorBlindTestView: View {
     @State private var guess:String = ""
     @State private var idx: Int = 0
@@ -62,7 +240,7 @@ struct ColorBlindTestView: View {
     var body: some View {
         //VStack(alignment: .center){
             VStack() {
-            
+
             HStack(alignment: .top) {
             Image(image)
                 .resizable()
@@ -71,17 +249,17 @@ struct ColorBlindTestView: View {
             }
 //            Spacer()
 //                .frame(height: 200)
-            
+
             VStack(alignment: .center) {
                 Text("Enter the number you see")
-                
+
                 TextField("", text: $guess)
                     .font(.subheadline)
                     .frame(width: 80, height: 40, alignment: .center)
                     .border(Color.gray, width: 2)
                     .multilineTextAlignment(.center)
                     .keyboardType(.numberPad)
-                
+
                 if(finished) {
                     Button(action:{self.finish()}) {
                         Text("Complete Test")
@@ -91,25 +269,25 @@ struct ColorBlindTestView: View {
                         Text("Next Question")
                     }
                 }
-                
+
                 Spacer()
                     .frame(height: 150)
-                
+
 //                Text("Score: \(score)")
-                    
+
                 Spacer()
                 .frame(height: 50)
             }
         }
     .padding()
     }
-    
+
     func nextQuestion() {
         idx = idx + 1
         if guess == correct {
             score += 1
         }
-        
+
         if(idx == Testdata[0].tests.count) {
             finished = true
         } else {
@@ -120,11 +298,11 @@ struct ColorBlindTestView: View {
             guess = ""
         }
     }
-    
+
     func finish() {
         //Send to results view
     }
-    
+
 }
 
 

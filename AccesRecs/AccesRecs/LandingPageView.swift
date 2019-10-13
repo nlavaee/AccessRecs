@@ -72,8 +72,8 @@ class LandingPageView: UIViewController {
     @objc func VisionAction(sender: UIButton!){
         print("Vision button tapped")
         let testVC = TestList()
-        let testCtrl = UIHostingController(rootView: testVC)
-        self.present(testCtrl, animated: true, completion: nil)
+//        let testCtrl = UIHostingController(rootView: testVC)
+        self.present(testVC, animated: true, completion: nil)
     }
     
     @objc func GoToGuide(sender: UIButton!){
