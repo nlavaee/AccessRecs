@@ -14,6 +14,14 @@ struct GuideRow: View {
     
     var guide: Guide
     
+//    ForEach(self.data.filter {
+//        self.searchTerm.isEmpty ? true :
+//            $0.localizedCaseInsensitiveContains(self.searchTerm)
+//    }, id: \.self){ item in
+//
+//        data_trash.append((item))
+//
+//    }
     var body: some View {
         
         HStack {
@@ -25,9 +33,9 @@ struct GuideRow: View {
     }
 }
 
-struct GuideRow_Previews: PreviewProvider {
-    static var previews: some View {
-        
-        GuideRow(guide: Guidedata[0])
-    }
-}
+//struct GuideRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//
+//        GuideRow(guide: Guidedata[0])
+//    }
+//}

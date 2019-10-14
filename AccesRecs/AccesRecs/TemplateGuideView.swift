@@ -31,7 +31,6 @@ struct TemplateGuideView: View {
             VStack{
                 HStack(){
                     Text(guide.name)
-//                        .font(.system(size: 30))
                         .font(.headline)
                      Spacer()
                      Toggle(isOn: $toggleTrue){
@@ -40,7 +39,7 @@ struct TemplateGuideView: View {
                      .labelsHidden()
                     }
                 Text(guide.Description)
-                    .font(.subheadline)
+                    .font(.body)
                     .lineLimit(nil)
             }
             .padding()

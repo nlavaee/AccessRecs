@@ -20,7 +20,7 @@ class LandingPageView: UIViewController {
         super.viewDidLoad()
         
         // Title of App
-        let appName = UILabel(frame: CGRect(x:187.5 - 100, y: 125, width: 200, height: 100))
+        let appName = UILabel(frame: CGRect(x:self.view.frame.width/2 - 100, y: 125, width: 200, height: 100))
         appName.textColor = UIColor.black
         appName.font = .boldSystemFont(ofSize: 24.0)
         appName.text = "Smart Accessibility Recommendations"
@@ -30,28 +30,31 @@ class LandingPageView: UIViewController {
 //        appName.adjustsFontSizeToFitWidth = true
         
         // First Button Option
-        let button1 = UIButton(frame: CGRect(x: 187.5 - 100, y: 456 - 25, width:200, height: 50))
+        let button1 = UIButton(frame: CGRect(x: self.view.frame.width/2 - 100, y: 456 - 25, width:200, height: 50))
         button1.setTitle("Mobility", for: .normal)
+        button1.titleLabel?.font = .boldSystemFont(ofSize: 22)
         button1.addTarget(self, action: #selector(MobilityAction), for: .touchUpInside)
         button1.backgroundColor = UIColor.red
         button1.layer.cornerRadius = 20
         
         // Second Button Option
-        let button2 = UIButton(frame: CGRect(x: 187.5 - (100), y: 506, width: 200, height: 50))
+        let button2 = UIButton(frame: CGRect(x: self.view.frame.width/2 - (100), y: 506, width: 200, height: 50))
         button2.setTitle("Vision", for: .normal)
+        button2.titleLabel?.font = .boldSystemFont(ofSize: 22)
         button2.addTarget(self, action: #selector(VisionAction), for: .touchUpInside)
         button2.backgroundColor = UIColor.blue
         button2.layer.cornerRadius = 20
         
-        let button3 = UIButton(frame: CGRect(x: 187.5 - (100), y: 506 + 75, width: 200, height: 50))
+        let button3 = UIButton(frame: CGRect(x: self.view.frame.width/2 - (100), y: 506 + 75, width: 200, height: 50))
         button3.setTitle("Guide", for: .normal)
+        button3.titleLabel?.font = .boldSystemFont(ofSize: 22)
         button3.addTarget(self, action: #selector(GoToGuide), for: .touchUpInside)
-        button3.backgroundColor = UIColor.green
+        button3.backgroundColor = UIColor.brown
         button3.layer.cornerRadius = 20;
         
         let appLogo = UIImage(named: "appLogo.png")
         let logoImageView = UIImageView(image: appLogo!)
-        logoImageView.frame = CGRect(x: 187.5 - 50, y: 255, width: 100, height: 100)
+        logoImageView.frame = CGRect(x: self.view.frame.width/2 - 50, y: 255, width: 100, height: 100)
     
         
         
