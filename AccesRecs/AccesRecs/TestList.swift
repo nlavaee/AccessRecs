@@ -10,16 +10,21 @@ import Foundation
 import SwiftUI
 
 struct TestList: View {
-
+    
+//    private var destination: AnyView
+    
+    
     var body: some View {
 
         NavigationView {
 
             List(Testdata) { test in
-
-                NavigationLink(destination: LargeTextTestView()){
-                //NavigationLink(destination: ColorBlindTestView()){
-                    TestRow(test: test)
+                
+                if(test.name == "Colorblind"){
+                    NavigationLink(destination: ColorBlindTestView()){ TestRow(test: test) }
+                }
+                else if(test.name == "Large Text") {
+                    NavigationLink(destination: LargeTextTestView()){ TestRow(test: test) }
                 }
             }
         }
