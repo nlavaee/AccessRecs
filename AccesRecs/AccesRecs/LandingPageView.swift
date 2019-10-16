@@ -21,13 +21,13 @@ class LandingPageView: UIViewController {
         
         // Title of App
         let appName = UILabel(frame: CGRect(x:self.view.frame.width/2 - 100, y: 125, width: 200, height: 100))
+        appName.isAccessibilityElement = true
         appName.textColor = UIColor.black
         appName.font = .boldSystemFont(ofSize: 24.0)
         appName.text = "Smart Accessibility Recommendations"
         appName.lineBreakMode = .byWordWrapping
         appName.numberOfLines = 0
         appName.textAlignment = .center
-//        appName.adjustsFontSizeToFitWidth = true
         
         // First Button Option
         let button1 = UIButton(frame: CGRect(x: self.view.frame.width/2 - 100, y: 456 - 25, width:200, height: 50))
@@ -36,6 +36,8 @@ class LandingPageView: UIViewController {
         button1.addTarget(self, action: #selector(MobilityAction), for: .touchUpInside)
         button1.backgroundColor = UIColor.red
         button1.layer.cornerRadius = 20
+        button1.isAccessibilityElement = true
+        button1.accessibilityLabel = "Mobility"
         
         // Second Button Option
         let button2 = UIButton(frame: CGRect(x: self.view.frame.width/2 - (100), y: 506, width: 200, height: 50))

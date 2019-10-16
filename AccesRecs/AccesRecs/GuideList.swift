@@ -11,8 +11,22 @@
 
 
 import SwiftUI
+import UIKit
+import Foundation
 
 struct GuideList: View {
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    
+//    var btnBack : some View { Button(action: {
+//        self.presentationMode.wrappedValue.dismiss()
+//        }) {
+//            HStack {
+//                Text("Go back")
+//            }
+//        }
+//    }
     
     @State private var searchTerm: String = ""
     
@@ -38,7 +52,7 @@ struct GuideList: View {
                     }
                     return false
                 }) { guide in
-                    
+    
                             NavigationLink(destination: TemplateGuideView(guide: guide)){
                                 GuideRow(guide: guide)
                                 Spacer()
@@ -51,15 +65,32 @@ struct GuideList: View {
 
                 .navigationBarTitle(Text("Guide"), displayMode: .inline)
                 .navigationBarBackButtonHidden(true)
-                .navigationBarItems(trailing:
-                    Button("")                     {
-                        print("tapped")
+                .navigationBarItems(leading: Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }) {
+                    HStack {
+                        Text("Go back")
                     }
                     
+                }
+                
+//                    Button(action: {
+//                        (self.presentationMode.value as AnyObject).dismiss()
+//                          }, label: { Text("Button") })
+                
                 )
+//                .navigationBarItems(trailing:
+//                    Button("") {
+//                        print("tapped")
+//                    }
+                    
+//                )
             }
         }
     }
+//    func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+//        aTextField.resignFirstResponder()
+//    }
 }
 
 //struct GuideList_Previews: PreviewProvider {
