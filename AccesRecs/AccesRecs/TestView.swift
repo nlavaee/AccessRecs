@@ -48,7 +48,7 @@ struct LargeTextTestView: View {
 
 class LargeTextTestViewController : UIViewController {
     var sentenceLabel : UILabel = UILabel()
-    var textSize : Int = 6 {
+    var textSize : Int = 4 {
         didSet {
             sentenceLabel.font = .systemFont(ofSize: CGFloat(textSize))
         }
@@ -72,6 +72,7 @@ class LargeTextTestViewController : UIViewController {
         prompt.center.x = self.view.center.x
         prompt.textAlignment = .center
         prompt.textColor = UIColor.black
+        prompt.font = .systemFont(ofSize: 24.0)
         prompt.text = "Can you easily read the text below?"
         
         
@@ -99,7 +100,7 @@ class LargeTextTestViewController : UIViewController {
     @objc func canRead(sender: UIButton!) {
         let resultView = ResultView()
         var result = ""
-        if(textSize > 10) {
+        if(textSize > 18) {
             result = "You might want to increase the text size on your phone"
             resultView.steps = Resultdata[1]
         } else {
