@@ -158,6 +158,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate {
         answerField.borderStyle = UITextField.BorderStyle.line
         answerField.layer.borderColor = UIColor.gray.cgColor
         answerField.keyboardType = .numberPad
+        answerField.textAlignment = .center
 
         self.view.addSubview(testImageView)
         self.view.addSubview(prompt)
