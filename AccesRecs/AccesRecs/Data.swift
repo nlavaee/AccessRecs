@@ -11,6 +11,7 @@ import CoreLocation
 
 let Guidedata: [Guide] = load("GuideData.json")
 let Testdata: [Test] = load("TestData.json")
+let Resultdata: [[String]] = load("ResultData.json")
 
 func load<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
     let data: Data

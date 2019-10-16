@@ -100,7 +100,8 @@ class LargeTextTestViewController : UIViewController {
         let resultView = ResultView()
         var result = ""
         if(textSize > 10) {
-            result = "You should probably increase your text size"
+            result = "You might want to increase the text size on your phone"
+            resultView.steps = Resultdata[1]
         } else {
             result = "You don't need to increase the text size on your phone"
         }
@@ -201,9 +202,11 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate {
         if(score > 3) {
             result = "You don't need to update any color settings on your phone"
         } else {
-            result = "You might be color blind"
+            result = "You might want to change the color filters on your phone"
+            resultView.steps = Resultdata[0]
         }
         resultView.result = result
+        
 //        let resultCtrl = UIHostingController(rootView: resultView)
         self.present(resultView, animated: true, completion: nil)
     }

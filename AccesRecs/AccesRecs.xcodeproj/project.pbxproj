@@ -11,6 +11,7 @@
 		811F93AE234E697400D6375E /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811F93AD234E697400D6375E /* Test.swift */; };
 		81416711234E6E58008C74E0 /* TestRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81416710234E6E58008C74E0 /* TestRow.swift */; };
 		81416712234E709D008C74E0 /* TestData.json in Resources */ = {isa = PBXBuildFile; fileRef = E2D2A901234E492B00E2404B /* TestData.json */; };
+		8165DA012357591D0063A747 /* ResultData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8165DA002357591C0063A747 /* ResultData.json */; };
 		E2C43DB02350D6F400F61715 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C43DAF2350D6F400F61715 /* ResultView.swift */; };
 		E2D2A8FE234E439100E2404B /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2A8FD234E439100E2404B /* TestView.swift */; };
 		E2D2A900234E43DA00E2404B /* TestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2A8FF234E43DA00E2404B /* TestList.swift */; };
@@ -55,6 +56,7 @@
 		811479B7234E72CF00502363 /* ColorBlindTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBlindTest.swift; sourceTree = "<group>"; };
 		811F93AD234E697400D6375E /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		81416710234E6E58008C74E0 /* TestRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRow.swift; sourceTree = "<group>"; };
+		8165DA002357591C0063A747 /* ResultData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ResultData.json; sourceTree = "<group>"; };
 		E2C43DAF2350D6F400F61715 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		E2D2A8FD234E439100E2404B /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		E2D2A8FF234E43DA00E2404B /* TestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestList.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				EF5A890B234DBEAC003DB430 /* GrayScale.jpg */,
 				EF5A890C234DBEAC003DB430 /* GuideData.json */,
 				E2D2A901234E492B00E2404B /* TestData.json */,
+				8165DA002357591C0063A747 /* ResultData.json */,
 				EF10A082233E4F9D004407B5 /* AppDelegate.swift */,
 				EF5A8907234DBD9B003DB430 /* Data.swift */,
 				811F93AD234E697400D6375E /* Test.swift */,
@@ -304,6 +307,7 @@
 				EF5A890F234DBEAC003DB430 /* GuideData.json in Resources */,
 				EF5A890E234DBEAC003DB430 /* GrayScale.jpg in Resources */,
 				EF10A089233E4F9F004407B5 /* Assets.xcassets in Resources */,
+				8165DA012357591D0063A747 /* ResultData.json in Resources */,
 				EF5A890D234DBEAC003DB430 /* DarkMode.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
