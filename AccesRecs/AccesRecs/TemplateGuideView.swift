@@ -20,10 +20,12 @@ struct TemplateGuideView: View {
     @State private var toggleTrue = false
     var guide: Guide
 
+    
     var body: some View {
         
         
         VStack{
+            
 //            Text("hello world")
 //          line 23 - 36
 //          title, toggle button, description

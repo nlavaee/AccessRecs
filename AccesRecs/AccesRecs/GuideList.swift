@@ -14,25 +14,16 @@ import SwiftUI
 import UIKit
 import Foundation
 
+
+
 struct GuideList: View {
     
-    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
-    
-//    var btnBack : some View { Button(action: {
-//        self.presentationMode.wrappedValue.dismiss()
-//        }) {
-//            HStack {
-//                Text("Go back")
-//            }
-//        }
-//    }
     
     @State private var searchTerm: String = ""
     
     var body: some View {
         
-        
+    
         
         VStack(){
             
@@ -62,36 +53,19 @@ struct GuideList: View {
                     }
                 
                 }
-
                 .navigationBarTitle(Text("Guide"), displayMode: .inline)
                 .navigationBarBackButtonHidden(true)
-                .navigationBarItems(leading: Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }) {
-                    HStack {
-                        Text("Go back")
-                    }
-                    
-                }
-                
-//                    Button(action: {
-//                        (self.presentationMode.value as AnyObject).dismiss()
-//                          }, label: { Text("Button") })
-                
-                )
-//                .navigationBarItems(trailing:
-//                    Button("") {
-//                        print("tapped")
-//                    }
-                    
-//                )
+                .navigationBarItems(leading: Button("") {
+                    print("tapped")
+                })
+
             }
         }
+    
     }
-//    func dismissKeyboard (_ sender: UITapGestureRecognizer) {
-//        aTextField.resignFirstResponder()
-//    }
+
 }
+
 
 //struct GuideList_Previews: PreviewProvider {
 //    static var previews: some View {

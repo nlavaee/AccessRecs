@@ -30,6 +30,7 @@
 		EF10A08C233E4F9F004407B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF10A08B233E4F9F004407B5 /* Preview Assets.xcassets */; };
 		EF10A09A233E4F9F004407B5 /* AccesRecsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10A099233E4F9F004407B5 /* AccesRecsTests.swift */; };
 		EF10A0A5233E4F9F004407B5 /* AccesRecsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10A0A4233E4F9F004407B5 /* AccesRecsUITests.swift */; };
+		EF2D7DCF2357F920008468CD /* home_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EF2D7DCE2357F91F008468CD /* home_icon.png */; };
 		EF416D52234BA67900DC30A9 /* GuideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF416D51234BA67900DC30A9 /* GuideVC.swift */; };
 		EF416D54234D3AC000DC30A9 /* GuideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF416D53234D3AC000DC30A9 /* GuideTableViewCell.swift */; };
 		EF5A8903234DBBC9003DB430 /* GuideRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8902234DBBC9003DB430 /* GuideRow.swift */; };
@@ -97,6 +98,7 @@
 		EF10A0A0233E4F9F004407B5 /* AccesRecsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccesRecsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF10A0A4233E4F9F004407B5 /* AccesRecsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccesRecsUITests.swift; sourceTree = "<group>"; };
 		EF10A0A6233E4F9F004407B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF2D7DCE2357F91F008468CD /* home_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_icon.png; sourceTree = "<group>"; };
 		EF416D51234BA67900DC30A9 /* GuideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideVC.swift; sourceTree = "<group>"; };
 		EF416D53234D3AC000DC30A9 /* GuideTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideTableViewCell.swift; sourceTree = "<group>"; };
 		EF5A8902234DBBC9003DB430 /* GuideRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideRow.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		EF10A081233E4F9D004407B5 /* AccesRecs */ = {
 			isa = PBXGroup;
 			children = (
+				EF2D7DCE2357F91F008468CD /* home_icon.png */,
 				EFABA6242352806200229064 /* AfterReduceTransparency.png */,
 				EFABA6222352804D00229064 /* BeforeReduceTransparency.png */,
 				EFABA6172352620E00229064 /* ButtonShapeLogo.png */,
@@ -340,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F2E71F3235029C700D89A71 /* AfterGrayScale.png in Resources */,
+				EF2D7DCF2357F920008468CD /* home_icon.png in Resources */,
 				EF10A08C233E4F9F004407B5 /* Preview Assets.xcassets in Resources */,
 				EF5A890F234DBEAC003DB430 /* GuideData.json in Resources */,
 				EFABA6212352620F00229064 /* MotionLogo.png in Resources */,

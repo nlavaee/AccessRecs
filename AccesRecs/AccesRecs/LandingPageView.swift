@@ -13,11 +13,21 @@ import SwiftUI
 //struct LandingP: View {
 //
 //}
-class LandingPageView: UIViewController {
+class LandingPageView: UIViewController, UINavigationControllerDelegate{
+
+    
     
     override func viewDidLoad(){
         
         super.viewDidLoad()
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.delegate = self
+        let home_icon = UIImage(named: "home_icon")
+        self.navigationController?.navigationBar.backIndicatorImage = home_icon
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = home_icon
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        
         
         // Title of App
         let appName = UILabel(frame: CGRect(x:self.view.frame.width/2 - 100, y: 125, width: 200, height: 100))
@@ -81,8 +91,12 @@ class LandingPageView: UIViewController {
     @objc func GoToGuide(sender: UIButton!){
         let guideVC = GuideList()
         let viewCtrl = UIHostingController(rootView: guideVC)
-        present(viewCtrl, animated: true, completion: nil)
+        
+        
+        navigationController?.pushViewController(viewCtrl, animated: true)
         
     }
 }
 
+
+//}
