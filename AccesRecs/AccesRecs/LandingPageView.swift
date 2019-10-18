@@ -20,12 +20,13 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
     override func viewDidLoad(){
         
         super.viewDidLoad()
-        navigationController?.setNavigationBarHidden(true, animated: true)
+//        navigationController?.setNavigationBarHidden(true, animated: true)
         self.navigationController?.delegate = self
         let home_icon = UIImage(named: "home_icon")
         self.navigationController?.navigationBar.backIndicatorImage = home_icon
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = home_icon
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
         
         
         
@@ -88,7 +89,8 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
         print("Vision button tapped")
         let testVC = TestList()
 //        let testCtrl = UIHostingController(rootView: testVC)
-        self.present(testVC, animated: true, completion: nil)
+//        self.present(testVC, animated: true, completion: nil)
+        navigationController?.pushViewController(testVC, animated: true)
     }
     
     @objc func GoToGuide(sender: UIButton!){

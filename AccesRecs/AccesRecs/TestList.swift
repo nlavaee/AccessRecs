@@ -33,13 +33,19 @@ import SwiftUI
 //}
 
 
-class TestList: UITableViewController {
+class TestList: UITableViewController, UINavigationControllerDelegate {
     
     var tests = Testdata
     
     override func viewDidLoad(){
 
         super.viewDidLoad()
+        
+        self.navigationController?.delegate = self
+       let home_icon = UIImage(named: "home_icon")
+       self.navigationController?.navigationBar.backIndicatorImage = home_icon
+       self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = home_icon
+       self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.tableView.register(TestRow.self, forCellReuseIdentifier: "TestRow")
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -64,10 +70,12 @@ class TestList: UITableViewController {
         if(self.tests[indexPath.row].name == "Colorblind") {
             let testVC = ColorBlindTestViewController()
             testVC.tests = self.tests[indexPath.row].tests
-            present(testVC, animated: true, completion: nil)
+            navigationController?.pushViewController(testVC, animated: true)
+//            present(testVC, animated: true, completion: nil)
         } else if(self.tests[indexPath.row].name == "Large Text"){
             let testVC = LargeTextTestViewController()
-            present(testVC, animated: true, completion: nil)
+            navigationController?.pushViewController(testVC, animated: true)
+//            present(testVC, animated: true, completion: nil)
         }
         
     }

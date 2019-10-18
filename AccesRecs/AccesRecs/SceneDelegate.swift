@@ -14,6 +14,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     var navigationController: UINavigationController?
+
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -35,7 +36,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            window.makeKeyAndVisible()
 //
 //        }
-        _ = LandingPageView()
+//        _ = LandingPageView()
 ////
 //////        // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

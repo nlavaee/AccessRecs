@@ -10,11 +10,18 @@ import Foundation
 import UIKit
 import SwiftUI
 
-class ResultView: UIViewController {
+class ResultView: UIViewController, UINavigationControllerDelegate {
     var result : String = ""
     var steps: [String] = []
     
     override func viewDidLoad() {
+        
+        
+        self.navigationController?.delegate = self
+             let home_icon = UIImage(named: "home_icon")
+             self.navigationController?.navigationBar.backIndicatorImage = home_icon
+             self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = home_icon
+             self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.view.backgroundColor = UIColor.white
         
         let resultLabel = UILabel(frame: CGRect(x:187.5 - 100, y: 75, width: 200, height: 100))
@@ -68,7 +75,9 @@ class ResultView: UIViewController {
     }
     
     @objc func bringToGuide(sender: UIButton!) {
-        let guideVC = GuideVC()
-        self.present(guideVC, animated: true, completion: nil)
+        let guideVC = GuideList()
+        let guideView = UIHostingController(rootView: guideVC)
+//        navigationController?.pushViewController(guideView, animated: true)
+        self.present(guideView, animated: true, completion: nil)
     }
 }
