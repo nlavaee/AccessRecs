@@ -2,14 +2,74 @@
     {
         "name": "Dark Mode",
         "category": "Vision",
-        "id": 1001,
-        "imageName": "DarkMode"
+        "id": 0,
+        "imageName": "DarkMode",
+        "imageBefore": "BeforeDarkMode",
+        "imageAfter": "AfterDarkMode",
+        "Description": "Use light-colored text & icons on dark background"
     },
     {
         "name": "Gray Scale",
         "category": "Vision",
+        "id": 1,
+        "imageName": "GrayScale",
+        "imageBefore": "BeforeGrayScale",
+        "imageAfter": "AfterGrayScale",
+        "Description": "Display content in gray scale for color blind and users who have difficulty reading text on the display"
+    },
+    {
+        "name": "Reduce Transparency",
+        "category": "Vision",
+        "id": 2,
+        "imageName": "ReduceTransparencyLogo",
+        "imageBefore": "BeforeReduceTransparency",
+        "imageAfter": "AfterReduceTransparency",
+        "Description": "Improve contrast and blurs on backgrounds"
+    },
+    {
+        "name": "Zoom",
+        "category": "Vision",
+        "id": 3,
+        "imageName": "ZoomLogo",
+        "imageBefore": "BeforeZoom",
+        "imageAfter": "AfterZoom",
+        "Description": "Double tap three fingers to magnify entire screen"
+    },
+    {
+        "name": "Magnifier",
+        "category": "Vision",
         "id": 4,
-        "imageName": "GrayScale"
-    }
+        "imageName": "MagnifierLogo",
+        "imageBefore": "BeforeMagnifier",
+        "imageAfter": "AfterMagnifier",
+        "Description": "Use device camera to quickly magnify surroundings"
+    },
+    {
+        "name": "Large Text",
+        "category": "Vision",
+        "id": 5,
+        "imageName": "LargeTextLogo",
+        "imageBefore": "BeforeLargerText",
+        "imageAfter": "AfterLargerText",
+        "Description": "Increase text size on all screens"
+    },
+    {
+        "name": "Motion",
+        "category": "Vision",
+        "id": 6,
+        "imageName": "MotionLogo",
+        "imageBefore": "BeforeLargerText",
+        "imageAfter": "AfterLargerText",
+        "Description": "Reduce the motion of the screen, including opening icons"
+    },
+    {
+        "name": "Button Shape",
+        "category": "Vision",
+        "id": 7,
+        "imageName": "ButtonShapeLogo",
+        "imageBefore": "BeforeButtonShape",
+        "imageAfter": "AfterButtonShape",
+        "Description": "Underline buttons to be able to identify easier on screen"
+      }
 ]
 
