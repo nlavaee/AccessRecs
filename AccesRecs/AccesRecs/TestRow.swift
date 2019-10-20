@@ -31,9 +31,10 @@ import SwiftUI
 //}
 
 class TestRow : UITableViewCell {
-    var titleArea : UILabel = UILabel(frame: CGRect(x: 30, y: 5, width: 350, height: 25))
+    var titleArea : UILabel = UILabel(frame: CGRect(x: 30, y: 5, width: 200, height: 44))
     var test : Test! {
         didSet {
+            titleArea.numberOfLines = 0
             titleArea.text = test.name
             contentView.addSubview(titleArea)
         }
