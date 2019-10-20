@@ -31,7 +31,7 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
         
         
         // Title of App
-        let appName = UILabel(frame: CGRect(x:self.view.frame.width/2 - 100, y: 125, width: 200, height: 100))
+        let appName = UILabel(frame: CGRect(x:self.view.frame.width/2 - 100, y: self.view.frame.height/2 - 225, width: 200, height: 100))
         appName.isAccessibilityElement = true
         appName.textColor = UIColor.black
         appName.font = .boldSystemFont(ofSize: 24.0)
@@ -41,7 +41,7 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
         appName.textAlignment = .center
         
         // First Button Option
-        let button1 = UIButton(frame: CGRect(x: self.view.frame.width/2 - 100, y: 456 - 25, width:200, height: 50))
+        let button1 = UIButton(frame: CGRect(x: self.view.frame.width/2 - 100, y: self.view.frame.height/2 + 75, width:200, height: 50))
         button1.setTitle("Mobility", for: .normal)
         button1.titleLabel?.font = .boldSystemFont(ofSize: 22)
         button1.addTarget(self, action: #selector(MobilityAction), for: .touchUpInside)
@@ -51,14 +51,14 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
         button1.accessibilityLabel = "Mobility"
         
         // Second Button Option
-        let button2 = UIButton(frame: CGRect(x: self.view.frame.width/2 - (100), y: 506, width: 200, height: 50))
+        let button2 = UIButton(frame: CGRect(x: self.view.frame.width/2 - (100), y: self.view.frame.height - 190, width: 200, height: 50))
         button2.setTitle("Vision", for: .normal)
         button2.titleLabel?.font = .boldSystemFont(ofSize: 22)
         button2.addTarget(self, action: #selector(VisionAction), for: .touchUpInside)
         button2.backgroundColor = UIColor.blue
         button2.layer.cornerRadius = 20
         
-        let button3 = UIButton(frame: CGRect(x: self.view.frame.width/2 - (100), y: 506 + 75, width: 200, height: 50))
+        let button3 = UIButton(frame: CGRect(x: self.view.frame.width/2 - (100), y: self.view.frame.height - 125, width: 200, height: 50))
         button3.setTitle("Guide", for: .normal)
         button3.titleLabel?.font = .boldSystemFont(ofSize: 22)
         button3.addTarget(self, action: #selector(GoToGuide), for: .touchUpInside)
@@ -67,10 +67,9 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
         
         let appLogo = UIImage(named: "appLogo.png")
         let logoImageView = UIImageView(image: appLogo!)
-        logoImageView.frame = CGRect(x: self.view.frame.width/2 - 50, y: 255, width: 100, height: 100)
+        logoImageView.frame = CGRect(x: self.view.frame.width/2 - 50, y: self.view.frame.height/2 - 75, width: 100, height: 100)
     
-        
-        
+
 //         add each of these views into the app
         self.view.addSubview(appName)
         self.view.addSubview(logoImageView)
