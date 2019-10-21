@@ -32,7 +32,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         super.viewDidLoad()
         
 //        self.scrollView.contentSize = CGSize(width:2000, height: 5678)
-        self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 100)
+        self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 150)
         self.scrollView.isScrollEnabled = true
         self.scrollView.contentOffset = CGPoint(x: view.frame.origin.x, y: view.frame.origin.y + 75)
         
@@ -101,7 +101,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
     }
     
     @objc func keyboardWillOpen(notification: Notification) {
-        view.frame.origin.y = -150
+        view.frame.origin.y = -75
     }
     
     @objc func keyboardWillClose(notification: Notification) {
