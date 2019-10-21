@@ -80,8 +80,9 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
     
     @objc func MobilityAction(sender: UIButton!){
         print("Mobility button tapped") // replace eventually to take to first test
+        let testVC = Mobility()
+        navigationController?.pushViewController(testVC, animated: true)
         
-        // ideally this could be a sandbox so we could re-direct to an existing test but not sure how to get those results back
     }
     
     @objc func VisionAction(sender: UIButton!){

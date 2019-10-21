@@ -68,7 +68,7 @@ class LargeTextTestViewController : UIViewController {
         sentenceLabel.textColor = UIColor.black
         sentenceLabel.font = .systemFont(ofSize: CGFloat(textSize))
         
-        let prompt = UILabel(frame: CGRect(x: 0, y: 50, width: view.frame.size.width, height: 100))
+        let prompt = UILabel(frame: CGRect(x: 0, y: 75, width: view.frame.size.width, height: 100))
         prompt.center.x = self.view.center.x
         prompt.textAlignment = .center
         prompt.textColor = UIColor.black
@@ -76,8 +76,8 @@ class LargeTextTestViewController : UIViewController {
         prompt.text = "Can you easily read the text below?"
         
         
-        let yesButton = UIButton(frame: CGRect(x: 50, y: 600, width: 100, height: 100))
-        let noButton = UIButton(frame: CGRect(x: 250, y: 600, width: 100, height: 100))
+        let yesButton = UIButton(frame: CGRect(x: self.view.frame.width - 50 - 250 - 25, y: self.view.frame.height - 200, width: 100, height: 100))
+        let noButton = UIButton(frame: CGRect(x: self.view.frame.width - 50 - 100, y: self.view.frame.height - 200, width: 100, height: 100))
         yesButton.setTitle("Yes", for: .normal)
         noButton.setTitle("No", for: .normal)
         noButton.addTarget(self, action: #selector(cantRead), for: .touchUpInside)
