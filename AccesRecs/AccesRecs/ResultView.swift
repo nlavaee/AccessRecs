@@ -16,15 +16,17 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         
-        
+//        let maxFrameHeight = self.view.frame.height
         self.navigationController?.delegate = self
              let home_icon = UIImage(named: "home_icon")
              self.navigationController?.navigationBar.backIndicatorImage = home_icon
              self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = home_icon
              self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.view.backgroundColor = UIColor.white
+        let maxFrameHeight = self.view.frame.height
+
         
-        let resultLabel = UILabel(frame: CGRect(x:187.5 - 100, y: 75, width: 200, height: 100))
+        let resultLabel = UILabel(frame: CGRect(x:187.5 - 100, y: 20, width: 200, height: 100))
         resultLabel.center.x = self.view.center.x
         resultLabel.textColor = UIColor.black
         resultLabel.font = .boldSystemFont(ofSize: 18.0)
@@ -33,15 +35,16 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
         resultLabel.numberOfLines = 0
         resultLabel.textAlignment = .center
         
-        let stepsLabel = UILabel(frame: CGRect(x:187.5 - 100, y: 175, width: 200, height: 100))
+        let stepsLabel = UILabel(frame: CGRect(x:187.5 - 100, y: resultLabel.frame.maxY + 15, width: 200, height: 25))
         stepsLabel.textColor = UIColor.black
         stepsLabel.font = .boldSystemFont(ofSize: 16.0)
         stepsLabel.text = "Steps:"
         
-        let yStart = 220.0
+        let yStart = Double(stepsLabel.frame.maxY) - 15.0
         var offset = 0.0
+        var max = 0.0
         for step in steps {
-            let stepLabel = UILabel(frame: CGRect(x: 187.5 - 100, y: yStart + offset, width: 200, height: 100))
+            let stepLabel = UILabel(frame: CGRect(x: 187.5 - 100, y: yStart + offset, width: 200, height: 75))
             stepLabel.center.x = self.view.center.x
             stepLabel.textColor = UIColor.black
             stepLabel.font = .systemFont(ofSize: 16.0)
@@ -50,7 +53,7 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
             stepLabel.numberOfLines = 0
             self.view.addSubview(stepLabel)
             offset = offset + 75
-            
+            max = yStart + offset - 75
         }
             
         
@@ -60,7 +63,7 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
             self.view.addSubview(stepsLabel)
         }
         
-        let guideButton = UIButton(frame: CGRect(x: 0, y: 600, width: 250, height: 100))
+        let guideButton = UIButton(frame: CGRect(x: 0, y: (Double(maxFrameHeight) + max) / 2 - 50, width: 250, height: 100))
         guideButton.setTitle("Check out the guide for more accessibility settings", for: .normal)
         guideButton.addTarget(self, action: #selector(bringToGuide), for: .touchUpInside)
         guideButton.backgroundColor = UIColor.red

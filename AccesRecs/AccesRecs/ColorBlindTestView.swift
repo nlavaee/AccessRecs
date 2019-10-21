@@ -18,7 +18,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate {
     var testImageView : UIImageView!
     var tests : [ColorBlindTest]!
     var nextButton : UIButton = UIButton(frame: CGRect(x: 200 - (100), y: 575, width: 200, height: 50))
-    var answerField : UITextField = UITextField(frame: CGRect(x: 125, y: 505, width: 149, height: 50))
+    var answerField : UITextField = UITextField(frame: CGRect(x: 0, y: 505, width: 150, height: 50))
     var score : Int = 0
 //    var scoreLabel = UILabel(frame: CGRect(x: 100, y: 600, width: 100, height: 100))
 
@@ -30,13 +30,17 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate {
         nextButton.addTarget(self, action: #selector(NextQuestion), for: .touchUpInside)
         nextButton.backgroundColor = UIColor.red
         nextButton.layer.cornerRadius = 20
+        nextButton.frame = CGRect(x: self.view.frame.width / 2 - 100, y: self.view.frame.height - 50 - 50, width: 200, height: 50)
+
         
         
         let testImage = UIImage(named: tests[idx].imageName)
         testImageView = UIImageView(image: testImage!)
-        testImageView.frame = CGRect(x: 80, y: 180, width: 250, height: 250)
+        //testImageView.frame = CGRect(x: 80, y: 180, width: 250, height: 250)
+        testImageView.frame = CGRect(x: self.view.frame.width / 2 - 125, y: self.view.frame.height / 2 - 250, width: 250, height: 250)
         
-        let prompt = UILabel(frame: CGRect(x: 100, y: 420, width: 200, height: 100))
+        
+        let prompt = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 100, y: self.view.frame.height / 2 + 25, width: 200, height: 100))
         prompt.textColor = UIColor.black
         prompt.font = .preferredFont(forTextStyle: UIFont.TextStyle.title3)
         prompt.text = "Enter the number you see"
@@ -47,13 +51,14 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate {
         
 //        scoreLabel.textColor = UIColor.black
 //        scoreLabel.text = "Score: " + String(score)
-        
+        answerField.frame = CGRect(x: self.view.frame.width / 2 - 75, y: self.view.frame.height / 2 + prompt.frame.height + 10, width: 150, height: 50)
         answerField.delegate = self
         answerField.borderStyle = UITextField.BorderStyle.line
         answerField.layer.borderColor = UIColor.gray.cgColor
         answerField.keyboardType = .numberPad
         answerField.textAlignment = .center
 
+                
         self.view.addSubview(testImageView)
         self.view.addSubview(prompt)
         self.view.addSubview(answerField)
@@ -125,91 +130,91 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate {
     
     
 }
-struct ColorBlindTestView: View {
-    @State private var guess:String = ""
-    @State private var idx: Int = 0
-    @State private var score: Int = 0
-    @State private var image: String = Testdata[0].tests[0].imageName
-    @State private var name: String = Testdata[0].tests[0].name
-    @State private var correct: String = String(Testdata[0].tests[0].answer)
-    @State private var id: Int = Testdata[0].tests[0].id
-    @State private var finished = false
-
-    var body: some View {
-        //VStack(alignment: .center){
-            VStack() {
-
-            HStack(alignment: .top) {
-            Image(image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: CGFloat(250.00), height: CGFloat(250.00), alignment: .top)
-            }
-//            Spacer()
-//                .frame(height: 200)
-
-            VStack(alignment: .center) {
-                Text("Enter the number you see")
-
-                TextField("", text: $guess)
-                    .font(.subheadline)
-                    .frame(width: 80, height: 40, alignment: .center)
-                    .border(Color.gray, width: 2)
-                    .multilineTextAlignment(.center)
-                    .keyboardType(.numberPad)
-
-                if(finished) {
-                    Button(action:{self.finish()}) {
-                        Text("Complete Test")
-                    }
-                } else {
-                    Button(action:{self.nextQuestion()}) {
-                        Text("Next Question")
-                    }
-                }
-
-                Spacer()
-                    .frame(height: 150)
-
-//                Text("Score: \(score)")
-
-                Spacer()
-                .frame(height: 50)
-            }
-        }
-    .padding()
-    }
-
-    func nextQuestion() {
-        idx = idx + 1
-        if guess == correct {
-            score += 1
-        }
-
-        if(idx == Testdata[0].tests.count) {
-            finished = true
-        } else {
-            name = Testdata[0].tests[idx].name
-            correct = String(Testdata[0].tests[idx].answer)
-            id = Testdata[0].tests[idx].id
-            image = Testdata[0].tests[idx].imageName
-            guess = ""
-        }
-    }
-
-    func finish() {
-        //Send to results view
-    }
-
-}
-
-
-
-
-#if DEBUG
-struct ColorBlindTestView_Preview: PreviewProvider {
-    static var previews: some View {
-        ColorBlindTestView() // Add something here??
-    }
-}
-#endif
+//struct ColorBlindTestView: View {
+//    @State private var guess:String = ""
+//    @State private var idx: Int = 0
+//    @State private var score: Int = 0
+//    @State private var image: String = Testdata[0].tests[0].imageName
+//    @State private var name: String = Testdata[0].tests[0].name
+//    @State private var correct: String = String(Testdata[0].tests[0].answer)
+//    @State private var id: Int = Testdata[0].tests[0].id
+//    @State private var finished = false
+//
+//    var body: some View {
+//        //VStack(alignment: .center){
+//            VStack() {
+//
+//            HStack(alignment: .top) {
+//            Image(image)
+//                .resizable()
+//                .aspectRatio(contentMode: .fit)
+//                .frame(width: CGFloat(250.00), height: CGFloat(250.00), alignment: .top)
+//            }
+////            Spacer()
+////                .frame(height: 200)
+//
+//            VStack(alignment: .center) {
+//                Text("Enter the number you see")
+//
+//                TextField("", text: $guess)
+//                    .font(.subheadline)
+//                    .frame(width: 80, height: 40, alignment: .center)
+//                    .border(Color.gray, width: 2)
+//                    .multilineTextAlignment(.center)
+//                    .keyboardType(.numberPad)
+//
+//                if(finished) {
+//                    Button(action:{self.finish()}) {
+//                        Text("Complete Test")
+//                    }
+//                } else {
+//                    Button(action:{self.nextQuestion()}) {
+//                        Text("Next Question")
+//                    }
+//                }
+//
+//                Spacer()
+//                    .frame(height: 150)
+//
+////                Text("Score: \(score)")
+//
+//                Spacer()
+//                .frame(height: 50)
+//            }
+//        }
+//    .padding()
+//    }
+//
+//    func nextQuestion() {
+//        idx = idx + 1
+//        if guess == correct {
+//            score += 1
+//        }
+//
+//        if(idx == Testdata[0].tests.count) {
+//            finished = true
+//        } else {
+//            name = Testdata[0].tests[idx].name
+//            correct = String(Testdata[0].tests[idx].answer)
+//            id = Testdata[0].tests[idx].id
+//            image = Testdata[0].tests[idx].imageName
+//            guess = ""
+//        }
+//    }
+//
+//    func finish() {
+//        //Send to results view
+//    }
+//
+//}
+//
+//
+//
+//
+//#if DEBUG
+//struct ColorBlindTestView_Preview: PreviewProvider {
+//    static var previews: some View {
+//        ColorBlindTestView() // Add something here??
+//    }
+//}
+//#endif
