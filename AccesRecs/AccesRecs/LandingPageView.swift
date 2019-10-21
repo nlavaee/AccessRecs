@@ -51,14 +51,15 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
         button1.accessibilityLabel = "Mobility"
         
         // Second Button Option
-        let button2 = UIButton(frame: CGRect(x: self.view.frame.width/2 - (100), y: self.view.frame.height - 190, width: 200, height: 50))
+//        let button2 = UIButton(frame: CGRect(x: self.view.frame.width/2 - (100), y: self.view.frame.height - 190, width: 200, height: 50))
+        let button2 = UIButton(frame: CGRect(x: self.view.frame.width/2 - (100), y: button1.frame.maxY + 15, width: 200, height: 50))
         button2.setTitle("Vision", for: .normal)
         button2.titleLabel?.font = .boldSystemFont(ofSize: 22)
         button2.addTarget(self, action: #selector(VisionAction), for: .touchUpInside)
         button2.backgroundColor = UIColor.blue
         button2.layer.cornerRadius = 20
         
-        let button3 = UIButton(frame: CGRect(x: self.view.frame.width/2 - (100), y: self.view.frame.height - 125, width: 200, height: 50))
+        let button3 = UIButton(frame: CGRect(x: self.view.frame.width/2 - (100), y: button2.frame.maxY + 15, width: 200, height: 50))
         button3.setTitle("Guide", for: .normal)
         button3.titleLabel?.font = .boldSystemFont(ofSize: 22)
         button3.addTarget(self, action: #selector(GoToGuide), for: .touchUpInside)
