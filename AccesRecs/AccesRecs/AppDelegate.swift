@@ -9,21 +9,36 @@
 import UIKit
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+//    @property (nonatomic, retain) IBOutlet RootViewController *rootViewController;
+//    @property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
     
     var window: UIWindow?
-
+    
+  
+    var navigationController: UINavigationController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        let homeViewController = UIViewController()
-//        homeViewController.view.backgroundColor = UIColor.red
-        window!.rootViewController = LandingPageView()
-        window!.makeKeyAndVisible()
-    
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+////        let homeViewController = UIViewController()
+////        homeViewController.view.backgroundColor = UIColor.red
+//        window!.rootViewController = LandingPageView()
+//        window!.makeKeyAndVisible()
+        
+         window = UIWindow(frame: UIScreen.main.bounds)
+         
+         if let window = window {
+             let mainVC = LandingPageView()
+             navigationController = UINavigationController(rootViewController: mainVC)
+             window.rootViewController = navigationController
+             window.makeKeyAndVisible()
+         }
+        //
+        ////        // Use a UIHostingController as window root view controller.
+             
         return true
         
     }
