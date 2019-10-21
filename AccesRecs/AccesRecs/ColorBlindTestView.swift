@@ -44,6 +44,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         nextButton.backgroundColor = UIColor.red
         nextButton.layer.cornerRadius = 20
         nextButton.frame = CGRect(x: self.view.frame.width / 2 - 100, y:self.view.frame.height / 2 + 200, width: 200, height: 50)
+        nextButton.isEnabled = false
         
         
         let testImage = UIImage(named: tests[idx].imageName)
@@ -68,6 +69,8 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         answerField.layer.borderColor = UIColor.gray.cgColor
         answerField.keyboardType = .numberPad
         answerField.textAlignment = .center
+        answerField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+
 
         self.view.addSubview(scrollView)
         
@@ -89,6 +92,13 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         
+    }
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if(answerField.text == "") {
+            nextButton.isEnabled = false
+        }else {
+            nextButton.isEnabled = true
+        }
     }
     
     func hideKeyboard() {
@@ -126,6 +136,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
     
     @objc func NextQuestion(sender: UIButton!) {
         self.hideKeyboard()
+        nextButton.isEnabled = false
         if(answerField.text == String(tests[idx].answer)) {
             score = score + 1
         }
