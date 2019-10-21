@@ -34,6 +34,7 @@ struct TemplateGuideView: View {
                 HStack(){
                     Text(guide.name)
                         .font(.headline)
+                        .lineLimit(nil)
                      Spacer()
                      Toggle(isOn: $toggleTrue){
                         Text(guide.name)

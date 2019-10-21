@@ -29,7 +29,7 @@ struct GuideRow: View {
             guide.image.resizable().frame(width: 50, height: 55)
             Text(guide.name)
                 .lineLimit(nil)
-                .frame(width: 200, height:44, alignment: .leading)
+                .frame(width: 200, height: 44, alignment: .leading)
             Spacer() // push all the way to the edges
         }
     }
