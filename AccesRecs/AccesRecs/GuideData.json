@@ -54,15 +54,6 @@
         "Description": "Increase text size on all screens"
     },
     {
-        "name": "Motion",
-        "category": "Vision",
-        "id": 6,
-        "imageName": "MotionLogo",
-        "imageBefore": "BeforeLargerText",
-        "imageAfter": "AfterLargerText",
-        "Description": "Reduce the motion of the screen, including opening icons"
-    },
-    {
         "name": "Button Shape",
         "category": "Vision",
         "id": 7,
