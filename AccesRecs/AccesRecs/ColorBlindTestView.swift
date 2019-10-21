@@ -17,7 +17,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
     var testImageView : UIImageView!
     var tests : [ColorBlindTest]!
     var nextButton : UIButton = UIButton(frame: CGRect(x: 200 - (100), y: 575, width: 200, height: 50))
-    var answerField : UITextField = UITextField(frame: CGRect(x: 125, y: 505, width: 149, height: 50))
+    var answerField : UITextField = UITextField(frame: CGRect(x: 0, y: 505, width: 150, height: 50))
     var score : Int = 0
 //    var scoreLabel = UILabel(frame: CGRect(x: 100, y: 600, width: 100, height: 100))
 //
@@ -34,7 +34,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
 //        self.scrollView.contentSize = CGSize(width:2000, height: 5678)
         self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 100)
         self.scrollView.isScrollEnabled = true
-        self.scrollView.contentOffset = CGPoint(x: view.frame.origin.x, y: view.frame.origin.y + 150)
+        self.scrollView.contentOffset = CGPoint(x: view.frame.origin.x, y: view.frame.origin.y + 75)
         
         
         self.view.backgroundColor = UIColor.white
@@ -43,13 +43,14 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         nextButton.addTarget(self, action: #selector(NextQuestion), for: .touchUpInside)
         nextButton.backgroundColor = UIColor.red
         nextButton.layer.cornerRadius = 20
+        nextButton.frame = CGRect(x: self.view.frame.width / 2 - 100, y:self.view.frame.height / 2 + 200, width: 200, height: 50)
         
         
         let testImage = UIImage(named: tests[idx].imageName)
         testImageView = UIImageView(image: testImage!)
-        testImageView.frame = CGRect(x: 80, y: 180, width: 250, height: 250)
+        testImageView.frame = CGRect(x: self.view.frame.width / 2 - 125, y: self.view.frame.height / 2 - 250, width: 250, height: 250)
         
-        let prompt = UILabel(frame: CGRect(x: 100, y: 420, width: 200, height: 100))
+        let prompt = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 100, y: self.view.frame.height / 2 + 25, width: 200, height: 100))
         prompt.textColor = UIColor.black
         prompt.font = .preferredFont(forTextStyle: UIFont.TextStyle.title3)
         prompt.text = "Enter the number you see"
@@ -61,6 +62,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
 //        scoreLabel.textColor = UIColor.black
 //        scoreLabel.text = "Score: " + String(score)
         
+        answerField.frame = CGRect(x: self.view.frame.width / 2 - 75, y: self.view.frame.height / 2 + prompt.frame.height + 10, width: 150, height: 50)
         answerField.delegate = self
         answerField.borderStyle = UITextField.BorderStyle.line
         answerField.layer.borderColor = UIColor.gray.cgColor
