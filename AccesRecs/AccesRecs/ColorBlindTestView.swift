@@ -19,6 +19,8 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
     var nextButton : UIButton = UIButton(frame: CGRect(x: 200 - (100), y: 575, width: 200, height: 50))
     var answerField : UITextField = UITextField(frame: CGRect(x: 0, y: 505, width: 150, height: 50))
     var score : Int = 0
+    var answers : [String] = []
+    var correctAnswers : [String] = []
 //    var scoreLabel = UILabel(frame: CGRect(x: 100, y: 600, width: 100, height: 100))
 //
 //    @IBOutlet var scrollView: UIScrollView!
@@ -111,8 +113,14 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
     @objc func CompleteTest(sender: UIButton!) {
         let resultView = ResultView()
         var result = ""
+        score = 0
+        for i in 0...idx {
+            if(answers[i] == correctAnswers[i]) {
+                score += 1
+            }
+        }
         if(score > 3) {
-            result = "You don't need to update any color settings on your phone"
+            result = "You don't need to update any color settings on your phone!"
         } else {
             result = "You might want to change the color filters on your phone"
             resultView.steps = Resultdata[0]
@@ -126,9 +134,18 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
     
     @objc func NextQuestion(sender: UIButton!) {
         self.hideKeyboard()
-        if(answerField.text == String(tests[idx].answer)) {
-            score = score + 1
+        
+        if let userAnswer = answerField.text {
+            answers.append(userAnswer)
+        } else {
+            answers.append("")
         }
+        correctAnswers.append(String(tests[idx].answer))
+        
+        
+//        if(answerField.text == String(tests[idx].answer)) {
+//            score = score + 1
+//        }
         answerField.text = ""
         if(idx < (tests.count - 1)) {
             idx = idx + 1

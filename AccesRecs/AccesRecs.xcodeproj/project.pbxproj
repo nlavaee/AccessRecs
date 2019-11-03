@@ -30,6 +30,7 @@
 		8FEF7E352350231B0094A22A /* BeforeButtonShape.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FEF7E332350231B0094A22A /* BeforeButtonShape.png */; };
 		E29BC91D235D287B00803278 /* ColorBlindTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29BC91C235D287B00803278 /* ColorBlindTestView.swift */; };
 		E29BC91F235D397F00803278 /* Mobility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29BC91E235D397F00803278 /* Mobility.swift */; };
+		E29BC921236F781E00803278 /* MobilityTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29BC920236F781E00803278 /* MobilityTestView.swift */; };
 		E2C43DB02350D6F400F61715 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C43DAF2350D6F400F61715 /* ResultView.swift */; };
 		E2D2A8FE234E439100E2404B /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2A8FD234E439100E2404B /* TestView.swift */; };
 		E2D2A900234E43DA00E2404B /* TestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2A8FF234E43DA00E2404B /* TestList.swift */; };
@@ -101,6 +102,7 @@
 		8FEF7E332350231B0094A22A /* BeforeButtonShape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeButtonShape.png; sourceTree = "<group>"; };
 		E29BC91C235D287B00803278 /* ColorBlindTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBlindTestView.swift; sourceTree = "<group>"; };
 		E29BC91E235D397F00803278 /* Mobility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobility.swift; sourceTree = "<group>"; };
+		E29BC920236F781E00803278 /* MobilityTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilityTestView.swift; sourceTree = "<group>"; };
 		E2C43DAF2350D6F400F61715 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		E2D2A8FD234E439100E2404B /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		E2D2A8FF234E43DA00E2404B /* TestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestList.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				EF10A088233E4F9F004407B5 /* Assets.xcassets */,
 				E2D2A8FD234E439100E2404B /* TestView.swift */,
 				E29BC91C235D287B00803278 /* ColorBlindTestView.swift */,
+				E29BC920236F781E00803278 /* MobilityTestView.swift */,
 				E29BC91E235D397F00803278 /* Mobility.swift */,
 				E2C43DAF2350D6F400F61715 /* ResultView.swift */,
 				EF10A090233E4F9F004407B5 /* Info.plist */,
@@ -438,6 +441,7 @@
 				EF416D52234BA67900DC30A9 /* GuideVC.swift in Sources */,
 				EF10A083233E4F9D004407B5 /* AppDelegate.swift in Sources */,
 				E29BC91D235D287B00803278 /* ColorBlindTestView.swift in Sources */,
+				E29BC921236F781E00803278 /* MobilityTestView.swift in Sources */,
 				811F93AE234E697400D6375E /* Test.swift in Sources */,
 				EF5A8911234DC3A6003DB430 /* GuideList.swift in Sources */,
 				81416711234E6E58008C74E0 /* TestRow.swift in Sources */,
