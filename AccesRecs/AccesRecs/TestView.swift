@@ -56,6 +56,8 @@ class LargeTextTestViewController : UIViewController {
     
     override func viewDidLoad() {
         
+        
+        
         self.view.backgroundColor = UIColor.white
         sentenceLabel.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 200)
         sentenceLabel.center = self.view.center
@@ -111,6 +113,7 @@ class LargeTextTestViewController : UIViewController {
         resultView.result = result
 //        let resultCtrl = UIHostingController(rootView: resultView)
 //        navigationController?.pushViewController(resultView, animated: true)
+        _ = navigationController?.popViewController(animated: false)
         self.present(resultView, animated: true, completion: nil)
     }
     
