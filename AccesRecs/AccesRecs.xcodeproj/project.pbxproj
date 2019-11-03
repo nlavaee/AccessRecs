@@ -51,6 +51,7 @@
 		EF5A8911234DC3A6003DB430 /* GuideList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8910234DC3A6003DB430 /* GuideList.swift */; };
 		EF5A8913234DCE32003DB430 /* TemplateGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8912234DCE32003DB430 /* TemplateGuideView.swift */; };
 		EF7253A323413CFC00FEBF0F /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7253A223413CFC00FEBF0F /* LandingPageView.swift */; };
+		EF8219B9236E7B000025E7DF /* x_button.png in Resources */ = {isa = PBXBuildFile; fileRef = EF8219B8236E7B000025E7DF /* x_button.png */; };
 		EFABA6152350D0EE00229064 /* BeforeReduceTransparencyDock.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA6142350D0EE00229064 /* BeforeReduceTransparencyDock.png */; };
 		EFABA61C2352620F00229064 /* MagnifierLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA6162352620E00229064 /* MagnifierLogo.png */; };
 		EFABA61D2352620F00229064 /* ButtonShapeLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA6172352620E00229064 /* ButtonShapeLogo.png */; };
@@ -130,6 +131,7 @@
 		EF5A8910234DC3A6003DB430 /* GuideList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideList.swift; sourceTree = "<group>"; };
 		EF5A8912234DCE32003DB430 /* TemplateGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateGuideView.swift; sourceTree = "<group>"; };
 		EF7253A223413CFC00FEBF0F /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
+		EF8219B8236E7B000025E7DF /* x_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x_button.png; sourceTree = "<group>"; };
 		EFABA6142350D0EE00229064 /* BeforeReduceTransparencyDock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeReduceTransparencyDock.png; sourceTree = "<group>"; };
 		EFABA6162352620E00229064 /* MagnifierLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MagnifierLogo.png; sourceTree = "<group>"; };
 		EFABA6172352620E00229064 /* ButtonShapeLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonShapeLogo.png; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		EF10A081233E4F9D004407B5 /* AccesRecs */ = {
 			isa = PBXGroup;
 			children = (
+				EF8219B8236E7B000025E7DF /* x_button.png */,
 				E2D2A8FF234E43DA00E2404B /* TestList.swift */,
 				81416710234E6E58008C74E0 /* TestRow.swift */,
 				EF2D7DCE2357F91F008468CD /* home_icon.png */,
@@ -384,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F2E71F3235029C700D89A71 /* AfterGrayScale.png in Resources */,
+				EF8219B9236E7B000025E7DF /* x_button.png in Resources */,
 				EF2D7DCF2357F920008468CD /* home_icon.png in Resources */,
 				EF10A08C233E4F9F004407B5 /* Preview Assets.xcassets in Resources */,
 				81416712234E709D008C74E0 /* TestData.json in Resources */,

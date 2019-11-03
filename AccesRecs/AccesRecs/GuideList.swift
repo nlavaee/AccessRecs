@@ -64,6 +64,21 @@ struct GuideList: View {
     }
 
 }
+//struct ModalView: View {
+//
+//  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+//
+//  var body: some View {
+//    Group {
+//      Text("Modal view")
+//      Button(action: {
+//         self.presentationMode.wrappedValue.dismiss()
+//      }) {
+//        Text("Dismiss")
+//      }
+//    }
+//  }
+//}
 
 
 //struct GuideList_Previews: PreviewProvider {

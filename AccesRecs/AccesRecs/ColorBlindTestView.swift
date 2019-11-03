@@ -34,7 +34,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         super.viewDidLoad()
         
 //        self.scrollView.contentSize = CGSize(width:2000, height: 5678)
-        self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 100)
+        self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 150)
         self.scrollView.isScrollEnabled = true
         self.scrollView.contentOffset = CGPoint(x: view.frame.origin.x, y: view.frame.origin.y + 75)
         
@@ -46,6 +46,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         nextButton.backgroundColor = UIColor.red
         nextButton.layer.cornerRadius = 20
         nextButton.frame = CGRect(x: self.view.frame.width / 2 - 100, y:self.view.frame.height / 2 + 200, width: 200, height: 50)
+        nextButton.isEnabled = false
         
         
         let testImage = UIImage(named: tests[idx].imageName)
@@ -70,6 +71,8 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         answerField.layer.borderColor = UIColor.gray.cgColor
         answerField.keyboardType = .numberPad
         answerField.textAlignment = .center
+        answerField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+
 
         self.view.addSubview(scrollView)
         
@@ -92,6 +95,13 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         
     }
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if(answerField.text == "") {
+            nextButton.isEnabled = false
+        }else {
+            nextButton.isEnabled = true
+        }
+    }
     
     func hideKeyboard() {
         answerField.resignFirstResponder()
@@ -103,7 +113,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
     }
     
     @objc func keyboardWillOpen(notification: Notification) {
-        view.frame.origin.y = -150
+        view.frame.origin.y = -75
     }
     
     @objc func keyboardWillClose(notification: Notification) {
@@ -134,7 +144,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
     
     @objc func NextQuestion(sender: UIButton!) {
         self.hideKeyboard()
-        
+
         if let userAnswer = answerField.text {
             answers.append(userAnswer)
         } else {
