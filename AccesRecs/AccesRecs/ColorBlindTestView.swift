@@ -124,9 +124,18 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         let resultView = ResultView()
         var result = ""
         score = 0
+        var redGreenFilter = false
+        var blueYellowFilter = false
         for i in 0...idx {
             if(answers[i] == correctAnswers[i]) {
                 score += 1
+            }
+            else {
+                if (i % 3 != 2) {
+                    redGreenFilter = true
+                } else {
+                    blueYellowFilter = true
+                }
             }
         }
         if(score > 3) {
@@ -134,6 +143,17 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         } else {
             result = "You might want to change the color filters on your phone"
             resultView.steps = Resultdata[0]
+            
+            if(redGreenFilter && blueYellowFilter) {
+                resultView.steps.append("Choose from one of the four preset filters, or customize your own")
+            }
+            else if (redGreenFilter) {
+                resultView.steps.append("Choose either 'Protanopia' or 'Deuteranopia' filter")
+            }
+            else if (blueYellowFilter) {
+                resultView.steps.append("Choose the 'Tritanopia' filter")
+            }
+            
         }
         resultView.result = result
         
@@ -165,7 +185,6 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
             nextButton.setTitle("Complete Test", for: .normal)
             nextButton.addTarget(self, action: #selector(CompleteTest), for: .touchUpInside)
         }
-        
     }
 }
 struct ColorBlindTestView: View {
