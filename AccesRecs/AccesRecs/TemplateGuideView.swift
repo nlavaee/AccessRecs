@@ -48,6 +48,7 @@ struct TemplateGuideView: View {
             .padding()
 //          line 43-52
 //          before text box and image
+            if !toggleTrue {
             Text("Before")
                 .frame(alignment:.center)
                 .padding([.horizontal])
@@ -59,6 +60,7 @@ struct TemplateGuideView: View {
             guide.imgBefore
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+            }
 //                .scaledToFit()
             Spacer()
                 .frame(height:10)
