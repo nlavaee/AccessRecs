@@ -15,10 +15,13 @@ import SwiftUI
 
 var answerField : UITextField = UITextField(frame: CGRect(x: 0, y: 505, width: 150, height: 50))
 var finishedButton: UIButton = UIButton(frame: CGRect(x: 200 - (100), y: 575, width: 200, height: 50))
-var testText: String = "The quick brown fox jumped over the lazy dog. The slow, lazy dog sat under the jumping, quick brown fox."
+var start = DispatchTime.now()
+var finish = DispatchTime.now()
+// In the future, we should randomly generate a list of phrases that the user can type in.
+// If the text appears the same, but registers as incorrect, check if any escape characters were automatically added into one of the strings (' vs \')
+var testText: String = "The quick brown fox jumped over the lazy dog. The slow, lazy dog sat under the jump of the quick brown fox."
 class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     let scrollView = UIScrollView(frame: UIScreen.main.bounds)
-        
         
         override func viewDidLoad() {
             
@@ -28,6 +31,9 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             self.scrollView.isScrollEnabled = true
             self.scrollView.contentOffset = CGPoint(x: view.frame.origin.x, y: view.frame.origin.y + 75)
             self.view.backgroundColor = UIColor.white
+            
+            //start = DispatchTime.now()
+            
             
             let prompt = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 100, y: 50, width: 200, height: 100))
             prompt.textColor = UIColor.black
@@ -55,7 +61,7 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             answerField.borderStyle = UITextField.BorderStyle.line
             answerField.layer.borderColor = UIColor.gray.cgColor
             answerField.textAlignment = .center
-//            answerField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+            answerField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.touchDown)
             
             
             finishedButton.setTitle("Done", for: .normal)
@@ -86,13 +92,16 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
     
     @objc func DoneTyping(sender: UIButton!) {
         self.hideKeyboard()
+        finish = DispatchTime.now()
         let resultView = ResultView()
         var result = ""
         if(answerField.text == testText) {
             result = "Perfect!!"
         } else {
-            result = "Fix your typing"
+            result = "We have recommendations for you:"
+            //result = "You spent \((finish.uptimeNanoseconds - start.uptimeNanoseconds) / //1000000000) seconds typing"
             resultView.steps = Resultdata[2]
+            //resultView.steps = answerField.text
         }
         resultView.result = result
         self.present(resultView, animated: true, completion: nil)
@@ -100,11 +109,9 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
     
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-//           if(answerField.text == "") {
-//               finishedButton.isEnabled = false
-//           }else {
-//               finishedButton.isEnabled = true
-//           }
+           if(answerField.text == "") {
+                start = DispatchTime.now()
+           }
        }
     
     func hideKeyboard() {
