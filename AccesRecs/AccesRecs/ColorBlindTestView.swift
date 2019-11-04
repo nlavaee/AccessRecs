@@ -158,6 +158,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         resultView.result = result
         
 //        let resultCtrl = UIHostingController(rootView: resultView)
+        navigationController?.popViewController(animated: false)
         self.present(resultView, animated: true, completion: nil)
 //        navigationController?.pushViewController(resultView, animated: true)
     }
