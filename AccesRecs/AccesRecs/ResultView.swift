@@ -16,12 +16,26 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         
+        super.viewDidLoad()
+        
+        
+        self.navigationItem.hidesBackButton = false
+        let x_button = UIImage(named: "x_button")
+        
+        
+        self.navigationController?.navigationBar.backIndicatorImage = x_button
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = x_button
+        
+         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: #selector(dissmissView))
+//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: x_button, style: .done, target: self, action: #selector(dissmissView))
+  
+        
 //        let maxFrameHeight = self.view.frame.height
-        self.navigationController?.delegate = self
-             let home_icon = UIImage(named: "home_icon")
-             self.navigationController?.navigationBar.backIndicatorImage = home_icon
-             self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = home_icon
-             self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+//        self.navigationController?.delegate = self
+//             let home_icon = UIImage(named: "home_icon")
+//             self.navigationController?.navigationBar.backIndicatorImage = home_icon
+//             self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = home_icon
+//             self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.view.backgroundColor = UIColor.white
         let maxFrameHeight = self.view.frame.height
 
@@ -81,6 +95,12 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
         let guideVC = GuideList()
         let guideView = UIHostingController(rootView: guideVC)
 //        navigationController?.pushViewController(guideView, animated: true)
-        self.present(guideView, animated: true, completion: nil)
+       present(guideView, animated: true, completion: nil)
+        
+    }
+    
+    @objc func dissmissView(sender: UIButton!) {
+        
+        self.dismiss(animated: false, completion: nil)
     }
 }

@@ -81,7 +81,7 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
     
     @objc func MobilityAction(sender: UIButton!){
         print("Mobility button tapped") // replace eventually to take to first test
-        let testVC = Mobility()
+        let testVC = MobilityTypingTest()
         navigationController?.pushViewController(testVC, animated: true)
         
     }

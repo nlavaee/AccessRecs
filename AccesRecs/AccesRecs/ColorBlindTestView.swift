@@ -19,6 +19,8 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
     var nextButton : UIButton = UIButton(frame: CGRect(x: 200 - (100), y: 575, width: 200, height: 50))
     var answerField : UITextField = UITextField(frame: CGRect(x: 0, y: 505, width: 150, height: 50))
     var score : Int = 0
+    var answers : [String] = []
+    var correctAnswers : [String] = []
 //    var scoreLabel = UILabel(frame: CGRect(x: 100, y: 600, width: 100, height: 100))
 //
 //    @IBOutlet var scrollView: UIScrollView!
@@ -121,25 +123,60 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
     @objc func CompleteTest(sender: UIButton!) {
         let resultView = ResultView()
         var result = ""
+        score = 0
+        var redGreenFilter = false
+        var blueYellowFilter = false
+        for i in 0...idx {
+            if(answers[i] == correctAnswers[i]) {
+                score += 1
+            }
+            else {
+                if (i % 3 != 2) {
+                    redGreenFilter = true
+                } else {
+                    blueYellowFilter = true
+                }
+            }
+        }
         if(score > 3) {
-            result = "You don't need to update any color settings on your phone"
+            result = "You don't need to update any color settings on your phone!"
         } else {
             result = "You might want to change the color filters on your phone"
             resultView.steps = Resultdata[0]
+            
+            if(redGreenFilter && blueYellowFilter) {
+                resultView.steps.append("Choose from one of the four preset filters, or customize your own")
+            }
+            else if (redGreenFilter) {
+                resultView.steps.append("Choose either 'Protanopia' or 'Deuteranopia' filter")
+            }
+            else if (blueYellowFilter) {
+                resultView.steps.append("Choose the 'Tritanopia' filter")
+            }
+            
         }
         resultView.result = result
         
 //        let resultCtrl = UIHostingController(rootView: resultView)
+        navigationController?.popViewController(animated: false)
         self.present(resultView, animated: true, completion: nil)
 //        navigationController?.pushViewController(resultView, animated: true)
     }
     
     @objc func NextQuestion(sender: UIButton!) {
         self.hideKeyboard()
-        nextButton.isEnabled = false
-        if(answerField.text == String(tests[idx].answer)) {
-            score = score + 1
+
+        if let userAnswer = answerField.text {
+            answers.append(userAnswer)
+        } else {
+            answers.append("")
         }
+        correctAnswers.append(String(tests[idx].answer))
+        
+        
+//        if(answerField.text == String(tests[idx].answer)) {
+//            score = score + 1
+//        }
         answerField.text = ""
         if(idx < (tests.count - 1)) {
             idx = idx + 1
@@ -149,7 +186,6 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
             nextButton.setTitle("Complete Test", for: .normal)
             nextButton.addTarget(self, action: #selector(CompleteTest), for: .touchUpInside)
         }
-        
     }
 }
 struct ColorBlindTestView: View {
