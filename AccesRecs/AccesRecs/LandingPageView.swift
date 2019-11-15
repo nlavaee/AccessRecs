@@ -4,15 +4,14 @@
 //
 //  Created by Norin Lavaee on 9/29/19.
 //  Copyright © 2019 Norin Lavaee. All rights reserved.
-//
+// login/apple sign in from https://www.youtube.com/watch?v=vuygdr0EcGM
 
 import Foundation
 import UIKit
 import SwiftUI
+import AuthenticationServices
 
-//struct LandingP: View {
-//
-//}
+
 class LandingPageView: UIViewController, UINavigationControllerDelegate{
 
     
@@ -26,9 +25,7 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
         self.navigationController?.navigationBar.backIndicatorImage = home_icon
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = home_icon
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        
-        
-        
+
         
         // Title of App
         let appName = UILabel(frame: CGRect(x:self.view.frame.width/2 - 100, y: self.view.frame.height/2 - 225, width: 200, height: 100))
@@ -40,8 +37,13 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
         appName.numberOfLines = 0
         appName.textAlignment = .center
         
+        // logo
+        let appLogo = UIImage(named: "appLogo.png")
+        let logoImageView = UIImageView(image: appLogo!)
+        logoImageView.frame = CGRect(x: self.view.frame.width/2 - 50, y: self.view.frame.height/2 - 75, width: 100, height: 100)
+        
         // First Button Option
-        let button1 = UIButton(frame: CGRect(x: self.view.frame.width/2 - 100, y: self.view.frame.height/2 + 75, width:200, height: 50))
+        let button1 = UIButton()
         button1.setTitle("Mobility", for: .normal)
         button1.titleLabel?.font = .boldSystemFont(ofSize: 22)
         button1.addTarget(self, action: #selector(MobilityAction), for: .touchUpInside)
@@ -52,33 +54,71 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
         
         // Second Button Option
 //        let button2 = UIButton(frame: CGRect(x: self.view.frame.width/2 - (100), y: self.view.frame.height - 190, width: 200, height: 50))
-        let button2 = UIButton(frame: CGRect(x: self.view.frame.width/2 - (100), y: button1.frame.maxY + 15, width: 200, height: 50))
+        let button2 = UIButton()
         button2.setTitle("Vision", for: .normal)
         button2.titleLabel?.font = .boldSystemFont(ofSize: 22)
         button2.addTarget(self, action: #selector(VisionAction), for: .touchUpInside)
         button2.backgroundColor = UIColor.blue
         button2.layer.cornerRadius = 20
         
-        let button3 = UIButton(frame: CGRect(x: self.view.frame.width/2 - (100), y: button2.frame.maxY + 15, width: 200, height: 50))
+        let button3 = UIButton()
         button3.setTitle("Guide", for: .normal)
         button3.titleLabel?.font = .boldSystemFont(ofSize: 22)
         button3.addTarget(self, action: #selector(GoToGuide), for: .touchUpInside)
         button3.backgroundColor = UIColor.brown
         button3.layer.cornerRadius = 20;
         
-        let appLogo = UIImage(named: "appLogo.png")
-        let logoImageView = UIImageView(image: appLogo!)
-        logoImageView.frame = CGRect(x: self.view.frame.width/2 - 50, y: self.view.frame.height/2 - 75, width: 100, height: 100)
+//      login button
+        let loginButton = ASAuthorizationAppleIDButton()
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        loginButton.addTarget(self, action: #selector(didTapAppleButton), for: .touchUpInside)
+//        loginButton.widthAnchor.constraint(equalToConstant: 200).isActive
+//        loginButton.heightAnchor.constraint(equalToConstant: 50).isActive
+          
+        loginButton.cornerRadius = 15;
+        
+        let stackView = UIStackView(arrangedSubviews: [button1, button2, button3, loginButton])
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.alignment = .fill
+        stackView.spacing = 15
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.widthAnchor.constraint(equalToConstant: 200).isActive = true
     
-
-//         add each of these views into the app
+//      add each of these views into the app
         self.view.addSubview(appName)
         self.view.addSubview(logoImageView)
-        self.view.addSubview(button1)
-        self.view.addSubview(button2)
-        self.view.addSubview(button3)
+        self.view.addSubview(stackView)
+//        self.view.addSubview(button1)
+//        self.view.addSubview(button2)
+//        self.view.addSubview(button3)
+//        self.view.addSubview(loginButton)
+        
+        NSLayoutConstraint.activate([
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 150),
+//
+//
+        ])
+
+        
     }
-    
+
+    @objc
+    func didTapAppleButton() {
+        let provider = ASAuthorizationAppleIDProvider()
+        let request = provider.createRequest()
+        request.requestedScopes = [.email, .fullName]
+        
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+        
+        controller.delegate = self
+        controller.presentationContextProvider = self
+        
+        controller.performRequests()
+    }
+
+        
     @objc func MobilityAction(sender: UIButton!){
         print("Mobility button tapped") // replace eventually to take to first test
         let testVC = MobilityTypingTest()
@@ -102,7 +142,31 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
         navigationController?.pushViewController(viewCtrl, animated: true)
         
     }
+    
+    
 }
 
+extension LandingPageView: ASAuthorizationControllerDelegate {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print("login error")
+        
+    }
 
-//}
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        
+        switch authorization.credential {
+        case let credentials as ASAuthorizationAppleIDCredential:
+            _ = User(credentials: credentials)
+            
+        default:
+            break
+        
+        }
+    }
+}
+
+extension LandingPageView: ASAuthorizationControllerPresentationContextProviding {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return view.window!
+    }
+}
