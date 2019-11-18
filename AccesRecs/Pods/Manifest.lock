@@ -1,0 +1,16 @@
+PODS:
+  - FuzzyMatchingSwift (0.7.0)
+
+DEPENDENCIES:
+  - FuzzyMatchingSwift
+
+SPEC REPOS:
+  trunk:
+    - FuzzyMatchingSwift
+
+SPEC CHECKSUMS:
+  FuzzyMatchingSwift: bcbeda92c3d16dc338b4bfa655d5848d66b884dd
+
+PODFILE CHECKSUM: f211d27652f0f28af13fc3adfa594942fe1e47cb
+
+COCOAPODS: 1.8.4
