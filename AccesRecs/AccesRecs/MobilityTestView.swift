@@ -24,7 +24,7 @@ var finish = DispatchTime.now()
 // If the text appears the same, but registers as incorrect, check if any escape characters were automatically added into one of the strings (' vs \')
 var id:Int = Int.random(in: 0 ..< testTextList.count)
 var testText: String = testTextList[id]
-
+var testTimer: Timer = Timer()
 class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     let scrollView = UIScrollView(frame: UIScreen.main.bounds)
         override func viewDidLoad() {
@@ -104,14 +104,15 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
         var result = ""
         
         let threshold = 0.05
+        // Compute time to take test in seconds
+        let totalTime = ((finish.uptimeNanoseconds - start.uptimeNanoseconds) / 1000000000)
         let score = computeScore()
         
         print(score)
-        if(score.isLess(than: threshold)) {
+        if(score.isLess(than: threshold) && totalTime < 15) {
             result = "Perfect!!"
                     } else {
             result = "We have recommendations for you:"
-            //result = "You spent \((finish.uptimeNanoseconds - start.uptimeNanoseconds) / //1000000000) seconds typing"
             resultView.steps = Resultdata[2]
         }
         
@@ -119,10 +120,10 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
         self.present(resultView, animated: true, completion: nil)
     }
     
-    
     @objc func textFieldDidChange(_ textField: UITextField) {
            if(answerField.text == "") {
                 start = DispatchTime.now()
+            testTimer = Timer.scheduledTimer(timeInterval: 90, target: self, selector: #selector(self.DoneTyping), userInfo: nil, repeats: false)
            }
        }
 
