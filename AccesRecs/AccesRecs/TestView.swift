@@ -10,8 +10,12 @@ import Foundation
 import UIKit
 import SwiftUI
 
+
+
 struct LargeTextTestView: View {
     @State private var textSize: Int = 6
+    
+    
     var body: some View {
         VStack(){
             Text("Can you easily read the text below?")
@@ -113,12 +117,34 @@ class LargeTextTestViewController : UIViewController {
         resultView.result = result
 //        let resultCtrl = UIHostingController(rootView: resultView)
 //        navigationController?.pushViewController(resultView, animated: true)
-        _ = navigationController?.popViewController(animated: false)
-        self.present(resultView, animated: true, completion: nil)
+//        _ = navigationController?.popViewController(animated: false)
+//        let navController = UINavigationController(rootViewController: resultView) // Creating a navigation controller with VC1 at the root of the navigation stack.
+//        let x_button = UIImage(named: "x_button")
+//
+//        navController.navigationBar.backIndicatorImage = x_button
+//        navController.navigationBar.backIndicatorTransitionMaskImage = x_button
+//        navController.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: #selector(dismissView))
+//        navController.isNavigationBarHidden = false
+//
+//
+//        self.present(navController, animated:true, completion: nil)
+        navigationController?.popViewController(animated: false)
+        navigationController?.pushViewController(resultView, animated: false)
+        self.show(resultView, sender: nil)
+//        self.present(resultView, animated: true, completion: nil)
+        
+
+//        resultView.navigationController?.isToolbarHidden = true
+        
     }
     
     @objc func cantRead(sender: UIButton!) {
         textSize += 2
+    }
+    
+    @objc func dismissView(sender: UIButton!) {
+        
+        self.dismiss(animated: false, completion: nil)
     }
 }
 

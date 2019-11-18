@@ -34,6 +34,9 @@
 		E2C43DB02350D6F400F61715 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C43DAF2350D6F400F61715 /* ResultView.swift */; };
 		E2D2A8FE234E439100E2404B /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2A8FD234E439100E2404B /* TestView.swift */; };
 		E2D2A900234E43DA00E2404B /* TestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2A8FF234E43DA00E2404B /* TestList.swift */; };
+		EF0CA163237BD5F000BF2D9E /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0CA162237BD5F000BF2D9E /* DropDown.swift */; };
+		EF0CA165237BDF6300BF2D9E /* down-chevron.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0CA164237BDF6300BF2D9E /* down-chevron.png */; };
+		EF0CA167237BE68E00BF2D9E /* up-chevron.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0CA166237BE68E00BF2D9E /* up-chevron.png */; };
 		EF10A083233E4F9D004407B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10A082233E4F9D004407B5 /* AppDelegate.swift */; };
 		EF10A085233E4F9D004407B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10A084233E4F9D004407B5 /* SceneDelegate.swift */; };
 		EF10A087233E4F9D004407B5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10A086233E4F9D004407B5 /* ContentView.swift */; };
@@ -52,6 +55,7 @@
 		EF5A8913234DCE32003DB430 /* TemplateGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8912234DCE32003DB430 /* TemplateGuideView.swift */; };
 		EF7253A323413CFC00FEBF0F /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7253A223413CFC00FEBF0F /* LandingPageView.swift */; };
 		EF8219B9236E7B000025E7DF /* x_button.png in Resources */ = {isa = PBXBuildFile; fileRef = EF8219B8236E7B000025E7DF /* x_button.png */; };
+		EF84A6AA2381D16C00FC6CA5 /* SettingsStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84A6A92381D16C00FC6CA5 /* SettingsStepsView.swift */; };
 		EFABA6152350D0EE00229064 /* BeforeReduceTransparencyDock.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA6142350D0EE00229064 /* BeforeReduceTransparencyDock.png */; };
 		EFABA61C2352620F00229064 /* MagnifierLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA6162352620E00229064 /* MagnifierLogo.png */; };
 		EFABA61D2352620F00229064 /* ButtonShapeLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA6172352620E00229064 /* ButtonShapeLogo.png */; };
@@ -108,6 +112,9 @@
 		E2D2A8FD234E439100E2404B /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		E2D2A8FF234E43DA00E2404B /* TestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestList.swift; sourceTree = "<group>"; };
 		E2D2A901234E492B00E2404B /* TestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TestData.json; sourceTree = "<group>"; };
+		EF0CA162237BD5F000BF2D9E /* DropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDown.swift; sourceTree = "<group>"; };
+		EF0CA164237BDF6300BF2D9E /* down-chevron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "down-chevron.png"; sourceTree = "<group>"; };
+		EF0CA166237BE68E00BF2D9E /* up-chevron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "up-chevron.png"; sourceTree = "<group>"; };
 		EF10A07F233E4F9D004407B5 /* AccesRecs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccesRecs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF10A082233E4F9D004407B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF10A084233E4F9D004407B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +139,7 @@
 		EF5A8912234DCE32003DB430 /* TemplateGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateGuideView.swift; sourceTree = "<group>"; };
 		EF7253A223413CFC00FEBF0F /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
 		EF8219B8236E7B000025E7DF /* x_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x_button.png; sourceTree = "<group>"; };
+		EF84A6A92381D16C00FC6CA5 /* SettingsStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStepsView.swift; sourceTree = "<group>"; };
 		EFABA6142350D0EE00229064 /* BeforeReduceTransparencyDock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeReduceTransparencyDock.png; sourceTree = "<group>"; };
 		EFABA6162352620E00229064 /* MagnifierLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MagnifierLogo.png; sourceTree = "<group>"; };
 		EFABA6172352620E00229064 /* ButtonShapeLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonShapeLogo.png; sourceTree = "<group>"; };
@@ -199,6 +207,8 @@
 		EF10A081233E4F9D004407B5 /* AccesRecs */ = {
 			isa = PBXGroup;
 			children = (
+				EF0CA166237BE68E00BF2D9E /* up-chevron.png */,
+				EF0CA164237BDF6300BF2D9E /* down-chevron.png */,
 				EF8219B8236E7B000025E7DF /* x_button.png */,
 				E2D2A8FF234E43DA00E2404B /* TestList.swift */,
 				81416710234E6E58008C74E0 /* TestRow.swift */,
@@ -239,6 +249,7 @@
 				8F8CC16D234FEA79009D629C /* SearchBar.swift */,
 				EF5A8902234DBBC9003DB430 /* GuideRow.swift */,
 				EF5A8912234DCE32003DB430 /* TemplateGuideView.swift */,
+				EF84A6A92381D16C00FC6CA5 /* SettingsStepsView.swift */,
 				EF416D51234BA67900DC30A9 /* GuideVC.swift */,
 				EF416D53234D3AC000DC30A9 /* GuideTableViewCell.swift */,
 				EF7253A223413CFC00FEBF0F /* LandingPageView.swift */,
@@ -250,6 +261,7 @@
 				E29BC920236F781E00803278 /* MobilityTestView.swift */,
 				E29BC91E235D397F00803278 /* Mobility.swift */,
 				E2C43DAF2350D6F400F61715 /* ResultView.swift */,
+				EF0CA162237BD5F000BF2D9E /* DropDown.swift */,
 				EF10A090233E4F9F004407B5 /* Info.plist */,
 				EF10A08A233E4F9F004407B5 /* Preview Content */,
 			);
@@ -405,6 +417,7 @@
 				EF10A089233E4F9F004407B5 /* Assets.xcassets in Resources */,
 				8165DA012357591D0063A747 /* ResultData.json in Resources */,
 				EFABA61E2352620F00229064 /* LargeTextLogo.png in Resources */,
+				EF0CA167237BE68E00BF2D9E /* up-chevron.png in Resources */,
 				8F2E71F92350DA2E00D89A71 /* BeforeMagnifier.png in Resources */,
 				8FEF7E352350231B0094A22A /* BeforeButtonShape.png in Resources */,
 				8F8CC179234FEE8B009D629C /* DarkMode.png in Resources */,
@@ -415,6 +428,7 @@
 				8F8CC177234FEE8B009D629C /* AfterReduceTransparencyDock.png in Resources */,
 				EFABA6152350D0EE00229064 /* BeforeReduceTransparencyDock.png in Resources */,
 				8F2E71EB2350286E00D89A71 /* AfterDarkMode.png in Resources */,
+				EF0CA165237BDF6300BF2D9E /* down-chevron.png in Resources */,
 				EFABA61C2352620F00229064 /* MagnifierLogo.png in Resources */,
 				EFABA6252352806200229064 /* AfterReduceTransparency.png in Resources */,
 			);
@@ -441,6 +455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF84A6AA2381D16C00FC6CA5 /* SettingsStepsView.swift in Sources */,
 				E2D2A8FE234E439100E2404B /* TestView.swift in Sources */,
 				EF416D52234BA67900DC30A9 /* GuideVC.swift in Sources */,
 				EF10A083233E4F9D004407B5 /* AppDelegate.swift in Sources */,
@@ -461,6 +476,7 @@
 				E2C43DB02350D6F400F61715 /* ResultView.swift in Sources */,
 				EF5A8913234DCE32003DB430 /* TemplateGuideView.swift in Sources */,
 				E2D2A900234E43DA00E2404B /* TestList.swift in Sources */,
+				EF0CA163237BD5F000BF2D9E /* DropDown.swift in Sources */,
 				EF10A087233E4F9D004407B5 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

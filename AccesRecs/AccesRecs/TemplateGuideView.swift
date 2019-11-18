@@ -2,17 +2,13 @@
 //  TemplateGuideView.swift
 //  AccesRecs
 //
-
 //  Created by Amaris Sim on 10/7/19.
 //  Copyright © 2019 Norin Lavaee. All rights reserved.
 //
 
 
-
 import Foundation
 import UIKit
-import SwiftUI
-
 import SwiftUI
 
 
@@ -26,10 +22,6 @@ struct TemplateGuideView: View {
         
         VStack{
             
-//            Text("hello world")
-//          line 23 - 36
-//          title, toggle button, description
-//          note: padding to apply goes to outside
             VStack{
                 HStack(){
                     Text(guide.name)
@@ -43,27 +35,28 @@ struct TemplateGuideView: View {
                     }
                 Text(guide.Description)
                     .font(.body)
+                    .minimumScaleFactor(0.01)
                     .lineLimit(nil)
             }
             .padding()
 //          line 43-52
 //          before text box and image
-            if !toggleTrue {
-            Text("Before")
-                .frame(alignment:.center)
-                .padding([.horizontal])
-                .overlay(
-                    RoundedRectangle(cornerRadius: 4)
-                        .stroke(Color.gray, lineWidth:2)
-                )
-                .lineLimit(1)
-            guide.imgBefore
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            if !toggleTrue{
+                Text("Before")
+                    .frame(alignment:.center)
+                    .padding([.horizontal])
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 4)
+                            .stroke(Color.gray, lineWidth:2)
+                    )
+                    .lineLimit(1)
+                guide.imgBefore
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+    //                .scaledToFit()
+                Spacer()
+                    .frame(height:10)
             }
-//                .scaledToFit()
-            Spacer()
-                .frame(height:10)
             
            if toggleTrue {
             Text("After")
@@ -99,9 +92,11 @@ struct TemplateGuideView: View {
 //}
 //#if DEBUG
 //struct TemplateGuideView_Preview: PreviewProvider {
-//    
+//
 //    static var previews: some View {
 //        TemplateGuideView(guide)
 //    }
 //}
 //#endif
+
+

@@ -6,7 +6,10 @@
         "imageName": "DarkMode",
         "imageBefore": "BeforeDarkMode",
         "imageAfter": "AfterDarkMode",
-        "Description": "Use light-colored text & icons on dark background"
+        "Description": "Use light-colored text & icons on dark background",
+        "Steps":  ["Navigate to the Settings app on your phone",
+        "Under the 'Vision' category, select 'Display Accommodations'",
+        "Select 'Color Filters' and toggle the setting on"]
     },
     {
         "name": "Gray Scale",
@@ -15,7 +18,10 @@
         "imageName": "GrayScale",
         "imageBefore": "BeforeGrayScale",
         "imageAfter": "AfterGrayScale",
-        "Description": "Display content in gray scale for color blind and users who have difficulty reading text on the display"
+        "Description": "Display content in gray scale for color blind and users who have difficulty reading text on the display",
+        "Steps":  ["Navigate to the Settings app on your phone",
+        "Under the 'Vision' category, select 'Display Accommodations'",
+        "Select 'Color Filters' and toggle the setting on"]
     },
     {
         "name": "Reduce Transparency",
@@ -24,7 +30,10 @@
         "imageName": "ReduceTransparencyLogo",
         "imageBefore": "BeforeReduceTransparency",
         "imageAfter": "AfterReduceTransparency",
-        "Description": "Improve contrast and blurs on backgrounds"
+        "Description": "Improve contrast and blurs on backgrounds",
+        "Steps":  ["Navigate to the Settings app on your phone",
+        "Under the 'Vision' category, select 'Display Accommodations'",
+        "Select 'Color Filters' and toggle the setting on"]
     },
     {
         "name": "Zoom",
@@ -33,7 +42,10 @@
         "imageName": "ZoomLogo",
         "imageBefore": "BeforeZoom",
         "imageAfter": "AfterZoom",
-        "Description": "Double tap three fingers to magnify entire screen"
+        "Description": "Double tap three fingers to magnify entire screen",
+        "Steps":  ["Navigate to the Settings app on your phone",
+        "Under the 'Vision' category, select 'Display Accommodations'",
+        "Select 'Color Filters' and toggle the setting on"]
     },
     {
         "name": "Magnifier",
@@ -42,7 +54,10 @@
         "imageName": "MagnifierLogo",
         "imageBefore": "BeforeMagnifier",
         "imageAfter": "AfterMagnifier",
-        "Description": "Use device camera to quickly magnify surroundings"
+        "Description": "Use device camera to quickly magnify surroundings",
+        "Steps":  ["Navigate to the Settings app on your phone",
+        "Under the 'Vision' category, select 'Display Accommodations'",
+        "Select 'Color Filters' and toggle the setting on"]
     },
     {
         "name": "Large Text",
@@ -51,7 +66,10 @@
         "imageName": "LargeTextLogo",
         "imageBefore": "BeforeLargerText",
         "imageAfter": "AfterLargerText",
-        "Description": "Increase text size on all screens"
+        "Description": "Increase text size on all screens",
+        "Steps":  ["Navigate to the Settings app on your phone",
+        "Under the 'Vision' category, select 'Display Accommodations'",
+        "Select 'Color Filters' and toggle the setting on"]
     },
     {
         "name": "Button Shape",
@@ -60,7 +78,10 @@
         "imageName": "ButtonShapeLogo",
         "imageBefore": "BeforeButtonShape",
         "imageAfter": "AfterButtonShape",
-        "Description": "Underline buttons to be able to identify easier on screen"
+        "Description": "Underline buttons to be able to identify easier on screen",
+        "Steps":  ["Navigate to the Settings app on your phone",
+        "Under the 'Vision' category, select 'Display Accommodations'",
+        "Select 'Color Filters' and toggle the setting on"]
       }
 ]
 

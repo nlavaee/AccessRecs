@@ -43,7 +43,8 @@ struct GuideList: View {
                     return false
                 }) { guide in
     
-                            NavigationLink(destination: TemplateGuideView(guide: guide)){
+//                            NavigationLink(destination: TemplateGuideView(guide: guide)){
+                    NavigationLink(destination: DropDown(guide: guide)) {
                                 GuideRow(guide: guide)
                                 Spacer()
                             

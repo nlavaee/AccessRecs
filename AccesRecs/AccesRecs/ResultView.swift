@@ -10,32 +10,29 @@ import Foundation
 import UIKit
 import SwiftUI
 
+struct DismissModal : View {
+    @Binding var showingModal:Bool
+
+    var body: some View {
+        Button(action: {
+            self.showingModal = false
+        }) {
+            Text("Dismiss").frame(height: 60)
+        }
+    }
+}
+
 class ResultView: UIViewController, UINavigationControllerDelegate {
     var result : String = ""
     var steps: [String] = []
+    var dismissModal: Bool = false
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        
-        self.navigationItem.hidesBackButton = false
-        let x_button = UIImage(named: "x_button")
-        
-        
-        self.navigationController?.navigationBar.backIndicatorImage = x_button
-        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = x_button
-        
-         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: #selector(dissmissView))
-//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: x_button, style: .done, target: self, action: #selector(dissmissView))
-  
-        
-//        let maxFrameHeight = self.view.frame.height
-//        self.navigationController?.delegate = self
-//             let home_icon = UIImage(named: "home_icon")
-//             self.navigationController?.navigationBar.backIndicatorImage = home_icon
-//             self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = home_icon
-//             self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        dismissModal = true
+
         self.view.backgroundColor = UIColor.white
         let maxFrameHeight = self.view.frame.height
 
@@ -85,22 +82,39 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
         guideButton.titleLabel?.numberOfLines = 0
         guideButton.titleLabel?.textAlignment = .center
         guideButton.center.x = self.view.center.x
-
-        guideButton.layer.cornerRadius = 30
         
+        guideButton.layer.cornerRadius = 30
+              
         self.view.addSubview(guideButton)
+        
+        let dismissButton = UIButton(frame: CGRect(x: 0, y: (Double(maxFrameHeight) + max) / 2 + 100, width: 250, height: 100))
+        dismissButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
+        dismissButton.setTitle("Dismiss", for: .normal)
+//        dismissButton.backgroundColor = UIColor.red
+        dismissButton.setTitleColor(.systemBlue, for: .normal)
+        dismissButton.titleLabel?.lineBreakMode = .byWordWrapping
+        dismissButton.titleLabel?.numberOfLines = 0
+        dismissButton.titleLabel?.textAlignment = .center
+        dismissButton.center.x = self.view.center.x
+        
+        dismissButton.layer.cornerRadius = 30
+        
+        self.view.addSubview(dismissButton)
+
     }
     
     @objc func bringToGuide(sender: UIButton!) {
         let guideVC = GuideList()
         let guideView = UIHostingController(rootView: guideVC)
 //        navigationController?.pushViewController(guideView, animated: true)
-       present(guideView, animated: true, completion: nil)
+        self.show(guideView, sender: nil)
+//       present(guideView, animated: true, completion: nil)
         
     }
     
-    @objc func dissmissView(sender: UIButton!) {
+    @objc func dismissView(sender: UIButton!) {
         
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true, completion: nil)
+        
     }
 }
