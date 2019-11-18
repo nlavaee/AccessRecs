@@ -19,6 +19,7 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
     override func viewDidLoad(){
         
         super.viewDidLoad()
+        performExistingAccountSetupFlows()
 //        navigationController?.setNavigationBarHidden(true, animated: true)
         self.navigationController?.delegate = self
         let home_icon = UIImage(named: "home_icon")
@@ -104,8 +105,7 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
         
     }
 
-    @objc
-    func didTapAppleButton() {
+    @objc func didTapAppleButton() {
         let provider = ASAuthorizationAppleIDProvider()
         let request = provider.createRequest()
         request.requestedScopes = [.email, .fullName]
@@ -116,6 +116,15 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
         controller.presentationContextProvider = self
         
         controller.performRequests()
+    }
+    
+    private func performExistingAccountSetupFlows(){
+        let requests = [ASAuthorizationAppleIDProvider().createRequest(), ASAuthorizationPasswordProvider().createRequest() ]
+        
+        let authorizationController = ASAuthorizationController(authorizationRequests: requests)
+        authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
+        authorizationController.performRequests()
     }
 
         
