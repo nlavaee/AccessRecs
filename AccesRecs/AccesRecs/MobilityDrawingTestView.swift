@@ -18,6 +18,7 @@ class MobilityDrawingTest : UIViewController {
     var swiped = false
     var mainImageView : UIImageView = UIImageView()
     var tempImageView : UIImageView = UIImageView()
+    //var shapeImage: UIImage = UIImage!
     var resetButton : UIButton = UIButton()
     override func viewDidLoad() {
         mainImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
@@ -31,6 +32,13 @@ class MobilityDrawingTest : UIViewController {
         resetButton.frame = CGRect(x: 200 - (100), y: self.view.frame.height - 100, width: 200, height:50)
         self.view.addSubview(resetButton)
         
+        let shapeImage = UIImage(named: "drawing_circle")
+        let testImageView = UIImageView(image: shapeImage)
+        testImageView.frame = CGRect(x: self.view.frame.width / 2 - 125, y: self.view.frame.height / 2 - 250, width: 250, height: 250)
+        //testImageView.toBack
+        self.view.addSubview(testImageView)
+        self.view.bringSubviewToFront(tempImageView)
+        self.view.bringSubviewToFront(mainImageView)
 
     }
     
