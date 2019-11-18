@@ -192,10 +192,10 @@ struct ColorBlindTestView: View {
     @State private var guess:String = ""
     @State private var idx: Int = 0
     @State private var score: Int = 0
-    @State private var image: String = Testdata[0].tests[0].imageName
-    @State private var name: String = Testdata[0].tests[0].name
-    @State private var correct: String = String(Testdata[0].tests[0].answer)
-    @State private var id: Int = Testdata[0].tests[0].id
+    @State private var image: String = VisionTestdata[0].tests[0].imageName
+    @State private var name: String = VisionTestdata[0].tests[0].name
+    @State private var correct: String = String(VisionTestdata[0].tests[0].answer)
+    @State private var id: Int = VisionTestdata[0].tests[0].id
     @State private var finished = false
 
     var body: some View {
@@ -249,13 +249,13 @@ struct ColorBlindTestView: View {
             score += 1
         }
 
-        if(idx == Testdata[0].tests.count) {
+        if(idx == VisionTestdata[0].tests.count) {
             finished = true
         } else {
-            name = Testdata[0].tests[idx].name
-            correct = String(Testdata[0].tests[idx].answer)
-            id = Testdata[0].tests[idx].id
-            image = Testdata[0].tests[idx].imageName
+            name = VisionTestdata[0].tests[idx].name
+            correct = String(VisionTestdata[0].tests[idx].answer)
+            id = VisionTestdata[0].tests[idx].id
+            image = VisionTestdata[0].tests[idx].imageName
             guess = ""
         }
     }

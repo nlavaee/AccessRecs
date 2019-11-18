@@ -108,7 +108,6 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
         let totalTime = ((finish.uptimeNanoseconds - start.uptimeNanoseconds) / 1000000000)
         let score = computeScore()
         
-        print(score)
         if(score.isLess(than: threshold) && totalTime < 15) {
             result = "Perfect!!"
                     } else {

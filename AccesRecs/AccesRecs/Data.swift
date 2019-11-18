@@ -10,7 +10,8 @@ import SwiftUI
 import CoreLocation
 
 let Guidedata: [Guide] = load("GuideData.json")
-let Testdata: [Test] = load("TestData.json")
+let VisionTestdata: [Test] = load("VisionTestData.json")
+let MobilityTestdata: [Test] = load("MobilityTestData.json")
 let Resultdata: [[String]] = load("ResultData.json")
 
 func load<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {

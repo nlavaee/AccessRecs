@@ -35,7 +35,7 @@ import SwiftUI
 
 class TestList: UITableViewController, UINavigationControllerDelegate {
     
-    var tests = Testdata
+    var tests : [Test] = []
     
     override func viewDidLoad(){
 
@@ -76,6 +76,12 @@ class TestList: UITableViewController, UINavigationControllerDelegate {
             let testVC = LargeTextTestViewController()
             navigationController?.pushViewController(testVC, animated: true)
 //            present(testVC, animated: true, completion: nil)
+        } else if(self.tests[indexPath.row].name == "Mobility Typing") {
+            let testVC = MobilityTypingTest()
+            navigationController?.pushViewController(testVC, animated: true)
+        } else if(self.tests[indexPath.row].name == "Mobility Drawing") {
+            let testVC = MobilityDrawingTest()
+            navigationController?.pushViewController(testVC, animated: true)
         }
         
     }
