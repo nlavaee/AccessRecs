@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 import SwiftUI
+import FuzzyMatchingSwift
+
+var testTextList = ["The quick brown fox jumped over the lazy dog.", "I love eating toasted cheese and tuna sandwiches.", "He didn’t want to go to the dentist, yet he went anyway.", "Last Friday I saw a spotted striped blue worm", "They got there early, and they got really good seats.", "I really want to go to work, but I am too sick to drive.", "We have a lot of rain in June.", "She was too short to see over the fence.", "I'd rather be a bird than a fish.", "It was getting dark, and we weren’t there yet.", "The book is in front of the table."]
 
 //Find out how to pass in name of image and correct answer, then use that and a
 // assets to load multiple tests in a row
@@ -19,10 +22,11 @@ var start = DispatchTime.now()
 var finish = DispatchTime.now()
 // In the future, we should randomly generate a list of phrases that the user can type in.
 // If the text appears the same, but registers as incorrect, check if any escape characters were automatically added into one of the strings (' vs \')
-var testText: String = "The quick brown fox jumped over the lazy dog. The slow, lazy dog sat under the jump of the quick brown fox."
+var id:Int = Int.random(in: 0 ..< testTextList.count)
+var testText: String = testTextList[id]
+
 class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     let scrollView = UIScrollView(frame: UIScreen.main.bounds)
-        
         override func viewDidLoad() {
             
             super.viewDidLoad()
@@ -35,6 +39,8 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             //start = DispatchTime.now()
             
             
+            id = Int.random(in: 0 ..< testTextList.count)
+            testText = testTextList[id]
             let prompt = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 100, y: 50, width: 200, height: 100))
             prompt.textColor = UIColor.black
             prompt.font = .preferredFont(forTextStyle: UIFont.TextStyle.title3)
@@ -60,6 +66,7 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             answerField.delegate = self
             answerField.borderStyle = UITextField.BorderStyle.line
             answerField.layer.borderColor = UIColor.gray.cgColor
+            answerField.autocorrectionType = .no
             answerField.textAlignment = .center
             answerField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.touchDown)
             
@@ -95,14 +102,19 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
         finish = DispatchTime.now()
         let resultView = ResultView()
         var result = ""
-        if(answerField.text == testText) {
+        
+        let threshold = 0.05
+        let score = computeScore()
+        
+        print(score)
+        if(score.isLess(than: threshold)) {
             result = "Perfect!!"
-        } else {
+                    } else {
             result = "We have recommendations for you:"
             //result = "You spent \((finish.uptimeNanoseconds - start.uptimeNanoseconds) / //1000000000) seconds typing"
             resultView.steps = Resultdata[2]
-            //resultView.steps = answerField.text
         }
+        
         resultView.result = result
         self.present(resultView, animated: true, completion: nil)
     }
@@ -113,6 +125,19 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
                 start = DispatchTime.now()
            }
        }
+
+    func computeScore() -> Double {
+        var score = 0.0
+        
+        // Checking user answer is within ~15% of the length of the real answer
+        if(abs(testText.count - answerField.text!.count) > (testText.count / 7)) {
+            score = 1.0
+        } else {
+            score = Double(testText.confidenceScore(answerField.text!)! ?? 1.0)
+        }
+        
+        return score
+    }
     
     func hideKeyboard() {
         answerField.resignFirstResponder()
