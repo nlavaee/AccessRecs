@@ -9,7 +9,7 @@
         "Description": "Use light-colored text & icons on dark background",
         "Steps":  ["Go to Settings > Display & Brightness",
             "Select Dark to turn on Dark Mode."],
-        "Usage": []
+        "Usage": ["Go to Settings > Accessibility > VoiceOver, then turn the setting on or off.", "Summon Siri and say “Turn on VoiceOver” or “Turn off VoiceOver.”", "Triple-click the side button (iPhone X and later).", "Triple-click the Home button (other models)."]
         
     },
     {
@@ -21,7 +21,7 @@
         "imageAfter": "AfterGrayScale",
         "Description": "Display content in gray scale for color blind and users who have difficulty reading text on the display",
         "Steps":  ["Go to Settings > Accessibility > Display & Text Size > Color Filters", "Switch Color Filters on and select Grayscale"],
-        "Usage": []
+        "Usage": ["Go to Settings > Accessibility > VoiceOver, then turn the setting on or off.", "Summon Siri and say “Turn on VoiceOver” or “Turn off VoiceOver.”", "Triple-click the side button (iPhone X and later).", "Triple-click the Home button (other models)."]
     },
     {
         "name": "Reduce Transparency",
@@ -32,7 +32,7 @@
         "imageAfter": "AfterReduceTransparency",
         "Description": "Improve contrast and blurs on backgrounds",
         "Steps":  ["Go to Settings > Accessibility > Display & Text Size > Reduce Transparency", "Switch Reduce Transparency on"],
-        "Usage": []
+        "Usage": ["Go to Settings > Accessibility > VoiceOver, then turn the setting on or off.", "Summon Siri and say “Turn on VoiceOver” or “Turn off VoiceOver.”", "Triple-click the side button (iPhone X and later).", "Triple-click the Home button (other models)."]
     },
     {
         "name": "Zoom",
@@ -43,7 +43,7 @@
         "imageAfter": "AfterZoom",
         "Description": "Double tap three fingers to magnify entire screen",
         "Steps":  ["Go to Settings  > Accessibility > Zoom, then turn on Zoom", "Follow Focus: Track your selections, the text insertion point, and your typing.", "Smart Typing: Switch to Window Zoom when a keyboard appears.", "Keyboard Shortcuts: Turn on keyboard shortcuts to control Zoom.", "Zoom Controller: Turn the controller on, set controller actions, and adjust the color and opacity.", "Zoom Region: Choose Full Screen Zoom or Window Zoom.", "Zoom Filter: Choose None, Inverted, Grayscale, Grayscale Inverted, or Low Light.", "Maximum Zoom Level: Drag the slider to adjust the level.", "To add Zoom to Accessibility Shortcut, go to Settings > Accessibility > Accessibility Shortcut, then tap Zoom."],
-         "Usage": []
+         "Usage": ["Go to Settings > Accessibility > VoiceOver, then turn the setting on or off.", "Summon Siri and say “Turn on VoiceOver” or “Turn off VoiceOver.”", "Triple-click the side button (iPhone X and later).", "Triple-click the Home button (other models)."]
     },
     {
         "name": "Magnifier",
@@ -54,7 +54,7 @@
         "imageAfter": "AfterMagnifier",
         "Description": "Use device camera to quickly magnify surroundings",
         "Steps":  ["Go to Settings  > Accessibility > Magnifier", "Turn on Magnifier. This adds Magnifier as an accessibility shortcut.", "To automatically adjust the brightness of Magnifier based on ambient light settings, turn on Auto-Adjust Exposure."],
-        "Usage": []
+        "Usage": ["Go to Settings > Accessibility > VoiceOver, then turn the setting on or off.", "Summon Siri and say “Turn on VoiceOver” or “Turn off VoiceOver.”", "Triple-click the side button (iPhone X and later).", "Triple-click the Home button (other models)."]
     },
     {
         "name": "Large Text",
@@ -65,7 +65,7 @@
         "imageAfter": "AfterLargerText",
         "Description": "Increase text size on all screens",
         "Steps":  ["Go to Settings > Accessibility > Display & Text Size.", "Turn on Larger Accessibility Sizes, then adjust the text size using the Font Size slider. This setting adjusts to your preferred text size in apps that support Dynamic Type, such as Settings, Calendar, Contacts, Mail, Messages, and Notes."],
-        "Usage": []
+        "Usage": ["Go to Settings > Accessibility > VoiceOver, then turn the setting on or off.", "Summon Siri and say “Turn on VoiceOver” or “Turn off VoiceOver.”", "Triple-click the side button (iPhone X and later).", "Triple-click the Home button (other models)."]
     },
     {
         "name": "Button Shape",
@@ -76,7 +76,7 @@
         "imageAfter": "AfterButtonShape",
         "Description": "Underline buttons to be able to identify easier on screen",
         "Steps":  ["Go to Settings > Accessibility > Display & Text Size.", "Switch Button Shape on"],
-        "Usage": []
+        "Usage": ["Go to Settings > Accessibility > VoiceOver, then turn the setting on or off.", "Summon Siri and say “Turn on VoiceOver” or “Turn off VoiceOver.”", "Triple-click the side button (iPhone X and later).", "Triple-click the Home button (other models)."]
     },
     {
        "name": "VoiceOver",
@@ -87,7 +87,7 @@
        "imageAfter": "AfterButtonShape",
        "Description": "A gesture-based screen reader",
        "Steps":  ["Go to Settings > Accessibility > VoiceOver", "Switch Button Shape on", "Summon Siri and say “Turn on VoiceOver” or “Turn off VoiceOver.", "Triple-click the side button (iPhone X and later).", "Triple-click the Home button (other models)."],
-       "Usage": []
+       "Usage": ["Go to Settings > Accessibility > VoiceOver, then turn the setting on or off.", "Summon Siri and say “Turn on VoiceOver” or “Turn off VoiceOver.”", "Triple-click the side button (iPhone X and later).", "Triple-click the Home button (other models)."]
     },
     {
       "name": "Motion",
@@ -98,7 +98,7 @@
       "imageAfter": "AfterButtonShape",
       "Description": "Stop or reduce the movement of some screen elements (i.e. screen transitions, typing autocompletion)",
       "Steps":  ["Go to Settings > Accessibility > Motion", "Switch Button Shape on", "Reduce Motion: This setting reduces the motion of the user interface, including the parallax effect of icons.", "Prefer Cross-Fade Transitions: This setting reduces the motion of user interface controls that slide in and out when appearing and disappearing.", "Auto-Play Message Effects: This setting allows the Messages app to automatically play full-screen effects.", "Auto-Play Video Previews: This setting allows apps such as the App Store to automatically play video previews."],
-      "Usage": []
+      "Usage": ["Go to Settings > Accessibility > VoiceOver, then turn the setting on or off.", "Summon Siri and say “Turn on VoiceOver” or “Turn off VoiceOver.”", "Triple-click the side button (iPhone X and later).", "Triple-click the Home button (other models)."]
     }
     
     

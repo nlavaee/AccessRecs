@@ -21,11 +21,21 @@ struct UsageGuideView: View {
             .lineLimit(nil)
             .padding()
             
+    
+            VStack(alignment: .leading) {
+                ForEach(guide.Usage, id: \.self) { line in
+                    
+                   Text("• " + line)
+                    .font(.body) //gotta fix this later
+//                    .minimumScaleFactor(0.1)
+                    .minimumScaleFactor(0.01)
+                    .lineLimit(nil)
+                    .multilineTextAlignment(.leading)
+                    
+                }
+                .padding()
+            }
         }
-        
-//        VStack(alignment: .leading) {
-//
-//        }
     }
     
 }
