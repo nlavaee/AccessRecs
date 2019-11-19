@@ -18,8 +18,11 @@ class MobilityDrawingTest : UIViewController {
     var swiped = false
     var mainImageView : UIImageView = UIImageView()
     var tempImageView : UIImageView = UIImageView()
-    //var shapeImage: UIImage = UIImage!
     var resetButton : UIButton = UIButton()
+    var totalDistance: Double = 0.0
+    //var currentPoint = CGPoint.zero
+
+//    var lastPoint:
     override func viewDidLoad() {
         mainImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         tempImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
@@ -30,8 +33,17 @@ class MobilityDrawingTest : UIViewController {
         resetButton.backgroundColor = UIColor.blue
         resetButton.layer.cornerRadius = 20
         resetButton.frame = CGRect(x: 200 - (100), y: self.view.frame.height - 100, width: 200, height:50)
-        self.view.addSubview(resetButton)
         
+        let prompt = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 100, y: 75, width: 200, height: 100))
+        prompt.textColor = UIColor.black
+        prompt.font = .preferredFont(forTextStyle: UIFont.TextStyle.title3)
+        prompt.text = "Please trace the shape below:"
+        prompt.lineBreakMode = .byWordWrapping
+        prompt.numberOfLines = 0
+        prompt.textAlignment = .center
+        prompt.adjustsFontSizeToFitWidth = true
+        
+        testTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.calcDistance), userInfo: nil, repeats: true)
         let shapeImage = UIImage(named: "drawing_circle")
         let testImageView = UIImageView(image: shapeImage)
         testImageView.frame = CGRect(x: self.view.frame.width / 2 - 125, y: self.view.frame.height / 2 - 250, width: 250, height: 250)
@@ -39,11 +51,19 @@ class MobilityDrawingTest : UIViewController {
         self.view.addSubview(testImageView)
         self.view.bringSubviewToFront(tempImageView)
         self.view.bringSubviewToFront(mainImageView)
+        self.view.addSubview(resetButton)
+        self.view.addSubview(prompt)
 
+    }
+    
+    @objc func calcDistance() -> Double {
+        //print("calculating distance")
+        return 0.0;
     }
     
     @objc func resetPressed(sender: UIButton!) {
       mainImageView.image = nil
+      totalDistance = 0.0
     }
     
     @IBAction func sharePressed(_ sender: Any) {
@@ -102,7 +122,13 @@ class MobilityDrawingTest : UIViewController {
       swiped = true
       let currentPoint = touch.location(in: view)
       drawLine(from: lastPoint, to: currentPoint)
-      
+        
+      let xDist = CGFloat(currentPoint.x - lastPoint.x)
+      let yDist = CGFloat(currentPoint.y - lastPoint.y)
+      let distance = sqrt(xDist * xDist + yDist * yDist)
+        
+      totalDistance = totalDistance + Double(distance)
+      print(totalDistance)
       lastPoint = currentPoint
     }
     

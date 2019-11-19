@@ -102,13 +102,13 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
         finish = DispatchTime.now()
         let resultView = ResultView()
         var result = ""
-        
+
         let threshold = 0.05
         // Compute time to take test in seconds
         let totalTime = ((finish.uptimeNanoseconds - start.uptimeNanoseconds) / 1000000000)
         let score = computeScore()
         
-        if(score.isLess(than: threshold) && totalTime < 15) {
+        if(score.isLess(than: threshold) && totalTime < 60) {
             result = "Perfect!!"
                     } else {
             result = "We have recommendations for you:"
@@ -133,7 +133,7 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
         if(abs(testText.count - answerField.text!.count) > (testText.count / 7)) {
             score = 1.0
         } else {
-            score = Double(testText.confidenceScore(answerField.text!)! ?? 1.0)
+            score = Double(testText.confidenceScore(answerField.text!)! )
         }
         
         return score
