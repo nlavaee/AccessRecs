@@ -17,6 +17,7 @@ struct Guide: Hashable, Codable, Identifiable {
     fileprivate var imageAfter: String
     var Description: String
     var Steps: Array<String>
+    var Usage: Array<String>
 
 //    func image(forSize size: Int) -> Image {
 //        ImageStore.shared.image(name: imageName)

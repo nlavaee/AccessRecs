@@ -34,6 +34,7 @@ struct DropDown : View {
     var guide: Guide
     @State var toggleTrue = false
     @State var showingDetail = false
+    @State var showingUsage = false
     
     var body : some View {
      
@@ -46,16 +47,16 @@ struct DropDown : View {
             
                VStack {
                 Text(guide.name).fontWeight(.heavy).foregroundColor(.green).font(.title)
-                    .minimumScaleFactor(0.01)
+//                    .minimumScaleFactor(0.01)
                     .lineLimit(nil)
-                    .padding()
                     
-                   // Image(systemName: expand ?  "up-chevron" : "down_chevron").resizable()//.frame(width: 100, height: 6)
-    //
-                //}//.onTapGesture {
-                    
-    //                self.expand.toggle()
-                }
+                }.padding()
+                VStack {
+                    Text(guide.Description).fontWeight(.regular).font(.subheadline).multilineTextAlignment(.center)
+                       .font(.body)
+                       .minimumScaleFactor(0.01)
+                       .lineLimit(nil)
+                }.padding()
            // if !expand {
                 
                 Button(action: {
@@ -72,8 +73,6 @@ struct DropDown : View {
                     ModalPopup(showingModal: self.$showingDetail)
                     })//.foregroundColor(.clear).background(guide.imgBefore)
                 
-                
-                
                 Button(action: {
                     
                     self.toggleTrue.toggle()
@@ -81,6 +80,7 @@ struct DropDown : View {
                 }) {
                     
                     Text("Enable Feature Steps").font(.headline)
+                    .minimumScaleFactor(0.01)
                     .lineLimit(nil)
                     .padding()
                 }.sheet(isPresented: $toggleTrue, content : {
@@ -88,9 +88,22 @@ struct DropDown : View {
                     ModalPopup(showingModal: self.$toggleTrue)
                     
                 })
-                    
                 
-            
+                Button(action: {
+                    
+                    self.showingUsage.toggle()
+                    
+                }) {
+                    
+                    Text("Show Usage Steps").font(.headline)
+                    .minimumScaleFactor(0.01)
+                    .lineLimit(nil)
+                    .padding()
+                }.sheet(isPresented: $showingUsage, content: {
+                    UsageGuideView(guide: self.guide)
+                    ModalPopup(showingModal: self.$showingUsage)
+                })
+                    
             }
             .padding()
            // .background(LinearGradient(gradient: .init(colors: [.white, .green]), startPoint: .top, endPoint: .bottom))

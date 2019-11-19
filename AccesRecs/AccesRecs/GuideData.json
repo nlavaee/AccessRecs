@@ -7,9 +7,10 @@
         "imageBefore": "BeforeDarkMode",
         "imageAfter": "AfterDarkMode",
         "Description": "Use light-colored text & icons on dark background",
-        "Steps":  ["Navigate to the Settings app on your phone",
-        "Under the 'Vision' category, select 'Display Accommodations'",
-        "Select 'Color Filters' and toggle the setting on"]
+        "Steps":  ["Go to Settings > Display & Brightness",
+            "Select Dark to turn on Dark Mode."],
+        "Usage": []
+        
     },
     {
         "name": "Gray Scale",
@@ -19,9 +20,8 @@
         "imageBefore": "BeforeGrayScale",
         "imageAfter": "AfterGrayScale",
         "Description": "Display content in gray scale for color blind and users who have difficulty reading text on the display",
-        "Steps":  ["Navigate to the Settings app on your phone",
-        "Under the 'Vision' category, select 'Display Accommodations'",
-        "Select 'Color Filters' and toggle the setting on"]
+        "Steps":  ["Go to Settings > Accessibility > Display & Text Size > Color Filters", "Switch Color Filters on and select Grayscale"],
+        "Usage": []
     },
     {
         "name": "Reduce Transparency",
@@ -31,9 +31,8 @@
         "imageBefore": "BeforeReduceTransparency",
         "imageAfter": "AfterReduceTransparency",
         "Description": "Improve contrast and blurs on backgrounds",
-        "Steps":  ["Navigate to the Settings app on your phone",
-        "Under the 'Vision' category, select 'Display Accommodations'",
-        "Select 'Color Filters' and toggle the setting on"]
+        "Steps":  ["Go to Settings > Accessibility > Display & Text Size > Reduce Transparency", "Switch Reduce Transparency on"],
+        "Usage": []
     },
     {
         "name": "Zoom",
@@ -43,9 +42,8 @@
         "imageBefore": "BeforeZoom",
         "imageAfter": "AfterZoom",
         "Description": "Double tap three fingers to magnify entire screen",
-        "Steps":  ["Navigate to the Settings app on your phone",
-        "Under the 'Vision' category, select 'Display Accommodations'",
-        "Select 'Color Filters' and toggle the setting on"]
+        "Steps":  ["Go to Settings  > Accessibility > Zoom, then turn on Zoom", "Follow Focus: Track your selections, the text insertion point, and your typing.", "Smart Typing: Switch to Window Zoom when a keyboard appears.", "Keyboard Shortcuts: Turn on keyboard shortcuts to control Zoom.", "Zoom Controller: Turn the controller on, set controller actions, and adjust the color and opacity.", "Zoom Region: Choose Full Screen Zoom or Window Zoom.", "Zoom Filter: Choose None, Inverted, Grayscale, Grayscale Inverted, or Low Light.", "Maximum Zoom Level: Drag the slider to adjust the level.", "To add Zoom to Accessibility Shortcut, go to Settings > Accessibility > Accessibility Shortcut, then tap Zoom."],
+         "Usage": []
     },
     {
         "name": "Magnifier",
@@ -55,9 +53,8 @@
         "imageBefore": "BeforeMagnifier",
         "imageAfter": "AfterMagnifier",
         "Description": "Use device camera to quickly magnify surroundings",
-        "Steps":  ["Navigate to the Settings app on your phone",
-        "Under the 'Vision' category, select 'Display Accommodations'",
-        "Select 'Color Filters' and toggle the setting on"]
+        "Steps":  ["Go to Settings  > Accessibility > Magnifier", "Turn on Magnifier. This adds Magnifier as an accessibility shortcut.", "To automatically adjust the brightness of Magnifier based on ambient light settings, turn on Auto-Adjust Exposure."],
+        "Usage": []
     },
     {
         "name": "Large Text",
@@ -67,21 +64,43 @@
         "imageBefore": "BeforeLargerText",
         "imageAfter": "AfterLargerText",
         "Description": "Increase text size on all screens",
-        "Steps":  ["Navigate to the Settings app on your phone",
-        "Under the 'Vision' category, select 'Display Accommodations'",
-        "Select 'Color Filters' and toggle the setting on"]
+        "Steps":  ["Go to Settings > Accessibility > Display & Text Size.", "Turn on Larger Accessibility Sizes, then adjust the text size using the Font Size slider. This setting adjusts to your preferred text size in apps that support Dynamic Type, such as Settings, Calendar, Contacts, Mail, Messages, and Notes."],
+        "Usage": []
     },
     {
         "name": "Button Shape",
         "category": "Vision",
-        "id": 7,
+        "id": 6,
         "imageName": "ButtonShapeLogo",
         "imageBefore": "BeforeButtonShape",
         "imageAfter": "AfterButtonShape",
         "Description": "Underline buttons to be able to identify easier on screen",
-        "Steps":  ["Navigate to the Settings app on your phone",
-        "Under the 'Vision' category, select 'Display Accommodations'",
-        "Select 'Color Filters' and toggle the setting on"]
-      }
+        "Steps":  ["Go to Settings > Accessibility > Display & Text Size.", "Switch Button Shape on"],
+        "Usage": []
+    },
+    {
+       "name": "VoiceOver",
+       "category": "Vision",
+       "id": 7,
+       "imageName": "ButtonShapeLogo",
+       "imageBefore": "BeforeButtonShape",
+       "imageAfter": "AfterButtonShape",
+       "Description": "A gesture-based screen reader",
+       "Steps":  ["Go to Settings > Accessibility > VoiceOver", "Switch Button Shape on", "Summon Siri and say “Turn on VoiceOver” or “Turn off VoiceOver.", "Triple-click the side button (iPhone X and later).", "Triple-click the Home button (other models)."],
+       "Usage": []
+    },
+    {
+      "name": "Motion",
+      "category": "Vision",
+      "id": 8,
+      "imageName": "ButtonShapeLogo",
+      "imageBefore": "BeforeButtonShape",
+      "imageAfter": "AfterButtonShape",
+      "Description": "Stop or reduce the movement of some screen elements (i.e. screen transitions, typing autocompletion)",
+      "Steps":  ["Go to Settings > Accessibility > Motion", "Switch Button Shape on", "Reduce Motion: This setting reduces the motion of the user interface, including the parallax effect of icons.", "Prefer Cross-Fade Transitions: This setting reduces the motion of user interface controls that slide in and out when appearing and disappearing.", "Auto-Play Message Effects: This setting allows the Messages app to automatically play full-screen effects.", "Auto-Play Video Previews: This setting allows apps such as the App Store to automatically play video previews."],
+      "Usage": []
+    }
+    
+    
 ]
 

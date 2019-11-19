@@ -33,10 +33,6 @@ struct TemplateGuideView: View {
                      }
                      .labelsHidden()
                     }
-                Text(guide.Description)
-                    .font(.body)
-                    .minimumScaleFactor(0.01)
-                    .lineLimit(nil)
             }
             .padding()
 //          line 43-52
@@ -77,26 +73,6 @@ struct TemplateGuideView: View {
 
 }
 
-//struct before_img_togg : View{
-//    var guide: Guide
-//
-//    var body : some View {
-//
-//        GeometryReader { geometry in
-//
-//            guide.imgBefore
-//            .frame(width: <#T##CGFloat?#>, height: <#T##CGFloat?#>, alignment: <#T##Alignment#>)
-//
-//        }
-//    }
-//}
-//#if DEBUG
-//struct TemplateGuideView_Preview: PreviewProvider {
-//
-//    static var previews: some View {
-//        TemplateGuideView(guide)
-//    }
-//}
-//#endif
+
 
 
