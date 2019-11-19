@@ -29,11 +29,9 @@ struct SettingsStepsView: View {
                     
                     Text("• " + line)
                     .font(.body) //gotta fix this later
-//                    .minimumScaleFactor(0.1)
                     .minimumScaleFactor(0.01)
                     .lineLimit(nil)
                     .multilineTextAlignment(.leading)
-    //                .lineLimit(nil)
                    
                     }
                  .padding()
