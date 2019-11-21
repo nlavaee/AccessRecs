@@ -94,8 +94,9 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
         navigationController?.pushViewController(testVC, animated: true)
     }
     
-    @objc func GoToGuide(sender: UIButton!){
-        let guideVC = GuideList()
+    @objc func GoToGuide(sender: AnyObject){
+        //let guideVC = GuideList()
+        let guideVC = ContentView()
         let viewCtrl = UIHostingController(rootView: guideVC)
         
         

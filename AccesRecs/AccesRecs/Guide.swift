@@ -11,7 +11,7 @@ import CoreLocation
 struct Guide: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
-    var category: Category
+    var category: String
     fileprivate var imageName: String
     fileprivate var imageBefore: String
     fileprivate var imageAfter: String
@@ -23,10 +23,10 @@ struct Guide: Hashable, Codable, Identifiable {
 //        ImageStore.shared.image(name: imageName)
 //    }
     
-    enum Category: String, CaseIterable, Codable, Hashable {
-        case vision = "Vision"
-        case mobility = "Mobility"
-    }
+//    enum Category: String, CaseIterable, Codable, Hashable {
+//        case vision = "Vision"
+//        case mobility = "Mobility"
+//    }
 }
 
 extension Guide {

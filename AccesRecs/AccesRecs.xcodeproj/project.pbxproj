@@ -53,6 +53,17 @@
 		EF5A890F234DBEAC003DB430 /* GuideData.json in Resources */ = {isa = PBXBuildFile; fileRef = EF5A890C234DBEAC003DB430 /* GuideData.json */; };
 		EF5A8911234DC3A6003DB430 /* GuideList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8910234DC3A6003DB430 /* GuideList.swift */; };
 		EF5A8913234DCE32003DB430 /* TemplateGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8912234DCE32003DB430 /* TemplateGuideView.swift */; };
+		EF5B5F05238642FD00BA2E2B /* GuideData2.json in Resources */ = {isa = PBXBuildFile; fileRef = EF5B5F04238642FC00BA2E2B /* GuideData2.json */; };
+		EF5B5F082386535600BA2E2B /* BeforeVoiceOver.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5B5F062386535500BA2E2B /* BeforeVoiceOver.png */; };
+		EF5B5F092386535600BA2E2B /* AfterVoiceOver.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5B5F072386535500BA2E2B /* AfterVoiceOver.png */; };
+		EF5B5F0C2386553400BA2E2B /* AfterBoldText.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5B5F0A2386553300BA2E2B /* AfterBoldText.png */; };
+		EF5B5F0D2386553400BA2E2B /* BeforeBoldText.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5B5F0B2386553400BA2E2B /* BeforeBoldText.png */; };
+		EF5B5F162386589F00BA2E2B /* AfterIncreaseContrast.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5B5F102386589D00BA2E2B /* AfterIncreaseContrast.png */; };
+		EF5B5F172386589F00BA2E2B /* AfterAssistiveTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5B5F112386589D00BA2E2B /* AfterAssistiveTouch.png */; };
+		EF5B5F182386589F00BA2E2B /* BeforeIncreaseContrast.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5B5F122386589E00BA2E2B /* BeforeIncreaseContrast.png */; };
+		EF5B5F192386589F00BA2E2B /* BeforeAssistiveTouch.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5B5F132386589E00BA2E2B /* BeforeAssistiveTouch.png */; };
+		EF5B5F1A2386589F00BA2E2B /* BeforeOnOff.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5B5F142386589E00BA2E2B /* BeforeOnOff.png */; };
+		EF5B5F1B2386589F00BA2E2B /* AfterOnOff.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5B5F152386589F00BA2E2B /* AfterOnOff.png */; };
 		EF7253A323413CFC00FEBF0F /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7253A223413CFC00FEBF0F /* LandingPageView.swift */; };
 		EF8219B9236E7B000025E7DF /* x_button.png in Resources */ = {isa = PBXBuildFile; fileRef = EF8219B8236E7B000025E7DF /* x_button.png */; };
 		EF84A6AA2381D16C00FC6CA5 /* SettingsStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF84A6A92381D16C00FC6CA5 /* SettingsStepsView.swift */; };
@@ -66,6 +77,9 @@
 		EFABA6232352804E00229064 /* BeforeReduceTransparency.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA6222352804D00229064 /* BeforeReduceTransparency.png */; };
 		EFABA6252352806200229064 /* AfterReduceTransparency.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA6242352806200229064 /* AfterReduceTransparency.png */; };
 		EFC504D7238451470073EC3D /* UsageGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC504D6238451470073EC3D /* UsageGuideView.swift */; };
+		EFD6B2B3238680BA003D91E3 /* eye.png in Resources */ = {isa = PBXBuildFile; fileRef = EFD6B2B2238680BA003D91E3 /* eye.png */; };
+		EFD6B2B723868543003D91E3 /* motion.png in Resources */ = {isa = PBXBuildFile; fileRef = EFD6B2B623868543003D91E3 /* motion.png */; };
+		EFFE016123868ABF00591E26 /* catscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = EFFE016023868ABF00591E26 /* catscreen.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +152,17 @@
 		EF5A890C234DBEAC003DB430 /* GuideData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GuideData.json; sourceTree = "<group>"; };
 		EF5A8910234DC3A6003DB430 /* GuideList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideList.swift; sourceTree = "<group>"; };
 		EF5A8912234DCE32003DB430 /* TemplateGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateGuideView.swift; sourceTree = "<group>"; };
+		EF5B5F04238642FC00BA2E2B /* GuideData2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GuideData2.json; sourceTree = "<group>"; };
+		EF5B5F062386535500BA2E2B /* BeforeVoiceOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeVoiceOver.png; sourceTree = "<group>"; };
+		EF5B5F072386535500BA2E2B /* AfterVoiceOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AfterVoiceOver.png; sourceTree = "<group>"; };
+		EF5B5F0A2386553300BA2E2B /* AfterBoldText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AfterBoldText.png; sourceTree = "<group>"; };
+		EF5B5F0B2386553400BA2E2B /* BeforeBoldText.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeBoldText.png; sourceTree = "<group>"; };
+		EF5B5F102386589D00BA2E2B /* AfterIncreaseContrast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AfterIncreaseContrast.png; sourceTree = "<group>"; };
+		EF5B5F112386589D00BA2E2B /* AfterAssistiveTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AfterAssistiveTouch.png; sourceTree = "<group>"; };
+		EF5B5F122386589E00BA2E2B /* BeforeIncreaseContrast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeIncreaseContrast.png; sourceTree = "<group>"; };
+		EF5B5F132386589E00BA2E2B /* BeforeAssistiveTouch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeAssistiveTouch.png; sourceTree = "<group>"; };
+		EF5B5F142386589E00BA2E2B /* BeforeOnOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeOnOff.png; sourceTree = "<group>"; };
+		EF5B5F152386589F00BA2E2B /* AfterOnOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AfterOnOff.png; sourceTree = "<group>"; };
 		EF7253A223413CFC00FEBF0F /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
 		EF8219B8236E7B000025E7DF /* x_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x_button.png; sourceTree = "<group>"; };
 		EF84A6A92381D16C00FC6CA5 /* SettingsStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStepsView.swift; sourceTree = "<group>"; };
@@ -151,6 +176,9 @@
 		EFABA6222352804D00229064 /* BeforeReduceTransparency.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeReduceTransparency.png; sourceTree = "<group>"; };
 		EFABA6242352806200229064 /* AfterReduceTransparency.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AfterReduceTransparency.png; sourceTree = "<group>"; };
 		EFC504D6238451470073EC3D /* UsageGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageGuideView.swift; sourceTree = "<group>"; };
+		EFD6B2B2238680BA003D91E3 /* eye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye.png; sourceTree = "<group>"; };
+		EFD6B2B623868543003D91E3 /* motion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = motion.png; sourceTree = "<group>"; };
+		EFFE016023868ABF00591E26 /* catscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = catscreen.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +237,20 @@
 		EF10A081233E4F9D004407B5 /* AccesRecs */ = {
 			isa = PBXGroup;
 			children = (
+				EFFE016023868ABF00591E26 /* catscreen.png */,
+				EFD6B2B623868543003D91E3 /* motion.png */,
+				EFD6B2B2238680BA003D91E3 /* eye.png */,
+				EF5B5F112386589D00BA2E2B /* AfterAssistiveTouch.png */,
+				EF5B5F102386589D00BA2E2B /* AfterIncreaseContrast.png */,
+				EF5B5F152386589F00BA2E2B /* AfterOnOff.png */,
+				EF5B5F132386589E00BA2E2B /* BeforeAssistiveTouch.png */,
+				EF5B5F122386589E00BA2E2B /* BeforeIncreaseContrast.png */,
+				EF5B5F142386589E00BA2E2B /* BeforeOnOff.png */,
+				EF5B5F0A2386553300BA2E2B /* AfterBoldText.png */,
+				EF5B5F0B2386553400BA2E2B /* BeforeBoldText.png */,
+				EF5B5F072386535500BA2E2B /* AfterVoiceOver.png */,
+				EF5B5F062386535500BA2E2B /* BeforeVoiceOver.png */,
+				EF5B5F04238642FC00BA2E2B /* GuideData2.json */,
 				EF0CA166237BE68E00BF2D9E /* up-chevron.png */,
 				EF0CA164237BDF6300BF2D9E /* down-chevron.png */,
 				EF8219B8236E7B000025E7DF /* x_button.png */,
@@ -406,10 +448,16 @@
 				EF2D7DCF2357F920008468CD /* home_icon.png in Resources */,
 				EF10A08C233E4F9F004407B5 /* Preview Assets.xcassets in Resources */,
 				81416712234E709D008C74E0 /* TestData.json in Resources */,
+				EF5B5F082386535600BA2E2B /* BeforeVoiceOver.png in Resources */,
 				EF5A890F234DBEAC003DB430 /* GuideData.json in Resources */,
+				EF5B5F1B2386589F00BA2E2B /* AfterOnOff.png in Resources */,
 				EFABA6212352620F00229064 /* MotionLogo.png in Resources */,
+				EF5B5F0D2386553400BA2E2B /* BeforeBoldText.png in Resources */,
 				8F2E71EA2350286E00D89A71 /* AfterLargerText.png in Resources */,
 				8F2E71ED2350286E00D89A71 /* BeforeLargerText.png in Resources */,
+				EF5B5F05238642FD00BA2E2B /* GuideData2.json in Resources */,
+				EF5B5F162386589F00BA2E2B /* AfterIncreaseContrast.png in Resources */,
+				EFFE016123868ABF00591E26 /* catscreen.png in Resources */,
 				EFABA6202352620F00229064 /* ZoomLogo.png in Resources */,
 				8F2E71FF2350DAEE00D89A71 /* BeforeZoom.png in Resources */,
 				EFABA61F2352620F00229064 /* ReduceTransparencyLogo.png in Resources */,
@@ -417,20 +465,28 @@
 				EFABA61D2352620F00229064 /* ButtonShapeLogo.png in Resources */,
 				8F2E71EC2350286E00D89A71 /* BeforeGrayScale.png in Resources */,
 				8F2E71FB2350DA2E00D89A71 /* AfterMagnifier.png in Resources */,
+				EFD6B2B723868543003D91E3 /* motion.png in Resources */,
 				EF10A089233E4F9F004407B5 /* Assets.xcassets in Resources */,
 				8165DA012357591D0063A747 /* ResultData.json in Resources */,
 				EFABA61E2352620F00229064 /* LargeTextLogo.png in Resources */,
+				EFD6B2B3238680BA003D91E3 /* eye.png in Resources */,
 				EF0CA167237BE68E00BF2D9E /* up-chevron.png in Resources */,
 				8F2E71F92350DA2E00D89A71 /* BeforeMagnifier.png in Resources */,
 				8FEF7E352350231B0094A22A /* BeforeButtonShape.png in Resources */,
+				EF5B5F172386589F00BA2E2B /* AfterAssistiveTouch.png in Resources */,
+				EF5B5F0C2386553400BA2E2B /* AfterBoldText.png in Resources */,
 				8F8CC179234FEE8B009D629C /* DarkMode.png in Resources */,
 				8F2E71FE2350DAEE00D89A71 /* AfterZoom.png in Resources */,
+				EF5B5F182386589F00BA2E2B /* BeforeIncreaseContrast.png in Resources */,
 				8F2E71EF2350286E00D89A71 /* BeforeDarkMode.png in Resources */,
 				EFABA6232352804E00229064 /* BeforeReduceTransparency.png in Resources */,
 				8FEF7E342350231B0094A22A /* AfterButtonShape.png in Resources */,
+				EF5B5F092386535600BA2E2B /* AfterVoiceOver.png in Resources */,
 				8F8CC177234FEE8B009D629C /* AfterReduceTransparencyDock.png in Resources */,
+				EF5B5F1A2386589F00BA2E2B /* BeforeOnOff.png in Resources */,
 				EFABA6152350D0EE00229064 /* BeforeReduceTransparencyDock.png in Resources */,
 				8F2E71EB2350286E00D89A71 /* AfterDarkMode.png in Resources */,
+				EF5B5F192386589F00BA2E2B /* BeforeAssistiveTouch.png in Resources */,
 				EF0CA165237BDF6300BF2D9E /* down-chevron.png in Resources */,
 				EFABA61C2352620F00229064 /* MagnifierLogo.png in Resources */,
 				EFABA6252352806200229064 /* AfterReduceTransparency.png in Resources */,

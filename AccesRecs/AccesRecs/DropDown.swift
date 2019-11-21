@@ -58,7 +58,6 @@ struct DropDown : View {
                        .lineLimit(nil)
                 }.padding()
            // if !expand {
-                
                 Button(action: {
                     self.showingDetail.toggle()
                     

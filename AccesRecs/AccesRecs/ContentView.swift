@@ -16,21 +16,101 @@ struct Accessibility_Categories: Identifiable {
 }
 struct ContentView: View {
     
-    let categoryList = [
-        Accessibility_Categories(name: "Mobility"),
-        Accessibility_Categories(name: "Vision")
-    ]
+    @State var showingVision = false
+    @State var showingMotion = false
+    @State var categoryMotion:String = "Motion"
+    @State var categoryVision:String = "Vision"
+    
+    //var categoryType: String = "" // Motion = false, Vision = true
+//    let categoryList = [
+//        Accessibility_Categories(name: "Mobility"),
+//        Accessibility_Categories(name: "Vision")
+//    ]
     var body: some View {
-        List(categoryList) { cat in
-            Text(cat.name)
+        //GeometryReader { geometry in
+        VStack{
             
+            Text("Accessibility Categories").bold().foregroundColor(.green).font(.title).baselineOffset(90)
+                .padding(.horizontal, 20)
+                .fixedSize(horizontal: false, vertical: true)
+                .lineLimit(nil)
+                .padding(.vertical, 15)
+            
+            Image("catscreen")
+                .frame(width: 100, height: 100)
+                .aspectRatio(contentMode: .fit)
+           .padding()
+        
+           Text("Comprehensive list of Accessibility features for diversely-abled users")
+           .fixedSize(horizontal: false, vertical: true)
+           .padding(.vertical, 15)
+           .padding(.horizontal, 20)
+
+        
+           Button(action: {
+                    self.showingMotion.toggle()
+                    
+                }) {
+                 HStack {
+                    Image(systemName: "motion")
+                        .font(.title).foregroundColor(.white)
+                    Text("Motion")
+                        .fontWeight(.semibold).foregroundColor(.white)
+                           .font(.title)
+                   }
+            }.sheet(isPresented: $showingMotion, content:  {
+                GuideList(categoryType: self.categoryMotion)
+                //ModalPopup(showingModal: self.$showingMotion)
+            }).buttonStyle(PlainButtonStyle())
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .padding()
+            .background(LinearGradient(gradient: Gradient(colors: [Color(.white), Color(.systemGreen)]), startPoint: .leading, endPoint: .trailing))
+            .cornerRadius(40)
+            .padding(.horizontal, 20)
+            
+            
+//            .padding(.horizontal, 1)
+            
+            .padding(.vertical, 40)
+            Button(action: {
+                    self.showingVision.toggle()
+                    
+                }) {
+                     HStack {
+                           Image(systemName: "eye")
+                            .font(.title).foregroundColor(.white)
+                        Text("Vision")
+                            .fontWeight(.semibold).foregroundColor(.white)
+                               .font(.title)
+                       }
+            }.sheet(isPresented: $showingVision, content:  {
+                GuideList(categoryType: self.categoryVision)
+                //ModalPopup(showingModal: self.$showingVision)
+                })//.buttonStyle(RoundedButton())//.foregroundColor(.clear).background(guide.imgBefore)
+//                .mask(Circle()).accentColor(.white).fixedSize()
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .padding()
+                .background(LinearGradient(gradient: Gradient(colors: [Color(.white), Color(.systemGreen)]), startPoint: .leading, endPoint: .trailing))
+                .cornerRadius(40)
+                .padding(.horizontal, 20)
+
+//                .padding(.horizontal, 1)
+        //}
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+
+//public struct RoundedButton: ButtonStyle {
+//
+//    public func makeBody(configuration: Self.Configuration) -> some View {
+//        configuration.label
+////            .foregroundColor(configuration.isPressed ? .red : .blue)
+//            .accentColor(.white)
+//            .padding()
+//            .background(Color.green)
+//            .cornerRadius(10)
+//    }
+//}
+
 

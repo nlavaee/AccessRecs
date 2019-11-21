@@ -25,13 +25,14 @@ struct DismissModal : View {
 class ResultView: UIViewController, UINavigationControllerDelegate {
     var result : String = ""
     var steps: [String] = []
-    var dismissModal: Bool = false
+//    var dismissModal: Bool = false
+    @State var modalGone = false
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        dismissModal = true
+//        dismissModal = true
 
         self.view.backgroundColor = UIColor.white
         let maxFrameHeight = self.view.frame.height
@@ -74,8 +75,10 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
             self.view.addSubview(stepsLabel)
         }
         
+        
+        // vision guide button
         let guideButton = UIButton(frame: CGRect(x: 0, y: (Double(maxFrameHeight) + max) / 2 - 50, width: 250, height: 100))
-        guideButton.setTitle("Check out the guide for more accessibility settings", for: .normal)
+        guideButton.setTitle("Check out the Vision guide for more accessibility settings", for: .normal)
         guideButton.addTarget(self, action: #selector(bringToGuide), for: .touchUpInside)
         guideButton.backgroundColor = UIColor.red
         guideButton.titleLabel?.lineBreakMode = .byWordWrapping
@@ -87,7 +90,22 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
               
         self.view.addSubview(guideButton)
         
-        let dismissButton = UIButton(frame: CGRect(x: 0, y: (Double(maxFrameHeight) + max) / 2 + 100, width: 250, height: 100))
+        // mobility guide button
+    
+        let guideButtonMotion = UIButton(frame: CGRect(x: 0, y: (Double(maxFrameHeight) + max) / 2 + 75, width: 250, height: 100))
+        guideButtonMotion.setTitle("Check out the Motion guide for more accessibility settings", for: .normal)
+        guideButtonMotion.addTarget(self, action: #selector(bringToMotionGuide(sender:)), for: .touchUpInside)
+        guideButtonMotion.backgroundColor = UIColor.red
+        guideButtonMotion.titleLabel?.lineBreakMode = .byWordWrapping
+        guideButtonMotion.titleLabel?.numberOfLines = 0
+        guideButtonMotion.titleLabel?.textAlignment = .center
+        guideButtonMotion.center.x = self.view.center.x
+        
+        guideButtonMotion.layer.cornerRadius = 30
+              
+        self.view.addSubview(guideButtonMotion)
+        
+        let dismissButton = UIButton(frame: CGRect(x: 0, y: (Double(maxFrameHeight) + max) / 2 + 150, width: 250, height: 100))
         dismissButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         dismissButton.setTitle("Dismiss", for: .normal)
 //        dismissButton.backgroundColor = UIColor.red
@@ -104,13 +122,41 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
     }
     
     @objc func bringToGuide(sender: UIButton!) {
-        let guideVC = GuideList()
+//        let guideVC = GuideList()
+        let guideVC = GuideList(categoryType: String("Vision"))
+        
         let guideView = UIHostingController(rootView: guideVC)
+        self.present(guideView, animated: false)
 //        navigationController?.pushViewController(guideView, animated: true)
-        self.show(guideView, sender: nil)
-//       present(guideView, animated: true, completion: nil)
+//        navigationController?.pushViewController(nextView, animated: true)
+
+//        let guideView = UIHostingController(rootView: guideVC)
+        
+//        self.dismiss(animated: true, completion: nil)
+
+//        navigationController?.pushViewController(nextView, animated: true)
+        
+//        nextView.GoToGuide(sender: sender)
+//
+        
+//        self.present(, animated: false)
+        
+       
         
     }
+    
+    @objc func bringToMotionGuide(sender: UIButton!) {
+        
+        
+        let guideVC = GuideList(categoryType: String("Motion"))
+
+        let guideView = UIHostingController(rootView: guideVC)
+        
+//        navigationController?.pushViewController(guideView, animated: false)
+//        self.presentingViewController?.present(guideView, animated: false, completion: nil)
+        self.present(guideView, animated: false)
+    }
+    
     
     @objc func dismissView(sender: UIButton!) {
         

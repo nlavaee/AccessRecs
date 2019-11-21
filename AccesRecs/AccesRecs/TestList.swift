@@ -42,10 +42,10 @@ class TestList: UITableViewController, UINavigationControllerDelegate {
         super.viewDidLoad()
         
         self.navigationController?.delegate = self
-       let home_icon = UIImage(named: "home_icon")
-       self.navigationController?.navigationBar.backIndicatorImage = home_icon
-       self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = home_icon
-       self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        let home_icon = UIImage(named: "home_icon")
+        self.navigationController?.navigationBar.backIndicatorImage = home_icon
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = home_icon
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         self.tableView.register(TestRow.self, forCellReuseIdentifier: "TestRow")
         self.tableView.delegate = self
         self.tableView.dataSource = self

@@ -9,7 +9,7 @@ import UIKit
 import SwiftUI
 import CoreLocation
 
-let Guidedata: [Guide] = load("GuideData.json")
+let Guidedata: [Guide] = load("GuideData2.json")
 let Testdata: [Test] = load("TestData.json")
 let Resultdata: [[String]] = load("ResultData.json")
 
@@ -28,8 +28,13 @@ func load<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
     }
     
     do {
+//        let encoder = JSONEncoder()
         let decoder = JSONDecoder()
+//        let encoded_data = try encoder.encode(data)
+    
+//        return String(data: encoded_data, encoding: .utf8)! as! T
         return try decoder.decode(T.self, from: data)
+//        return String(data: data, encoding: .utf8)
     } catch {
         fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
     }

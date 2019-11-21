@@ -23,19 +23,26 @@ struct SettingsStepsView: View {
             .lineLimit(nil)
             .padding()
             
+            ScrollView(.vertical, showsIndicators: true){
             VStack(alignment: .leading){
                 
                 ForEach(guide.Steps, id: \.self) { line in
                     
                     Text("• " + line)
-                    .font(.body) //gotta fix this later
-                    .minimumScaleFactor(0.01)
+//                    .font(.body)
+                    .font(.body).fixedSize(horizontal: false, vertical: true)
                     .lineLimit(nil)
+//                    .minimumScaleFactor(0.01)
                     .multilineTextAlignment(.leading)
                    
                     }
-                 .padding()
+                    .padding()
+//                .padding(.bottom, 20)
+//                .padding(.vertical, 40)
+//                .padding(.horizontal, 20)
+//                .minimumScaleFactor(0.01)
             }
+        }
             
         }
     

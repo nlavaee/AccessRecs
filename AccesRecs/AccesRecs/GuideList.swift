@@ -15,21 +15,40 @@ import UIKit
 import Foundation
 
 
+struct ModalDismiss : View {
+    @Binding var showingModal:Bool
+
+    var body: some View {
+        Button(action: {
+            self.showingModal = false
+        }) {
+            Text("Dismiss").frame(height: 60)
+        }
+    }
+}
+
 
 struct GuideList: View {
     
     
     @State private var searchTerm: String = ""
+    @State var showingModal = false
+    var categoryType: String // default Motion = false, Vision = true
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     var body: some View {
         
-    
+        
         
         VStack(){
-            
+        
         NavigationView {
             Group{
                 Text("")
                 .font(.title)
+        
+//                ModalDismiss(showingModal: self.$showingModal)
+//                self.category = self.categoryType ? "Vision" : "Motion"
                 SearchBar(text: $searchTerm)
                 List(Guidedata.filter { i in
                     if(!self.searchTerm.isEmpty){
@@ -42,15 +61,19 @@ struct GuideList: View {
                     }
                     return false
                 }) { guide in
-    
-//                            NavigationLink(destination: TemplateGuideView(guide: guide)){
-                    NavigationLink(destination: DropDown(guide: guide)) {
-                                GuideRow(guide: guide)
-                                Spacer()
+                    
+                    if(guide.category == self.categoryType){
+                        
+                        NavigationLink(destination: DropDown(guide: guide)) {
                             
+                                GuideRow(guide: guide)
+                            
+                                Spacer()
+                                    
                         }
-                       
                     }
+                    
+                  }
                 
                 }
                 .navigationBarTitle(Text("Guide"), displayMode: .inline)
@@ -59,6 +82,15 @@ struct GuideList: View {
                     print("tapped")
                 })
 
+            }
+            Button(action: {
+                self.presentationMode.wrappedValue.dismiss()
+                    
+                }) {
+                Text(String("Dismiss")).font(.headline)
+                .minimumScaleFactor(0.01)
+                .lineLimit(nil)
+                .padding()
             }
         }
 

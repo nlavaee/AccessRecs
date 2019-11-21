@@ -129,9 +129,9 @@ class LargeTextTestViewController : UIViewController {
 //
 //        self.present(navController, animated:true, completion: nil)
         navigationController?.popViewController(animated: false)
-        navigationController?.pushViewController(resultView, animated: false)
-        self.show(resultView, sender: nil)
-//        self.present(resultView, animated: true, completion: nil)
+//        navigationController?.pushViewController(resultView, animated: false)
+//        self.show(resultView, sender: nil)
+        self.present(resultView, animated: true, completion: nil)
         
 
 //        resultView.navigationController?.isToolbarHidden = true
