@@ -82,10 +82,13 @@ class TestList: UITableViewController, UINavigationControllerDelegate {
         } else if(self.tests[indexPath.row].name == "Astigmatism"){
             let testVC = AstigmatismViewController()
             navigationController?.pushViewController(testVC, animated: true)
-        } else if(self.tests[indexPath.row].name == "Mobility Typing") {
+        } else if(self.tests[indexPath.row].name == "Maze"){
+            let testVC = MobilityMazeTest()
+            navigationController?.pushViewController(testVC, animated: true)
+        } else if(self.tests[indexPath.row].name == "Typing") {
             let testVC = MobilityTypingTest()
             navigationController?.pushViewController(testVC, animated: true)
-        } else if(self.tests[indexPath.row].name == "Mobility Drawing") {
+        } else if(self.tests[indexPath.row].name == "Drawing") {
             let testVC = MobilityDrawingTest()
             navigationController?.pushViewController(testVC, animated: true)
         }

@@ -210,8 +210,6 @@ class MobilityDrawingTest : UIViewController {
 
     // Approximates the circumference of an ellipse
     func calcEllipsePerimeter(height: Int, length: Int) -> Double {
-        print(height)
-        print(length)
         let temp = Double(Double(height * height) / 4.0 + Double(length * length) / 4.0)
         return 2 * Double.pi * Double(sqrt(temp/2.0))
     }
@@ -232,7 +230,7 @@ class MobilityDrawingTest : UIViewController {
       context.setStrokeColor(color.cgColor)
 
       //context.setLineWidth(4)
-      context.setStrokeColor(UIColor.red.cgColor)
+      context.setStrokeColor(UIColor.cyan.cgColor)
       context.strokePath()
       
       tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
@@ -280,5 +278,4 @@ class MobilityDrawingTest : UIViewController {
       
       tempImageView.image = nil
     }
-
 }
