@@ -35,5 +35,17 @@
         "id": 2,
         "tests": [
         ],
-    }
+    },
+    {
+        "name": "Grid",
+        "id": 3,
+        "tests": [
+        ],
+    },
+    {
+        "name": "Astigmatism",
+        "id": 3,
+        "tests": [
+        ],
+    },
 ]

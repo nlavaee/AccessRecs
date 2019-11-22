@@ -56,7 +56,7 @@ class TestList: UITableViewController, UINavigationControllerDelegate {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return tests.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -76,6 +76,12 @@ class TestList: UITableViewController, UINavigationControllerDelegate {
             let testVC = LargeTextTestViewController()
             navigationController?.pushViewController(testVC, animated: true)
 //            present(testVC, animated: true, completion: nil)
+        } else if(self.tests[indexPath.row].name == "Grid"){
+            let testVC = GridViewController()
+            navigationController?.pushViewController(testVC, animated: true)
+        } else if(self.tests[indexPath.row].name == "Astigmatism"){
+            let testVC = AstigmatismViewController()
+            navigationController?.pushViewController(testVC, animated: true)
         } else if(self.tests[indexPath.row].name == "Mobility Typing") {
             let testVC = MobilityTypingTest()
             navigationController?.pushViewController(testVC, animated: true)

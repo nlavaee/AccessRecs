@@ -10,42 +10,6 @@ import Foundation
 import UIKit
 import SwiftUI
 
-struct LargeTextTestView: View {
-    @State private var textSize: Int = 6
-    var body: some View {
-        VStack(){
-            Text("Can you easily read the text below?")
-            Spacer()
-            Text("This is a sentence")
-                .font(Font.system(size: CGFloat(textSize)))
-                .multilineTextAlignment(.center)
-            
-                HStack() {
-                    Button(action:{self.canRead(flag: true)}) {
-                        Text("Yes")
-                    }
-                    
-                    Spacer()
-                    Button(action:{self.canRead(flag: false)})
-                    {
-                        Text("No")
-                    }
-                    
-                    
-                }
-                } .padding()
-        }
-    
-    func canRead(flag: Bool) {
-        if flag {
-            
-        } else {
-            textSize += 2
-        }
-    }
-
-}
-
 class LargeTextTestViewController : UIViewController {
     var sentenceLabel : UILabel = UILabel()
     var textSize : Int = 4 {
@@ -55,8 +19,6 @@ class LargeTextTestViewController : UIViewController {
     }
     
     override func viewDidLoad() {
-        
-        
         
         self.view.backgroundColor = UIColor.white
         sentenceLabel.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 200)
@@ -122,28 +84,114 @@ class LargeTextTestViewController : UIViewController {
     }
 }
 
+class GridViewController : UIViewController {
+    override func viewDidLoad() {
+        let sentenceLabel : UILabel = UILabel()
+        let testImage = UIImage(named: "amslerGrid")
+        let testImageView = UIImageView(image: testImage!)
+        testImageView.frame = CGRect(x: 0, y: self.view.frame.height / 4, width: self.view.frame.width, height: self.view.frame.height / 2)
 
-//Find out how to pass in name of image and correct answer, then use that and a
-// assets to load multiple tests in a row
-
-
-
-//
-//
-//#if DEBUG
-//struct ColorBlindTestView_Preview: PreviewProvider {
-//    static var previews: some View {
-//        ColorBlindTestView() // Add something here??
-//    }
-//}
-//#endif
-
-#if DEBUG
-struct LargeTextTestView_Preview: PreviewProvider {
-    static var previews: some View {
-        LargeTextTestView() // Add something here??
+            self.view.backgroundColor = UIColor.white
+            sentenceLabel.frame = CGRect(x: 0, y: 100, width: view.frame.size.width, height: 50)
+            sentenceLabel.center = self.view.center
+            sentenceLabel.center.x = self.view.center.x
+            sentenceLabel.center.y = 130
+            sentenceLabel.textAlignment = .center
+            sentenceLabel.lineBreakMode = .byWordWrapping
+            sentenceLabel.numberOfLines = 0
+    //        sentenceLabel.sizeToFit()
+            sentenceLabel.text = "Stare at the dot for 30 seconds...\n Did you see any curved or blurry lines?"
+            sentenceLabel.textColor = UIColor.black
+            //sentenceLabel.font = .systemFont(ofSize: CGFloat(textSize))
+        
+        
+        let yesButton = UIButton(frame: CGRect(x: self.view.frame.width - 325, y: self.view.frame.height - 125, width: 100, height: 100))
+        let noButton = UIButton(frame: CGRect(x: self.view.frame.width - 150, y: self.view.frame.height - 125, width: 100, height: 100))
+        yesButton.setTitle("Yes", for: .normal)
+        noButton.setTitle("No", for: .normal)
+        noButton.addTarget(self, action: #selector(noBlurs), for: .touchUpInside)
+        yesButton.addTarget(self, action: #selector(sawBlurs), for: .touchUpInside)
+        noButton.backgroundColor = UIColor.red
+        yesButton.backgroundColor = UIColor.blue
+        noButton.layer.cornerRadius = 20
+        yesButton.layer.cornerRadius = 20
+        
+        self.view.addSubview(sentenceLabel)
+        self.view.addSubview(testImageView)
+        self.view.addSubview(yesButton)
+        self.view.addSubview(noButton)
+    }
+    
+    @objc func noBlurs(sender: UIButton!) {
+        let resultView = ResultView()
+        let result = "We have no recommendations for you!"
+        resultView.result = result
+        self.present(resultView, animated: true, completion: nil)
+    }
+    
+    @objc func sawBlurs(sender: UIButton!) {
+        let resultView = ResultView()
+               var result = ""
+              result = "We have recommendations for you:"
+              resultView.steps = Resultdata[4]
+              resultView.result = result
+              self.present(resultView, animated: true, completion: nil)
     }
 }
-#endif
 
+class AstigmatismViewController : UIViewController {
+    override func viewDidLoad() {
+        let sentenceLabel : UILabel = UILabel()
+        let testImage = UIImage(named: "stigma")
+        let testImageView = UIImageView(image: testImage!)
+        testImageView.frame = CGRect(x: 0, y: self.view.frame.height / 4 + 20, width: self.view.frame.width, height: self.view.frame.height / 2)
+
+            self.view.backgroundColor = UIColor.white
+            sentenceLabel.frame = CGRect(x: 0, y: 100, width: view.frame.size.width, height: 100)
+            sentenceLabel.center = self.view.center
+            sentenceLabel.center.x = self.view.center.x
+            sentenceLabel.center.y = 130
+            sentenceLabel.textAlignment = .center
+            sentenceLabel.lineBreakMode = .byWordWrapping
+            sentenceLabel.numberOfLines = 0
+    //        sentenceLabel.sizeToFit()
+            sentenceLabel.text = "Cover your left eye and look at the image\nNext, cover your right eye\n\nAre some lines lighter than others?"
+            sentenceLabel.textColor = UIColor.black
+            //sentenceLabel.font = .systemFont(ofSize: CGFloat(textSize))
+        
+        
+        let yesButton = UIButton(frame: CGRect(x: self.view.frame.width - 325, y: self.view.frame.height - 125, width: 100, height: 100))
+        let noButton = UIButton(frame: CGRect(x: self.view.frame.width - 150, y: self.view.frame.height - 125, width: 100, height: 100))
+        yesButton.setTitle("Yes", for: .normal)
+        noButton.setTitle("No", for: .normal)
+        noButton.addTarget(self, action: #selector(noDiff), for: .touchUpInside)
+        yesButton.addTarget(self, action: #selector(sawDiff), for: .touchUpInside)
+        noButton.backgroundColor = UIColor.red
+        yesButton.backgroundColor = UIColor.blue
+        noButton.layer.cornerRadius = 20
+        yesButton.layer.cornerRadius = 20
+        
+        self.view.addSubview(sentenceLabel)
+        self.view.addSubview(testImageView)
+        self.view.addSubview(yesButton)
+        self.view.addSubview(noButton)
+        self.view.bringSubviewToFront(sentenceLabel)
+    }
+    
+    @objc func noDiff(sender: UIButton!) {
+        let resultView = ResultView()
+        let result = "We have no recommendations for you!"
+        resultView.result = result
+        self.present(resultView, animated: true, completion: nil)
+    }
+    
+    @objc func sawDiff(sender: UIButton!) {
+        let resultView = ResultView()
+               var result = ""
+              result = "We have recommendations for you:"
+              resultView.steps = Resultdata[5]
+              resultView.result = result
+              self.present(resultView, animated: true, completion: nil)
+    }
+}
 

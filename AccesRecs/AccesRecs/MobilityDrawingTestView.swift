@@ -9,8 +9,13 @@
 import Foundation
 import UIKit
 
+//Returns true if num2 is within a certain threshold of num1
+func isWithinThreshold(num1: Double, num2: Double, threshold: Double) -> Bool {
+    let range = (num1 - num1*threshold)...(num1 + num1*threshold)
+    return range.contains(num2)
+}
+
 class MobilityDrawingTest : UIViewController {
-    
     var lastPoint = CGPoint.zero
     var color = UIColor.black
     var brushWidth: CGFloat = 10.0
@@ -20,9 +25,9 @@ class MobilityDrawingTest : UIViewController {
     var tempImageView : UIImageView = UIImageView()
     var resetButton : UIButton = UIButton()
     var totalDistance: Double = 0.0
-    //var currentPoint = CGPoint.zero
+    var shapePerimeter: Double = 0.0
+    var doneButton: UIButton = UIButton()
 
-//    var lastPoint:
     override func viewDidLoad() {
         mainImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         tempImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
@@ -32,8 +37,8 @@ class MobilityDrawingTest : UIViewController {
         resetButton.setTitle("Reset", for: .normal)
         resetButton.backgroundColor = UIColor.blue
         resetButton.layer.cornerRadius = 20
-        resetButton.frame = CGRect(x: 200 - (100), y: self.view.frame.height - 100, width: 200, height:50)
-        
+        resetButton.frame = CGRect(x: 10, y: self.view.frame.height - 60, width: 120, height:50)
+
         let prompt = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 100, y: 75, width: 200, height: 100))
         prompt.textColor = UIColor.black
         prompt.font = .preferredFont(forTextStyle: UIFont.TextStyle.title3)
@@ -42,30 +47,28 @@ class MobilityDrawingTest : UIViewController {
         prompt.numberOfLines = 0
         prompt.textAlignment = .center
         prompt.adjustsFontSizeToFitWidth = true
-        
-        testTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.calcDistance), userInfo: nil, repeats: true)
-        let shapeImage = UIImage(named: "drawing_circle")
-        let testImageView = UIImageView(image: shapeImage)
-        testImageView.frame = CGRect(x: self.view.frame.width / 2 - 125, y: self.view.frame.height / 2 - 250, width: 250, height: 250)
-        //testImageView.toBack
-        self.view.addSubview(testImageView)
+
+
+        doneButton.addTarget(self, action: #selector(calcResults), for: .touchUpInside)
+        doneButton.setTitle("Done", for: .normal)
+        doneButton.backgroundColor = UIColor.red
+        doneButton.layer.cornerRadius = 20
+        doneButton.frame = CGRect(x: self.view.frame.width - 130, y: self.view.frame.height - 60, width: 120, height:50)
+
+        shapePerimeter = createTestShape()
+
         self.view.bringSubviewToFront(tempImageView)
         self.view.bringSubviewToFront(mainImageView)
         self.view.addSubview(resetButton)
         self.view.addSubview(prompt)
+        self.view.addSubview(doneButton)
+    }
 
-    }
-    
-    @objc func calcDistance() -> Double {
-        //print("calculating distance")
-        return 0.0;
-    }
-    
     @objc func resetPressed(sender: UIButton!) {
       mainImageView.image = nil
       totalDistance = 0.0
     }
-    
+
     @IBAction func sharePressed(_ sender: Any) {
       guard let image = mainImageView.image else {
         return
@@ -73,7 +76,7 @@ class MobilityDrawingTest : UIViewController {
       let activity = UIActivityViewController(activityItems: [image], applicationActivities: nil)
       present(activity, animated: true)
     }
-    
+
     @IBAction func pencilPressed(_ sender: UIButton) {
       guard let pencil = Pencil(tag: sender.tag) else {
         return
@@ -83,7 +86,136 @@ class MobilityDrawingTest : UIViewController {
         opacity = 1.0
       }
     }
-    
+
+    @objc func calcResults() {
+        let resultView = ResultView()
+        var result = ""
+
+        if(isWithinThreshold(num1: shapePerimeter, num2: totalDistance, threshold: 0.05)) {
+           result = "Perfect!!"
+                   } else {
+           result = "We have recommendations for you:"
+           resultView.steps = Resultdata[3]
+       }
+
+       resultView.result = result
+       self.present(resultView, animated: true, completion: nil)
+    }
+
+// Generates a shape of random size to trace, displays it, and returns its perimeter
+    func createTestShape() -> Double {
+        let id = Int.random(in: 0 ... 7)
+        let layer = CAShapeLayer()
+        layer.fillColor = nil
+        layer.strokeColor = UIColor.gray.cgColor
+        layer.lineWidth = 2
+
+        var perimeter: Double = 0.0
+        let shapeHeight: Int = Int.random(in: 100 ..< 350)
+        let shapeLength: Int = Int.random(in: 100 ..< 250)
+
+        switch id {
+        // Rounded Rectangle
+        case 0:
+            layer.path = UIBezierPath(roundedRect: CGRect(x: self.view.frame.width/2 - CGFloat(shapeLength / 2), y: self.view.frame.height/2 - CGFloat(shapeHeight / 2), width: CGFloat(shapeLength), height: CGFloat(shapeHeight)), cornerRadius: 50).cgPath
+            perimeter = calcRoundedRectanglePerimeter(height: shapeHeight, length: shapeLength, radius:50)
+
+        // Circle
+        case 1:
+            let radius: Double = Double.random(in: 50 ..< 100)
+            layer.path = UIBezierPath(arcCenter: CGPoint(x:self.view.frame.width/2, y: self.view.frame.height/2), radius: CGFloat(radius), startAngle: 0, endAngle: 360, clockwise: true).cgPath
+            perimeter = 2.0 * Double.pi * radius
+
+        //Rectangle
+        case 2:
+            layer.path = UIBezierPath(roundedRect: CGRect(x: self.view.frame.width/2 - CGFloat(shapeLength / 2), y: self.view.frame.height/2 - CGFloat(shapeHeight / 2), width: CGFloat(shapeLength), height: CGFloat(shapeHeight)), cornerRadius: 0).cgPath
+                perimeter = Double (2 * shapeLength + 2 * shapeHeight)
+
+        // Triangle
+        case 3:
+            let path = UIBezierPath()
+            let pointOne = CGPoint(x:self.view.frame.width / 2 - CGFloat(shapeLength / 2), y: self.view.frame.height / 2 + CGFloat(shapeHeight/2))
+            let pointTwo = CGPoint(x: pointOne.x + CGFloat(shapeLength), y: pointOne.y)
+            let pointThree = CGPoint(x: self.view.frame.width / 2, y: pointOne.y - CGFloat(shapeHeight))
+            path.move(to: pointOne)
+            path.addLine(to:pointTwo)
+            path.addLine(to:pointThree)
+            path.addLine(to:pointOne)
+
+            layer.path = path.cgPath
+            perimeter = calcDistance(p1: pointOne, p2: pointTwo) + calcDistance(p1: pointTwo, p2: pointThree) + calcDistance(p1: pointThree, p2: pointOne)
+
+        // Square
+        case 4: layer.path = UIBezierPath(rect: CGRect(x: self.view.frame.width/2 - CGFloat(shapeLength / 2), y: self.view.frame.height/2 - CGFloat(shapeLength / 2), width: CGFloat(shapeLength), height: CGFloat(shapeLength))).cgPath
+            perimeter = Double(4 * shapeLength)
+
+        // Hourglass
+        case 5:
+            let path = UIBezierPath()
+            let pointOne = CGPoint(x:self.view.frame.width / 2 - CGFloat(shapeLength / 2), y: self.view.frame.height / 2 + CGFloat(shapeHeight/2))
+            let pointTwo = CGPoint(x: pointOne.x + CGFloat(shapeLength), y: pointOne.y)
+            let pointThree = CGPoint(x: pointTwo.x, y: pointOne.y - CGFloat(shapeHeight))
+            let pointFour = CGPoint(x: pointOne.x, y: pointThree.y)
+            path.move(to: pointOne)
+            path.addLine(to:pointTwo)
+            path.addLine(to:pointFour)
+            path.addLine(to:pointThree)
+
+            path.addLine(to:pointOne)
+
+            layer.path = path.cgPath
+            perimeter = calcDistance(p1: pointOne, p2: pointTwo) + calcDistance(p1: pointTwo, p2: pointFour) + calcDistance(p1: pointFour, p2: pointThree) + calcDistance(p1: pointThree, p2: pointOne)
+
+        // Trapezoid
+        case 6:
+            let path = UIBezierPath()
+            let pointOne = CGPoint(x:self.view.frame.width / 2 - CGFloat(shapeLength / 2) - 15, y: self.view.frame.height / 2 + CGFloat(shapeHeight/2))
+            let pointTwo = CGPoint(x: pointOne.x + CGFloat(shapeLength) + 30, y: pointOne.y)
+            let pointThree = CGPoint(x: pointTwo.x - 40, y: pointOne.y - CGFloat(shapeHeight))
+            let pointFour = CGPoint(x: pointOne.x + 40, y: pointThree.y)
+
+            path.move(to: pointOne)
+            path.addLine(to:pointTwo)
+            path.addLine(to:pointThree)
+            path.addLine(to:pointFour)
+            path.addLine(to:pointOne)
+
+            layer.path = path.cgPath
+            perimeter = calcDistance(p1: pointOne, p2: pointTwo) + calcDistance(p1: pointTwo, p2: pointThree) + calcDistance(p1: pointFour, p2: pointThree) + calcDistance(p1: pointFour, p2: pointOne)
+
+        // Ellipse
+        default:
+            layer.path = UIBezierPath(ovalIn: CGRect(x: self.view.frame.width/2 - CGFloat(shapeLength / 2), y: self.view.frame.height/2 - CGFloat(shapeHeight / 2), width: CGFloat(shapeLength), height: CGFloat(shapeHeight))).cgPath
+            perimeter = calcEllipsePerimeter(height: shapeHeight, length: shapeLength)
+        }
+
+        view.layer.addSublayer(layer)
+        return perimeter
+    }
+
+    // Calculates the distance between two given points
+    func calcDistance(p1: CGPoint, p2: CGPoint) -> Double {
+        let xDist: CGFloat = (p2.x - p1.x);
+        let yDist: CGFloat = (p2.y - p1.y);
+        return Double(sqrt(xDist * xDist + yDist * yDist))
+    }
+
+    // Calculates the perimeter of a rounded rectangle
+    func calcRoundedRectanglePerimeter(height: Int, length: Int, radius: Int) -> Double {
+        var perimeter: Double =  Double(2 * height + 2 * length)
+        perimeter -= Double(8 * radius)
+        perimeter += 2.0 * Double(radius) * Double.pi
+        return perimeter
+    }
+
+    // Approximates the circumference of an ellipse
+    func calcEllipsePerimeter(height: Int, length: Int) -> Double {
+        print(height)
+        print(length)
+        let temp = Double(Double(height * height) / 4.0 + Double(length * length) / 4.0)
+        return 2 * Double.pi * Double(sqrt(temp/2.0))
+    }
+
     func drawLine(from fromPoint: CGPoint, to toPoint: CGPoint) {
       UIGraphicsBeginImageContext(view.frame.size)
       guard let context = UIGraphicsGetCurrentContext() else {
@@ -98,7 +230,9 @@ class MobilityDrawingTest : UIViewController {
       context.setBlendMode(.normal)
       context.setLineWidth(brushWidth)
       context.setStrokeColor(color.cgColor)
-      
+
+      //context.setLineWidth(4)
+      context.setStrokeColor(UIColor.red.cgColor)
       context.strokePath()
       
       tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
@@ -128,7 +262,6 @@ class MobilityDrawingTest : UIViewController {
       let distance = sqrt(xDist * xDist + yDist * yDist)
         
       totalDistance = totalDistance + Double(distance)
-      print(totalDistance)
       lastPoint = currentPoint
     }
     
