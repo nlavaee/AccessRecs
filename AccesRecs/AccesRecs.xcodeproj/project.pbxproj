@@ -70,9 +70,9 @@
 		EF977AF6238842E6001542DB /* digitalAccess.png in Resources */ = {isa = PBXBuildFile; fileRef = EF977AF4238842E6001542DB /* digitalAccess.png */; };
 		EF977AF7238842E6001542DB /* digitalAccess.png in Resources */ = {isa = PBXBuildFile; fileRef = EF977AF4238842E6001542DB /* digitalAccess.png */; };
 		EF977AF8238842E6001542DB /* digitalAccess.png in Resources */ = {isa = PBXBuildFile; fileRef = EF977AF4238842E6001542DB /* digitalAccess.png */; };
-		EF977AF9238842E6001542DB /* motion.png in Resources */ = {isa = PBXBuildFile; fileRef = EF977AF5238842E6001542DB /* motion.png */; };
-		EF977AFA238842E6001542DB /* motion.png in Resources */ = {isa = PBXBuildFile; fileRef = EF977AF5238842E6001542DB /* motion.png */; };
-		EF977AFB238842E6001542DB /* motion.png in Resources */ = {isa = PBXBuildFile; fileRef = EF977AF5238842E6001542DB /* motion.png */; };
+		EF977AFD238848C1001542DB /* slow-motion.png in Resources */ = {isa = PBXBuildFile; fileRef = EF977AFC238848C0001542DB /* slow-motion.png */; };
+		EF977AFE238848C1001542DB /* slow-motion.png in Resources */ = {isa = PBXBuildFile; fileRef = EF977AFC238848C0001542DB /* slow-motion.png */; };
+		EF977AFF238848C1001542DB /* slow-motion.png in Resources */ = {isa = PBXBuildFile; fileRef = EF977AFC238848C0001542DB /* slow-motion.png */; };
 		EFABA6152350D0EE00229064 /* BeforeReduceTransparencyDock.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA6142350D0EE00229064 /* BeforeReduceTransparencyDock.png */; };
 		EFABA61C2352620F00229064 /* MagnifierLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA6162352620E00229064 /* MagnifierLogo.png */; };
 		EFABA61D2352620F00229064 /* ButtonShapeLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = EFABA6172352620E00229064 /* ButtonShapeLogo.png */; };
@@ -171,7 +171,7 @@
 		EF8219B8236E7B000025E7DF /* x_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x_button.png; sourceTree = "<group>"; };
 		EF84A6A92381D16C00FC6CA5 /* SettingsStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStepsView.swift; sourceTree = "<group>"; };
 		EF977AF4238842E6001542DB /* digitalAccess.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = digitalAccess.png; sourceTree = "<group>"; };
-		EF977AF5238842E6001542DB /* motion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = motion.png; sourceTree = "<group>"; };
+		EF977AFC238848C0001542DB /* slow-motion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slow-motion.png"; sourceTree = "<group>"; };
 		EFABA6142350D0EE00229064 /* BeforeReduceTransparencyDock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BeforeReduceTransparencyDock.png; sourceTree = "<group>"; };
 		EFABA6162352620E00229064 /* MagnifierLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MagnifierLogo.png; sourceTree = "<group>"; };
 		EFABA6172352620E00229064 /* ButtonShapeLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonShapeLogo.png; sourceTree = "<group>"; };
@@ -241,8 +241,8 @@
 		EF10A081233E4F9D004407B5 /* AccesRecs */ = {
 			isa = PBXGroup;
 			children = (
+				EF977AFC238848C0001542DB /* slow-motion.png */,
 				EF977AF4238842E6001542DB /* digitalAccess.png */,
-				EF977AF5238842E6001542DB /* motion.png */,
 				EFD6B2B2238680BA003D91E3 /* eye.png */,
 				EF5B5F112386589D00BA2E2B /* AfterAssistiveTouch.png */,
 				EF5B5F102386589D00BA2E2B /* AfterIncreaseContrast.png */,
@@ -472,6 +472,7 @@
 				8165DA012357591D0063A747 /* ResultData.json in Resources */,
 				EFABA61E2352620F00229064 /* LargeTextLogo.png in Resources */,
 				EFD6B2B3238680BA003D91E3 /* eye.png in Resources */,
+				EF977AFD238848C1001542DB /* slow-motion.png in Resources */,
 				EF0CA167237BE68E00BF2D9E /* up-chevron.png in Resources */,
 				8F2E71F92350DA2E00D89A71 /* BeforeMagnifier.png in Resources */,
 				8FEF7E352350231B0094A22A /* BeforeButtonShape.png in Resources */,
@@ -491,7 +492,6 @@
 				8F2E71EB2350286E00D89A71 /* AfterDarkMode.png in Resources */,
 				EF5B5F192386589F00BA2E2B /* BeforeAssistiveTouch.png in Resources */,
 				EF0CA165237BDF6300BF2D9E /* down-chevron.png in Resources */,
-				EF977AF9238842E6001542DB /* motion.png in Resources */,
 				EFABA61C2352620F00229064 /* MagnifierLogo.png in Resources */,
 				EFABA6252352806200229064 /* AfterReduceTransparency.png in Resources */,
 			);
@@ -501,8 +501,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF977AFE238848C1001542DB /* slow-motion.png in Resources */,
 				EF977AF7238842E6001542DB /* digitalAccess.png in Resources */,
-				EF977AFA238842E6001542DB /* motion.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,8 +510,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF977AFF238848C1001542DB /* slow-motion.png in Resources */,
 				EF977AF8238842E6001542DB /* digitalAccess.png in Resources */,
-				EF977AFB238842E6001542DB /* motion.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

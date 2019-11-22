@@ -57,7 +57,8 @@ struct ContentView: View {
                     
                 }) {
                  HStack {
-                    Image(systemName: "motion")
+//                    Image(systemName: "slow-motion")
+                    Image(uiImage: UIImage(named: "slow-motion")!).colorInvert()
                         .font(.title).foregroundColor(.white)
                     Text("Motion")
                         .fontWeight(.semibold).foregroundColor(.white)
