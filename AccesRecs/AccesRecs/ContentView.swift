@@ -36,15 +36,20 @@ struct ContentView: View {
                 .lineLimit(nil)
                 .padding(.vertical, 15)
             
-            Image("catscreen")
+            Image("digitalAccess")
                 .frame(width: 100, height: 100)
                 .aspectRatio(contentMode: .fit)
-           .padding()
+                .padding()
+                .opacity(0.3)
+            
         
-           Text("Comprehensive list of Accessibility features for diversely-abled users")
-           .fixedSize(horizontal: false, vertical: true)
-           .padding(.vertical, 15)
-           .padding(.horizontal, 20)
+           //Text("Comprehensive list of Accessibility features for diversely-abled users")
+            Text("")
+            .fixedSize(horizontal: false, vertical: true)
+            .padding(.vertical, 15)
+            .padding(.horizontal, 20)
+            .multilineTextAlignment(.center)
+           
 
         
            Button(action: {
@@ -64,7 +69,8 @@ struct ContentView: View {
             }).buttonStyle(PlainButtonStyle())
             .frame(minWidth: 0, maxWidth: .infinity)
             .padding()
-            .background(LinearGradient(gradient: Gradient(colors: [Color(.white), Color(.systemGreen)]), startPoint: .leading, endPoint: .trailing))
+            .background(LinearGradient(gradient: Gradient(colors: [Color(.systemGreen), Color(.systemGreen)]), startPoint: .leading, endPoint: .trailing))
+//            .foregroundColor(.green)
             .cornerRadius(40)
             .padding(.horizontal, 20)
             
@@ -90,7 +96,7 @@ struct ContentView: View {
 //                .mask(Circle()).accentColor(.white).fixedSize()
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .padding()
-                .background(LinearGradient(gradient: Gradient(colors: [Color(.white), Color(.systemGreen)]), startPoint: .leading, endPoint: .trailing))
+                .background(LinearGradient(gradient: Gradient(colors: [Color(.systemGreen), Color(.systemGreen)]), startPoint: .leading, endPoint: .trailing))
                 .cornerRadius(40)
                 .padding(.horizontal, 20)
 
