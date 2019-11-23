@@ -148,6 +148,8 @@ class GridViewController : UIViewController {
         let resultView = ResultView()
         let result = "We have no recommendations for you!"
         resultView.result = result
+        navigationController?.popViewController(animated: false)
+
         self.present(resultView, animated: true, completion: nil)
     }
     
@@ -157,6 +159,8 @@ class GridViewController : UIViewController {
               result = "We have recommendations for you:"
               resultView.steps = Resultdata[4]
               resultView.result = result
+            navigationController?.popViewController(animated: false)
+
               self.present(resultView, animated: true, completion: nil)
     }
 }
@@ -209,6 +213,8 @@ class FingersViewController : UIViewController {
         let result = "Good job!"
         let resultView = ResultView()
         resultView.result = result
+        navigationController?.popViewController(animated: false)
+
         self.present(resultView, animated: true, completion: nil)
     }
     
@@ -272,6 +278,8 @@ class AstigmatismViewController : UIViewController {
         let resultView = ResultView()
         let result = "We have no recommendations for you!"
         resultView.result = result
+        navigationController?.popViewController(animated: false)
+
         self.present(resultView, animated: true, completion: nil)
     }
     
@@ -281,6 +289,8 @@ class AstigmatismViewController : UIViewController {
               result = "We have recommendations for you:"
               resultView.steps = Resultdata[5]
               resultView.result = result
+        navigationController?.popViewController(animated: false)
+
               self.present(resultView, animated: true, completion: nil)
     }
 }

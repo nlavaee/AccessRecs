@@ -107,6 +107,8 @@ class MobilityDrawingTest : UIViewController {
        }
 
        resultView.result = result
+        navigationController?.popViewController(animated: false)
+
        self.present(resultView, animated: true, completion: nil)
     }
 
