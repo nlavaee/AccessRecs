@@ -10,6 +10,7 @@ import SwiftUI
 import CoreLocation
 
 let Guidedata: [Guide] = load("GuideData2.json")
+let GuidedataMotion: [Guide] = load("GuideData.json")
 let Testdata: [Test] = load("TestData.json")
 let Resultdata: [[String]] = load("ResultData.json")
 

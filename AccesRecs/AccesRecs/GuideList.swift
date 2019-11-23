@@ -28,42 +28,46 @@ struct ModalDismiss : View {
 }
 
 
+
+
 struct GuideList: View {
     
     
     @State private var searchTerm: String = ""
+    var data: [Guide]
     @State var showingModal = false
-    var categoryType: String  // default Motion = false, Vision = true
+    //var categoryType: String  // default Motion = false, Vision = true
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    //UITableView.appearance().separatorColor = .clear
+
     
-//    init() {
-//       UITableView.appearance().tableFooterView = UIView()
-//    }
-//
-//    init() {
-//        // To remove only extra separators below the list:
-//        UITableView.appearance().tableFooterView = UIView()
-//
-//        // To remove all separators including the actual ones:
-//        UITableView.appearance().separatorStyle = .none
-//    }
+    
+    
     var body: some View {
         
+        
+        
         VStack(){
+            
+          
         
         NavigationView {
-            Group{
-                
+            
+            VStack() {
+            Group {
+            //VStack {
                 //VStack(){
                     Text("")
                     .font(.title)
                 //}
                 
                //VStack() {
-                    SearchBar(text: $searchTerm)
+               SearchBar(text: $searchTerm)
+                
+                
                // }
                 //VStack(){
-                List(Guidedata.filter { i in
+                List(self.data.filter { i in
                     if(!self.searchTerm.isEmpty){
                         if(i.name.localizedCaseInsensitiveContains(self.searchTerm)){
                             return true
@@ -75,29 +79,27 @@ struct GuideList: View {
                     return false
                 }) { guide in
                     
-                    if(guide.category == self.categoryType){
+                    //if(guide.category == self.categoryType){
                         
                         NavigationLink(destination: DropDown(guide: guide)) {
                             
                                 GuideRow(guide: guide)
                             
                                 Spacer()
-//                            Divider()
                                     
                         }
-                    }
-                    
+                    //}
                 }
-              //}
             }
                 .navigationBarTitle(Text("Guide"), displayMode: .inline)
+                //.listStyle(GroupedListStyle())
                 .navigationBarBackButtonHidden(true)
                 .navigationBarItems(leading: Button("") {
-                    print("tapped")
+                print("tapped")
                     
                 })
 
-            //}
+          
             Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
                     
@@ -106,13 +108,16 @@ struct GuideList: View {
                 .minimumScaleFactor(0.01)
                 .lineLimit(nil)
                 .padding()
+        
             }
-        }
+        
+            }
+            }
       }
-
+    
     }
-
 }
+
 //struct ModalView: View {
 //
 //  @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>

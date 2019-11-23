@@ -18,8 +18,11 @@ struct ContentView: View {
     
     @State var showingVision = false
     @State var showingMotion = false
-    @State var categoryMotion:String = "Motion"
-    @State var categoryVision:String = "Vision"
+//    @State var categoryMotion:String = "Motion"
+//    @State var categoryVision:String = "Vision"
+    
+    @State var guideMotiondata: [Guide] = GuidedataMotion
+    @State var guideVisiondata: [Guide] = Guidedata
     
     //var categoryType: String = "" // Motion = false, Vision = true
 //    let categoryList = [
@@ -37,7 +40,7 @@ struct ContentView: View {
                 .padding()
                 .opacity(0.3)
                 
-                Text("Accessibility Categories").bold().foregroundColor(Color(.systemGreen)).font(.title).baselineOffset(90)
+                Text(String("Accessibility Categories")).bold().foregroundColor(Color(.systemGreen)).font(.title).baselineOffset(90)
                     .padding(.horizontal, 20)
                     .fixedSize(horizontal: false, vertical: true)
                     .lineLimit(nil)
@@ -64,12 +67,12 @@ struct ContentView: View {
 //                    Image(systemName: "slow-motion")
                     Image(uiImage: UIImage(named: "slow-motion")!).colorInvert()
                         .font(.title).foregroundColor(.white)
-                    Text("Motion")
+                    Text(String("Motion"))
                         .fontWeight(.semibold).foregroundColor(.white)
                            .font(.title)
                    }
             }.sheet(isPresented: $showingMotion, content:  {
-                GuideList(categoryType: self.categoryMotion)
+                GuideList(data: self.guideMotiondata)
                 //ModalPopup(showingModal: self.$showingMotion)
             }).buttonStyle(PlainButtonStyle())
             .frame(minWidth: 0, maxWidth: .infinity)
@@ -95,7 +98,7 @@ struct ContentView: View {
                                .font(.title)
                        }
             }.sheet(isPresented: $showingVision, content:  {
-                GuideList(categoryType: self.categoryVision)
+                GuideList(data: self.guideVisiondata)
                 //ModalPopup(showingModal: self.$showingVision)
                 })//.buttonStyle(RoundedButton())//.foregroundColor(.clear).background(guide.imgBefore)
 //                .mask(Circle()).accentColor(.white).fixedSize()

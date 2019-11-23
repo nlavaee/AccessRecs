@@ -123,7 +123,7 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
     
     @objc func bringToGuide(sender: UIButton!) {
 //        let guideVC = GuideList()
-        let guideVC = GuideList(categoryType: String("Vision"))
+        let guideVC = GuideList(data: Guidedata)
         
         let guideView = UIHostingController(rootView: guideVC)
         self.present(guideView, animated: false)
@@ -148,7 +148,7 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
     @objc func bringToMotionGuide(sender: UIButton!) {
         
         
-        let guideVC = GuideList(categoryType: String("Motion"))
+        let guideVC = GuideList(data: GuidedataMotion)
 
         let guideView = UIHostingController(rootView: guideVC)
         
