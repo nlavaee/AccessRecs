@@ -30,17 +30,21 @@ struct ContentView: View {
         //GeometryReader { geometry in
         VStack{
             
-            Text("Accessibility Categories").bold().foregroundColor(.green).font(.title).baselineOffset(90)
-                .padding(.horizontal, 20)
-                .fixedSize(horizontal: false, vertical: true)
-                .lineLimit(nil)
-                .padding(.vertical, 15)
-            
-            Image("digitalAccess")
+            ZStack {
+                Image("digitalAccess")
                 .frame(width: 100, height: 100)
                 .aspectRatio(contentMode: .fit)
                 .padding()
                 .opacity(0.3)
+                
+                Text("Accessibility Categories").bold().foregroundColor(Color(.systemGreen)).font(.title).baselineOffset(90)
+                    .padding(.horizontal, 20)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(nil)
+                    .padding(.vertical, 15)
+                
+                
+            }
             
         
            //Text("Comprehensive list of Accessibility features for diversely-abled users")

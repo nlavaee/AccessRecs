@@ -44,6 +44,8 @@
 		EF10A08C233E4F9F004407B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF10A08B233E4F9F004407B5 /* Preview Assets.xcassets */; };
 		EF10A09A233E4F9F004407B5 /* AccesRecsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10A099233E4F9F004407B5 /* AccesRecsTests.swift */; };
 		EF10A0A5233E4F9F004407B5 /* AccesRecsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10A0A4233E4F9F004407B5 /* AccesRecsUITests.swift */; };
+		EF1153AB2389C16900E56CE4 /* TouchAccomAfter.png in Resources */ = {isa = PBXBuildFile; fileRef = EF1153A92389C16800E56CE4 /* TouchAccomAfter.png */; };
+		EF1153AC2389C16900E56CE4 /* TouchAccomBefore.png in Resources */ = {isa = PBXBuildFile; fileRef = EF1153AA2389C16800E56CE4 /* TouchAccomBefore.png */; };
 		EF2D7DCF2357F920008468CD /* home_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = EF2D7DCE2357F91F008468CD /* home_icon.png */; };
 		EF416D52234BA67900DC30A9 /* GuideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF416D51234BA67900DC30A9 /* GuideVC.swift */; };
 		EF416D54234D3AC000DC30A9 /* GuideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF416D53234D3AC000DC30A9 /* GuideTableViewCell.swift */; };
@@ -147,6 +149,8 @@
 		EF10A0A0233E4F9F004407B5 /* AccesRecsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccesRecsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF10A0A4233E4F9F004407B5 /* AccesRecsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccesRecsUITests.swift; sourceTree = "<group>"; };
 		EF10A0A6233E4F9F004407B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF1153A92389C16800E56CE4 /* TouchAccomAfter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TouchAccomAfter.png; sourceTree = "<group>"; };
+		EF1153AA2389C16800E56CE4 /* TouchAccomBefore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TouchAccomBefore.png; sourceTree = "<group>"; };
 		EF2D7DCE2357F91F008468CD /* home_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_icon.png; sourceTree = "<group>"; };
 		EF416D51234BA67900DC30A9 /* GuideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideVC.swift; sourceTree = "<group>"; };
 		EF416D53234D3AC000DC30A9 /* GuideTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideTableViewCell.swift; sourceTree = "<group>"; };
@@ -241,6 +245,8 @@
 		EF10A081233E4F9D004407B5 /* AccesRecs */ = {
 			isa = PBXGroup;
 			children = (
+				EF1153A92389C16800E56CE4 /* TouchAccomAfter.png */,
+				EF1153AA2389C16800E56CE4 /* TouchAccomBefore.png */,
 				EF977AFC238848C0001542DB /* slow-motion.png */,
 				EF977AF4238842E6001542DB /* digitalAccess.png */,
 				EFD6B2B2238680BA003D91E3 /* eye.png */,
@@ -493,6 +499,8 @@
 				EF5B5F192386589F00BA2E2B /* BeforeAssistiveTouch.png in Resources */,
 				EF0CA165237BDF6300BF2D9E /* down-chevron.png in Resources */,
 				EFABA61C2352620F00229064 /* MagnifierLogo.png in Resources */,
+				EF1153AB2389C16900E56CE4 /* TouchAccomAfter.png in Resources */,
+				EF1153AC2389C16900E56CE4 /* TouchAccomBefore.png in Resources */,
 				EFABA6252352806200229064 /* AfterReduceTransparency.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -33,23 +33,36 @@ struct GuideList: View {
     
     @State private var searchTerm: String = ""
     @State var showingModal = false
-    var categoryType: String // default Motion = false, Vision = true
+    var categoryType: String  // default Motion = false, Vision = true
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     
+//    init() {
+//       UITableView.appearance().tableFooterView = UIView()
+//    }
+//
+//    init() {
+//        // To remove only extra separators below the list:
+//        UITableView.appearance().tableFooterView = UIView()
+//
+//        // To remove all separators including the actual ones:
+//        UITableView.appearance().separatorStyle = .none
+//    }
     var body: some View {
-        
-        
         
         VStack(){
         
         NavigationView {
             Group{
-                Text("")
-                .font(.title)
-        
-//                ModalDismiss(showingModal: self.$showingModal)
-//                self.category = self.categoryType ? "Vision" : "Motion"
-                SearchBar(text: $searchTerm)
+                
+                //VStack(){
+                    Text("")
+                    .font(.title)
+                //}
+                
+               //VStack() {
+                    SearchBar(text: $searchTerm)
+               // }
+                //VStack(){
                 List(Guidedata.filter { i in
                     if(!self.searchTerm.isEmpty){
                         if(i.name.localizedCaseInsensitiveContains(self.searchTerm)){
@@ -69,20 +82,22 @@ struct GuideList: View {
                                 GuideRow(guide: guide)
                             
                                 Spacer()
+//                            Divider()
                                     
                         }
                     }
                     
-                  }
-                
                 }
+              //}
+            }
                 .navigationBarTitle(Text("Guide"), displayMode: .inline)
                 .navigationBarBackButtonHidden(true)
                 .navigationBarItems(leading: Button("") {
                     print("tapped")
+                    
                 })
 
-            }
+            //}
             Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
                     
@@ -93,6 +108,7 @@ struct GuideList: View {
                 .padding()
             }
         }
+      }
 
     }
 

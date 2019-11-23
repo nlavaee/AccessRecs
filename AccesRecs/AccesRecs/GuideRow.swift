@@ -22,6 +22,14 @@ struct GuideRow: View {
 //        data_trash.append((item))
 //
 //    }
+//    @Binding var enableNext: Bool
+//
+//    init(enableNext: Binding<Bool>) {
+//        self._enableNext = enableNext
+//        UITableView.appearance().separatorColor = .clear
+//
+//
+//      }
     var body: some View {
         
         HStack {

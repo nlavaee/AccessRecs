@@ -329,4 +329,20 @@
   "Multifinger swipe or drag: Tap Device > More > Gestures, then tap the number of digits needed for the gesture. When the circles appear on the screen, swipe or drag in the direction required by the gesture. When you finish, tap the menu button.",
   "To return to the previous menu, tap the arrow in the center of the menu. To exit the menu without performing a gesture: Tap anywhere outside the menu."]  
 },
+{
+  "name": "Touch Accommodiations",
+  "category": "Motion",
+  "id": 24,
+  "imageName": "TouchAccomBefore",
+  "imageBefore": "TouchAccomBefore",
+  "imageAfter": "TouchAccomAfter",
+  "Description": "If you have trouble using the touchscreen or buttons, you can change how iPhone responds to your touch.",
+  "Steps": ["Navigate to the Settings app on your phone and select 'Accessibility",
+    "Under the Motion category, select 'Touch Accommodations'",
+    "You can configure iPhone to do any of the following: ",
+    "Respond to touches of a certain duration: Turn on Hold Duration, then tap the Decrement button (➖) or the Increment button (➕) to adjust the duration (the default is 0.10 seconds). To perform swipe gestures without waiting for the specified hold duration, tap Swipe Gestures, then turn on Swipe Gestures. You can choose the amount of required movement before a swipe gesture begins.",
+    "Ignore multiple touches: Turn on Ignore Repeat, then tap the Decrement button (➖) or the Increment button (➕) to adjust the amount of time allowed between multiple touches. Then, if you touch the screen several times quickly, iPhone treats the touches as one.",
+    "Respond to the first or last place you touch: Choose Use Initial Touch Location or Use Final Touch Location."],
+  "Usage": []
+},
 ]
