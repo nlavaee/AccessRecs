@@ -36,6 +36,7 @@ class MobilityMazeTest : UIViewController {
     var edges: [UIBezierPath] = []
     var topCircle = CAShapeLayer()
     var bottomCircle = CAShapeLayer()
+    var drawnHeight: Double = 0.0
     
     override func viewDidLoad() {
         mainImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
@@ -111,11 +112,11 @@ class MobilityMazeTest : UIViewController {
         var result = ""
         
         if !hitTop {
-            result += "You didn't hit the start"
+            result += "You didn't hit the start\n"
         }
         
         if !hitBottom {
-            result += "You didn't hit the bottom"
+            result += "You didn't hit the bottom\n"
         }
         
         if hitWall {
@@ -123,7 +124,9 @@ class MobilityMazeTest : UIViewController {
             resultView.steps = Resultdata[6]
         }
         
-        if hitTop && hitBottom && !hitWall {
+        if drawnHeight < Double(topCircle.frame.maxY - bottomCircle.frame.minY) {
+            result = "You didn't complete the maze"
+        } else if hitTop && hitBottom && !hitWall {
             result = "Perfect!!"
         }
 
@@ -274,6 +277,7 @@ class MobilityMazeTest : UIViewController {
       hitBottom = false
       hitWall = false
       hitCount = 0
+      drawnHeight = 0.0
       totalDistance = 0.0
     }
 
@@ -337,7 +341,6 @@ class MobilityMazeTest : UIViewController {
       let currentPoint = touch.location(in: view)
       drawLine(from: lastPoint, to: currentPoint)
         
-        
      let tempPath = UIBezierPath()
         tempPath.move(to: lastPoint)
         tempPath.addLine(to: currentPoint)
@@ -355,6 +358,9 @@ class MobilityMazeTest : UIViewController {
             hitBottom = true
         }
 
+      drawnHeight += Double(currentPoint.y - lastPoint.y)
+      totalDistance += calcDistance(p1: currentPoint, p2: lastPoint)
+        
       lastPoint = currentPoint
     }
     

@@ -15,6 +15,14 @@ func isWithinThreshold(num1: Double, num2: Double, threshold: Double) -> Bool {
     return range.contains(num2)
 }
 
+
+// Calculates the distance between two given points
+func calcDistance(p1: CGPoint, p2: CGPoint) -> Double {
+    let xDist: CGFloat = (p2.x - p1.x);
+    let yDist: CGFloat = (p2.y - p1.y);
+    return Double(sqrt(xDist * xDist + yDist * yDist))
+}
+
 class MobilityDrawingTest : UIViewController {
     var lastPoint = CGPoint.zero
     var color = UIColor.black
@@ -191,13 +199,6 @@ class MobilityDrawingTest : UIViewController {
 
         view.layer.addSublayer(layer)
         return perimeter
-    }
-
-    // Calculates the distance between two given points
-    func calcDistance(p1: CGPoint, p2: CGPoint) -> Double {
-        let xDist: CGFloat = (p2.x - p1.x);
-        let yDist: CGFloat = (p2.y - p1.y);
-        return Double(sqrt(xDist * xDist + yDist * yDist))
     }
 
     // Calculates the perimeter of a rounded rectangle
