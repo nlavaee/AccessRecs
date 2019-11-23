@@ -91,6 +91,9 @@ class TestList: UITableViewController, UINavigationControllerDelegate {
         } else if(self.tests[indexPath.row].name == "Drawing") {
             let testVC = MobilityDrawingTest()
             navigationController?.pushViewController(testVC, animated: true)
+        } else if(self.tests[indexPath.row].name == "Fingers") {
+            let testVC = FingersViewController()
+            navigationController?.pushViewController(testVC, animated: true)
         }
         
     }
