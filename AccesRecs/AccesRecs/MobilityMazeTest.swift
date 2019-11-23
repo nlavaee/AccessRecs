@@ -164,7 +164,7 @@ class MobilityMazeTest : UIViewController {
     }
     
     func drawMaze(_ points: [CGPoint]) {
-        let choice = Int.random(in: 0...1)
+        let choice = Int.random(in: 0...2)
         
         if choice == 0 {
             path.move(to: grid[0][3])
@@ -210,10 +210,8 @@ class MobilityMazeTest : UIViewController {
             appendPath(grid[2][2], grid[2][5])
             appendPath(grid[3][4], grid[3][5])
             appendPath(grid[4][4], grid[5][4])
-
             
-            
-        } else {
+        } else if(choice == 1) {
             path.move(to: grid[0][4])
             path.addLine(to: grid[0][0])
             path.addLine(to: grid[5][0])
@@ -261,6 +259,62 @@ class MobilityMazeTest : UIViewController {
             appendPath(grid[3][5], grid[3][4])
             appendPath(grid[3][4], grid[1][4])
             appendPath(grid[2][4], grid[2][3])
+        } else {
+            path.move(to: grid[2][3])
+            path.addLine(to: grid[2][4])
+            path.addLine(to: grid[1][4])
+            path.addLine(to: grid[1][1])
+            path.addLine(to: grid[0][1])
+            path.addLine(to: grid[0][0])
+            path.addLine(to: grid[5][0])
+            path.addLine(to: grid[5][4])
+            
+            appendPath(grid[2][3], grid[2][4])
+            appendPath(grid[2][4], grid[1][4])
+            appendPath(grid[1][4], grid[1][1])
+            appendPath(grid[1][1], grid[0][1])
+            appendPath(grid[0][1], grid[0][0])
+            appendPath(grid[0][0], grid[5][0])
+            appendPath(grid[5][0], grid[5][4])
+            
+            path.move(to: grid[5][5])
+            path.addLine(to: grid[0][5])
+            path.addLine(to: grid[0][2])
+            
+            appendPath(grid[5][5], grid[0][5])
+            appendPath(grid[0][5], grid[0][2])
+            
+            path.move(to: grid[2][0])
+            path.addLine(to: grid[2][2])
+            path.addLine(to: grid[3][2])
+            path.addLine(to: grid[3][0])
+            
+            appendPath(grid[2][0], grid[2][2])
+            appendPath(grid[2][2], grid[3][2])
+            appendPath(grid[3][2], grid[3][0])
+            
+            path.move(to: grid[3][1])
+            path.addLine(to: grid[4][1])
+            
+            appendPath(grid[3][1], grid[4][1])
+            
+            path.move(to: grid[3][3])
+            path.addLine(to: grid[3][5])
+            
+            appendPath(grid[3][3], grid[3][5])
+            
+            path.move(to: grid[5][3])
+            path.addLine(to: grid[4][3])
+            path.addLine(to: grid[4][4])
+            path.addLine(to: grid[5][4])
+            
+            appendPath(grid[5][3], grid[4][3])
+            appendPath(grid[4][3], grid[4][4])
+            appendPath(grid[4][5], grid[5][4])
+            
+            path.move(to: grid[5][2])
+            path.addLine(to: grid[4][2])
+            appendPath(grid[5][2], grid[4][2])
         }
         
         maze.path = path.cgPath
