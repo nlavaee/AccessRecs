@@ -9,17 +9,15 @@
 import Foundation
 import UIKit
 
-let points: [(Int,Int)] = [(0,0)] //, grid[0][grid[0].count - 1], grid[grid.count - 1][grid[0].count-1], grid[grid.count - 1][0]
-//]
-
 func printPoint(_ point: CGPoint) {
-    //print("(\(point.x), \(point.y))")
+    print("(\(point.x), \(point.y))")
 }
 
 class MobilityMazeTest : UIViewController {
     var hitTop = false
     var hitBottom = false
     var hitWall = false
+    var hitCount = 0
     var lastPoint = CGPoint.zero
     var color = UIColor.black
     var brushWidth: CGFloat = 10.0
@@ -36,6 +34,8 @@ class MobilityMazeTest : UIViewController {
     var maze: CAShapeLayer = CAShapeLayer()
     var path: UIBezierPath = UIBezierPath()
     var edges: [UIBezierPath] = []
+    var topCircle = CAShapeLayer()
+    var bottomCircle = CAShapeLayer()
     
     override func viewDidLoad() {
         mainImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
@@ -71,14 +71,13 @@ class MobilityMazeTest : UIViewController {
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
         
-        let topCircle = CAShapeLayer()
+        
         topCircle.fillColor = nil
         topCircle.strokeColor = UIColor.black.cgColor
         topCircle.fillColor = UIColor.black.cgColor
         topCircle.lineWidth = 2
         topCircle.path = UIBezierPath(arcCenter: CGPoint(x:self.view.frame.width/2, y: grid[0][0].y - 40), radius: CGFloat(radius), startAngle: 0, endAngle: 360, clockwise: true).cgPath
         
-        let bottomCircle = CAShapeLayer()
         bottomCircle.fillColor = nil
         bottomCircle.strokeColor = UIColor.black.cgColor
         bottomCircle.fillColor = UIColor.black.cgColor
@@ -108,13 +107,41 @@ class MobilityMazeTest : UIViewController {
     }
     
     @objc func donePressed() {
+        let resultView = ResultView()
+        var result = ""
         
+        if !hitTop {
+            result += "You didn't hit the start"
+        }
+        
+        if !hitBottom {
+            result += "You didn't hit the bottom"
+        }
+        
+        if hitWall {
+            result = "We have the following recommendations:"
+            resultView.steps = Resultdata[6]
+        }
+        
+        if hitTop && hitBottom && !hitWall {
+            result = "Perfect!!"
+        }
+
+        resultView.result = result
+        self.present(resultView, animated: true, completion: nil)
     }
     
+    func checkStart(_ circle: CAShapeLayer, _ path: CGRect) -> Bool{
+        let intersect = circle.path!.boundingBox.intersection(path)
+        return !intersect.isNull
+    }
+    
+    func checkEnd(_ circle: CAShapeLayer, _ path: CGRect) -> Bool {
+        let intersect = circle.path!.boundingBox.intersection(path)
+        return !intersect.isNull
+    }
     
     func computeCross(_ pathOne: [UIBezierPath], _ pathTwo: CGRect) -> Bool{
-       // if computeCross(edges[0].bounds, tempPath.bounds) {
-
         for i in 0 ..< pathOne.count {
             let intersect = edges[i].bounds.intersection(pathTwo)
             if !intersect.isNull {
@@ -134,7 +161,6 @@ class MobilityMazeTest : UIViewController {
     }
     
     func drawMaze(_ points: [CGPoint]) {
-
         let choice = Int.random(in: 0...1)
         
         if choice == 0 {
@@ -244,6 +270,10 @@ class MobilityMazeTest : UIViewController {
     
     @objc func resetPressed(sender: UIButton!) {
       mainImageView.image = nil
+      hitTop = false
+      hitBottom = false
+      hitWall = false
+      hitCount = 0
       totalDistance = 0.0
     }
 
@@ -311,18 +341,20 @@ class MobilityMazeTest : UIViewController {
      let tempPath = UIBezierPath()
         tempPath.move(to: lastPoint)
         tempPath.addLine(to: currentPoint)
-        //print("temp: \(tempPath.bounds)")
-        //print(edges[0].bounds)
-        if computeCross(edges, tempPath.bounds) {
-            print("Hit wall: (\(currentPoint.x), \(currentPoint.y))")
+        
+        if  computeCross(edges, tempPath.bounds) {
+            hitWall = true
+            hitCount += 1
         }
         
-        
-        if edges[0].contains(currentPoint) {
-            //print("Hit wall: (\(currentPoint.x), \(currentPoint.y))")
-            //print(edges[0].bounds)
+        if !hitTop && checkStart(topCircle, tempPath.bounds) {
+            hitTop = true
         }
-    
+        
+        if !hitBottom && checkEnd(bottomCircle, tempPath.bounds) {
+            hitBottom = true
+        }
+
       lastPoint = currentPoint
     }
     
