@@ -35,7 +35,7 @@ import SwiftUI
 
 class TestList: UITableViewController, UINavigationControllerDelegate {
     
-    var tests = Testdata
+    var tests : [Test] = []
     
     override func viewDidLoad(){
 
@@ -56,7 +56,7 @@ class TestList: UITableViewController, UINavigationControllerDelegate {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return tests.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -76,6 +76,24 @@ class TestList: UITableViewController, UINavigationControllerDelegate {
             let testVC = LargeTextTestViewController()
             navigationController?.pushViewController(testVC, animated: true)
 //            present(testVC, animated: true, completion: nil)
+        } else if(self.tests[indexPath.row].name == "Grid"){
+            let testVC = GridViewController()
+            navigationController?.pushViewController(testVC, animated: true)
+        } else if(self.tests[indexPath.row].name == "Astigmatism"){
+            let testVC = AstigmatismViewController()
+            navigationController?.pushViewController(testVC, animated: true)
+        } else if(self.tests[indexPath.row].name == "Maze"){
+            let testVC = MobilityMazeTest()
+            navigationController?.pushViewController(testVC, animated: true)
+        } else if(self.tests[indexPath.row].name == "Typing") {
+            let testVC = MobilityTypingTest()
+            navigationController?.pushViewController(testVC, animated: true)
+        } else if(self.tests[indexPath.row].name == "Drawing") {
+            let testVC = MobilityDrawingTest()
+            navigationController?.pushViewController(testVC, animated: true)
+        } else if(self.tests[indexPath.row].name == "Fingers") {
+            let testVC = FingersViewController()
+            navigationController?.pushViewController(testVC, animated: true)
         }
         
     }

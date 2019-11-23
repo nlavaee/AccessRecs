@@ -81,7 +81,8 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
     
     @objc func MobilityAction(sender: UIButton!){
         print("Mobility button tapped") // replace eventually to take to first test
-        let testVC = MobilityTypingTest()
+        let testVC = TestList()
+        testVC.tests = MobilityTestdata
         navigationController?.pushViewController(testVC, animated: true)
         
     }
@@ -89,6 +90,7 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
     @objc func VisionAction(sender: UIButton!){
         print("Vision button tapped")
         let testVC = TestList()
+        testVC.tests = VisionTestdata
 //        let testCtrl = UIHostingController(rootView: testVC)
 //        self.present(testVC, animated: true, completion: nil)
         navigationController?.pushViewController(testVC, animated: true)

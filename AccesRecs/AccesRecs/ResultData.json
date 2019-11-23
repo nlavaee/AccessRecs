@@ -12,8 +12,33 @@
     ],
     [
         "Navigate to the Settings app on your phone",
-        "Under the 'Physical and Motor' category, select 'Keyboards'",
-        "Unlock the next steps for just $2.99!",
+        "Under the 'Physical and Motor' category, select 'Touch'",
+        "Select 'Touch Accomodations'",
+        "Turn on 'Use Final Touch Location'"
+    ],
+    [
+        "Navigate to the Settings app on your phone",
+        "Under the 'Physical and Motor' category, select 'Touch'",
+        "Select 'Assistive Touch'",
+        "Turn on 'Assistive Touch'"
+    ],
+    [
+        "Navigate to the Settings app on your phone",
+        "Select 'Accessibility'",
+        "Under the 'Vision' category, turn on 'Magnifier'",
+        "Under the 'Vision' category, turn on 'VoiceOver'"
+    ],
+    [
+        "Navigate to the Settings app on your phone",
+        "Select 'Accessibility'",
+        "Under the 'Vision' category, turn on 'Magnifier'",
+        "Under the 'Vision' category, turn on 'Zoom'"
+    ],
+    [
+        "Navigate to the Settings app on your phone",
+        "Under the 'Physical and Motor' category, select 'Touch'",
+        "Select 'Assistive Touch'",
+        "Turn on 'Assistive Touch'"
     ]
 ]
 

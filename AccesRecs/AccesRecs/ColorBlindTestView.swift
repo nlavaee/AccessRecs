@@ -27,10 +27,9 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
     
     let scrollView = UIScrollView(frame: UIScreen.main.bounds)
     
-    
     override func viewDidLoad() {
         
-        
+
         super.viewDidLoad()
         
 //        self.scrollView.contentSize = CGSize(width:2000, height: 5678)
@@ -124,37 +123,91 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         let resultView = ResultView()
         var result = ""
         score = 0
-        var redGreenFilter = false
-        var blueYellowFilter = false
+        var protanopiaScore = 0
+        var deuteranopiaScore = 0
+        var tritanopiaScore = 0
+        
+//        var redGreenFilter = false
+//        var blueYellowFilter = false
         for i in 0...idx {
-            if(answers[i] == correctAnswers[i]) {
+            if(answers[i] != correctAnswers[i]) {
                 score += 1
             }
-            else {
-                if (i % 3 != 2) {
-                    redGreenFilter = true
-                } else {
-                    blueYellowFilter = true
+//            else {
+//                if (i % 3 != 2) {
+//                    redGreenFilter = true
+//                } else {
+//                    blueYellowFilter = true
+//                }
+//            }
+            if(correctAnswers[i] == "42") {
+                if(answers[i] == "2") {
+                    protanopiaScore += 2
+                }else if(answers[i] == "4") {
+                    deuteranopiaScore += 2
                 }
             }
+            if(correctAnswers[i] == "26") {
+                if(answers[i] == "6") {
+                    protanopiaScore += 2
+                }else if(answers[i] == "2") {
+                    deuteranopiaScore += 2
+                }
+            }
+            if(correctAnswers[i] == "7" && answers[i] != correctAnswers[i]) {
+                tritanopiaScore += 2
+            }
+            if((correctAnswers[i] == "6" || correctAnswers[i] == "73") && (answers[i] != correctAnswers[i])) {
+                protanopiaScore += 1
+                deuteranopiaScore += 1
+                tritanopiaScore += 1
+            }
+            if((correctAnswers[i] == "74" || correctAnswers[i] == "15") && (answers[i] != correctAnswers[i])) {
+                protanopiaScore += 1
+                deuteranopiaScore += 1
+            }
         }
-        if(score > 3) {
+        if(score < 2) {
             result = "You don't need to update any color settings on your phone!"
         } else {
             result = "You might want to change the color filters on your phone"
             resultView.steps = Resultdata[0]
-            
-            if(redGreenFilter && blueYellowFilter) {
-                resultView.steps.append("Choose from one of the four preset filters, or customize your own")
-            }
-            else if (redGreenFilter) {
-                resultView.steps.append("Choose either 'Protanopia' or 'Deuteranopia' filter")
-            }
-            else if (blueYellowFilter) {
-                resultView.steps.append("Choose the 'Tritanopia' filter")
-            }
-            
         }
+        if(score == 7) {
+            resultView.steps.append("Choose from one of the four preset filters, or customize your own")
+        }
+        else if((protanopiaScore < 6 && deuteranopiaScore < 6) && (protanopiaScore + deuteranopiaScore > 7)) {
+            resultView.steps.append("Choose either 'Protanopia' or 'Deuteranopia' filter")
+        }
+        else if(protanopiaScore > 5) {
+            resultView.steps.append("Choose the 'Protanopia' filter")
+        }
+        else if(deuteranopiaScore > 5) {
+            resultView.steps.append("Choose the 'Deuteranopia' filter")
+        }
+        else if(tritanopiaScore > 2) {
+            resultView.steps.append("Choose the 'Tritanopia' filter")
+        } else {
+            resultView.steps.append("Choose from one of the four preset filters, or customize your own")
+        }
+        
+//        if(score > 3) {
+//            result = "You don't need to update any color settings on your phone!"
+//        } else {
+//            result = "You might want to change the color filters on your phone"
+//            resultView.steps = Resultdata[0]
+//
+//            if(redGreenFilter && blueYellowFilter) {
+//                resultView.steps.append("Choose from one of the four preset filters, or customize your own")
+//            }
+//            else if (redGreenFilter) {
+//                resultView.steps.append("Choose either 'Protanopia' or 'Deuteranopia' filter")
+//            }
+//            else if (blueYellowFilter) {
+//                resultView.steps.append("Choose the 'Tritanopia' filter")
+//            }
+//
+//        }
         resultView.result = result
         
 //        let resultCtrl = UIHostingController(rootView: resultView)
@@ -192,10 +245,10 @@ struct ColorBlindTestView: View {
     @State private var guess:String = ""
     @State private var idx: Int = 0
     @State private var score: Int = 0
-    @State private var image: String = Testdata[0].tests[0].imageName
-    @State private var name: String = Testdata[0].tests[0].name
-    @State private var correct: String = String(Testdata[0].tests[0].answer)
-    @State private var id: Int = Testdata[0].tests[0].id
+    @State private var image: String = VisionTestdata[0].tests[0].imageName
+    @State private var name: String = VisionTestdata[0].tests[0].name
+    @State private var correct: String = String(VisionTestdata[0].tests[0].answer)
+    @State private var id: Int = VisionTestdata[0].tests[0].id
     @State private var finished = false
 
     var body: some View {
@@ -249,13 +302,13 @@ struct ColorBlindTestView: View {
             score += 1
         }
 
-        if(idx == Testdata[0].tests.count) {
+        if(idx == VisionTestdata[0].tests.count) {
             finished = true
         } else {
-            name = Testdata[0].tests[idx].name
-            correct = String(Testdata[0].tests[idx].answer)
-            id = Testdata[0].tests[idx].id
-            image = Testdata[0].tests[idx].imageName
+            name = VisionTestdata[0].tests[idx].name
+            correct = String(VisionTestdata[0].tests[idx].answer)
+            id = VisionTestdata[0].tests[idx].id
+            image = VisionTestdata[0].tests[idx].imageName
             guess = ""
         }
     }

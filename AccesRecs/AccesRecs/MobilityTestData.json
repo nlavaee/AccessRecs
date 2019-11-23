@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Typing",
+        "id": 3,
+        "tests": [
+        ],
+    },
+    {
+        "name": "Drawing",
+        "id": 4,
+        "tests": [
+        ],
+    },
+    {
+        "name": "Maze",
+        "id": 5,
+        "tests": [
+        ],
+    }
+]
