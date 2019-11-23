@@ -12,7 +12,14 @@ import UIKit
 let points: [(Int,Int)] = [(0,0)] //, grid[0][grid[0].count - 1], grid[grid.count - 1][grid[0].count-1], grid[grid.count - 1][0]
 //]
 
+func printPoint(_ point: CGPoint) {
+    //print("(\(point.x), \(point.y))")
+}
+
 class MobilityMazeTest : UIViewController {
+    var hitTop = false
+    var hitBottom = false
+    var hitWall = false
     var lastPoint = CGPoint.zero
     var color = UIColor.black
     var brushWidth: CGFloat = 10.0
@@ -28,21 +35,35 @@ class MobilityMazeTest : UIViewController {
     var grid: [[CGPoint]] = []
     var maze: CAShapeLayer = CAShapeLayer()
     var path: UIBezierPath = UIBezierPath()
+    var edges: [UIBezierPath] = []
     
     override func viewDidLoad() {
         mainImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         tempImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         self.view.addSubview(mainImageView)
         self.view.addSubview(tempImageView)
+        
+        let radius = 15
+        let rows = 6 //Int(self.view.frame.height - 200) / 10
+        let cols = 6 //Int(self.view.frame.width - 20) / 30
+        initGrid(rows, cols)
+        drawMaze([])
+        
         resetButton.addTarget(self, action: #selector(resetPressed), for: .touchUpInside)
         resetButton.setTitle("Reset", for: .normal)
         resetButton.backgroundColor = UIColor.blue
         resetButton.layer.cornerRadius = 20
         resetButton.frame = CGRect(x: 10, y: self.view.frame.height - 60, width: 120, height:50)
         
+        doneButton.addTarget(self, action: #selector(donePressed), for: .touchUpInside)
+        doneButton.setTitle("Done", for: .normal)
+        doneButton.backgroundColor = UIColor.red
+        doneButton.layer.cornerRadius = 20
+        doneButton.frame = CGRect(x: self.view.frame.width - 130, y: self.view.frame.height - 60, width: 120, height:50)
+        
         //let label = UILabel()
-        label.frame = CGRect(x: self.view.frame.width / 2 - 100, y: 50, width: 200, height: 75)
-        label.text = " Please Connect the dots"
+        label.frame = CGRect(x: self.view.frame.width / 2 - 150, y: grid[0][0].y - 100, width: 300, height: 50)
+        label.text = " Please connect the dots"
         label.textColor = UIColor.black
         label.font = .preferredFont(forTextStyle: UIFont.TextStyle.title3)
         label.lineBreakMode = .byWordWrapping
@@ -50,85 +71,159 @@ class MobilityMazeTest : UIViewController {
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
         
-        let radius = 10
-        
         let topCircle = CAShapeLayer()
         topCircle.fillColor = nil
-        topCircle.strokeColor = UIColor.blue.cgColor
-        topCircle.fillColor = UIColor.blue.cgColor
+        topCircle.strokeColor = UIColor.black.cgColor
+        topCircle.fillColor = UIColor.black.cgColor
         topCircle.lineWidth = 2
-        topCircle.path = UIBezierPath(arcCenter: CGPoint(x:self.view.frame.width/2, y: self.view.frame.height / 4), radius: CGFloat(radius), startAngle: 0, endAngle: 360, clockwise: true).cgPath
+        topCircle.path = UIBezierPath(arcCenter: CGPoint(x:self.view.frame.width/2, y: grid[0][0].y - 40), radius: CGFloat(radius), startAngle: 0, endAngle: 360, clockwise: true).cgPath
         
         let bottomCircle = CAShapeLayer()
         bottomCircle.fillColor = nil
-        bottomCircle.strokeColor = UIColor.blue.cgColor
-        bottomCircle.fillColor = UIColor.blue.cgColor
+        bottomCircle.strokeColor = UIColor.black.cgColor
+        bottomCircle.fillColor = UIColor.black.cgColor
         bottomCircle.lineWidth = 2
-        bottomCircle.path = UIBezierPath(arcCenter: CGPoint(x:self.view.frame.width/2, y: 3 * self.view.frame.height / 4), radius: CGFloat(radius), startAngle: 0, endAngle: 360, clockwise: true).cgPath
-        
-        // first count = numCols (width), second count = numRows (height)
-        let rows = 10 //Int(self.view.frame.height - 200) / 10
-        let cols = 10 //Int(self.view.frame.width - 20) / 30
-        
-        print("height: \(self.view.frame.height) for \(rows) rows")
-        print("width: \(self.view.frame.height) for \(cols) cols")
-        
-        initGrid(rows, cols)
-        drawMaze([])
-        print(grid.count) //46 rows
-        print(grid[0].count) //35 cols
-        path.move(to: grid[0][0])
-        path.addLine(to: grid[0][4])
-        path.move(to: grid[0][5])
-        path.addLine(to: grid[0][9])
-        path.addLine(to: grid[9][9])
-        path.addLine(to: grid[9][0])
-        path.addLine(to: grid[0][0])
-        path.move(to:grid[0][1])
-        path.addLine(to:grid[1][1])
-        path.addLine(to:grid[1][8])
-        path.addLine(to:grid[2][8])
-        path.move(to: grid[3][4])
-        path.addLine(to: grid[3][8])
-        path.addLine(to: grid[7][8])
-        path.addLine(to: grid[7][9])
-        path.move(to: grid[2][8])
-        path.addLine(to: grid[2][1])
-        path.move(to: grid[4][4])
-        path.addLine(to: grid[4][7])
-        path.addLine(to: grid[7][7])
-        path.move(to: grid[8][9])
-        path.addLine(to: grid[8][3])
-        maze.path = path.cgPath
-        maze.fillColor = nil
-        maze.strokeColor = UIColor.black.cgColor
-        maze.lineWidth = 2
-
-        //print(grid)
-        
-        self.view.layer.addSublayer(maze)
+        bottomCircle.path = UIBezierPath(arcCenter: CGPoint(x:self.view.frame.width/2, y: grid[grid.count - 1][0].y + 40), radius: CGFloat(radius), startAngle: 0, endAngle: 360, clockwise: true).cgPath
+                
         self.view.layer.addSublayer(topCircle)
         self.view.layer.addSublayer(bottomCircle)
         self.view.addSubview(label)
+        self.view.addSubview(resetButton)
+        self.view.addSubview(doneButton)
     }
     
     func initGrid(_ rows: Int, _ cols: Int) {
         grid = [[CGPoint]](repeating: [CGPoint](repeating: CGPoint(x:0, y:0), count: cols), count: rows)
-        let startX = 10
-        let startY = 150
+        let startX = 5
+        let endX = Int(self.view.frame.width) - 5
+        
+        let step = Double(endX - startX) / 5.0
+        let startY = Int(self.view.frame.height) / 4
         for r in 0 ..< rows {
             for c in 0 ..< cols {
-                grid[r][c] = CGPoint(x:startX + 40 * c, y: startY + 40 * r)
+                grid[r][c] = CGPoint(x:startX + Int(Double(step) * Double(c)), y: startY + Int(Double(step) * Double(r)))
             }
         }
     }
     
-    func drawMaze(_ points: [CGPoint]) {
-        //path.move(to: grid[points[0][0],points[0][1]])
+    @objc func donePressed() {
         
-//        for i in 1 ..< points.count {
-//            path.addLine(to: points[i])
-//        }
+    }
+    
+    
+    func computeCross(_ pathOne: [UIBezierPath], _ pathTwo: CGRect) -> Bool{
+       // if computeCross(edges[0].bounds, tempPath.bounds) {
+
+        for i in 0 ..< pathOne.count {
+            let intersect = edges[i].bounds.intersection(pathTwo)
+            if !intersect.isNull {
+                return true
+            }
+        }
+        
+        return false
+        
+    }
+    
+    func appendPath(_ pointOne: CGPoint, _ pointTwo:CGPoint) {
+        let tempPath = UIBezierPath()
+        tempPath.move(to: pointOne)
+        tempPath.addLine(to: pointTwo)
+        edges.append(tempPath)
+    }
+    
+    func drawMaze(_ points: [CGPoint]) {
+
+        let choice = Int.random(in: 0...0)
+        var tempPath = UIBezierPath()
+        
+        if choice == 0 {
+            path.move(to: grid[0][3])
+            path.addLine(to: grid[0][0])
+            path.addLine(to: grid[5][0])
+            path.addLine(to: grid[5][1])
+            path.addLine(to: grid[4][1])
+            path.addLine(to: grid[4][2])
+            
+            appendPath(grid[0][3], grid[0][0])
+            appendPath(grid[0][0], grid[5][0])
+            appendPath(grid[5][0], grid[5][1])
+            appendPath(grid[5][1], grid[4][1])
+            appendPath(grid[4][1], grid[4][2])
+            
+            path.move(to: grid[3][1])
+            path.addLine(to: grid[3][3])
+            path.addLine(to: grid[5][3])
+            path.move(to: grid[5][2])
+            path.addLine(to: grid[5][5])
+            path.addLine(to: grid[0][5])
+            path.addLine(to: grid[0][4])
+            path.addLine(to: grid[1][4])
+            path.addLine(to: grid[1][1])
+            path.addLine(to: grid[2][1])
+            
+            appendPath(grid[3][1], grid[3][3])
+            appendPath(grid[3][3], grid[5][3])
+            appendPath(grid[5][2], grid[5][5])
+            appendPath(grid[5][5], grid[0][5])
+            appendPath(grid[0][5], grid[0][4])
+            appendPath(grid[0][4], grid[1][4])
+            appendPath(grid[1][4], grid[1][1])
+            appendPath(grid[1][1], grid[2][1])
+            
+            path.move(to: grid[2][2])
+            path.addLine(to: grid[2][5])
+            path.move(to: grid[3][4])
+            path.addLine(to: grid[3][5])
+            path.move(to: grid[4][4])
+            path.addLine(to: grid[5][4])
+            
+            appendPath(grid[2][2], grid[2][5])
+            appendPath(grid[3][4], grid[3][5])
+            appendPath(grid[4][4], grid[5][4])
+
+            
+            
+        } else {
+            path.move(to: grid[0][4])
+            path.addLine(to: grid[0][0])
+            path.addLine(to: grid[5][0])
+            path.move(to: grid[5][1])
+            path.addLine(to: grid[5][5])
+            path.addLine(to: grid[0][5])
+            
+            
+            
+            path.move(to: grid[3][0])
+            path.addLine(to: grid[3][1])
+            path.addLine(to: grid[4][1])
+            path.addLine(to: grid[4][4])
+            path.move(to: grid[4][3])
+            path.addLine(to: grid[3][3])
+            path.addLine(to: grid[3][2])
+            path.addLine(to: grid[2][2])
+            path.addLine(to: grid[2][1])
+            path.addLine(to: grid[1][1])
+            
+            path.move(to: grid[1][2])
+            path.addLine(to: grid[1][3])
+            path.addLine(to: grid[0][3])
+            path.move(to: grid[3][5])
+            path.addLine(to: grid[3][4])
+            path.addLine(to: grid[1][4])
+            path.move(to: grid[2][4])
+            path.addLine(to: grid[2][3])
+        }
+        
+        //path.addClip()
+        maze.path = path.cgPath
+        maze.fillColor = nil
+        maze.strokeColor = UIColor.black.cgColor
+        maze.lineWidth = 2
+        //print(maze.bounds)
+        //print(grid)
+        
+        self.view.layer.addSublayer(maze)
     }
     
     @objc func resetPressed(sender: UIButton!) {
@@ -172,6 +267,7 @@ class MobilityMazeTest : UIViewController {
       //context.setLineWidth(4)
       context.setStrokeColor(UIColor.cyan.cgColor)
       context.strokePath()
+
       
       tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
       tempImageView.alpha = opacity
@@ -195,11 +291,22 @@ class MobilityMazeTest : UIViewController {
       let currentPoint = touch.location(in: view)
       drawLine(from: lastPoint, to: currentPoint)
         
-      let xDist = CGFloat(currentPoint.x - lastPoint.x)
-      let yDist = CGFloat(currentPoint.y - lastPoint.y)
-      let distance = sqrt(xDist * xDist + yDist * yDist)
         
-      totalDistance = totalDistance + Double(distance)
+     let tempPath = UIBezierPath()
+        tempPath.move(to: lastPoint)
+        tempPath.addLine(to: currentPoint)
+        //print("temp: \(tempPath.bounds)")
+        //print(edges[0].bounds)
+        if computeCross(edges, tempPath.bounds) {
+            print("Hit wall: (\(currentPoint.x), \(currentPoint.y))")
+        }
+        
+        
+        if edges[0].contains(currentPoint) {
+            //print("Hit wall: (\(currentPoint.x), \(currentPoint.y))")
+            //print(edges[0].bounds)
+        }
+    
       lastPoint = currentPoint
     }
     
@@ -220,27 +327,3 @@ class MobilityMazeTest : UIViewController {
     }
 
 }
-
-
-//       path.move(to: grid[0][0])
-//       path.addLine(to: grid[0][4])
-//       path.move(to: grid[0][5])
-//       path.addLine(to: grid[0][9])
-//       path.addLine(to: grid[9][9])
-//       path.addLine(to: grid[9][0])
-//       path.addLine(to: grid[0][0])
-//       path.move(to:grid[0][1])
-//       path.addLine(to:grid[1][1])
-//       path.addLine(to:grid[1][8])
-//       path.addLine(to:grid[2][8])
-//       path.move(to: grid[3][4])
-//       path.addLine(to: grid[3][8])
-//       path.addLine(to: grid[7][8])
-//       path.addLine(to: grid[7][9])
-//       path.move(to: grid[2][8])
-//       path.addLine(to: grid[2][1])
-//       path.move(to: grid[4][4])
-//       path.addLine(to: grid[4][7])
-//       path.addLine(to: grid[7][7])
-//       path.move(to: grid[8][9])
-//       path.addLine(to: grid[8][3])
