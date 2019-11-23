@@ -209,6 +209,8 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
 //
 //        }
         resultView.result = result
+        resultView.resultType = "Vision"
+
         
 //        let resultCtrl = UIHostingController(rootView: resultView)
         navigationController?.popViewController(animated: false)

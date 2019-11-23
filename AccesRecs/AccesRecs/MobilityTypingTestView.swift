@@ -116,6 +116,8 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
         }
         
         resultView.result = result
+        resultView.resultType = "Motion"
+
         navigationController?.popViewController(animated: false)
 
         self.present(resultView, animated: true, completion: nil)

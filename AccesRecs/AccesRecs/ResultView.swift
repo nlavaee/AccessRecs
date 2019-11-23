@@ -25,6 +25,8 @@ struct DismissModal : View {
 class ResultView: UIViewController, UINavigationControllerDelegate {
     var result : String = ""
     var steps: [String] = []
+    var resultType: String = ""
+    
 //    var dismissModal: Bool = false
     @State var modalGone = false
     
@@ -77,6 +79,8 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
         
         
         // vision guide button
+        
+        if(resultType == "Vision") {
         let guideButton = UIButton(frame: CGRect(x: 0, y: (Double(maxFrameHeight) + max) / 2 - 50, width: 250, height: 100))
         guideButton.setTitle("Check out the Vision guide for more accessibility settings", for: .normal)
         guideButton.addTarget(self, action: #selector(bringToGuide), for: .touchUpInside)
@@ -89,7 +93,9 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
         guideButton.layer.cornerRadius = 30
               
         self.view.addSubview(guideButton)
+        }
         
+        if(resultType == "Motion"){
         // mobility guide button
     
         let guideButtonMotion = UIButton(frame: CGRect(x: 0, y: (Double(maxFrameHeight) + max) / 2 + 75, width: 250, height: 100))
@@ -105,6 +111,7 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
               
         self.view.addSubview(guideButtonMotion)
         
+        }
         let dismissButton = UIButton(frame: CGRect(x: 0, y: (Double(maxFrameHeight) + max) / 2 + 150, width: 250, height: 100))
         dismissButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         dismissButton.setTitle("Dismiss", for: .normal)
