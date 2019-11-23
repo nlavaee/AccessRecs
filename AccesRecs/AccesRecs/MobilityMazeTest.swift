@@ -94,6 +94,7 @@ class MobilityMazeTest : UIViewController {
     
     func initGrid(_ rows: Int, _ cols: Int) {
         grid = [[CGPoint]](repeating: [CGPoint](repeating: CGPoint(x:0, y:0), count: cols), count: rows)
+        edges = []
         let startX = 5
         let endX = Int(self.view.frame.width) - 5
         
@@ -134,8 +135,7 @@ class MobilityMazeTest : UIViewController {
     
     func drawMaze(_ points: [CGPoint]) {
 
-        let choice = Int.random(in: 0...0)
-        var tempPath = UIBezierPath()
+        let choice = Int.random(in: 0...1)
         
         if choice == 0 {
             path.move(to: grid[0][3])
@@ -192,7 +192,11 @@ class MobilityMazeTest : UIViewController {
             path.addLine(to: grid[5][5])
             path.addLine(to: grid[0][5])
             
-            
+            appendPath(grid[0][4], grid[0][0])
+            appendPath(grid[0][0], grid[5][0])
+            appendPath(grid[5][1], grid[5][5])
+            appendPath(grid[5][5], grid[0][5])
+
             
             path.move(to: grid[3][0])
             path.addLine(to: grid[3][1])
@@ -205,6 +209,15 @@ class MobilityMazeTest : UIViewController {
             path.addLine(to: grid[2][1])
             path.addLine(to: grid[1][1])
             
+            appendPath(grid[3][0], grid[3][1])
+            appendPath(grid[3][1], grid[4][1])
+            appendPath(grid[4][1], grid[4][4])
+            appendPath(grid[4][3], grid[3][3])
+            appendPath(grid[3][3], grid[3][2])
+            appendPath(grid[3][2], grid[2][2])
+            appendPath(grid[2][2], grid[2][1])
+            appendPath(grid[2][1], grid[1][1])
+            
             path.move(to: grid[1][2])
             path.addLine(to: grid[1][3])
             path.addLine(to: grid[0][3])
@@ -213,15 +226,18 @@ class MobilityMazeTest : UIViewController {
             path.addLine(to: grid[1][4])
             path.move(to: grid[2][4])
             path.addLine(to: grid[2][3])
+            
+            appendPath(grid[1][2], grid[1][3])
+            appendPath(grid[1][3], grid[0][3])
+            appendPath(grid[3][5], grid[3][4])
+            appendPath(grid[3][4], grid[1][4])
+            appendPath(grid[2][4], grid[2][3])
         }
         
-        //path.addClip()
         maze.path = path.cgPath
         maze.fillColor = nil
         maze.strokeColor = UIColor.black.cgColor
         maze.lineWidth = 2
-        //print(maze.bounds)
-        //print(grid)
         
         self.view.layer.addSublayer(maze)
     }
