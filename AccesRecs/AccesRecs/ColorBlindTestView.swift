@@ -27,10 +27,9 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
     
     let scrollView = UIScrollView(frame: UIScreen.main.bounds)
     
-    
     override func viewDidLoad() {
         
-        
+
         super.viewDidLoad()
         
 //        self.scrollView.contentSize = CGSize(width:2000, height: 5678)
