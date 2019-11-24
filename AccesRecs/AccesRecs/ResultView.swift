@@ -43,7 +43,7 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
         let resultLabel = UILabel(frame: CGRect(x:187.5 - 100, y: 20, width: 200, height: 100))
         resultLabel.center.x = self.view.center.x
         resultLabel.textColor = UIColor.black
-        resultLabel.font = .boldSystemFont(ofSize: 18.0)
+        resultLabel.font = .boldSystemFont(ofSize: 24.0)
         resultLabel.text = result
         resultLabel.lineBreakMode = .byWordWrapping
         resultLabel.numberOfLines = 0
@@ -52,7 +52,7 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
         let recsLabel = UILabel(frame: CGRect(x:187.5 - 100, y: resultLabel.frame.maxY + 15, width: 200, height: 25))
         recsLabel.textColor = UIColor.black
         recsLabel.font = .boldSystemFont(ofSize: 16.0)
-        recsLabel.text = "Recs:"
+        recsLabel.text = "Recommendations: "
         
         let yStart = Double(recsLabel.frame.maxY) - 15.0
         var offset = 0.0
@@ -66,8 +66,8 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
             stepLabel.lineBreakMode = .byWordWrapping
             stepLabel.numberOfLines = 0
             self.view.addSubview(stepLabel)
-            offset = offset + 75
-            max = yStart + offset - 75
+            offset = offset + 25
+            max = yStart + offset - 25
         }
             
         
@@ -81,38 +81,39 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
         // vision guide button
         
         if(resultType == "Vision") {
-        let guideButton = UIButton(frame: CGRect(x: 0, y: (Double(maxFrameHeight) + max) / 2 - 50, width: 250, height: 100))
-        guideButton.setTitle("Check out the Vision guide for more accessibility settings", for: .normal)
-        guideButton.addTarget(self, action: #selector(bringToGuide), for: .touchUpInside)
-        guideButton.backgroundColor = UIColor.red
-        guideButton.titleLabel?.lineBreakMode = .byWordWrapping
-        guideButton.titleLabel?.numberOfLines = 0
-        guideButton.titleLabel?.textAlignment = .center
-        guideButton.center.x = self.view.center.x
-        
-        guideButton.layer.cornerRadius = 30
-              
-        self.view.addSubview(guideButton)
+            let guideButton = UIButton(frame: CGRect(x: 0, y: (Double(maxFrameHeight) + max) / 2 - 100, width: 250, height: 100))
+            guideButton.setTitle("Check out the Vision Guide", for: .normal)
+            guideButton.addTarget(self, action: #selector(bringToGuide), for: .touchUpInside)
+            guideButton.backgroundColor = UIColor.red
+            guideButton.titleLabel?.lineBreakMode = .byWordWrapping
+            guideButton.titleLabel?.numberOfLines = 0
+            guideButton.titleLabel?.textAlignment = .center
+            guideButton.titleLabel?.font = .boldSystemFont(ofSize: 24)
+            guideButton.center.x = self.view.center.x
+            
+            guideButton.layer.cornerRadius = 30
+                  
+            self.view.addSubview(guideButton)
         }
         
         if(resultType == "Motion"){
         // mobility guide button
     
-        let guideButtonMotion = UIButton(frame: CGRect(x: 0, y: (Double(maxFrameHeight) + max) / 2 - 50, width: 250, height: 100))
-        guideButtonMotion.setTitle("Check out the Motion guide for more accessibility settings", for: .normal)
-        guideButtonMotion.addTarget(self, action: #selector(bringToMotionGuide(sender:)), for: .touchUpInside)
-        guideButtonMotion.backgroundColor = UIColor.red
-        guideButtonMotion.titleLabel?.lineBreakMode = .byWordWrapping
-        guideButtonMotion.titleLabel?.numberOfLines = 0
-        guideButtonMotion.titleLabel?.textAlignment = .center
-        guideButtonMotion.center.x = self.view.center.x
-        
-        guideButtonMotion.layer.cornerRadius = 30
-              
-        self.view.addSubview(guideButtonMotion)
+            let guideButtonMotion = UIButton(frame: CGRect(x: 0, y: (Double(maxFrameHeight) + max) / 2  - 100, width: 250, height: 100))
+            guideButtonMotion.setTitle("Check out the Motion Guide", for: .normal)
+            guideButtonMotion.addTarget(self, action: #selector(bringToMotionGuide(sender:)), for: .touchUpInside)
+            guideButtonMotion.backgroundColor = UIColor.red
+            guideButtonMotion.titleLabel?.lineBreakMode = .byWordWrapping
+            guideButtonMotion.titleLabel?.numberOfLines = 0
+            guideButtonMotion.titleLabel?.textAlignment = .center
+            guideButtonMotion.center.x = self.view.center.x
+            
+            guideButtonMotion.layer.cornerRadius = 30
+                  
+            self.view.addSubview(guideButtonMotion)
         
         }
-        let dismissButton = UIButton(frame: CGRect(x: 0, y: (Double(maxFrameHeight) + max) / 2 + 150, width: 250, height: 100))
+        let dismissButton = UIButton(frame: CGRect(x: 0, y: (Double(maxFrameHeight) + max) / 2 + 50, width: 250, height: 100))
         dismissButton.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         dismissButton.setTitle("Dismiss", for: .normal)
 //        dismissButton.backgroundColor = UIColor.red
@@ -120,6 +121,7 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
         dismissButton.titleLabel?.lineBreakMode = .byWordWrapping
         dismissButton.titleLabel?.numberOfLines = 0
         dismissButton.titleLabel?.textAlignment = .center
+        dismissButton.titleLabel?.font = .boldSystemFont(ofSize: 24)
         dismissButton.center.x = self.view.center.x
         
         dismissButton.layer.cornerRadius = 30
