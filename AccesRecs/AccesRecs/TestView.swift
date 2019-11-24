@@ -67,11 +67,31 @@ class LargeTextTestViewController : UIViewController {
         let resultView = ResultView()
         resultView.resultType = "Vision"
         var result = ""
+        
+        let recsRequest = RecsRequest(featid:5)
+    
+        let group = DispatchGroup()
+        
+        group.enter()
+        
+        recsRequest.getRecs{
+            result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case.success(let recs):
+                resultView.recs = recs.map({ $0.rec_name })
+                group.leave()
+            }
+        }
+        group.wait()
+        
+        
         if(textSize > 18) {
             result = "You might want to increase the text size on your phone"
-            resultView.steps = Resultdata[1]
         } else {
             result = "You don't need to increase the text size on your phone"
+            resultView.recs = [String]()
         }
         resultView.result = result
 //        let resultCtrl = UIHostingController(rootView: resultView)
@@ -158,15 +178,33 @@ class GridViewController : UIViewController {
     
     @objc func sawBlurs(sender: UIButton!) {
         let resultView = ResultView()
-               var result = ""
-              result = "We have recommendations for you:"
-              resultView.steps = Resultdata[4]
-              resultView.result = result
-              resultView.resultType = "Vision"
+        var result = ""
+        result = "We have recommendations for you:"
+        
+        let recsRequest = RecsRequest(featid:6)
+    
+        let group = DispatchGroup()
+        
+        group.enter()
+        
+        recsRequest.getRecs{
+            result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case.success(let recs):
+                resultView.recs = recs.map({ $0.rec_name })
+                group.leave()
+            }
+        }
+        group.wait()
+        //              // resultView.steps = Resultdata[4]
+        resultView.result = result
+        resultView.resultType = "Vision"
 
-            navigationController?.popViewController(animated: false)
+        navigationController?.popViewController(animated: false)
 
-              self.present(resultView, animated: true, completion: nil)
+        self.present(resultView, animated: true, completion: nil)
     }
 }
 
@@ -296,7 +334,23 @@ class AstigmatismViewController : UIViewController {
         let resultView = ResultView()
                var result = ""
               result = "We have recommendations for you:"
-              resultView.steps = Resultdata[5]
+                  let recsRequest = RecsRequest(featid:6)
+              
+                  let group = DispatchGroup()
+                  
+                  group.enter()
+                  
+                  recsRequest.getRecs{
+                      result in
+                      switch result {
+                      case .failure(let error):
+                          print(error)
+                      case.success(let recs):
+                          resultView.recs = recs.map({ $0.rec_name })
+                          group.leave()
+                      }
+                  }
+                  group.wait()
               resultView.result = result
               resultView.resultType = "Vision"
 

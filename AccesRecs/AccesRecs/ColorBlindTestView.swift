@@ -171,40 +171,56 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
             result = "You don't need to update any color settings on your phone!"
         } else {
             result = "You might want to change the color filters on your phone"
-            resultView.steps = Resultdata[0]
+                let recsRequest = RecsRequest(featid:14)
+            
+                let group = DispatchGroup()
+                
+                group.enter()
+                
+                recsRequest.getRecs{
+                    result in
+                    switch result {
+                    case .failure(let error):
+                        print(error)
+                    case.success(let recs):
+                        resultView.recs = recs.map({ $0.rec_name })
+                        group.leave()
+                    }
+                }
+                group.wait()
         }
-        if(score == 7) {
-            resultView.steps.append("Choose from one of the four preset filters, or customize your own")
-        }
-        else if((protanopiaScore < 6 && deuteranopiaScore < 6) && (protanopiaScore + deuteranopiaScore > 7)) {
-            resultView.steps.append("Choose either 'Protanopia' or 'Deuteranopia' filter")
-        }
-        else if(protanopiaScore > 5) {
-            resultView.steps.append("Choose the 'Protanopia' filter")
-        }
-        else if(deuteranopiaScore > 5) {
-            resultView.steps.append("Choose the 'Deuteranopia' filter")
-        }
-        else if(tritanopiaScore > 2) {
-            resultView.steps.append("Choose the 'Tritanopia' filter")
-        } else {
-            resultView.steps.append("Choose from one of the four preset filters, or customize your own")
-        }
+//        if(score == 7) {
+//            // resultView.steps.append("Choose from one of the four preset filters, or customize your own")
+//        }
+//        else if((protanopiaScore < 6 && deuteranopiaScore < 6) && (protanopiaScore + deuteranopiaScore > 7)) {
+//            // resultView.steps.append("Choose either 'Protanopia' or 'Deuteranopia' filter")
+//        }
+//        else if(protanopiaScore > 5) {
+//            // resultView.steps.append("Choose the 'Protanopia' filter")
+//        }
+//        else if(deuteranopiaScore > 5) {
+//            // resultView.steps.append("Choose the 'Deuteranopia' filter")
+//        }
+//        else if(tritanopiaScore > 2) {
+//            // resultView.steps.append("Choose the 'Tritanopia' filter")
+//        } else {
+//            // resultView.steps.append("Choose from one of the four preset filters, or customize your own")
+//        }
         
 //        if(score > 3) {
 //            result = "You don't need to update any color settings on your phone!"
 //        } else {
 //            result = "You might want to change the color filters on your phone"
-//            resultView.steps = Resultdata[0]
+//            // resultView.steps = Resultdata[0]
 //
 //            if(redGreenFilter && blueYellowFilter) {
-//                resultView.steps.append("Choose from one of the four preset filters, or customize your own")
+//                // resultView.steps.append("Choose from one of the four preset filters, or customize your own")
 //            }
 //            else if (redGreenFilter) {
-//                resultView.steps.append("Choose either 'Protanopia' or 'Deuteranopia' filter")
+//                // resultView.steps.append("Choose either 'Protanopia' or 'Deuteranopia' filter")
 //            }
 //            else if (blueYellowFilter) {
-//                resultView.steps.append("Choose the 'Tritanopia' filter")
+//                // resultView.steps.append("Choose the 'Tritanopia' filter")
 //            }
 //
 //        }

@@ -24,7 +24,7 @@ struct DismissModal : View {
 
 class ResultView: UIViewController, UINavigationControllerDelegate {
     var result : String = ""
-    var steps: [String] = []
+    var recs: [String] = []
     var resultType: String = ""
     
 //    var dismissModal: Bool = false
@@ -49,20 +49,20 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
         resultLabel.numberOfLines = 0
         resultLabel.textAlignment = .center
         
-        let stepsLabel = UILabel(frame: CGRect(x:187.5 - 100, y: resultLabel.frame.maxY + 15, width: 200, height: 25))
-        stepsLabel.textColor = UIColor.black
-        stepsLabel.font = .boldSystemFont(ofSize: 16.0)
-        stepsLabel.text = "Steps:"
+        let recsLabel = UILabel(frame: CGRect(x:187.5 - 100, y: resultLabel.frame.maxY + 15, width: 200, height: 25))
+        recsLabel.textColor = UIColor.black
+        recsLabel.font = .boldSystemFont(ofSize: 16.0)
+        recsLabel.text = "Recs:"
         
-        let yStart = Double(stepsLabel.frame.maxY) - 15.0
+        let yStart = Double(recsLabel.frame.maxY) - 15.0
         var offset = 0.0
         var max = 0.0
-        for step in steps {
+        for rec in recs {
             let stepLabel = UILabel(frame: CGRect(x: 187.5 - 100, y: yStart + offset, width: 200, height: 75))
             stepLabel.center.x = self.view.center.x
             stepLabel.textColor = UIColor.black
             stepLabel.font = .systemFont(ofSize: 16.0)
-            stepLabel.text = "• " + step
+            stepLabel.text = "• " + rec
             stepLabel.lineBreakMode = .byWordWrapping
             stepLabel.numberOfLines = 0
             self.view.addSubview(stepLabel)
@@ -73,8 +73,8 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
         
         
         self.view.addSubview(resultLabel)
-        if(steps.count > 0) {
-            self.view.addSubview(stepsLabel)
+        if(recs.count > 0) {
+            self.view.addSubview(recsLabel)
         }
         
         
@@ -98,7 +98,7 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
         if(resultType == "Motion"){
         // mobility guide button
     
-        let guideButtonMotion = UIButton(frame: CGRect(x: 0, y: (Double(maxFrameHeight) + max) / 2 + 75, width: 250, height: 100))
+        let guideButtonMotion = UIButton(frame: CGRect(x: 0, y: (Double(maxFrameHeight) + max) / 2 - 50, width: 250, height: 100))
         guideButtonMotion.setTitle("Check out the Motion guide for more accessibility settings", for: .normal)
         guideButtonMotion.addTarget(self, action: #selector(bringToMotionGuide(sender:)), for: .touchUpInside)
         guideButtonMotion.backgroundColor = UIColor.red

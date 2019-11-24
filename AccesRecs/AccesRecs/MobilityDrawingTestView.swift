@@ -103,7 +103,7 @@ class MobilityDrawingTest : UIViewController {
            result = "Perfect!!"
                    } else {
            result = "We have recommendations for you:"
-           resultView.steps = Resultdata[3]
+           // // resultView.steps = Resultdata[3]
        }
 
        resultView.result = result
