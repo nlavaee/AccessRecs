@@ -14,6 +14,7 @@ import SwiftUI
 
 struct TemplateGuideView: View {
     @State private var toggleTrue = false
+    @State var zoomPhoto = true
     var guide: Guide
 
     
@@ -37,7 +38,7 @@ struct TemplateGuideView: View {
             .padding()
 //          line 43-52
 //          before text box and image
-            if !toggleTrue{
+            if !toggleTrue {
                 Text("Before")
                     .frame(alignment:.center)
                     .padding([.horizontal])
@@ -48,7 +49,13 @@ struct TemplateGuideView: View {
                     .lineLimit(1)
                 guide.imgBefore
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(contentMode: zoomPhoto ? .fit : .fill)
+                    .shadow(radius: 2)
+                    .animation(Animation.spring(
+                        response: 0.87, dampingFraction: 0.7, blendDuration: 1))
+                    .onTapGesture {
+                        self.zoomPhoto.toggle()
+                }
     //                .scaledToFit()
                 Spacer()
                     .frame(height:10)
@@ -63,8 +70,14 @@ struct TemplateGuideView: View {
                 )
                 .lineLimit(1)
             guide.imgAfter
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+                  .resizable()
+                  .aspectRatio(contentMode: zoomPhoto ? .fit : .fill)
+                  .shadow(radius: 2)
+                  .animation(Animation.spring(
+                   response: 0.87, dampingFraction: 0.7, blendDuration: 1))
+                  .onTapGesture {
+                     self.zoomPhoto.toggle()
+              }
            }
         }
 //        .padding()

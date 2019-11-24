@@ -37,12 +37,13 @@ struct SettingsStepsView: View {
                    
                     }
                     .padding()
+           
 //                .padding(.bottom, 20)
 //                .padding(.vertical, 40)
 //                .padding(.horizontal, 20)
 //                .minimumScaleFactor(0.01)
             }
-        }
+          }
             
         }
     

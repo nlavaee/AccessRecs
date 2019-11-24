@@ -49,6 +49,7 @@ struct DropDown : View {
                 Text(guide.name).fontWeight(.heavy).foregroundColor(.green).font(.title)
 //                    .minimumScaleFactor(0.01)
                     .lineLimit(nil)
+                    .multilineTextAlignment(.center)
                     
                 }.padding()
                 VStack {

@@ -22,18 +22,25 @@ struct UsageGuideView: View {
             .padding()
             
     
-            VStack(alignment: .leading) {
-                ForEach(guide.Usage, id: \.self) { line in
+              ScrollView(.vertical, showsIndicators: true){
+                VStack(alignment: .leading){
                     
-                   Text("• " + line)
-                    .font(.body) //gotta fix this later
-//                    .minimumScaleFactor(0.1)
-                    .minimumScaleFactor(0.01)
-                    .lineLimit(nil)
-                    .multilineTextAlignment(.leading)
-                    
+                    ForEach(guide.Usage, id: \.self) { line in
+                        
+                        Text("• " + line)
+    //                    .font(.body)
+                        .font(.body).fixedSize(horizontal: false, vertical: true)
+                        .lineLimit(nil)
+    //                    .minimumScaleFactor(0.01)
+                        .multilineTextAlignment(.leading)
+                       
+                        }
+                        .padding()
+    //                .padding(.bottom, 20)
+    //                .padding(.vertical, 40)
+    //                .padding(.horizontal, 20)
+    //                .minimumScaleFactor(0.01)
                 }
-                .padding()
             }
         }
     }

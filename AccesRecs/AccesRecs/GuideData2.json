@@ -3,23 +3,23 @@
     "name": "VoiceOver",
     "category": "Vision",
     "id": 0,
-    "imageName": "BeforeVoiceOver",
+    "imageName": "VoiceOver",
     "imageBefore": "BeforeVoiceOver",
     "imageAfter": "AfterVoiceOver",
-    "Description": "voiceover is a gesture-based screen reader that lets you enjoy using iphone even if you don’t see the screen",
+    "Description": "Voiceover is a gesture-based screen reader that lets you enjoy using iphone even if you don’t see the screen",
     "Steps": ["Navigate to the Settings app on your phone and select 'Accessibility",
         "Under the 'Vision' category, select 'VoiceOver'",
         "toggle the VoiceOver setting on"],
-    "Usage": []
+    "Usage": ["Practice the following gestures with one, two, three, and four fingers:", "Tap", "Double-tap", "Triple-tap", "Swipe left, right, up, or down", "When you finish practicing, tap Done, then double-tap to exit."]
 },
 {
     "name": "VoiceOver Audio",
     "category": "Vision",
     "id": 1,
-    "imageName": "BeforeVoiceOver",
+    "imageName": "VOAudio",
     "imageBefore": "BeforeVoiceOver",
     "imageAfter": "AfterVoiceOver",
-    "Description": "voiceover is a gesture-based screen reader that lets you enjoy using iphone even if you don’t see the screen",
+    "Description": "Voiceover is a gesture-based screen reader that lets you enjoy using iphone even if you don’t see the screen",
     "Steps": [
         "Navigate to the Settings app on your phone and select 'Accessibility",
         "Under the 'Vision' category, select 'VoiceOver'",
@@ -27,16 +27,16 @@
         "Turn on Mute Sound Effects",
         "Turn on Audio Ducking to temporarily reduce playback volume when VoiceOver speaks.",
         "Adjust audio routing options when you connect additional devices, such as an instrument amplifier or a DJ mixer."],
-    "Usage": [] 
+    "Usage": ["To increase or decrease the volume, press the volume buttons on iPhone.", "To set other audio options, go to Settings  > Accessibility > VoiceOver > Audio, then do any of the following:", "Turn on Mute Sound Effects.", "Turn on Audio Ducking to temporarily reduce playback volume when VoiceOver speaks.", "Adjust audio routing options when you connect additional devices, such as an instrument amplifier or a DJ mixer."]
 },
 {
     "name": "VoiceOver Commands",
     "category": "Vision",
     "id": 2,
-    "imageName": "BeforeVoiceOver",
+    "imageName": "VOCommands",
     "imageBefore": "BeforeVoiceOver",
     "imageAfter": "AfterVoiceOver",
-    "Description": "voiceover is a gesture-based screen reader that lets you enjoy using iphone even if you don’t see the screen",
+    "Description": "Voiceover is a gesture-based screen reader that lets you enjoy using iphone even if you don’t see the screen",
     "Steps": [
         "Navigate to the Settings app on your phone and select 'Accessibility",
         "Under the 'Vision' category, select 'VoiceOver'",
@@ -47,7 +47,12 @@
         "Triple-tap",
         "Swipe left, right, up, or down",
         "When you finish practicing, tap Done, then double-tap to exit."],
-    "Usage": []
+    "Usage": ["Single-tap anywhere on the screen and your iPhone or iPad will speak aloud the item that you're tapping on.",
+    "Double-tap on an item to select it.",
+    "To scroll through a page, use three fingers. With VoiceOver off you typically use only one finger to scroll, but in VoiceOver you'll need to use three so that your iPhone or iPad doesn't misread a tap as a scroll.",
+    "Double-tap with three fingers to toggle speech commands on and off from the Lock Screen.",
+    "A two-finger double-tap while performing an action will start or stop that action. For example, if you're on a phone call, double-tapping the screen with two fingers will end the call. If you're in the Camera app, double-tap with two fingers to take a photo.",
+    "In VoiceOver options you can customize and fine tune options such as whether or not you'd like the device to speak notifications."]
 },
 {
         "name": "Zoom",
@@ -68,7 +73,10 @@
         "Zoom Filter: Choose None, Inverted, Grayscale, Grayscale Inverted, or Low Light.",     
         "Maximum Zoom Level: Drag the slider to adjust the level.",
         "To add Zoom to Accessibility Shortcut, go to Settings > Accessibility > Accessibility Shortcut, then tap Zoom"],
-        "Usage": []
+        "Usage": ["Double tap with three fingers anywhere on the screen to enable and disable zoom. You can do this from pretty much anywhere.",
+        "Drag three fingers around the screen to pan around and move to another area of the screen.",
+        "Use one or two fingers to scroll in the particular section that is on the screen.",
+        "Tap and hold the anchor to drag the magnifying glass up and down the screen."]
 },
 {
     "name": "Magnifier",
@@ -100,7 +108,7 @@
     "Steps":  ["Navigate to the Settings app on your phone and select 'Accessibility",
     "Under the 'Vision' category, select 'Display & Text Size'",
     "toggle the 'Bold Text' on"],
-    "Usage": []  
+    "Usage": ["Tap Continue to restart your iPhone with all text in bold."]
 },
 {
     "name": "Large Text",
@@ -114,7 +122,7 @@
     "Under the 'Vision' category, select 'Display & Text Size'",
     "Select Larger Text",
     "Adjust the font size to your preference, toggle Larger Accessiblity Sizes on for larger text options"],
-    "Usage": []
+    "Usage": ["Tap and drag the slider at the bottom to increase or decrease text size. Left is smaller; right is bigger."]
 },
 {
     "name": "Button Shape",
@@ -127,20 +135,20 @@
     "Steps":  ["Navigate to the Settings app on your phone and select 'Accessibility",
     "Under the 'Vision' category, select 'Display & Text Size'",
     "Toggle 'Button Shape' on"],
-    "Usage": []
+    "Usage": ["You should instantly notice that interactive menu items now are highlighted gray.", "Actionable items such as send buttons and menus will also display an underline indicating that you can tap on certain options to perform an action.", "Button shapes and underlines should work for all built-in apps and some third party apps, but be aware that not all of them will."]
 },
 {
     "name": "On/Off Labels",
     "category": "Vision",
     "id": 8,
-    "imageName": "BeforeOnOff",
+    "imageName": "OnOffLabels",
     "imageBefore": "BeforeOnOff",
     "imageAfter": "AfterOnOff",
     "Description": "Shows whether button is one or off (1 or 0)",
     "Steps": ["Navigate to the Settings app on your phone and select 'Accessibility",
     "Under the 'Vision' category, select 'Display & Text Size'",
     "Toggle 'On/Off Label' on"],
-    "Usage": []
+    "Usage": ["You should now see visual on and off representations on each toggle switch throughout iOS."]
 },
 {
     "name": "Reduce Transparency",
@@ -153,59 +161,59 @@
     "Steps":  ["Navigate to the Settings app on your phone and select 'Accessibility",
     "Under the 'Vision' category, select 'Display & Text Size'",
     "Toggle 'Reduce Transparency' on"],
-    "Usage": []
+    "Usage": ["Some apps use transparent and blurred backgrounds which can make text hard to read.", "To help improve legibility turn on Reduce Transparency."]
 },
 {
   "name": "Increase Constrast",
   "category": "Vision",
   "id": 10,
-  "imageName": "BeforeIncreaseContrast",
+  "imageName": "IncreaseContrast",
   "imageBefore": "BeforeIncreaseContrast",
   "imageAfter": "AfterIncreaseContrast",
   "Description": "Improves the contrast and legibility by altering color and text styling",
   "Steps": ["Navigate to the Settings app on your phone and select 'Accessibility",
     "Under the 'Vision' category, select 'Display & Text Size'",
     "Toggle 'Increase Constrast' on"],
-    "Usage": []
+    "Usage": ["With increase contrast the transparency becomes solid and the blue becomes sharp, making everything clearer and easier to read, tap, and understand."]
 },
 {
   "name": "Differentiate Without Color",
   "category": "Vision",
   "id": 11,
-  "imageName": "",
+  "imageName": "DiffWColor",
   "imageBefore": "",
   "imageAfter": "",
   "Description": "",
   "Steps": ["Navigate to the Settings app on your phone and select 'Accessibility",
     "Under the 'Vision' category, select 'Display & Text Size'",
     "Toggle 'Differentiate Without Color' on"],
-    "Usage": []
+  "Usage": ["The basic idea is that the setting will automatically replace user interface elements that rely solely on color to alternatives that are easier to differentiate.", "Any color indications will be replaced with a shape or symbol that doesn’t rely on color.", "A game, for example, that utilizes different colors to indicate player 1 and player 2 might switch to a unique icon to differentiate between players."]
 },
 {
   "name": "Smart Invert",
   "category": "Vision",
   "id": 12,
-  "imageName": "",
+  "imageName": "SmartInvert",
   "imageBefore": "",
   "imageAfter": "",
   "Description": "Smart Invert Colors reverses the colors of the display, except for images, media, and some apps that use dark color styles",
   "Steps": ["Navigate to the Settings app on your phone and select 'Accessibility",
     "Under the 'Vision' category, select 'Display & Text Size'",
     "Toggle 'Smart Invert' on"],
-    "Usage": []
+    "Usage": ["Instead of inverting all colors, ‘Smart Invert Colors’ only inverts the UI, meaning things like graphics, images, and app icons are all preserved in their original form.", "The result is a sort of dark UI or dark mode for iOS 11 with the rest of the content mostly remaining the same."]
 },
 {
   "name": "Classic Invert",
   "category": "Vision",
   "id": 13,
-  "imageName": "",
+  "imageName": "ClassicInvert",
   "imageBefore": "",
   "imageAfter": "",
   "Description": "Classic Invert Colors reverses the colors of the display",
   "Steps": ["Navigate to the Settings app on your phone and select 'Accessibility",
     "Under the 'Vision' category, select 'Display & Text Size'",
     "Toggle 'Classic Invert' on"],
-    "Usage": []
+    "Usage": ["If you use your iPhone or iPad in the dark, you may experience eye strain from the contrast between the bright screen and the dark surroundings.", "These dark colors are more appropriate for night use and for avoiding eye strain. Changing the color can be done either manually by the user or automatically based on ambient light or time of day." ]
 },
 {
     "name": "Gray Scale",
@@ -218,65 +226,65 @@
     "Steps":  ["Navigate to the Settings app on your phone and select 'Accessibility",
     "Under the 'Vision' category, select 'Display Accommodations'",
     "Select 'Color Filters' and toggle the setting on"],
-    "Usage": []
+    "Usage": ["The purpose of grayscale mode is to make smartphones less addictive, to reduce poor-habit formation, and to avoid Digital ADD."]
 },
 {
   "name": "Color Filters",
   "category": "Vision",
   "id": 15,
-  "imageName": "",
+  "imageName": "ColorFilters",
   "imageBefore": "",
   "imageAfter": "",
   "Description": "",
   "Steps": ["Navigate to the Settings app on your phone and select 'Accessibility",
     "Under the 'Vision' category, select 'Display Accommodations'",
     "Select 'Color Filters' and toggle the setting on"],
-  "Usage": []
+  "Usage": ["Tap a Color Filter: Grayscale, Red/Green Filter for Protanopia, Green/Red Filter for Deuteranopia, Blue/Yellow Filter for Tritanopia", "Tap and drag the Intensity slider at the bottom of the screen to increase or decrease the intensity of the filter.", "The way the filter affects your iPhone is shown by the three images at the top of the Color Filters screen. Swipe through the three images to see how the filter will affect the look of your phone."]
 },
 {
   "name": "Reduce Motion",
   "category": "Vision",
   "id": 16,
-  "imageName": "",
+  "imageName": "ReduceMotion",
   "imageBefore": "",
   "imageAfter": "",
   "Description": "This setting reduces the motion of the user interface, including the parallax effect of icons",
   "Steps": ["Navigate to the Settings app on your phone and select 'Accessibility",
     "Under the Vision category, select 'Motion'",
     "Select 'Reduce Motion' and toggle the setting on"],
-  "Usage": []  
+  "Usage": ["When on, the Reduce Motion setting limits on your Home screen such as the screen zooms upon opening folders or apps, icons move when the device is moved, photos or images used as the wallpaper are slightly zoomed and may not be able to be scaled to fit the screen."]
 },
 {
   "name": "Prefer Cross-Fade Transitions",
   "category": "Vision",
   "id": 17,
-  "imageName": "",
+  "imageName": "PreferCrossFade",
   "imageBefore": "",
   "imageAfter": "",
   "Description": "This setting reduces the motion of user interface controls that slide in and out when appearing and disappearing",
   "Steps": ["Navigate to the Settings app on your phone and select 'Accessibility'",
     "Under the Vision category, select 'Motion'",
     "Select 'Prefer Cross-Fade Transitions' and toggle the setting on"],
-  "Usage": [] 
+  "Usage": ["Rather than having zooming in and out animations for opening and closing apps, you’ll have a fading transition animation instead without any motion to help with any motion sickness.", "Sometimes it can feel faster to have the fading transitions rather than the sliding and zooming animations, though that can sometimes be just personal preference and observation."]
 },
 {
   "name": "Auto-Play Message Effects",
   "category": "Vision",
   "id": 18,
-  "imageName": "",
+  "imageName": "AutoPlayMessage",
   "imageBefore": "",
   "imageAfter": "",
   "Description": "This setting allows the Messages app to automatically play full-screen effects. If you turn this setting off, you can still manually play effects by tapping Replay below the message bubble.",
   "Steps": ["Navigate to the Settings app on your phone and select 'Accessibility",
     "Under the Vision category, select 'Motion'",
     "Select 'Auto-Play Message Effects' and toggle the setting on"],
-  "Usage": [] 
+  "Usage": ["If you turn Auto-play Message Effects Off while Reduce Motion is On, the effects your friends send you will not auto-play in the Messages app, you have to manually play the effect by tapping the recovery icon under text message", "When Reduce Motion is On, the icons in status bars appear ghosting on the iPhone Home screen. If you are annoyed with the parallax effect of icons, you can turn off Reduce motion."]
 },
 {
   "name": "Spoken Content",
   "category": "Vision",
   "id": 20,
-  "imageName": "",
+  "imageName": "SpokenContent",
   "imageBefore": "",
   "imageAfter": "",
   "Description": "Even if VoiceOver is turned off, you can have iPhone speak selected text or the entire screen. iPhone can also provide feedback and speak text corrections and suggestions as you type.",
@@ -304,13 +312,13 @@
     "Steps":  ["Navigate to the Settings app on your phone",
     "Select Display & Brightness",
     "toggle on 'Dark' option"],
-    "Usage": []
+    "Usage": ["You can also set Dark Mode to turn on automatically at sunset or at a specific time.", "Go to Settings > Display & Brightness and select Automatic.", "Tap Options to set a schedule for Dark Mode."]
 },
 {
   "name": "Assistive Touch",
   "category": "Vision",
   "id": 23,
-  "imageName": "BeforeAssistiveTouch",
+  "imageName": "AssistiveTouch",
   "imageBefore": "BeforeAssistiveTouch",
   "imageAfter": "AfterAssistiveTouch",
   "Description": "AssistiveTouch helps you use iPhone if you have difficulty touching the screen or pressing the buttons. You can use AssistiveTouch without any accessory to perform actions or gestures that are difficult for you. You can also use a compatible adaptive accessory (such as a joystick) together with AssistiveTouch to control iPhone.",
