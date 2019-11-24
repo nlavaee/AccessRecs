@@ -1,0 +1,78 @@
+[
+{
+  "name": "Touch Accommodiations",
+  "category": "Motion",
+  "id": 24,
+  "imageName": "TouchAcomm",
+  "imageBefore": "TouchAccomBefore",
+  "imageAfter": "TouchAccomAfter",
+  "Description": "If you have trouble using the touchscreen or buttons, you can change how iPhone responds to your touch.",
+  "Steps": ["Navigate to the Settings app on your phone and select 'Accessibility",
+    "Under the Motion category, select 'Touch Accommodations'",
+    "You can configure iPhone to do any of the following: ",
+    "Respond to touches of a certain duration: Turn on Hold Duration, then tap the Decrement button (➖) or the Increment button (➕) to adjust the duration (the default is 0.10 seconds). To perform swipe gestures without waiting for the specified hold duration, tap Swipe Gestures, then turn on Swipe Gestures. You can choose the amount of required movement before a swipe gesture begins.",
+    "Ignore multiple touches: Turn on Ignore Repeat, then tap the Decrement button (➖) or the Increment button (➕) to adjust the amount of time allowed between multiple touches. Then, if you touch the screen several times quickly, iPhone treats the touches as one.",
+    "Respond to the first or last place you touch: Choose Use Initial Touch Location or Use Final Touch Location."],
+  "Usage": ["Use Hold Duration to determine how long you press the screen before your touch is recognized. Increasing the hold duration time beyond 0.3 seconds will cause a circular timer to display when you touch the screen. After the timer is finished, your touch will be recognized by your device as an intentional input.", "To use Swipe Gestures, you need to have Hold Duration and Tap Assistance enabled on your device. When Swipe Gestures is on, you can swipe without waiting for the Hold Duration timer to complete. You can also determine how far your finger must move before a swipe is recognized by enabling the Required Movement setting, which appears when Swipe Gestures is on.", "You can choose to have multiple inadvertent or involuntary taps read as a single tap. Just tap a duration while you're using several taps.", "With Tap Assistance, your device responds to a tap when you lift your finger within a certain period of time, called the gesture delay. Your device can respond to other gestures, like drags, if you wait longer than the gesture delay. Tap the - and + buttons to change the gesture delay." ]
+},
+{
+  "name": "Shake to Undo",
+  "category": "Vision",
+  "id": 25,
+  "imageName": "UndoShake",
+  "imageBefore": "BeforeShakeUndo",
+  "imageAfter": "AfterShakeUndo",
+  "Description": "If you tend to shake your phone by accident, you can disable 'Shake to Undo' to prevent the Undo alert from appearing",
+  "Steps": ["Navigate to the Settings app on your phone and select 'Accessibility",
+    "Under the Motion category, select 'Shake to Undo' and toggle the setting on or off"],
+  "Usage": ["If you ever accidentally undo something, you can easily redo your last step.", "Type anything.", "Physically shake your iPhone or iPad.", "Tap Undo."]
+},
+{
+  "name": "Vibration",
+  "category": "Motion",
+  "id": 26,
+  "imageName": "Vibration",
+  "imageBefore": "BeforeVibration",
+  "imageAfter": "AfterVibration",
+  "Description": "Prevent vibrations, including those for emergency alerts",
+  "Steps": ["Navigate to the Settings app on your phone and select 'Accessibility",
+    "Under the Motion category, select 'Vibrations' and toggle the setting on or off"],
+  "Usage": ["Choose a tone (scroll to see them all).", "Ringtones play for incoming calls, clock alarms, and the clock timer; text tones are used for text messages, new voicemail, and other alerts.", "Tap Vibration, then choose a vibration pattern, or tap Create New Vibration to create your own."]
+},
+{
+  "name": "Call Audio Routing",
+  "category": "Motion",
+  "id": 28,
+  "imageName": "CallAudioRout",
+  "imageBefore": "BeforeCallRout",
+  "imageAfter": "AfterCallRout",
+  "Description": "You can automatically route the audio of phone or FaceTime calls to your headphones, speaker, or hearing devices.",
+  "Steps": ["Navigate to the Settings app on your phone and select 'Accessibility",
+    "Under the Motion category, select 'Call Audio Routing' and select between Automatic, Bluetooth HeadSet, or Speaker"],
+  "Usage": ["Scroll down and tap Call Audio Routing.", "Tap either Speaker or Bluetooth Headset.", "If you tap Speaker, it'll automatically route to the iPhone's speakerphone."]
+},
+{
+  "name": "Switch control",
+  "category": "Motion",
+  "id": 29,
+  "imageName": "SwitchControl",
+  "imageBefore": "BeforeSwitch",
+  "imageAfter": "AfterSwitch",
+  "Description": "If you have physical difficulties, you can use Switch Control to operate iPhone using one or more switches. With switches, you can select, tap, drag, type, and even draw freehand. You use a switch to select an item or location on the screen, then use the same (or a different) switch to choose an action.",
+  "Steps": ["Before you add an external switch, connect it to iPhone, following the instructions that came with the switch. If the switch connects using Bluetooth, pair it with iPhone—turn on the switch, go to Settings ⚙ > Bluetooth, tap the switch, then follow the onscreen instructions. See Connect Bluetooth devices to iPhone.",
+    "Navigate to the Settings app on your phone and select 'Accessibility",
+    "Under the Motion category, select 'Switch Control'",
+    "Tap 'Add NEw Switch', then choose a source",
+    "Assign an action to the switch.",
+    "To ensure Switch Control functions correctly, you must assign the Select Item action to at least one switch."],
+  "Usage": ["You can use any of the following sources as a switch:",
+            "An external adaptive switch: Choose a Bluetooth switch or Made For iPhone (MFi) switch that plugs into the Lightning connector on iPhone.",
+            "The iPhone screen: Tap the screen to trigger the switch.",
+            "The iPhone front-facing camera: Move your head left or right while facing the camera to trigger the switch.",
+            "With Switch Control, there are two methods to select an item on the screen:",
+            "Item scanning: The focus moves (automatically or manually) from one item to the next until you select an item; this is the default scanning method.",
+            "Point scanning: You select an item on the screen by pinpointing it with scanning crosshairs.",
+            "After you select an item, you can choose an action (for example, tap, drag, or pinch) in the Scanner Menu"]
+}
+
+]
