@@ -9,30 +9,6 @@
 import Foundation
 import SwiftUI
 
-//struct TestList: View {
-//
-//    var body: some View {
-//
-//        NavigationView {
-//
-//            List(Testdata) { test in
-//
-//                NavigationLink(destination: LargeTextTestView()){
-//                //NavigationLink(destination: ColorBlindTestView()){
-//                    TestRow(test: test)
-//                }
-//            }
-//        }
-//    }
-//}
-//
-//struct TestList_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TestList()
-//    }
-//}
-
-
 class TestList: UITableViewController, UINavigationControllerDelegate {
     
     var tests : [Test] = []
@@ -77,7 +53,7 @@ class TestList: UITableViewController, UINavigationControllerDelegate {
             navigationController?.pushViewController(testVC, animated: true)
 //            present(testVC, animated: true, completion: nil)
         } else if(self.tests[indexPath.row].name == "Grid"){
-            let testVC = GridViewController()
+            let testVC = GridTestViewController()
             navigationController?.pushViewController(testVC, animated: true)
         } else if(self.tests[indexPath.row].name == "Astigmatism"){
             let testVC = AstigmatismViewController()
