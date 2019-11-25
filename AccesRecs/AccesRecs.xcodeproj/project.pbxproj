@@ -110,6 +110,22 @@
 		E29BC921236F781E00803278 /* MobilityTypingTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29BC920236F781E00803278 /* MobilityTypingTestView.swift */; };
 		E2C43DB02350D6F400F61715 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2C43DAF2350D6F400F61715 /* ResultView.swift */; };
 		E2D2A900234E43DA00E2404B /* TestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2A8FF234E43DA00E2404B /* TestList.swift */; };
+		EF0F65EF238B512900D49F2F /* ReduceMotionBefore.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0F65DF238B512800D49F2F /* ReduceMotionBefore.png */; };
+		EF0F65F0238B512900D49F2F /* ColorFiltersAfter.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0F65E0238B512800D49F2F /* ColorFiltersAfter.png */; };
+		EF0F65F1238B512900D49F2F /* ColorFiltersBefore.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0F65E1238B512800D49F2F /* ColorFiltersBefore.png */; };
+		EF0F65F2238B512900D49F2F /* SmartInvertAfter.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0F65E2238B512800D49F2F /* SmartInvertAfter.png */; };
+		EF0F65F3238B512900D49F2F /* SmartInvertBefore.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0F65E3238B512900D49F2F /* SmartInvertBefore.png */; };
+		EF0F65F4238B512900D49F2F /* PreferCrossFadeAfter.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0F65E4238B512900D49F2F /* PreferCrossFadeAfter.png */; };
+		EF0F65F5238B512900D49F2F /* ClassicInvertBefore.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0F65E5238B512900D49F2F /* ClassicInvertBefore.png */; };
+		EF0F65F6238B512900D49F2F /* ReduceMotionAfter.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0F65E6238B512900D49F2F /* ReduceMotionAfter.png */; };
+		EF0F65F7238B512900D49F2F /* PreferCrossFadeBefore.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0F65E7238B512900D49F2F /* PreferCrossFadeBefore.png */; };
+		EF0F65F8238B512900D49F2F /* ClassicInvertAfter.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0F65E8238B512900D49F2F /* ClassicInvertAfter.png */; };
+		EF0F65F9238B512900D49F2F /* DiffWColorAfter.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0F65E9238B512900D49F2F /* DiffWColorAfter.png */; };
+		EF0F65FA238B512900D49F2F /* AutoPlayBefore.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0F65EA238B512900D49F2F /* AutoPlayBefore.png */; };
+		EF0F65FB238B512900D49F2F /* SpokenContentAfter.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0F65EB238B512900D49F2F /* SpokenContentAfter.png */; };
+		EF0F65FC238B512900D49F2F /* AutoPlayAfter.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0F65EC238B512900D49F2F /* AutoPlayAfter.png */; };
+		EF0F65FD238B512900D49F2F /* DiffWColorBefore.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0F65ED238B512900D49F2F /* DiffWColorBefore.png */; };
+		EF0F65FE238B512900D49F2F /* SpokenContentBefore.png in Resources */ = {isa = PBXBuildFile; fileRef = EF0F65EE238B512900D49F2F /* SpokenContentBefore.png */; };
 		EF10A083233E4F9D004407B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10A082233E4F9D004407B5 /* AppDelegate.swift */; };
 		EF10A085233E4F9D004407B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF10A084233E4F9D004407B5 /* SceneDelegate.swift */; };
 		EF10A08C233E4F9F004407B5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF10A08B233E4F9F004407B5 /* Preview Assets.xcassets */; };
@@ -254,6 +270,22 @@
 		E2C43DAF2350D6F400F61715 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		E2D2A8FF234E43DA00E2404B /* TestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestList.swift; sourceTree = "<group>"; };
 		E2D2A901234E492B00E2404B /* VisionTestData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = VisionTestData.json; sourceTree = "<group>"; };
+		EF0F65DF238B512800D49F2F /* ReduceMotionBefore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ReduceMotionBefore.png; sourceTree = "<group>"; };
+		EF0F65E0238B512800D49F2F /* ColorFiltersAfter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColorFiltersAfter.png; sourceTree = "<group>"; };
+		EF0F65E1238B512800D49F2F /* ColorFiltersBefore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ColorFiltersBefore.png; sourceTree = "<group>"; };
+		EF0F65E2238B512800D49F2F /* SmartInvertAfter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SmartInvertAfter.png; sourceTree = "<group>"; };
+		EF0F65E3238B512900D49F2F /* SmartInvertBefore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SmartInvertBefore.png; sourceTree = "<group>"; };
+		EF0F65E4238B512900D49F2F /* PreferCrossFadeAfter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PreferCrossFadeAfter.png; sourceTree = "<group>"; };
+		EF0F65E5238B512900D49F2F /* ClassicInvertBefore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClassicInvertBefore.png; sourceTree = "<group>"; };
+		EF0F65E6238B512900D49F2F /* ReduceMotionAfter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ReduceMotionAfter.png; sourceTree = "<group>"; };
+		EF0F65E7238B512900D49F2F /* PreferCrossFadeBefore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PreferCrossFadeBefore.png; sourceTree = "<group>"; };
+		EF0F65E8238B512900D49F2F /* ClassicInvertAfter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClassicInvertAfter.png; sourceTree = "<group>"; };
+		EF0F65E9238B512900D49F2F /* DiffWColorAfter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DiffWColorAfter.png; sourceTree = "<group>"; };
+		EF0F65EA238B512900D49F2F /* AutoPlayBefore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AutoPlayBefore.png; sourceTree = "<group>"; };
+		EF0F65EB238B512900D49F2F /* SpokenContentAfter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SpokenContentAfter.png; sourceTree = "<group>"; };
+		EF0F65EC238B512900D49F2F /* AutoPlayAfter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AutoPlayAfter.png; sourceTree = "<group>"; };
+		EF0F65ED238B512900D49F2F /* DiffWColorBefore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DiffWColorBefore.png; sourceTree = "<group>"; };
+		EF0F65EE238B512900D49F2F /* SpokenContentBefore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SpokenContentBefore.png; sourceTree = "<group>"; };
 		EF10A07F233E4F9D004407B5 /* AccesRecs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccesRecs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF10A082233E4F9D004407B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF10A084233E4F9D004407B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -397,6 +429,22 @@
 		8FBD1CCA238B174B00F95AC0 /* GuideVisionAssets */ = {
 			isa = PBXGroup;
 			children = (
+				EF0F65EC238B512900D49F2F /* AutoPlayAfter.png */,
+				EF0F65EA238B512900D49F2F /* AutoPlayBefore.png */,
+				EF0F65E8238B512900D49F2F /* ClassicInvertAfter.png */,
+				EF0F65E5238B512900D49F2F /* ClassicInvertBefore.png */,
+				EF0F65E0238B512800D49F2F /* ColorFiltersAfter.png */,
+				EF0F65E1238B512800D49F2F /* ColorFiltersBefore.png */,
+				EF0F65E9238B512900D49F2F /* DiffWColorAfter.png */,
+				EF0F65ED238B512900D49F2F /* DiffWColorBefore.png */,
+				EF0F65E4238B512900D49F2F /* PreferCrossFadeAfter.png */,
+				EF0F65E7238B512900D49F2F /* PreferCrossFadeBefore.png */,
+				EF0F65E6238B512900D49F2F /* ReduceMotionAfter.png */,
+				EF0F65DF238B512800D49F2F /* ReduceMotionBefore.png */,
+				EF0F65E2238B512800D49F2F /* SmartInvertAfter.png */,
+				EF0F65E3238B512900D49F2F /* SmartInvertBefore.png */,
+				EF0F65EB238B512900D49F2F /* SpokenContentAfter.png */,
+				EF0F65EE238B512900D49F2F /* SpokenContentBefore.png */,
 				8FBD1CE5238B176700F95AC0 /* AfterBoldText.png */,
 				8FBD1CEB238B176800F95AC0 /* AfterButtonShape.png */,
 				8FBD1CDD238B176500F95AC0 /* AfterDarkMode.png */,
@@ -674,17 +722,22 @@
 				8104C08D23825F8A00D3DA73 /* MobilityTestData.json in Resources */,
 				8FBD1C8D238B170500F95AC0 /* home_icon.png in Resources */,
 				8FBD1CB2238B172500F95AC0 /* Vibration.png in Resources */,
+				EF0F65F5238B512900D49F2F /* ClassicInvertBefore.png in Resources */,
 				8FBD1D1A238B176C00F95AC0 /* SmartInvert.png in Resources */,
 				8F91681A238B137300964917 /* testImages in Resources */,
 				8FBD1C85238B169D00F95AC0 /* GuideData.json in Resources */,
+				EF0F65FD238B512900D49F2F /* DiffWColorBefore.png in Resources */,
 				EF10A08C233E4F9F004407B5 /* Preview Assets.xcassets in Resources */,
 				8FBD1CF8238B176C00F95AC0 /* AfterReduceTransparencyDock.png in Resources */,
 				8FBD1D06238B176C00F95AC0 /* VOAudio.png in Resources */,
 				8FBD1CA4238B172500F95AC0 /* UndoShake.png in Resources */,
+				EF0F65F0238B512900D49F2F /* ColorFiltersAfter.png in Resources */,
 				81416712234E709D008C74E0 /* VisionTestData.json in Resources */,
 				8FBD1CA5238B172500F95AC0 /* AfterCallRout.png in Resources */,
 				8FBD1D14238B176C00F95AC0 /* BeforeBoldText.png in Resources */,
 				8FBD1CA8238B172500F95AC0 /* BeforeCallRout.png in Resources */,
+				EF0F65F4238B512900D49F2F /* PreferCrossFadeAfter.png in Resources */,
+				EF0F65FC238B512900D49F2F /* AutoPlayAfter.png in Resources */,
 				8FBD1CAB238B172500F95AC0 /* MotionLogo.png in Resources */,
 				8FBD1D12238B176C00F95AC0 /* BeforeVoiceOver.png in Resources */,
 				8FBD1CAD238B172500F95AC0 /* TouchAccomBefore.png in Resources */,
@@ -694,12 +747,14 @@
 				8FBD1CA6238B172500F95AC0 /* AfterAssistiveTouch.png in Resources */,
 				8FBD1D16238B176C00F95AC0 /* AssistiveTouch.png in Resources */,
 				8FBD1D15238B176C00F95AC0 /* DarkMode.png in Resources */,
+				EF0F65FE238B512900D49F2F /* SpokenContentBefore.png in Resources */,
 				8FBD1D17238B176C00F95AC0 /* AfterButtonShape.png in Resources */,
 				8FBD1CFA238B176C00F95AC0 /* MagnifierLogo.png in Resources */,
 				8FBD1CFF238B176C00F95AC0 /* IncreaseContrast.png in Resources */,
 				8FBD1CAF238B172500F95AC0 /* BeforeSwitch.png in Resources */,
 				8FBD1D1C238B176C00F95AC0 /* AfterOnOff.png in Resources */,
 				8FBD1C89238B16EB00F95AC0 /* digitalAccess.png in Resources */,
+				EF0F65F6238B512900D49F2F /* ReduceMotionAfter.png in Resources */,
 				8FBD1D13238B176C00F95AC0 /* BeforeOnOff.png in Resources */,
 				8FBD1D11238B176C00F95AC0 /* AfterBoldText.png in Resources */,
 				8FBD1D0D238B176C00F95AC0 /* VOCommands.png in Resources */,
@@ -714,6 +769,7 @@
 				8FBD1D19238B176C00F95AC0 /* PreferCrossFade.png in Resources */,
 				8FBD1C86238B169D00F95AC0 /* GuideData2.json in Resources */,
 				8FBD1D08238B176C00F95AC0 /* ReduceTransparencyLogo.png in Resources */,
+				EF0F65FB238B512900D49F2F /* SpokenContentAfter.png in Resources */,
 				8FBD1CB0238B172500F95AC0 /* AfterSwitch.png in Resources */,
 				8FBD1D00238B176C00F95AC0 /* LargeTextLogo.png in Resources */,
 				8FBD1D1B238B176C00F95AC0 /* BeforeReduceTransparencyDock.png in Resources */,
@@ -725,18 +781,26 @@
 				8FBD1D10238B176C00F95AC0 /* AfterReduceTransparency.png in Resources */,
 				8FBD1CA7238B172500F95AC0 /* TouchAcomm.png in Resources */,
 				8FBD1CFD238B176C00F95AC0 /* AfterIncreaseContrast.png in Resources */,
+				EF0F65F3238B512900D49F2F /* SmartInvertBefore.png in Resources */,
 				8FBD1CAE238B172500F95AC0 /* CallAudioRout.png in Resources */,
 				8FBD1C8E238B170500F95AC0 /* eye.png in Resources */,
+				EF0F65FA238B512900D49F2F /* AutoPlayBefore.png in Resources */,
+				EF0F65F8238B512900D49F2F /* ClassicInvertAfter.png in Resources */,
 				8FBD1D20238B176C00F95AC0 /* BeforeDarkMode.png in Resources */,
 				8FBD1D1F238B176C00F95AC0 /* VoiceOver.png in Resources */,
 				8165DA012357591D0063A747 /* ResultData.json in Resources */,
+				EF0F65F2238B512900D49F2F /* SmartInvertAfter.png in Resources */,
 				8FBD1CB6238B172600F95AC0 /* BeforeShakeUndo.png in Resources */,
 				8FBD1CA9238B172500F95AC0 /* BeforeAssistiveTouch.png in Resources */,
+				EF0F65EF238B512900D49F2F /* ReduceMotionBefore.png in Resources */,
+				EF0F65F9238B512900D49F2F /* DiffWColorAfter.png in Resources */,
 				8FBD1CB5238B172500F95AC0 /* AutoPlayMessage.png in Resources */,
 				8F916824238B137300964917 /* Preview Content in Resources */,
 				8FBD1CB4238B172500F95AC0 /* AfterShakeUndo.png in Resources */,
 				8FBD1CFC238B176C00F95AC0 /* GrayScale.png in Resources */,
 				8FBD1D0B238B176C00F95AC0 /* ReduceMotion.png in Resources */,
+				EF0F65F1238B512900D49F2F /* ColorFiltersBefore.png in Resources */,
+				EF0F65F7238B512900D49F2F /* PreferCrossFadeBefore.png in Resources */,
 				8FBD1CB1238B172500F95AC0 /* TouchAccomAfter.png in Resources */,
 				8FBD1D09238B176C00F95AC0 /* AfterDarkMode.png in Resources */,
 				8F91680C238B137300964917 /* Vision Tests in Resources */,
