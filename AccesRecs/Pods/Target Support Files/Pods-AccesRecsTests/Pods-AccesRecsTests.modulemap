@@ -1,0 +1,6 @@
+framework module Pods_AccesRecsTests {
+  umbrella header "Pods-AccesRecsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
