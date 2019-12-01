@@ -46,7 +46,7 @@ struct DropDown : View {
             VStack {
             
                VStack {
-                Text(guide.name).fontWeight(.heavy).foregroundColor(.green).font(.title)
+                Text(guide.name).fontWeight(.heavy).foregroundColor(.green).font(.title).fixedSize()
 //                    .minimumScaleFactor(0.01)
                     .lineLimit(nil)
                     .multilineTextAlignment(.center)
@@ -55,7 +55,7 @@ struct DropDown : View {
                 VStack {
                     Text(guide.Description).fontWeight(.regular).font(.subheadline).multilineTextAlignment(.center)
                        .font(.body)
-                       .minimumScaleFactor(0.01)
+                       //.minimumScaleFactor(0.01)
                        .lineLimit(nil)
                 }.padding()
            // if !expand {
@@ -64,8 +64,8 @@ struct DropDown : View {
                     
                 }) {
                     
-                    Text("Show Feature").font(.headline)
-                    .minimumScaleFactor(0.01)
+                    Text(String("Show Feature")).font(.headline)
+                    //.minimumScaleFactor(0.01)
                     .lineLimit(nil)
                     .padding()
                 }.sheet(isPresented: $showingDetail, content:  {
@@ -79,8 +79,8 @@ struct DropDown : View {
                     
                 }) {
                     
-                    Text("Enable Feature Steps").font(.headline)
-                    .minimumScaleFactor(0.01)
+                    Text(String("Enable Feature Steps")).font(.headline)
+                    //.minimumScaleFactor(0.01)
                     .lineLimit(nil)
                     .padding()
                 }.sheet(isPresented: $toggleTrue, content : {
@@ -96,7 +96,7 @@ struct DropDown : View {
                 }) {
                     
                     Text("Show Usage Steps").font(.headline)
-                    .minimumScaleFactor(0.01)
+                    //.minimumScaleFactor(0.01)
                     .lineLimit(nil)
                     .padding()
                 }.sheet(isPresented: $showingUsage, content: {

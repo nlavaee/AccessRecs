@@ -105,14 +105,14 @@ struct GuideList: View {
                     
                 }) {
                 Text(String("Dismiss")).font(.headline)
-                .minimumScaleFactor(0.01)
+//                .minimumScaleFactor(0.01)
                 .lineLimit(nil)
                 .padding()
         
             }
         
             }
-            }
+          }
       }
     
     }
