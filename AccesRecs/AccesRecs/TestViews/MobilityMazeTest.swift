@@ -121,9 +121,10 @@ class MobilityMazeTest : UIViewController {
         
         if hitWall {
             result = "We have the following recommendations:"
+            let recsRequest = RecsRequest(featid:24)
+            recsRequest.displayRecs(resultView: resultView)
             // resultView.steps = Resultdata[6]
         }
-        
         if abs(drawnHeight) < Double(topCircle.frame.maxY - bottomCircle.frame.minY) {
             result = "You didn't complete the maze"
         } else if hitTop && hitBottom && !hitWall {

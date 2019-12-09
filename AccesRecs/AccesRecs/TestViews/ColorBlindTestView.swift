@@ -179,24 +179,28 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
             result = "You don't need to update any color settings on your phone!"
         } else {
             result = "You might want to change the color filters on your phone"
-                let recsRequest = RecsRequest(featid:14)
-            
-                let group = DispatchGroup()
-                
-                group.enter()
-                
-                recsRequest.getRecs{
-                    result in
-                    switch result {
-                    case .failure(let error):
-                        print(error)
-                    case.success(let recs):
-                        resultView.recs = recs.map({ $0.rec_name })
-                        group.leave()
-                    }
-                }
-                group.wait()
+            if(score == 7) {
+                result = "Turn on one of the four preset color filters, or customize your own"
+            }
+            else if((protanopiaScore < 6 && deuteranopiaScore < 6) && (protanopiaScore + deuteranopiaScore > 7)) {
+                result = "Turn on the 'Protanopia' or 'Deuteranopia' color filter"
+            }
+            else if(protanopiaScore > 5) {
+                result = "Turn on the 'Protanopia' color filter"
+            }
+            else if(deuteranopiaScore > 5) {
+                result = "Turn on the 'Deuteranopia' color filter"
+            }
+            else if(tritanopiaScore > 2) {
+                result = "Turn on the 'Tritanopia' color filter"
+            } else {
+                result = "Turn on one of the four preset filters, or customize your own"
+            }
+
+            let recsRequest = RecsRequest(featid:14)
+            recsRequest.displayRecs(resultView: resultView)
         }
+        
 //        if(score == 7) {
 //            // resultView.steps.append("Choose from one of the four preset filters, or customize your own")
 //        }
@@ -214,7 +218,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
 //        } else {
 //            // resultView.steps.append("Choose from one of the four preset filters, or customize your own")
 //        }
-        
+//
 //        if(score > 3) {
 //            result = "You don't need to update any color settings on your phone!"
 //        } else {

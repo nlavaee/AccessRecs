@@ -100,9 +100,11 @@ class MobilityDrawingTest : UIViewController {
         var result = ""
 
         if(isWithinThreshold(num1: shapePerimeter, num2: totalDistance, threshold: 0.05)) {
-           result = "Perfect!!"
-                   } else {
-           result = "We have recommendations for you:"
+            result = "Perfect!!"
+        } else {
+            result = "We have recommendations for you:"
+            let recsRequest = RecsRequest(featid:24)
+            recsRequest.displayRecs(resultView: resultView)
            // // resultView.steps = Resultdata[3]
        }
 

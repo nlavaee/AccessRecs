@@ -35,8 +35,10 @@ class LargeTextTestViewController : UIViewController {
         prompt.center.x = self.view.center.x
         prompt.textAlignment = .center
         prompt.textColor = UIColor.black
-        prompt.font = .systemFont(ofSize: 24.0)
+        prompt.font = .systemFont(ofSize: 30.0)
         prompt.text = "Can you easily read the text below?"
+        prompt.lineBreakMode = .byWordWrapping
+        prompt.numberOfLines = 0
         
         // screen is 667 & 375
         let yesButton = UIButton(frame: CGRect(x: self.view.frame.width - 50 - 250 - 25, y: self.view.frame.height - 200, width: 100, height: 100))
@@ -65,21 +67,9 @@ class LargeTextTestViewController : UIViewController {
         
         //api request
         let recsRequest = RecsRequest(featid:5)
-        let group = DispatchGroup()
         
         // async call (wait till data is recieved)
-        group.enter()
-        recsRequest.getRecs{
-            result in
-            switch result {
-            case .failure(let error):
-                print(error)
-            case.success(let recs):
-                resultView.recs = recs.map({ $0.rec_name })
-                group.leave()
-            }
-        }
-        group.wait()
+        recsRequest.displayRecs(resultView: resultView)
         
         
         if(textSize > 18) {
@@ -97,7 +87,9 @@ class LargeTextTestViewController : UIViewController {
     }
     
     @objc func cantRead(sender: UIButton!) {
-        textSize += 2
+        if(textSize < 48) {
+            textSize += 2
+        }
     }
     
     @objc func dismissView(sender: UIButton!) {

@@ -112,23 +112,24 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             result = "Perfect!!"
                     } else {
             result = "We have recommendations for you:"
-                let recsRequest = RecsRequest(featid:14)
+            let recsRequest = RecsRequest(featid:24)
+            recsRequest.displayRecs(resultView: resultView)
             
-                let group = DispatchGroup()
-                
-                group.enter()
-                
-                recsRequest.getRecs{
-                    result in
-                    switch result {
-                    case .failure(let error):
-                        print(error)
-                    case.success(let recs):
-                        resultView.recs = recs.map({ $0.rec_name })
-                        group.leave()
-                    }
-                }
-                group.wait()
+//                let group = DispatchGroup()
+//
+//                group.enter()
+//
+//                recsRequest.getRecs{
+//                    result in
+//                    switch result {
+//                    case .failure(let error):
+//                        print(error)
+//                    case.success(let recs):
+//                        resultView.recs = recs.map({ $0.rec_name })
+//                        group.leave()
+//                    }
+//                }
+//                group.wait()
         }
         
         resultView.result = result

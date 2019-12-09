@@ -61,27 +61,12 @@ class AstigmatismViewController : UIViewController {
     
     @objc func sawDiff(sender: UIButton!) {
         let resultView = ResultView()
-               var result = ""
-              result = "We have recommendations for you:"
-                  let recsRequest = RecsRequest(featid:6)
-              
-                  let group = DispatchGroup()
-                  
-                  group.enter()
-                  
-                  recsRequest.getRecs{
-                      result in
-                      switch result {
-                      case .failure(let error):
-                          print(error)
-                      case.success(let recs):
-                          resultView.recs = recs.map({ $0.rec_name })
-                          group.leave()
-                      }
-                  }
-                  group.wait()
-              resultView.result = result
-              resultView.resultType = "Vision"
+        var result = ""
+        result = "We have recommendations for you:"
+        let recsRequest = RecsRequest(featid:6)
+        recsRequest.displayRecs(resultView: resultView)
+        resultView.result = result
+        resultView.resultType = "Vision"
 
         navigationController?.popViewController(animated: false)
 
