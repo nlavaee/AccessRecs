@@ -235,7 +235,7 @@ class MobilityDrawingTest : UIViewController {
       context.setStrokeColor(color.cgColor)
 
       //context.setLineWidth(4)
-      context.setStrokeColor(UIColor.cyan.cgColor)
+        context.setStrokeColor(UIColor.systemPurple.cgColor)
       context.strokePath()
       
       tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
