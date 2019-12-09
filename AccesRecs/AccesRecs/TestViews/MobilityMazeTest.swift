@@ -37,6 +37,8 @@ class MobilityMazeTest : UIViewController {
     var topCircle = CAShapeLayer()
     var bottomCircle = CAShapeLayer()
     var drawnHeight: Double = 0.0
+    var bottomCircleHeight = 0.0
+    var topCircleHeight = 0.0
     
     override func viewDidLoad() {
         mainImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
@@ -72,13 +74,14 @@ class MobilityMazeTest : UIViewController {
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
         
-        
+        topCircleHeight = Double(CGFloat(grid[0][0].y) + CGFloat(40) + CGFloat(radius))
         topCircle.fillColor = nil
         topCircle.strokeColor = UIColor.black.cgColor
         topCircle.fillColor = UIColor.black.cgColor
         topCircle.lineWidth = 2
         topCircle.path = UIBezierPath(arcCenter: CGPoint(x:self.view.frame.width/2, y: grid[0][0].y - 40), radius: CGFloat(radius), startAngle: 0, endAngle: 360, clockwise: true).cgPath
         
+        bottomCircleHeight = Double(CGFloat(grid[grid.count-1][0].y) + CGFloat(40) - CGFloat(radius))
         bottomCircle.fillColor = nil
         bottomCircle.strokeColor = UIColor.black.cgColor
         bottomCircle.fillColor = UIColor.black.cgColor
@@ -125,7 +128,7 @@ class MobilityMazeTest : UIViewController {
             recsRequest.displayRecs(resultView: resultView)
             // resultView.steps = Resultdata[6]
         }
-        if abs(drawnHeight) < Double(topCircle.frame.maxY - bottomCircle.frame.minY) {
+        if abs(drawnHeight) < Double(bottomCircleHeight - topCircleHeight) {
             result = "You didn't complete the maze"
         } else if hitTop && hitBottom && !hitWall {
             result = "Perfect!!"
