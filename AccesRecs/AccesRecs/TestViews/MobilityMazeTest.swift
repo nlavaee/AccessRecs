@@ -124,7 +124,7 @@ class MobilityMazeTest : UIViewController {
             // resultView.steps = Resultdata[6]
         }
         
-        if drawnHeight < Double(topCircle.frame.maxY - bottomCircle.frame.minY) {
+        if abs(drawnHeight) < Double(topCircle.frame.maxY - bottomCircle.frame.minY) {
             result = "You didn't complete the maze"
         } else if hitTop && hitBottom && !hitWall {
             result = "Perfect!!"

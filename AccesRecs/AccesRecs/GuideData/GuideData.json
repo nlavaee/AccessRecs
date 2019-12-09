@@ -62,7 +62,7 @@
   "Steps": ["Before you add an external switch, connect it to iPhone, following the instructions that came with the switch. If the switch connects using Bluetooth, pair it with iPhone—turn on the switch, go to Settings ⚙ > Bluetooth, tap the switch, then follow the onscreen instructions. See Connect Bluetooth devices to iPhone.",
     "Navigate to the Settings app on your phone and select 'Accessibility",
     "Under the Motion category, select 'Switch Control'",
-    "Tap 'Add NEw Switch', then choose a source",
+    "Tap 'Add New Switch', then choose a source",
     "Assign an action to the switch.",
     "To ensure Switch Control functions correctly, you must assign the Select Item action to at least one switch."],
   "Usage": ["You can use any of the following sources as a switch:",
