@@ -119,6 +119,14 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         view.frame.origin.y = 0
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let maxLength = 3
+        let currentString: NSString = textField.text! as NSString
+        let newString: NSString =
+            currentString.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= maxLength
+    }
+    
     @objc func CompleteTest(sender: UIButton!) {
         let resultView = ResultView()
         var result = ""
