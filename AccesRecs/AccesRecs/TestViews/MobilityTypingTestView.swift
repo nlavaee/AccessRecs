@@ -69,7 +69,7 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             answerField.autocorrectionType = .no
             answerField.textAlignment = .center
             answerField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.touchDown)
-            
+            answerField.addDoneButtonOnKeyboard()
             
             finishedButton.setTitle("Done", for: .normal)
             finishedButton.addTarget(self, action: #selector(DoneTyping), for: .touchUpInside)
