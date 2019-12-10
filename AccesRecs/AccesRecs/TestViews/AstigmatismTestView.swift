@@ -15,8 +15,15 @@ class AstigmatismViewController : UIViewController {
         let testImage = UIImage(named: "stigma")
         let testImageView = UIImageView(image: testImage!)
         testImageView.frame = CGRect(x: 0, y: self.view.frame.height / 4 + 20, width: self.view.frame.width, height: self.view.frame.height / 2)
+            if traitCollection.userInterfaceStyle == .dark{
+                self.view.backgroundColor = UIColor.black
 
-            self.view.backgroundColor = UIColor.white
+            }
+            else{
+                self.view.backgroundColor = UIColor.white
+
+            }
+        
             sentenceLabel.frame = CGRect(x: 0, y: 100, width: view.frame.size.width, height: 100)
             sentenceLabel.center = self.view.center
             sentenceLabel.center.x = self.view.center.x
@@ -26,7 +33,15 @@ class AstigmatismViewController : UIViewController {
             sentenceLabel.numberOfLines = 0
     //        sentenceLabel.sizeToFit()
             sentenceLabel.text = "Cover your left eye and look at the image\nNext, cover your right eye\n\nAre some lines lighter than others?"
+            
+        if traitCollection.userInterfaceStyle == .dark{
+            sentenceLabel.textColor = UIColor.white
+
+        }
+        else{
             sentenceLabel.textColor = UIColor.black
+
+        }
             //sentenceLabel.font = .systemFont(ofSize: CGFloat(textSize))
         
         

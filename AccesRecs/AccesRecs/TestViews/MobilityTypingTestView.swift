@@ -34,7 +34,14 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 150)
             self.scrollView.isScrollEnabled = true
             self.scrollView.contentOffset = CGPoint(x: view.frame.origin.x, y: view.frame.origin.y + 75)
-            self.view.backgroundColor = UIColor.white
+            if traitCollection.userInterfaceStyle == .dark{
+                self.view.backgroundColor = UIColor.black
+
+            }
+            else{
+                self.view.backgroundColor = UIColor.white
+
+            }
             
             //start = DispatchTime.now()
             
@@ -42,7 +49,13 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             id = Int.random(in: 0 ..< testTextList.count)
             testText = testTextList[id]
             let prompt = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 100, y: 50, width: 200, height: 100))
-            prompt.textColor = UIColor.black
+            
+            if traitCollection.userInterfaceStyle == .dark{
+                prompt.textColor = UIColor.white
+            }
+            else{
+                prompt.textColor = UIColor.black
+            }
             prompt.font = .preferredFont(forTextStyle: UIFont.TextStyle.title3)
             prompt.text = "Type the following text:"
             prompt.lineBreakMode = .byWordWrapping
@@ -55,7 +68,13 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             
             //let temp = Testdata
             let text = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 100, y: prompt.frame.maxY + 50, width: 200, height: 150))
-            text.textColor = UIColor.black
+            
+            if traitCollection.userInterfaceStyle == .dark{
+                text.textColor = UIColor.white
+            }
+            else{
+                text.textColor = UIColor.black
+            }
             text.font = .preferredFont(forTextStyle: UIFont.TextStyle.title3)
             text.text = testText
             text.lineBreakMode = .byWordWrapping
@@ -67,7 +86,14 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             answerField.frame = CGRect(x: self.view.frame.width / 2 - 75, y: self.view.frame.height / 2 + prompt.frame.height + 10, width: 150, height: 50)
             answerField.delegate = self
             answerField.borderStyle = UITextField.BorderStyle.line
-            answerField.layer.borderColor = UIColor.gray.cgColor
+            
+            if traitCollection.userInterfaceStyle == .dark{
+                answerField.layer.borderColor = UIColor.gray.cgColor
+            }
+            else{
+                answerField.layer.borderColor = UIColor.black.cgColor
+            }
+
             answerField.autocorrectionType = .no
             answerField.textAlignment = .center
             answerField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.touchDown)

@@ -28,7 +28,14 @@ class TestList: UITableViewController, UINavigationControllerDelegate {
         self.tableView.frame = view.frame
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 110
-        self.tableView.backgroundColor = UIColor.white
+        if traitCollection.userInterfaceStyle == .dark{
+            self.tableView.backgroundColor = UIColor.black
+
+        }
+        else{
+            self.tableView.backgroundColor = UIColor.white
+
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

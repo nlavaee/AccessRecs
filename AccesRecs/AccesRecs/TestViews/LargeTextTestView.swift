@@ -18,8 +18,15 @@ class LargeTextTestViewController : UIViewController {
     }
     
     override func viewDidLoad() {
+        if traitCollection.userInterfaceStyle == .dark{
+            self.view.backgroundColor = UIColor.black
+
+        }
+        else{
+            self.view.backgroundColor = UIColor.white
+
+        }
         
-        self.view.backgroundColor = UIColor.white
         sentenceLabel.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: 200)
         sentenceLabel.center = self.view.center
         sentenceLabel.center.x = self.view.center.x
@@ -28,15 +35,29 @@ class LargeTextTestViewController : UIViewController {
         sentenceLabel.lineBreakMode = .byWordWrapping
         sentenceLabel.numberOfLines = 0
         sentenceLabel.text = "This is a sentence."
-        sentenceLabel.textColor = UIColor.black
+        
+        if traitCollection.userInterfaceStyle == .dark{
+            sentenceLabel.textColor = UIColor.white
+        }
+        else{
+            sentenceLabel.textColor = UIColor.black
+        }
         sentenceLabel.font = .systemFont(ofSize: CGFloat(textSize))
         
         let prompt = UILabel(frame: CGRect(x: 0, y: 75, width: view.frame.size.width, height: 100))
         prompt.center.x = self.view.center.x
         prompt.textAlignment = .center
-        prompt.textColor = UIColor.black
+        
+
         prompt.font = .systemFont(ofSize: 30.0)
         prompt.text = "Can you easily read the text below?"
+        
+        if traitCollection.userInterfaceStyle == .dark{
+            prompt.textColor = UIColor.white
+        }
+        else{
+            prompt.textColor = UIColor.black
+        }
         prompt.lineBreakMode = .byWordWrapping
         prompt.numberOfLines = 0
         

@@ -73,6 +73,83 @@
             "Item scanning: The focus moves (automatically or manually) from one item to the next until you select an item; this is the default scanning method.",
             "Point scanning: You select an item on the screen by pinpointing it with scanning crosshairs.",
             "After you select an item, you can choose an action (for example, tap, drag, or pinch) in the Scanner Menu"]
-}
+},
+{
+  "name": "Voice control",
+  "category": "Motion",
+  "id": 30,
+  "imageName": "SwitchControl",
+  "imageBefore": "SwitchControl",
+  "imageAfter": "SwitchControl",
+  "Description": "You can control iPhone with just your voice. You can edit text as you dictate, navigate with voice commands and gestures, and see numbers or names next to screen elements.",
+  "Steps":[
+    "Navigate to the Settings app on your phone and select 'Accessibility",
+    "Under the Motion category, select 'Voice Control' and toggle on Voice Control",
+    "Add Voice Control to Accessibility Shortcuts—go to Settings > Accessibility > Accessibility Shortcuts, then tap Voice Control"
+    ],
+  "Usage": [
+    "When Voice Control is turned on, you can say commands such as the following:",
+    "Open Control Center",
+    "Go home",
+    "Tap 'item name'",
+    "Open 'app name'",
+    "Take screenshot",
+    "Turn up volume"
+  ]
+},
+{
+  "name": "Home Button",
+  "category": "Motion",
+  "id": 31,
+  "imageName": "SwitchControl",
+  "imageBefore": "SwitchControl",
+  "imageAfter": "SwitchControl",
+  "Description": "Adjust settings for the side or Home button on iPhone",
+  "Steps": [
+      "Navigate to the Settings app on your phone and select 'Accessibility",
+      "Under the Motion category, select Home Button",
+      "Choose the speed required to double or triple click",
+      "Choose how the iPhone responds when you press or hold the side or home button"
 
-]
+  ],
+  "Usage": ["Use the home button and/or the side button as you customized in the settings"]
+},
+{
+  "name": "Apple Remote TV",
+  "category": "Motion",
+  "id": 32,
+  "imageName": "SwitchControl",
+  "imageBefore": "SwitchControl",
+  "imageAfter": "SwitchControl",
+  "Description": "On the Apple TV Remote on iPhone, you can use buttons instead of swipe gestures.",
+  "Steps": [
+    "Navigate to the Settings app on your phone and select 'Accessibility",
+    "Under the Motion category, select Apple TV Remote",
+    "Toggle on directional button"
+  ],
+  "Usage": [
+    "On the Apple TV Remote on iPhone, you can use buttons instead of swipe gestures."
+  ]
+},
+{
+  "name": "Keyboard",
+  "category": "Motion",
+  "id": 33,
+  "imageName": "SwitchControl",
+  "imageBefore": "SwitchControl",
+  "imageAfter": "SwitchControl",
+  "Description": "configure settings on either external keyboard or keyboard on your iPhone",
+  "Steps": [
+    "Navigate to the Settings app on your phone and select 'Accessibility",
+    "Under the Motion category, select keyboard",
+    "configure the following settings for external keyboard:",
+    "Key repeat",
+    "Sticky Key",
+    "Slow key",
+    "And toggle setting for iphone keyboard to show lower/upper case"
+
+  ],
+  "Usage":[
+      "Use the keyboard either external or on the iphone as you see fit"
+  ]
+}]
