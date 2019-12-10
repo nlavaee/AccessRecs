@@ -40,7 +40,7 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
         let maxFrameHeight = self.view.frame.height
 
         
-        let resultLabel = UILabel(frame: CGRect(x:187.5 - 100, y: 20, width: 200, height: 100))
+        let resultLabel = UILabel(frame: CGRect(x:187.5 - 100, y: 20, width: 200, height: 150))
         resultLabel.center.x = self.view.center.x
         resultLabel.textColor = UIColor.black
         resultLabel.font = .boldSystemFont(ofSize: 24.0)

@@ -164,7 +164,7 @@
     "Usage": ["Some apps use transparent and blurred backgrounds which can make text hard to read.", "To help improve legibility turn on Reduce Transparency."]
 },
 {
-  "name": "Increase Constrast",
+  "name": "Increase Contrast",
   "category": "Vision",
   "id": 10,
   "imageName": "IncreaseContrast",

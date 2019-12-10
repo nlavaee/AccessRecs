@@ -50,7 +50,7 @@ class MobilityDrawingTest : UIViewController {
         let prompt = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 100, y: 75, width: 200, height: 100))
         prompt.textColor = UIColor.black
         prompt.font = .preferredFont(forTextStyle: UIFont.TextStyle.title3)
-        prompt.text = "Please trace the shape below:"
+        prompt.text = "Please trace the shape below one time:"
         prompt.lineBreakMode = .byWordWrapping
         prompt.numberOfLines = 0
         prompt.textAlignment = .center
@@ -100,9 +100,11 @@ class MobilityDrawingTest : UIViewController {
         var result = ""
 
         if(isWithinThreshold(num1: shapePerimeter, num2: totalDistance, threshold: 0.05)) {
-           result = "Perfect!!"
-                   } else {
-           result = "We have recommendations for you:"
+            result = "Perfect!!"
+        } else {
+            result = "We have recommendations for you:"
+            let recsRequest = RecsRequest(featid:24)
+            recsRequest.displayRecs(resultView: resultView)
            // // resultView.steps = Resultdata[3]
        }
 
@@ -235,7 +237,7 @@ class MobilityDrawingTest : UIViewController {
       context.setStrokeColor(color.cgColor)
 
       //context.setLineWidth(4)
-      context.setStrokeColor(UIColor.cyan.cgColor)
+        context.setStrokeColor(UIColor.systemPurple.cgColor)
       context.strokePath()
       
       tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()

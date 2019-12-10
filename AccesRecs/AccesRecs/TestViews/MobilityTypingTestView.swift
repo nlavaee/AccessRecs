@@ -50,6 +50,8 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             prompt.textAlignment = .center
             prompt.adjustsFontSizeToFitWidth = true
             
+            let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+            view.addGestureRecognizer(tap)
             
             //let temp = Testdata
             let text = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 100, y: prompt.frame.maxY + 50, width: 200, height: 150))
@@ -69,7 +71,7 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             answerField.autocorrectionType = .no
             answerField.textAlignment = .center
             answerField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.touchDown)
-            
+            answerField.addDoneButtonOnKeyboard()
             
             finishedButton.setTitle("Done", for: .normal)
             finishedButton.addTarget(self, action: #selector(DoneTyping), for: .touchUpInside)
@@ -112,23 +114,24 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             result = "Perfect!!"
                     } else {
             result = "We have recommendations for you:"
-                let recsRequest = RecsRequest(featid:14)
+            let recsRequest = RecsRequest(featid:24)
+            recsRequest.displayRecs(resultView: resultView)
             
-                let group = DispatchGroup()
-                
-                group.enter()
-                
-                recsRequest.getRecs{
-                    result in
-                    switch result {
-                    case .failure(let error):
-                        print(error)
-                    case.success(let recs):
-                        resultView.recs = recs.map({ $0.rec_name })
-                        group.leave()
-                    }
-                }
-                group.wait()
+//                let group = DispatchGroup()
+//
+//                group.enter()
+//
+//                recsRequest.getRecs{
+//                    result in
+//                    switch result {
+//                    case .failure(let error):
+//                        print(error)
+//                    case.success(let recs):
+//                        resultView.recs = recs.map({ $0.rec_name })
+//                        group.leave()
+//                    }
+//                }
+//                group.wait()
         }
         
         resultView.result = result
