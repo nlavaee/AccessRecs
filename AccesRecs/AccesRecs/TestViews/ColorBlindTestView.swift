@@ -258,6 +258,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
             answers.append("")
         }
         correctAnswers.append(String(tests[idx].answer))
+        nextButton.isEnabled = false
         
         
 //        if(answerField.text == String(tests[idx].answer)) {
