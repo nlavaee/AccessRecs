@@ -73,6 +73,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         answerField.keyboardType = .numberPad
         answerField.textAlignment = .center
         answerField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+        answerField.addDoneButtonOnKeyboard()
 
 
         self.view.addSubview(scrollView)
