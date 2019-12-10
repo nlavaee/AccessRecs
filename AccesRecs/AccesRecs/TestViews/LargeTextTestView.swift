@@ -90,6 +90,9 @@ class LargeTextTestViewController : UIViewController {
         if(textSize < 48) {
             textSize += 2
         }
+        else {
+            canRead(sender: UIButton())
+        }
     }
     
     @objc func dismissView(sender: UIButton!) {
