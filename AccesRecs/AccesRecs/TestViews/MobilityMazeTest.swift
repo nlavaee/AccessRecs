@@ -318,7 +318,7 @@ class MobilityMazeTest : UIViewController {
             
             appendPath(grid[5][3], grid[4][3])
             appendPath(grid[4][3], grid[4][4])
-            appendPath(grid[4][5], grid[5][4])
+            appendPath(grid[4][4], grid[5][4])
             
             path.move(to: grid[5][2])
             path.addLine(to: grid[4][2])
