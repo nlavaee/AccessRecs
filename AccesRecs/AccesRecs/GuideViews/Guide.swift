@@ -16,6 +16,8 @@ struct Guide: Hashable, Codable, Identifiable {
     fileprivate var imageBefore: String
     fileprivate var imageAfter: String
     var Description: String
+    var AccessibilityLabelBefore: String
+    var AccessibilityLabelAfter: String
     var Steps: Array<String>
     var Usage: Array<String>
 

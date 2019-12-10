@@ -134,6 +134,18 @@
 		EF53A19F238B03BA000F04B4 /* RecRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF53A19E238B03BA000F04B4 /* RecRequest.swift */; };
 		EF5A8909234DBD9B003DB430 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5A8907234DBD9B003DB430 /* Data.swift */; };
 		EF7253A323413CFC00FEBF0F /* LandingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7253A223413CFC00FEBF0F /* LandingPageView.swift */; };
+		EFDEC499239F505F00B7D22A /* AppleRemoteAfter.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDEC48D239F505E00B7D22A /* AppleRemoteAfter.png */; };
+		EFDEC49A239F505F00B7D22A /* KeyboardBefore.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDEC48E239F505E00B7D22A /* KeyboardBefore.png */; };
+		EFDEC49B239F505F00B7D22A /* Keyboard.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDEC48F239F505E00B7D22A /* Keyboard.png */; };
+		EFDEC49C239F505F00B7D22A /* VoiceControl.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDEC490239F505E00B7D22A /* VoiceControl.png */; };
+		EFDEC49D239F505F00B7D22A /* SideButton.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDEC491239F505E00B7D22A /* SideButton.png */; };
+		EFDEC49E239F505F00B7D22A /* VoiceControlAfter.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDEC492239F505E00B7D22A /* VoiceControlAfter.png */; };
+		EFDEC49F239F505F00B7D22A /* AppleRemoteBefore.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDEC493239F505E00B7D22A /* AppleRemoteBefore.png */; };
+		EFDEC4A0239F505F00B7D22A /* VoiceControlBefore.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDEC494239F505E00B7D22A /* VoiceControlBefore.png */; };
+		EFDEC4A1239F505F00B7D22A /* SideButtonAfter.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDEC495239F505E00B7D22A /* SideButtonAfter.png */; };
+		EFDEC4A2239F505F00B7D22A /* AppleRemote.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDEC496239F505E00B7D22A /* AppleRemote.png */; };
+		EFDEC4A3239F505F00B7D22A /* SideButtonBefore.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDEC497239F505E00B7D22A /* SideButtonBefore.png */; };
+		EFDEC4A4239F505F00B7D22A /* KeyboardAfter.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDEC498239F505F00B7D22A /* KeyboardAfter.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -300,6 +312,18 @@
 		EF53A19E238B03BA000F04B4 /* RecRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecRequest.swift; sourceTree = "<group>"; };
 		EF5A8907234DBD9B003DB430 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		EF7253A223413CFC00FEBF0F /* LandingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageView.swift; sourceTree = "<group>"; };
+		EFDEC48D239F505E00B7D22A /* AppleRemoteAfter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppleRemoteAfter.png; sourceTree = "<group>"; };
+		EFDEC48E239F505E00B7D22A /* KeyboardBefore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KeyboardBefore.png; sourceTree = "<group>"; };
+		EFDEC48F239F505E00B7D22A /* Keyboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Keyboard.png; sourceTree = "<group>"; };
+		EFDEC490239F505E00B7D22A /* VoiceControl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceControl.png; sourceTree = "<group>"; };
+		EFDEC491239F505E00B7D22A /* SideButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SideButton.png; sourceTree = "<group>"; };
+		EFDEC492239F505E00B7D22A /* VoiceControlAfter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceControlAfter.png; sourceTree = "<group>"; };
+		EFDEC493239F505E00B7D22A /* AppleRemoteBefore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppleRemoteBefore.png; sourceTree = "<group>"; };
+		EFDEC494239F505E00B7D22A /* VoiceControlBefore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VoiceControlBefore.png; sourceTree = "<group>"; };
+		EFDEC495239F505E00B7D22A /* SideButtonAfter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SideButtonAfter.png; sourceTree = "<group>"; };
+		EFDEC496239F505E00B7D22A /* AppleRemote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppleRemote.png; sourceTree = "<group>"; };
+		EFDEC497239F505E00B7D22A /* SideButtonBefore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SideButtonBefore.png; sourceTree = "<group>"; };
+		EFDEC498239F505F00B7D22A /* KeyboardAfter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KeyboardAfter.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +411,18 @@
 		8FBD1C90238B170C00F95AC0 /* GuideMotionAssets */ = {
 			isa = PBXGroup;
 			children = (
+				EFDEC496239F505E00B7D22A /* AppleRemote.png */,
+				EFDEC48D239F505E00B7D22A /* AppleRemoteAfter.png */,
+				EFDEC493239F505E00B7D22A /* AppleRemoteBefore.png */,
+				EFDEC48F239F505E00B7D22A /* Keyboard.png */,
+				EFDEC498239F505F00B7D22A /* KeyboardAfter.png */,
+				EFDEC48E239F505E00B7D22A /* KeyboardBefore.png */,
+				EFDEC491239F505E00B7D22A /* SideButton.png */,
+				EFDEC495239F505E00B7D22A /* SideButtonAfter.png */,
+				EFDEC497239F505E00B7D22A /* SideButtonBefore.png */,
+				EFDEC490239F505E00B7D22A /* VoiceControl.png */,
+				EFDEC492239F505E00B7D22A /* VoiceControlAfter.png */,
+				EFDEC494239F505E00B7D22A /* VoiceControlBefore.png */,
 				8FBD1C93238B172000F95AC0 /* AfterAssistiveTouch.png */,
 				8FBD1C92238B171F00F95AC0 /* AfterCallRout.png */,
 				8FBD1CA1238B172500F95AC0 /* AfterShakeUndo.png */,
@@ -720,6 +756,7 @@
 				8FBD1CF9238B176C00F95AC0 /* AfterLargerText.png in Resources */,
 				8FBD1D01238B176C00F95AC0 /* BeforeGrayScale.png in Resources */,
 				8104C08D23825F8A00D3DA73 /* MobilityTestData.json in Resources */,
+				EFDEC49A239F505F00B7D22A /* KeyboardBefore.png in Resources */,
 				8FBD1C8D238B170500F95AC0 /* home_icon.png in Resources */,
 				8FBD1CB2238B172500F95AC0 /* Vibration.png in Resources */,
 				EF0F65F5238B512900D49F2F /* ClassicInvertBefore.png in Resources */,
@@ -731,6 +768,7 @@
 				8FBD1CF8238B176C00F95AC0 /* AfterReduceTransparencyDock.png in Resources */,
 				8FBD1D06238B176C00F95AC0 /* VOAudio.png in Resources */,
 				8FBD1CA4238B172500F95AC0 /* UndoShake.png in Resources */,
+				EFDEC49F239F505F00B7D22A /* AppleRemoteBefore.png in Resources */,
 				EF0F65F0238B512900D49F2F /* ColorFiltersAfter.png in Resources */,
 				81416712234E709D008C74E0 /* VisionTestData.json in Resources */,
 				8FBD1CA5238B172500F95AC0 /* AfterCallRout.png in Resources */,
@@ -738,6 +776,7 @@
 				8FBD1CA8238B172500F95AC0 /* BeforeCallRout.png in Resources */,
 				EF0F65F4238B512900D49F2F /* PreferCrossFadeAfter.png in Resources */,
 				EF0F65FC238B512900D49F2F /* AutoPlayAfter.png in Resources */,
+				EFDEC49B239F505F00B7D22A /* Keyboard.png in Resources */,
 				8FBD1CAB238B172500F95AC0 /* MotionLogo.png in Resources */,
 				8FBD1D12238B176C00F95AC0 /* BeforeVoiceOver.png in Resources */,
 				8FBD1CAD238B172500F95AC0 /* TouchAccomBefore.png in Resources */,
@@ -755,15 +794,19 @@
 				8FBD1D1C238B176C00F95AC0 /* AfterOnOff.png in Resources */,
 				8FBD1C89238B16EB00F95AC0 /* digitalAccess.png in Resources */,
 				EF0F65F6238B512900D49F2F /* ReduceMotionAfter.png in Resources */,
+				EFDEC4A4239F505F00B7D22A /* KeyboardAfter.png in Resources */,
 				8FBD1D13238B176C00F95AC0 /* BeforeOnOff.png in Resources */,
 				8FBD1D11238B176C00F95AC0 /* AfterBoldText.png in Resources */,
 				8FBD1D0D238B176C00F95AC0 /* VOCommands.png in Resources */,
 				8FBD1CF7238B176C00F95AC0 /* BeforeMagnifier.png in Resources */,
 				8FBD1D0C238B176C00F95AC0 /* DiffWColor.png in Resources */,
+				EFDEC4A1239F505F00B7D22A /* SideButtonAfter.png in Resources */,
 				81416712234E709D008C74E0 /* VisionTestData.json in Resources */,
 				8FBD1D21238B176C00F95AC0 /* ColorFilters.png in Resources */,
+				EFDEC49E239F505F00B7D22A /* VoiceControlAfter.png in Resources */,
 				8FBD1D0F238B176C00F95AC0 /* AfterGrayScale.png in Resources */,
 				8FBD1D0E238B176C00F95AC0 /* ZoomLogo.png in Resources */,
+				EFDEC4A3239F505F00B7D22A /* SideButtonBefore.png in Resources */,
 				8FBD1D1D238B176C00F95AC0 /* AfterMagnifier.png in Resources */,
 				8FBD1D0A238B176C00F95AC0 /* BeforeLargerText.png in Resources */,
 				8FBD1D19238B176C00F95AC0 /* PreferCrossFade.png in Resources */,
@@ -779,8 +822,11 @@
 				8FBD1CB3238B172500F95AC0 /* BeforeVibration.png in Resources */,
 				8FBD1D2C238B182700F95AC0 /* Assets.xcassets in Resources */,
 				8FBD1D10238B176C00F95AC0 /* AfterReduceTransparency.png in Resources */,
+				EFDEC49C239F505F00B7D22A /* VoiceControl.png in Resources */,
 				8FBD1CA7238B172500F95AC0 /* TouchAcomm.png in Resources */,
 				8FBD1CFD238B176C00F95AC0 /* AfterIncreaseContrast.png in Resources */,
+				EFDEC4A0239F505F00B7D22A /* VoiceControlBefore.png in Resources */,
+				EFDEC499239F505F00B7D22A /* AppleRemoteAfter.png in Resources */,
 				EF0F65F3238B512900D49F2F /* SmartInvertBefore.png in Resources */,
 				8FBD1CAE238B172500F95AC0 /* CallAudioRout.png in Resources */,
 				8FBD1C8E238B170500F95AC0 /* eye.png in Resources */,
@@ -791,6 +837,7 @@
 				8165DA012357591D0063A747 /* ResultData.json in Resources */,
 				EF0F65F2238B512900D49F2F /* SmartInvertAfter.png in Resources */,
 				8FBD1CB6238B172600F95AC0 /* BeforeShakeUndo.png in Resources */,
+				EFDEC4A2239F505F00B7D22A /* AppleRemote.png in Resources */,
 				8FBD1CA9238B172500F95AC0 /* BeforeAssistiveTouch.png in Resources */,
 				EF0F65EF238B512900D49F2F /* ReduceMotionBefore.png in Resources */,
 				EF0F65F9238B512900D49F2F /* DiffWColorAfter.png in Resources */,
@@ -802,6 +849,7 @@
 				EF0F65F1238B512900D49F2F /* ColorFiltersBefore.png in Resources */,
 				EF0F65F7238B512900D49F2F /* PreferCrossFadeBefore.png in Resources */,
 				8FBD1CB1238B172500F95AC0 /* TouchAccomAfter.png in Resources */,
+				EFDEC49D239F505F00B7D22A /* SideButton.png in Resources */,
 				8FBD1D09238B176C00F95AC0 /* AfterDarkMode.png in Resources */,
 				8F91680C238B137300964917 /* Vision Tests in Resources */,
 				8FBD1CFB238B176C00F95AC0 /* BeforeZoom.png in Resources */,
