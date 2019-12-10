@@ -41,6 +41,15 @@ class MobilityMazeTest : UIViewController {
     var topCircleHeight = 0.0
     
     override func viewDidLoad() {
+        if traitCollection.userInterfaceStyle == .dark{
+            self.view.backgroundColor = UIColor.black
+
+        }
+        else{
+            self.view.backgroundColor = UIColor.white
+
+        }
+        
         mainImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         tempImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         self.view.addSubview(mainImageView)
@@ -69,7 +78,14 @@ class MobilityMazeTest : UIViewController {
         //let label = UILabel()
         label.frame = CGRect(x: self.view.frame.width / 2 - 150, y: grid[0][0].y - 100, width: 300, height: 50)
         label.text = " Please connect the dots"
-        label.textColor = UIColor.black
+        
+        if traitCollection.userInterfaceStyle == .dark{
+            label.textColor = UIColor.white
+        }
+        else{
+            label.textColor = UIColor.black
+        }
+        
         label.font = .preferredFont(forTextStyle: UIFont.TextStyle.title3)
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
@@ -78,15 +94,30 @@ class MobilityMazeTest : UIViewController {
         
         topCircleHeight = Double(CGFloat(grid[0][0].y) + CGFloat(40) + CGFloat(radius))
         topCircle.fillColor = nil
-        topCircle.strokeColor = UIColor.black.cgColor
-        topCircle.fillColor = UIColor.black.cgColor
+        
+        if traitCollection.userInterfaceStyle == .dark{
+            topCircle.strokeColor = UIColor.white.cgColor
+            topCircle.fillColor = UIColor.white.cgColor
+        }
+        else{
+            topCircle.strokeColor = UIColor.black.cgColor
+            topCircle.fillColor = UIColor.black.cgColor
+        }
+        
         topCircle.lineWidth = 2
         topCircle.path = UIBezierPath(arcCenter: CGPoint(x:self.view.frame.width/2, y: grid[0][0].y - 40), radius: CGFloat(radius), startAngle: 0, endAngle: 360, clockwise: true).cgPath
         
         bottomCircleHeight = Double(CGFloat(grid[grid.count-1][0].y) + CGFloat(40) - CGFloat(radius))
         bottomCircle.fillColor = nil
-        bottomCircle.strokeColor = UIColor.black.cgColor
-        bottomCircle.fillColor = UIColor.black.cgColor
+
+        if traitCollection.userInterfaceStyle == .dark{
+            bottomCircle.strokeColor = UIColor.white.cgColor
+            bottomCircle.fillColor = UIColor.white.cgColor
+        }
+        else{
+            bottomCircle.strokeColor = UIColor.black.cgColor
+            bottomCircle.fillColor = UIColor.black.cgColor
+        }
         bottomCircle.lineWidth = 2
         bottomCircle.path = UIBezierPath(arcCenter: CGPoint(x:self.view.frame.width/2, y: grid[grid.count - 1][0].y + 40), radius: CGFloat(radius), startAngle: 0, endAngle: 360, clockwise: true).cgPath
                 
@@ -125,7 +156,7 @@ class MobilityMazeTest : UIViewController {
         }
         
         if hitWall {
-            result = "We have the following recommendations:"
+            result = "We have the following recommendations"
             let recsRequest = RecsRequest(featid:24)
             recsRequest.displayRecs(resultView: resultView)
             // resultView.steps = Resultdata[6]
@@ -329,7 +360,15 @@ class MobilityMazeTest : UIViewController {
         
         maze.path = path.cgPath
         maze.fillColor = nil
-        maze.strokeColor = UIColor.black.cgColor
+        
+        
+        if traitCollection.userInterfaceStyle == .dark{
+            maze.strokeColor = UIColor.white.cgColor
+        }
+        else{
+            maze.strokeColor = UIColor.black.cgColor
+        }
+        
         maze.lineWidth = 2
         
         self.view.layer.addSublayer(maze)

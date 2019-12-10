@@ -16,7 +16,15 @@ class GridTestViewController : UIViewController {
         let testImageView = UIImageView(image: testImage!)
         testImageView.frame = CGRect(x: 0, y: self.view.frame.height / 4, width: self.view.frame.width, height: self.view.frame.height / 2)
 
-            self.view.backgroundColor = UIColor.white
+            if traitCollection.userInterfaceStyle == .dark{
+                self.view.backgroundColor = UIColor.black
+
+            }
+            else{
+                self.view.backgroundColor = UIColor.white
+
+            }
+            
             sentenceLabel.frame = CGRect(x: 0, y: 100, width: view.frame.size.width, height: 50)
             sentenceLabel.center = self.view.center
             sentenceLabel.center.x = self.view.center.x
@@ -27,6 +35,15 @@ class GridTestViewController : UIViewController {
     //        sentenceLabel.sizeToFit()
             sentenceLabel.text = "Stare at the dot for 30 seconds...\n Did you see any curved or blurry lines?"
             sentenceLabel.textColor = UIColor.black
+            if traitCollection.userInterfaceStyle == .dark{
+                sentenceLabel.textColor = UIColor.white
+
+            }
+            else{
+                sentenceLabel.textColor = UIColor.black
+
+            }
+        
             //sentenceLabel.font = .systemFont(ofSize: CGFloat(textSize))
         
         

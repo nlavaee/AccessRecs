@@ -27,13 +27,26 @@ class LandingPageView: UIViewController, UINavigationControllerDelegate{
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = home_icon
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
-        
+        if traitCollection.userInterfaceStyle == .dark{
+            self.view.backgroundColor = UIColor.black
+
+        }
+        else{
+            self.view.backgroundColor = UIColor.white
+        }
         
         
         // Title of App
         let appName = UILabel(frame: CGRect(x:self.view.frame.width/2 - 100, y: self.view.frame.height/2 - 225, width: 200, height: 100))
         appName.isAccessibilityElement = true
-        appName.textColor = UIColor.black
+        if traitCollection.userInterfaceStyle == .dark {
+            appName.textColor = UIColor.white
+
+        }
+        else{
+            appName.textColor = UIColor.black
+
+        }
         appName.font = .boldSystemFont(ofSize: 24.0)
         appName.text = "Smart Accessibility Recommendations"
         appName.lineBreakMode = .byWordWrapping

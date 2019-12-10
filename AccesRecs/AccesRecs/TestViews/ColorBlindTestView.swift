@@ -38,7 +38,14 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         self.scrollView.contentOffset = CGPoint(x: view.frame.origin.x, y: view.frame.origin.y + 75)
         
         
-        self.view.backgroundColor = UIColor.white
+        if traitCollection.userInterfaceStyle == .dark{
+            self.view.backgroundColor = UIColor.black
+
+        }
+        else{
+            self.view.backgroundColor = UIColor.white
+
+        }
         
         nextButton.setTitle("Next Question", for: .normal)
         nextButton.addTarget(self, action: #selector(NextQuestion), for: .touchUpInside)
@@ -56,7 +63,12 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         testImageView.frame = CGRect(x: self.view.frame.width / 2 - 125, y: self.view.frame.height / 2 - 250, width: 250, height: 250)
         
         let prompt = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 100, y: self.view.frame.height / 2 + 25, width: 200, height: 100))
-        prompt.textColor = UIColor.black
+        if traitCollection.userInterfaceStyle == .dark{
+            prompt.textColor = UIColor.white
+        }
+        else{
+            prompt.textColor = UIColor.black
+        }
         prompt.font = .preferredFont(forTextStyle: UIFont.TextStyle.title3)
         prompt.text = "Enter the number you see"
         prompt.lineBreakMode = .byWordWrapping

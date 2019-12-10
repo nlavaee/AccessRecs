@@ -55,7 +55,9 @@ struct TemplateGuideView: View {
                         response: 0.87, dampingFraction: 0.7, blendDuration: 1))
                     .onTapGesture {
                         self.zoomPhoto.toggle()
-                }
+                    }
+                    .accessibility(label: Text(guide.AccessibilityLabelBefore))
+                
     //                .scaledToFit()
                 Spacer()
                     .frame(height:10)
@@ -77,7 +79,9 @@ struct TemplateGuideView: View {
                    response: 0.87, dampingFraction: 0.7, blendDuration: 1))
                   .onTapGesture {
                      self.zoomPhoto.toggle()
-              }
+                  }
+                  .accessibility(label: Text(guide.AccessibilityLabelAfter))
+
            }
         }
 //        .padding()

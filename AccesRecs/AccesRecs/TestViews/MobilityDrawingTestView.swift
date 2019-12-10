@@ -37,6 +37,15 @@ class MobilityDrawingTest : UIViewController {
     var doneButton: UIButton = UIButton()
 
     override func viewDidLoad() {
+        if traitCollection.userInterfaceStyle == .dark{
+            self.view.backgroundColor = UIColor.black
+
+        }
+        else{
+            self.view.backgroundColor = UIColor.white
+
+        }
+        
         mainImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         tempImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         self.view.addSubview(mainImageView)
@@ -49,7 +58,13 @@ class MobilityDrawingTest : UIViewController {
         resetButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
 
         let prompt = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 100, y: 75, width: 200, height: 100))
-        prompt.textColor = UIColor.black
+            if traitCollection.userInterfaceStyle == .dark{
+            prompt.textColor = UIColor.white
+        }
+        else{
+            prompt.textColor = UIColor.black
+        }
+
         prompt.font = .preferredFont(forTextStyle: UIFont.TextStyle.title3)
         prompt.text = "Please trace the shape below one time:"
         prompt.lineBreakMode = .byWordWrapping
