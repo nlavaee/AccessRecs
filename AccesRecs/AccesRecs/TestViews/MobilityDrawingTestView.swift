@@ -50,7 +50,7 @@ class MobilityDrawingTest : UIViewController {
         let prompt = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 100, y: 75, width: 200, height: 100))
         prompt.textColor = UIColor.black
         prompt.font = .preferredFont(forTextStyle: UIFont.TextStyle.title3)
-        prompt.text = "Please trace the shape below:"
+        prompt.text = "Please trace the shape below one time:"
         prompt.lineBreakMode = .byWordWrapping
         prompt.numberOfLines = 0
         prompt.textAlignment = .center
