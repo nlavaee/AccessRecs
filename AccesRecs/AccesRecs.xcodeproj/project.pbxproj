@@ -146,6 +146,7 @@
 		EFDEC4A2239F505F00B7D22A /* AppleRemote.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDEC496239F505E00B7D22A /* AppleRemote.png */; };
 		EFDEC4A3239F505F00B7D22A /* SideButtonBefore.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDEC497239F505E00B7D22A /* SideButtonBefore.png */; };
 		EFDEC4A4239F505F00B7D22A /* KeyboardAfter.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDEC498239F505F00B7D22A /* KeyboardAfter.png */; };
+		EFDEC4A623A007D400B7D22A /* VOAudioAfter.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDEC4A523A007D400B7D22A /* VOAudioAfter.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -324,6 +325,7 @@
 		EFDEC496239F505E00B7D22A /* AppleRemote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppleRemote.png; sourceTree = "<group>"; };
 		EFDEC497239F505E00B7D22A /* SideButtonBefore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SideButtonBefore.png; sourceTree = "<group>"; };
 		EFDEC498239F505F00B7D22A /* KeyboardAfter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KeyboardAfter.png; sourceTree = "<group>"; };
+		EFDEC4A523A007D400B7D22A /* VOAudioAfter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VOAudioAfter.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -465,6 +467,7 @@
 		8FBD1CCA238B174B00F95AC0 /* GuideVisionAssets */ = {
 			isa = PBXGroup;
 			children = (
+				EFDEC4A523A007D400B7D22A /* VOAudioAfter.png */,
 				EF0F65EC238B512900D49F2F /* AutoPlayAfter.png */,
 				EF0F65EA238B512900D49F2F /* AutoPlayBefore.png */,
 				EF0F65E8238B512900D49F2F /* ClassicInvertAfter.png */,
@@ -779,6 +782,7 @@
 				EFDEC49B239F505F00B7D22A /* Keyboard.png in Resources */,
 				8FBD1CAB238B172500F95AC0 /* MotionLogo.png in Resources */,
 				8FBD1D12238B176C00F95AC0 /* BeforeVoiceOver.png in Resources */,
+				EFDEC4A623A007D400B7D22A /* VOAudioAfter.png in Resources */,
 				8FBD1CAD238B172500F95AC0 /* TouchAccomBefore.png in Resources */,
 				8FBD1D05238B176C00F95AC0 /* BeforeReduceTransparency.png in Resources */,
 				8FBD1D1E238B176C00F95AC0 /* BeforeButtonShape.png in Resources */,
