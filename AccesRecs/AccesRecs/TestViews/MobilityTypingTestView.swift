@@ -50,6 +50,8 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             prompt.textAlignment = .center
             prompt.adjustsFontSizeToFitWidth = true
             
+            let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+            view.addGestureRecognizer(tap)
             
             //let temp = Testdata
             let text = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 100, y: prompt.frame.maxY + 50, width: 200, height: 150))

@@ -47,6 +47,8 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         nextButton.frame = CGRect(x: self.view.frame.width / 2 - 100, y:self.view.frame.height / 2 + 200, width: 200, height: 50)
         nextButton.isEnabled = false
         
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
         
         let testImage = UIImage(named: tests[idx].imageName)
         testImageView = UIImageView(image: testImage!)
