@@ -56,13 +56,15 @@ class MobilityMazeTest : UIViewController {
         resetButton.setTitle("Reset", for: .normal)
         resetButton.backgroundColor = UIColor.blue
         resetButton.layer.cornerRadius = 20
-        resetButton.frame = CGRect(x: 10, y: self.view.frame.height - 60, width: 120, height:50)
+        resetButton.frame = CGRect(x: 10, y: self.view.frame.height - 70, width: 120, height:60)
+        resetButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         
         doneButton.addTarget(self, action: #selector(donePressed), for: .touchUpInside)
         doneButton.setTitle("Done", for: .normal)
         doneButton.backgroundColor = UIColor.red
         doneButton.layer.cornerRadius = 20
-        doneButton.frame = CGRect(x: self.view.frame.width - 130, y: self.view.frame.height - 60, width: 120, height:50)
+        doneButton.frame = CGRect(x: self.view.frame.width - 130, y: self.view.frame.height - 70, width: 120, height:60)
+        doneButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         
         //let label = UILabel()
         label.frame = CGRect(x: self.view.frame.width / 2 - 150, y: grid[0][0].y - 100, width: 300, height: 50)

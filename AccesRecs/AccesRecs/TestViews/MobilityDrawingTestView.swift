@@ -45,7 +45,8 @@ class MobilityDrawingTest : UIViewController {
         resetButton.setTitle("Reset", for: .normal)
         resetButton.backgroundColor = UIColor.blue
         resetButton.layer.cornerRadius = 20
-        resetButton.frame = CGRect(x: 10, y: self.view.frame.height - 60, width: 120, height:50)
+        resetButton.frame = CGRect(x: 10, y: self.view.frame.height - 70, width: 120, height:60)
+        resetButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
 
         let prompt = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 100, y: 75, width: 200, height: 100))
         prompt.textColor = UIColor.black
@@ -61,7 +62,8 @@ class MobilityDrawingTest : UIViewController {
         doneButton.setTitle("Done", for: .normal)
         doneButton.backgroundColor = UIColor.red
         doneButton.layer.cornerRadius = 20
-        doneButton.frame = CGRect(x: self.view.frame.width - 130, y: self.view.frame.height - 60, width: 120, height:50)
+        doneButton.frame = CGRect(x: self.view.frame.width - 130, y: self.view.frame.height - 70, width: 120, height:60)
+        doneButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
 
         shapePerimeter = createTestShape()
 

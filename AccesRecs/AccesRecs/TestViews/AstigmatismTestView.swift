@@ -33,11 +33,13 @@ class AstigmatismViewController : UIViewController {
         let yesButton = UIButton(frame: CGRect(x: self.view.frame.width - 325, y: self.view.frame.height - 125, width: 100, height: 100))
         let noButton = UIButton(frame: CGRect(x: self.view.frame.width - 150, y: self.view.frame.height - 125, width: 100, height: 100))
         yesButton.setTitle("Yes", for: .normal)
+        yesButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
+        noButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         noButton.setTitle("No", for: .normal)
         noButton.addTarget(self, action: #selector(noDiff), for: .touchUpInside)
         yesButton.addTarget(self, action: #selector(sawDiff), for: .touchUpInside)
         noButton.backgroundColor = UIColor.red
-        yesButton.backgroundColor = UIColor.blue
+        yesButton.backgroundColor = UIColor.systemGreen
         noButton.layer.cornerRadius = 20
         yesButton.layer.cornerRadius = 20
         

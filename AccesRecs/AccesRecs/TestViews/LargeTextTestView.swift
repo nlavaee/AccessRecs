@@ -44,11 +44,13 @@ class LargeTextTestViewController : UIViewController {
         let yesButton = UIButton(frame: CGRect(x: self.view.frame.width - 50 - 250 - 25, y: self.view.frame.height - 200, width: 100, height: 100))
         let noButton = UIButton(frame: CGRect(x: self.view.frame.width - 50 - 100, y: self.view.frame.height - 200, width: 100, height: 100))
         yesButton.setTitle("Yes", for: .normal)
+        yesButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
+        noButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         noButton.setTitle("No", for: .normal)
         noButton.addTarget(self, action: #selector(cantRead), for: .touchUpInside)
         yesButton.addTarget(self, action: #selector(canRead), for: .touchUpInside)
         noButton.backgroundColor = UIColor.red
-        yesButton.backgroundColor = UIColor.green
+        yesButton.backgroundColor = UIColor.systemGreen
         noButton.layer.cornerRadius = 20
         yesButton.layer.cornerRadius = 20
         

@@ -37,7 +37,9 @@ class GridTestViewController : UIViewController {
         noButton.addTarget(self, action: #selector(noBlurs), for: .touchUpInside)
         yesButton.addTarget(self, action: #selector(sawBlurs), for: .touchUpInside)
         noButton.backgroundColor = UIColor.red
-        yesButton.backgroundColor = UIColor.blue
+        yesButton.backgroundColor = UIColor.systemGreen
+        yesButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
+        noButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         noButton.layer.cornerRadius = 20
         yesButton.layer.cornerRadius = 20
         

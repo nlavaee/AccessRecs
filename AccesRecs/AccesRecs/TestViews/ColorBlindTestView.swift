@@ -44,8 +44,9 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         nextButton.addTarget(self, action: #selector(NextQuestion), for: .touchUpInside)
         nextButton.backgroundColor = UIColor.red
         nextButton.layer.cornerRadius = 20
-        nextButton.frame = CGRect(x: self.view.frame.width / 2 - 100, y:self.view.frame.height / 2 + 200, width: 200, height: 50)
+        nextButton.frame = CGRect(x: self.view.frame.width / 2 - 100, y:self.view.frame.height / 2 + 200, width: 200, height: 70)
         nextButton.isEnabled = false
+        nextButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)

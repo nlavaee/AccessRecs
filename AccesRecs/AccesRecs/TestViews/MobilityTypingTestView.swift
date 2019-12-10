@@ -77,8 +77,9 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             finishedButton.addTarget(self, action: #selector(DoneTyping), for: .touchUpInside)
             finishedButton.backgroundColor = UIColor.red
             finishedButton.layer.cornerRadius = 20
-            finishedButton.frame = CGRect(x: self.view.frame.width / 2 - 100, y:self.view.frame.height / 2 + 200, width: 200, height: 50)
+            finishedButton.frame = CGRect(x: self.view.frame.width / 2 - 100, y:self.view.frame.height / 2 + 200, width: 200, height: 70)
             //finishedButton.isEnabled = false
+            finishedButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
             
             
             self.view.addSubview(prompt)
