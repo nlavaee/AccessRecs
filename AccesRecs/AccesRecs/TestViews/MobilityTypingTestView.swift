@@ -34,7 +34,14 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height + 150)
             self.scrollView.isScrollEnabled = true
             self.scrollView.contentOffset = CGPoint(x: view.frame.origin.x, y: view.frame.origin.y + 75)
-            self.view.backgroundColor = UIColor.white
+            if traitCollection.userInterfaceStyle == .dark{
+                self.view.backgroundColor = UIColor.black
+
+            }
+            else{
+                self.view.backgroundColor = UIColor.white
+
+            }
             
             //start = DispatchTime.now()
             
@@ -42,7 +49,13 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             id = Int.random(in: 0 ..< testTextList.count)
             testText = testTextList[id]
             let prompt = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 100, y: 50, width: 200, height: 100))
-            prompt.textColor = UIColor.black
+            
+            if traitCollection.userInterfaceStyle == .dark{
+                prompt.textColor = UIColor.white
+            }
+            else{
+                prompt.textColor = UIColor.black
+            }
             prompt.font = .preferredFont(forTextStyle: UIFont.TextStyle.title3)
             prompt.text = "Type the following text:"
             prompt.lineBreakMode = .byWordWrapping
@@ -50,10 +63,18 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             prompt.textAlignment = .center
             prompt.adjustsFontSizeToFitWidth = true
             
+            let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+            view.addGestureRecognizer(tap)
             
             //let temp = Testdata
             let text = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 100, y: prompt.frame.maxY + 50, width: 200, height: 150))
-            text.textColor = UIColor.black
+            
+            if traitCollection.userInterfaceStyle == .dark{
+                text.textColor = UIColor.white
+            }
+            else{
+                text.textColor = UIColor.black
+            }
             text.font = .preferredFont(forTextStyle: UIFont.TextStyle.title3)
             text.text = testText
             text.lineBreakMode = .byWordWrapping
@@ -65,18 +86,26 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             answerField.frame = CGRect(x: self.view.frame.width / 2 - 75, y: self.view.frame.height / 2 + prompt.frame.height + 10, width: 150, height: 50)
             answerField.delegate = self
             answerField.borderStyle = UITextField.BorderStyle.line
-            answerField.layer.borderColor = UIColor.gray.cgColor
+            
+            if traitCollection.userInterfaceStyle == .dark{
+                answerField.layer.borderColor = UIColor.gray.cgColor
+            }
+            else{
+                answerField.layer.borderColor = UIColor.black.cgColor
+            }
+
             answerField.autocorrectionType = .no
             answerField.textAlignment = .center
             answerField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.touchDown)
-            
+            answerField.addDoneButtonOnKeyboard()
             
             finishedButton.setTitle("Done", for: .normal)
             finishedButton.addTarget(self, action: #selector(DoneTyping), for: .touchUpInside)
             finishedButton.backgroundColor = UIColor.red
             finishedButton.layer.cornerRadius = 20
-            finishedButton.frame = CGRect(x: self.view.frame.width / 2 - 100, y:self.view.frame.height / 2 + 200, width: 200, height: 50)
+            finishedButton.frame = CGRect(x: self.view.frame.width / 2 - 100, y:self.view.frame.height / 2 + 200, width: 200, height: 70)
             //finishedButton.isEnabled = false
+            finishedButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
             
             
             self.view.addSubview(prompt)
@@ -112,23 +141,24 @@ class MobilityTypingTest : UIViewController, UITextFieldDelegate, UIScrollViewDe
             result = "Perfect!!"
                     } else {
             result = "We have recommendations for you:"
-                let recsRequest = RecsRequest(featid:14)
+            let recsRequest = RecsRequest(featid:24)
+            recsRequest.displayRecs(resultView: resultView)
             
-                let group = DispatchGroup()
-                
-                group.enter()
-                
-                recsRequest.getRecs{
-                    result in
-                    switch result {
-                    case .failure(let error):
-                        print(error)
-                    case.success(let recs):
-                        resultView.recs = recs.map({ $0.rec_name })
-                        group.leave()
-                    }
-                }
-                group.wait()
+//                let group = DispatchGroup()
+//
+//                group.enter()
+//
+//                recsRequest.getRecs{
+//                    result in
+//                    switch result {
+//                    case .failure(let error):
+//                        print(error)
+//                    case.success(let recs):
+//                        resultView.recs = recs.map({ $0.rec_name })
+//                        group.leave()
+//                    }
+//                }
+//                group.wait()
         }
         
         resultView.result = result

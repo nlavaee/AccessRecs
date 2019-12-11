@@ -57,6 +57,24 @@ struct RecsRequest {
         }
         task.resume()
     }
+    
+    func displayRecs(resultView: ResultView) {
+        let group = DispatchGroup()
+        
+        group.enter()
+        
+        getRecs{
+            result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case.success(let recs):
+                resultView.recs = recs.map({ $0.rec_name })
+                group.leave()
+            }
+        }
+        group.wait()
+    }
 }
 
 //let session = URLSession.shared

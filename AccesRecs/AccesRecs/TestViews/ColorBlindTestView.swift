@@ -38,22 +38,37 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         self.scrollView.contentOffset = CGPoint(x: view.frame.origin.x, y: view.frame.origin.y + 75)
         
         
-        self.view.backgroundColor = UIColor.white
+        if traitCollection.userInterfaceStyle == .dark{
+            self.view.backgroundColor = UIColor.black
+
+        }
+        else{
+            self.view.backgroundColor = UIColor.white
+
+        }
         
         nextButton.setTitle("Next Question", for: .normal)
         nextButton.addTarget(self, action: #selector(NextQuestion), for: .touchUpInside)
         nextButton.backgroundColor = UIColor.red
         nextButton.layer.cornerRadius = 20
-        nextButton.frame = CGRect(x: self.view.frame.width / 2 - 100, y:self.view.frame.height / 2 + 200, width: 200, height: 50)
+        nextButton.frame = CGRect(x: self.view.frame.width / 2 - 100, y:self.view.frame.height / 2 + 200, width: 200, height: 70)
         nextButton.isEnabled = false
+        nextButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
         
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
         
         let testImage = UIImage(named: tests[idx].imageName)
         testImageView = UIImageView(image: testImage!)
         testImageView.frame = CGRect(x: self.view.frame.width / 2 - 125, y: self.view.frame.height / 2 - 250, width: 250, height: 250)
         
         let prompt = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 100, y: self.view.frame.height / 2 + 25, width: 200, height: 100))
-        prompt.textColor = UIColor.black
+        if traitCollection.userInterfaceStyle == .dark{
+            prompt.textColor = UIColor.white
+        }
+        else{
+            prompt.textColor = UIColor.black
+        }
         prompt.font = .preferredFont(forTextStyle: UIFont.TextStyle.title3)
         prompt.text = "Enter the number you see"
         prompt.lineBreakMode = .byWordWrapping
@@ -71,6 +86,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
         answerField.keyboardType = .numberPad
         answerField.textAlignment = .center
         answerField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+        answerField.addDoneButtonOnKeyboard()
 
 
         self.view.addSubview(scrollView)
@@ -117,6 +133,14 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
     
     @objc func keyboardWillClose(notification: Notification) {
         view.frame.origin.y = 0
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let maxLength = 3
+        let currentString: NSString = textField.text! as NSString
+        let newString: NSString =
+            currentString.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= maxLength
     }
     
     @objc func CompleteTest(sender: UIButton!) {
@@ -171,24 +195,28 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
             result = "You don't need to update any color settings on your phone!"
         } else {
             result = "You might want to change the color filters on your phone"
-                let recsRequest = RecsRequest(featid:14)
-            
-                let group = DispatchGroup()
-                
-                group.enter()
-                
-                recsRequest.getRecs{
-                    result in
-                    switch result {
-                    case .failure(let error):
-                        print(error)
-                    case.success(let recs):
-                        resultView.recs = recs.map({ $0.rec_name })
-                        group.leave()
-                    }
-                }
-                group.wait()
+            if(score == 7) {
+                result = "Turn on one of the four preset color filters, or customize your own"
+            }
+            else if((protanopiaScore < 6 && deuteranopiaScore < 6) && (protanopiaScore + deuteranopiaScore > 7)) {
+                result = "Turn on the 'Protanopia' or 'Deuteranopia' color filter"
+            }
+            else if(protanopiaScore > 5) {
+                result = "Turn on the 'Protanopia' color filter"
+            }
+            else if(deuteranopiaScore > 5) {
+                result = "Turn on the 'Deuteranopia' color filter"
+            }
+            else if(tritanopiaScore > 2) {
+                result = "Turn on the 'Tritanopia' color filter"
+            } else {
+                result = "Turn on one of the four preset filters, or customize your own"
+            }
+
+            let recsRequest = RecsRequest(featid:14)
+            recsRequest.displayRecs(resultView: resultView)
         }
+        
 //        if(score == 7) {
 //            // resultView.steps.append("Choose from one of the four preset filters, or customize your own")
 //        }
@@ -206,7 +234,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
 //        } else {
 //            // resultView.steps.append("Choose from one of the four preset filters, or customize your own")
 //        }
-        
+//
 //        if(score > 3) {
 //            result = "You don't need to update any color settings on your phone!"
 //        } else {
@@ -243,6 +271,7 @@ class ColorBlindTestViewController : UIViewController, UITextFieldDelegate, UISc
             answers.append("")
         }
         correctAnswers.append(String(tests[idx].answer))
+        nextButton.isEnabled = false
         
         
 //        if(answerField.text == String(tests[idx].answer)) {

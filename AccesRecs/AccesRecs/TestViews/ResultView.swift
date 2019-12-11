@@ -36,13 +36,29 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
         
 //        dismissModal = true
 
-        self.view.backgroundColor = UIColor.white
+        
+        if traitCollection.userInterfaceStyle == .dark{
+            self.view.backgroundColor = UIColor.black
+
+        }
+        else{
+            self.view.backgroundColor = UIColor.white
+        }
+        
         let maxFrameHeight = self.view.frame.height
 
         
-        let resultLabel = UILabel(frame: CGRect(x:187.5 - 100, y: 20, width: 200, height: 100))
+        let resultLabel = UILabel(frame: CGRect(x:187.5 - 100, y: 20, width: 200, height: 150))
         resultLabel.center.x = self.view.center.x
-        resultLabel.textColor = UIColor.black
+        
+        if traitCollection.userInterfaceStyle == .dark{
+            resultLabel.textColor = UIColor.white
+
+        }
+        else {
+            resultLabel.textColor = UIColor.black
+        }
+        
         resultLabel.font = .boldSystemFont(ofSize: 24.0)
         resultLabel.text = result
         resultLabel.lineBreakMode = .byWordWrapping
@@ -50,7 +66,14 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
         resultLabel.textAlignment = .center
         
         let recsLabel = UILabel(frame: CGRect(x:187.5 - 100, y: resultLabel.frame.maxY + 15, width: 200, height: 25))
-        recsLabel.textColor = UIColor.black
+        if traitCollection.userInterfaceStyle == .dark{
+            recsLabel.textColor = UIColor.white
+
+        }
+        else{
+            recsLabel.textColor = UIColor.black
+        }
+        
         recsLabel.font = .boldSystemFont(ofSize: 16.0)
         recsLabel.text = "Recommendations: "
         
@@ -60,7 +83,15 @@ class ResultView: UIViewController, UINavigationControllerDelegate {
         for rec in recs {
             let stepLabel = UILabel(frame: CGRect(x: 187.5 - 100, y: yStart + offset, width: 200, height: 75))
             stepLabel.center.x = self.view.center.x
-            stepLabel.textColor = UIColor.black
+            
+            if traitCollection.userInterfaceStyle == .dark{
+                stepLabel.textColor = UIColor.white
+            }
+            else{
+                stepLabel.textColor = UIColor.black
+                
+            }
+            
             stepLabel.font = .systemFont(ofSize: 16.0)
             stepLabel.text = "• " + rec
             stepLabel.lineBreakMode = .byWordWrapping

@@ -37,6 +37,15 @@ class MobilityDrawingTest : UIViewController {
     var doneButton: UIButton = UIButton()
 
     override func viewDidLoad() {
+        if traitCollection.userInterfaceStyle == .dark{
+            self.view.backgroundColor = UIColor.black
+
+        }
+        else{
+            self.view.backgroundColor = UIColor.white
+
+        }
+        
         mainImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         tempImageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         self.view.addSubview(mainImageView)
@@ -45,12 +54,19 @@ class MobilityDrawingTest : UIViewController {
         resetButton.setTitle("Reset", for: .normal)
         resetButton.backgroundColor = UIColor.blue
         resetButton.layer.cornerRadius = 20
-        resetButton.frame = CGRect(x: 10, y: self.view.frame.height - 60, width: 120, height:50)
+        resetButton.frame = CGRect(x: 10, y: self.view.frame.height - 70, width: 120, height:60)
+        resetButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
 
         let prompt = UILabel(frame: CGRect(x: self.view.frame.width / 2 - 100, y: 75, width: 200, height: 100))
-        prompt.textColor = UIColor.black
+            if traitCollection.userInterfaceStyle == .dark{
+            prompt.textColor = UIColor.white
+        }
+        else{
+            prompt.textColor = UIColor.black
+        }
+
         prompt.font = .preferredFont(forTextStyle: UIFont.TextStyle.title3)
-        prompt.text = "Please trace the shape below:"
+        prompt.text = "Please trace the shape below one time:"
         prompt.lineBreakMode = .byWordWrapping
         prompt.numberOfLines = 0
         prompt.textAlignment = .center
@@ -61,7 +77,8 @@ class MobilityDrawingTest : UIViewController {
         doneButton.setTitle("Done", for: .normal)
         doneButton.backgroundColor = UIColor.red
         doneButton.layer.cornerRadius = 20
-        doneButton.frame = CGRect(x: self.view.frame.width - 130, y: self.view.frame.height - 60, width: 120, height:50)
+        doneButton.frame = CGRect(x: self.view.frame.width - 130, y: self.view.frame.height - 70, width: 120, height:60)
+        doneButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 24)
 
         shapePerimeter = createTestShape()
 
@@ -100,9 +117,11 @@ class MobilityDrawingTest : UIViewController {
         var result = ""
 
         if(isWithinThreshold(num1: shapePerimeter, num2: totalDistance, threshold: 0.05)) {
-           result = "Perfect!!"
-                   } else {
-           result = "We have recommendations for you:"
+            result = "Perfect!!"
+        } else {
+            result = "We have recommendations for you:"
+            let recsRequest = RecsRequest(featid:24)
+            recsRequest.displayRecs(resultView: resultView)
            // // resultView.steps = Resultdata[3]
        }
 
@@ -235,7 +254,7 @@ class MobilityDrawingTest : UIViewController {
       context.setStrokeColor(color.cgColor)
 
       //context.setLineWidth(4)
-      context.setStrokeColor(UIColor.cyan.cgColor)
+        context.setStrokeColor(UIColor.systemPurple.cgColor)
       context.strokePath()
       
       tempImageView.image = UIGraphicsGetImageFromCurrentImageContext()
